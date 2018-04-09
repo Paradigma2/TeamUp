@@ -1,0 +1,209 @@
+
+/*Sanja Perisic*/
+
+.clanak{
+	width:60%;
+	float:left;
+	clear:left;
+	background-color:rgba(3, 3, 3, 0.85);
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	color:white;
+	padding: 12px 20px;
+    margin: 8px 16px;
+	border-radius: 6px;
+	position:relative;
+}
+
+.naslov{
+	color:#007DA4;
+}
+
+.pravila{
+	/*float:right;
+	clear:right;*/
+	/*width:20%;*/
+	background-color:rgba(3, 3, 3, 0.9);
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	color:white;
+	padding: 12px 20px;
+    margin: 8px 16px;
+	font-size:15;
+}
+
+button {
+	width:90%;
+    background-color: #184157;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+	/*float:right;*/
+}
+
+button:hover{
+	background-color: #0A102A;
+}
+
+.closebtn {
+    float: left;
+    cursor: pointer;
+	color:#007DA4;
+}
+
+.containerTab {
+    color: white;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.prosiri{
+	text-decoration:underline;
+	cursor:pointer;
+	color:#007DA4;
+}
+
+
+
+.iconButton{
+	
+	
+  background-color: #184157;
+  border: none;
+  color: white;
+  width:100px;
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+.iconButton:hover{opacity: 1}
+
+.checked{
+	color:#184157;
+}
+
+a.icon:link {
+    color: white;
+}
+
+/* visited link */
+a.icon:visited {
+    color: white;
+}
+
+/* mouse over link */
+a.icon:hover {
+    color: #184157;
+}
+
+/* selected link */
+a.icon:active {
+    color: white;
+}
+
+.buttonPencil{
+
+	position:absolute;
+	top:-10px;
+	right:30px;
+}
+
+.buttonErase{
+	position:absolute;
+	top:-10px;
+	right:-10px;
+}
+
+button.icon {
+  background-color: Transparent;
+  border: none;
+  outline: none;
+  color: white;
+  width:auto;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  font-family : inherit;
+  cursor: pointer;
+}
+button.icon:hover {
+	color:#184157;
+	opacity: 1}
+	
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #192028;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Modal Content/Box */
+.modal-content1 {
+    background-color: black;
+    margin: 2% auto; /* 15% from the top and centered */
+    padding: 10px;
+	padding-left:30px;
+	padding-right:30px;
+    border: 1px solid #192028;
+    width: 70%; /* Could be more or less, depending on screen size */
+}
+
+.modal-content {
+    background-color: black;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 10px;
+	padding-left:30px;
+	padding-right:30px;
+    border: 1px solid #192028;
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(3, 3, 3, 0.8); /* Black w/ opacity */
+}
+
+.button {
+  background-color: #184157;
+  border: none;
+  color: white;
+  width:160px;
+  padding: 14px;	
+  text-align: center;
+  font-size: 16px;
+  margin: 10px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  font-family : inherit;
+  cursor: pointer;
+}
+.button:hover {opacity: 1}

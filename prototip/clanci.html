@@ -1,0 +1,232 @@
+
+<!--Sanja Perisic-->
+
+<html>
+	<head>
+		<title>TeamUp!</title>
+		<style> 
+			html { 
+			background: url(slike/bb.jpg) no-repeat center fixed; 
+			background-size: cover;
+			}
+
+			body { 
+				color: white; 
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="mainbar.css">
+		<link rel="stylesheet" type="text/css" href="formaclanka.css">
+		<link rel="stylesheet" type="text/css" href="clanci.css">
+		<link rel="icon" href="slike/icon.png" type="image/png">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	
+	<body>
+		<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("prosiri");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+
+function closeTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("prosiri");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "inline";
+  }
+  document.getElementById(tabName).style.display = "none";
+}
+</script>
+		<ul>
+		<li class="fleft dropbtn">TeamUp!</li>
+		<li class="fleft"><a href="lobby_moderator.html">Lobi</a></li>
+		<li class="fleft"><a href="pretragaigraca_moderator.html">Pretraga igrača</a></li>
+		<li class="fleft"><a href="clanci.html">Članci</a></li>
+		<li class="dropdown fright">
+		<a href="javascript:void(0)" class="dropbtn">Nick</a>
+		<div class="dropdown-content">
+		<a href="profil_moderator.html">Profil</a>
+		<a href="inbox_moderator.html">Inbox</a>
+		<a href="lobby_gost.html">Log out</a>
+		</div>
+		</li>
+		</ul>
+		
+		<br>
+		
+		<div style="float:right; width:25%">
+		<button id="kreiraj">Kreiraj članak</button>
+		<div class="pravila">
+			
+			<h1>Pravila</h1>
+			<p>Moderator ne sme davati svoj profil drugim igracima na koriscenje. U suprotnom, moderator ce biti banovan sa sajta.</p>
+			<p>Clanci moraju biti vezani za desavanja u LoL-u i sadrzati korisne i zanimljive informacije. U suprotnom, clanci ce biti uklonjeni sa sajta.</p>
+			<p>Clanci ne smeju imati vulgaran sadrzaj. U suprotnom, moderator ce biti banovan, a svi njegovi clanci uklonjeni sa sajta.</p>
+			<p>Clanci ne smeju sluziti za prozivanje drugih igraca ili korisnika sajta. U suprotnom, moderator ce biti banovan, a svi njegovi clanci uklonjeni sa sajta.</p>
+		</div>
+		</div>
+		<div class="clanak">
+			<div class="buttonPencil">
+			<button class="icon"  id="vremeOnline" >
+					<i class="material-icons " style="font-size: 20px">&#xe3c9;</i> 
+					
+			</button>
+			</div>
+			<div class="buttonErase">
+			<button class="icon"   id="obrisi">
+					<i class="material-icons " style="font-size: 20px">&#xe872;</i> 
+					
+			</button>
+			</div>
+			<h1 class="naslov">Vip napravio karticu za igrače LoL-a</h1>
+			<p>Vip je jedini od tri mobilna operatara u našoj zemlji koji posvećuje posebnu pažnju gejming zajednici. Predstavili su posebnu ponudu u okviru njihove delatnosti  u vidu kartica za gejmere za akcentom na benefite u vidu bonus RP-a za League of Legends.</p>
+			<p onclick="openTab('b1');" class="prosiri"><i class="fa fa-chevron-down"></i></p>
+			<div id="b1" class="containerTab" style="display:none;">
+			
+			<p>Danas je aktuelna ponuda Vip Gaming prepaidcard. Dakle u pitanju je prepaid kartica na koju uplaćujete kredit. Karticu je moguće kupiti u svim Vip centrima.</p>
+			<p>Kartica košta 500 dinara i kada je kupite dobijate dakle 500 dinara kredita i pored toga još 4 gigabajta interneta koji možete da iskoristite u roku od 7 dana kao i 350 RP-a. RP iz ove ponude važi samo za Europe Nordic and East server.</p>
+			<p>Ono što ovu ponudu čini još boljom jeste činjenica da kasnije kada već imate karticu svaki put kada uplatite 500 dinara ili više dobijate ponovo bonus od 350 RP-a.Ukoliko svi ovi Riot poeni iz bonusa nisu dovoljni i želite još više ove gejming valute možeš kupiti  preko Vipa i ova opcija je dostupna i drugim postpaid i prepaid Vip korisnicima. Cene su i ovde fantastične pa tako možete dobiti 350 RP-a za 350 dinara ili veći paket od 750 RP-a za 750 dinara.Kupovina je vrlo jednostavna i možete je obaviti preko svog mobilnog telefona bilo kada.</p>
+			<span onclick="closeTab('b1');" class="closebtn"><i class="fa fa-chevron-up"></i></span>
+		</div>
+		</div>
+		
+		
+		<div class="clanak">
+		<div class="buttonPencil">
+			<button class="icon"  id="vremeOnline" >
+					<i class="material-icons " style="font-size: 20px">&#xe3c9;</i> 
+					
+			</button>
+			</div>
+			<div class="buttonErase">
+			<button class="icon"  id="obrisi1" >
+					<i class="material-icons " style="font-size: 20px">&#xe872;</i> 
+					
+			</button>
+			</div>
+			<h1 class="naslov">LoL Serbia powered by Asus zavrsni turnir</h1>
+			<p>Zavrsni turnir pocinje u nedelju 8. oktobra 2017. godine tacno u podne tj u 12:00
+Postoje male promene pravila posto se ne igra na Battlefy sajtu, procitajte ispod bracketa obavezno
+Kako je mali broj igraca, mozete slobodno za sva pitanja nedoumice i sve sto vas zanima da pisete u inbox stranice, odgovaracu vam veoma brzo.</p>
+			<p onclick="openTab('b2');" class="prosiri"><i class="fa fa-chevron-down"></i></p>
+			<div id="b2" class="containerTab" style="display:none;">
+			<p>Pravila vaze ista kao i na svim dosadasnjim turnirima.
+Jedina razlika je sto se sada ne igra preko battlefy sajta pa nema tournament kodova vec rucno zovete protivnika u gejm. Napravite custom i zovite ga (moguce je da zovete protivnika i ako ga nemate u prijateljima, ako treba pomoc javite se u inbox). Od momenta kada dobijete protivnika imate 5 minuta da pocnete mec, ukoliko se vas protivnik ne pojavljuje napravite screenshot kada ste usli u custom i pozvali ga i uhvatite i sat na racunaru da se vidi i kada prodje pet minuta napravite jos jedan takav screenshot i posaljite u inbox facebook stranice</p>
+			<p>Posto se ne igra na battlefy sajtu morate vi sami da prijavite rezultate gejmova, dakle morate napraviti screenshot pobede i da posaljete u inbox stranice.
+</p>
+			<span onclick="closeTab('b2');" class="closebtn"><i class="fa fa-chevron-up"></i></span>
+		</div>
+		</div>
+		
+	<div id="blokiraj" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p><font color="#9D907D"><h2 align="center">Da li ste sigurni?</h2></font></p>
+			<div align="center" >
+				<button class="button"> Potvrdi</button>
+				<button class="button"> Odustani</button>
+			</div>
+		</div>
+	</div>
+	
+	<div id="forma" class="modal">
+		<div class="modal-content1">
+			<span class="close">&times;</span>
+			<form name="kreirajclanak" method="post" action="">
+		<table align="center" cellpadding="15" cellspacing="10">
+			<tr>
+				<td width="20%">&nbsp;</td>
+				<td>Naslov:</td>
+				<td><input type="text"></td>
+				<td width="20%">&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>Tekst:</td>
+				<td><textarea rows="15" cols="60"></textarea></td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<table>
+						<tr><td><button>Odustani</button></td>
+				<td><button>Ubaci sliku</button></td></tr>
+					</table>
+				</td>
+				
+				<td><input type="submit" value="Objavi"></td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		</form>
+		</div>
+	</div>
+	
+	<script>
+	// Get the modal
+	var modal = document.getElementById('blokiraj');
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("obrisi");
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+    modal.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+    modal.style.display = "none";
+	}
+
+	</script>
+	<script>
+	// Get the modal
+	var modal1 = document.getElementById('blokiraj');
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("obrisi1");
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+    modal1.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+    modal1.style.display = "none";
+	}
+
+	</script>
+	<script>
+	// Get the modal
+	var modal2 = document.getElementById('forma');
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("kreiraj");
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[1];
+	
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+    modal2.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+    modal2.style.display = "none";
+	}
+
+	</script>
+	</body>
+</html>
+

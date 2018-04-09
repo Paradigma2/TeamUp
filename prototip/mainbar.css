@@ -1,0 +1,65 @@
+
+/*Sanja Perisic*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(3, 3, 3, 0.8);
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+
+}
+
+li a:hover, .dropdown:hover .dropbtn{
+    background-color: #192028
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(5, 5, 5, 0.8);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+	right:0;
+	left:auto;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+	
+}
+
+.dropdown-content a:hover {background-color: ##271138}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.fleft{
+    float: left;
+}
+.fright{
+	float:right;
+}
