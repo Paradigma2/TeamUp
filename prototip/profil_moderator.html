@@ -1,0 +1,907 @@
+
+<!--Jana Kragovic-->
+<!--Sanja Perisic(Forma za kreiranje oglasa-->
+<html>
+<head>
+<title>TeamUp!</title>
+<link rel="stylesheet" type="text/css" href="profil.css">
+<link rel="icon" href="slike/icon.png" type="image/png">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<ul>
+  <li class="fleft dropbtn">TeamUp!</li>
+  <li class="fleft"><a href="lobby_moderator.html">Lobi</a></li>
+  <li class="fleft"><a href="pretragaigraca_moderator.html">Pretraga igrača</a></li>
+  <li class="fleft"><a href="clanci.html">Članci</a></li>
+  <li class="dropdown fright">
+    <a href="javascript:void(0)" class="dropbtn">Nick</a>
+    <div class="dropdown-content">
+      <a href="profil_moderator.html">Profil</a>
+      <a href="inbox_moderator.html">Inbox</a>
+      <a href="lobby_gost.html">Log out</a>
+	</div>
+  </li>
+</ul>
+
+<div class="header">
+	<table width="100%" cellpadding="0px"  cellspacing="0px" >
+		<tr>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			
+			<td width="15%" rowspan="6">
+				<table >
+				<tr>
+					<td>
+					&nbsp;
+					<br>
+					<br>
+					<br>
+					&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td valign="bottom" >
+						<div  valign="bottom" class="inner3"><strong><button id="kreirajOglas" class="button" href="">Kreiraj oglas</button></strong></div>
+					</td>
+				</tr>
+				<tr>
+					<td valign="bottom" >
+						<div  valign="bottom" class="inner3"><strong><button id="obrisi" class="button" href="">Obriši profil</button></strong></div>
+					</td>
+				</tr>
+					
+				</table>
+				
+			</td>
+		</tr>
+		<tr>
+			<td width="16%" rowspan="4">
+				<img class="blur" border="2px" src="slike/icon.jpg" alt="Profilna slika" width="185px">
+			</td>
+			<td>
+				<h1 > Nick</h1>
+			</td>
+			
+			
+		</tr>
+		<tr>
+			<td>
+				<h3> Silver IV</h3>
+				
+			</td>
+			
+		
+
+		
+			
+			
+		</tr>
+		<tr>
+			
+		
+			<td>
+				<h3>35 LvL</h3>
+					
+			</td>
+		
+		</tr>
+		<tr>
+			
+			<td>
+				<div class="stars">
+						<form action="">
+						<input class="star star-5" id="star-5" type="radio" name="star"/>
+						<label class="star star-5" for="star-5"></label>
+						<input class="star star-4" id="star-4" type="radio" name="star"/>
+						<label class="star star-4" for="star-4"></label>
+						<input class="star star-3" id="star-3" type="radio" name="star"/>
+						<label class="star star-3" for="star-3"></label>
+						<input class="star star-2" id="star-2" type="radio" name="star"/>
+						<label class="star star-2" for="star-2"></label>
+						<input class="star star-1" id="star-1" type="radio" name="star"/>
+						<label class="star star-1" for="star-1"></label>
+						</form>
+				</div>
+			</td>
+			
+		</tr>
+		<tr>
+			<td>
+				&nbsp;
+			</td>
+			<td>
+				&nbsp;
+			</td>
+			
+		</tr>
+	</table>	
+	
+</div>
+	
+<div class="column">
+		<div class="timeAndReview"> 
+			<div class="naslov" >Kada igram LoL: 	
+			</div>
+			<div class="textfield"> 
+				
+			</div >
+			<div class="buttonField">
+			<button class="icon"  id="vremeOnline" >
+					<i class="material-icons " style="font-size: 20px">&#xe3c9;</i> 
+					
+			</button>
+			</div>
+			<div class="tarea">
+			Radnim danima igram LoL posle 19h, dok sam vikendom online tokom celog dana. :)
+			</div>
+		</div>
+	
+	
+		<div class="timeAndReview"> 
+			<div class="naslov" >Ocene i komentari:	
+			</div>
+			<div class="textfield"> 
+				
+			</div >
+			
+			<div class="comment">
+				<div class="tarea">
+				<img style="vertical-align:bottom " width="35px" alt="Profilna slika" src="slike/icon3.jpg">
+				Odlican ADC, kida kako farm-a, dogovr oko partije ispostovan maksimalno..
+				</div>
+				<div  align="right">
+					<div class="stars">
+						<form action="">
+						<input class="star star-5" id="star-5" type="radio" name="star"/>
+						<label class="star star-5" for="star-5"></label>
+						<input class="star star-4" id="star-4" type="radio" name="star"/>
+						<label class="star star-4" for="star-4"></label>
+						<input class="star star-3" id="star-3" type="radio" name="star"/>
+						<label class="star star-3" for="star-3"></label>
+						<input class="star star-2" id="star-2" type="radio" name="star"/>
+						<label class="star star-2" for="star-2"></label>
+						<input class="star star-1" id="star-1" type="radio" name="star"/>
+						<label class="star star-1" for="star-1"></label>
+						</form>
+					</div>
+
+				</div> 
+			</div>
+			<div class="comment">
+				<div class="tarea">
+				 <img style="vertical-align:bottom " alt="Profilna slika" width="35px" src="slike/icon1.jpg">
+				Najbolja Vayne ikada, sve preporuke za igraca..
+				</div>
+				<div class="rating">
+					<div class="stars">
+						<form action="">
+						<input class="star star-5" id="star-5" type="radio" name="star"/>
+						<label class="star star-5" for="star-5"></label>
+						<input class="star star-4" id="star-4" type="radio" name="star"/>
+						<label class="star star-4" for="star-4"></label>
+						<input class="star star-3" id="star-3" type="radio" name="star"/>
+						<label class="star star-3" for="star-3"></label>
+						<input class="star star-2" id="star-2" type="radio" name="star"/>
+						<label class="star star-2" for="star-2"></label>
+						<input class="star star-1" id="star-1" type="radio" name="star"/>
+						<label class="star star-1" for="star-1"></label>
+						</form>
+					</div>
+
+				</div> 
+			</div>
+			
+			<div class="comment">
+				<div class="tarea">
+				 <img style="vertical-align:bottom " width="35px"alt="Profilna slika" src="slike/icon2.jpg">
+				Lik se nije pojavio u dogovoreno vreme, nakon cega me je blokirao pa samim tim nismo odigrali partiju...
+				</div>
+				<div class="rating">
+					
+					<div class="stars">
+						<form action="">
+						<input class="star star-5" id="star-5" type="radio" name="star"/>
+						<label class="star star-5" for="star-5"></label>
+						<input class="star star-4" id="star-4" type="radio" name="star"/>
+						<label class="star star-4" for="star-4"></label>
+						<input class="star star-3" id="star-3" type="radio" name="star"/>
+						<label class="star star-3" for="star-3"></label>
+						<input class="star star-2" id="star-2" type="radio" name="star"/>
+						<label class="star star-2" for="star-2"></label>
+						<input class="star star-1" id="star-1" type="radio" name="star"/>
+						<label class="star star-1" for="star-1"></label>
+						</form>
+					</div>
+
+				</div> 
+			</div>
+			
+			
+			
+		</div>
+
+</div>
+<div class="row">
+   <div class="column">
+       <div class="o"> 
+	   
+	   <table cellpadding="10px" align="center">
+			<tr>
+				<td align="center"> 
+					<h2>Mid   
+							
+					</h2>
+				</td>
+				<td class="rightTop" align="right" >
+					<button class="icon" id="editujOglas1">
+						<i class="material-icons " style="font-size: 20px">&#xe3c9;</i> 
+					</button>
+					
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">
+					<h3>
+					Summoner's Rift
+					</h3>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="3">
+					<img class="round" border="3px" src="slike/Katarina.png" alt="Katarina">
+					<img class="round" border="3px" src="slike/Jayce.png" alt="Jayce">
+					<img class="round" border="3px" src="slike/Brand.png" alt="Brand">
+			
+		
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div class="tarea">
+					<center>
+						Trazim partnera za ranked duo, junglera ili top laner-a, ali ok je i bilo koji igrac sa timskim duhom i voljom za pobedom.
+					</center>
+					</div>
+				</td>
+			
+			</tr>
+		</table>
+	   
+	   </div>
+   </div>
+     <div class="column">
+       <div class="o">
+			<table cellpadding="10px" align="center">
+			<tr>
+				<td align="center"> 
+					<h2>Jungle   
+							
+					</h2>
+				</td>
+				<td class="rightTop" align="right" >
+					<button id="editujOglas2" class="icon" >
+						<i class="material-icons " style="font-size: 20px">&#xe3c9;</i> 
+					</button>
+					
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">
+					<h3>
+					Twisted Treeline
+					</h3>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="3">
+					<img class="round" border="3px" src="slike/Elise.png" alt="Elise">
+					<img class="round" border="3px" src="slike/Diana.png" alt="Diana">
+					<img class="round" border="3px" src="slike/Jax.png" alt="Jax">
+			
+		
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div class="tarea">
+					<center>
+						Trazim jos dva igraca voljnih da igraju Ranked.
+					</center>
+					</div>
+				</td>
+			
+			</tr>
+		</table>
+	   
+	   </div>
+   </div>
+    <div class="column">
+       <div class="o"> 
+			<table cellpadding="10px" align="center">
+			<tr>
+				<td align="center"> 
+					<h2>Support   
+							
+					</h2>
+				</td>
+				<td class="rightTop" align="right" >
+					<button id="editujOglas3" class="icon" >
+						<i class="material-icons " style="font-size: 20px">&#xe3c9;</i> 
+					</button>
+					
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">
+					<h3>
+					Summoner's Rift
+					</h3>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" colspan="3">
+					<img class="round" border="3px" src="slike/Zyra.png" alt="Zyra">
+					<img class="round" border="3px" src="slike/Rakan.png" alt="Rakan">
+					<img class="round" border="3px" src="slike/Karma.png" alt="Karma">
+			
+		
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div class="tarea">
+					<center>
+						Pretezno igram agresivne support-ove, trazi se adc sa dobrim skillom za farmu.. Posebno Jhin ili Vayne
+					</center>
+					</div>
+				</td>
+			
+			</tr>
+			</table>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="blokiraj" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p align="center"><font color="#9D907D" ><h2 align="center">Da li ste sigurni?</h2></font></p>
+			<div align="center" >
+				<button class="button"> Potvrdi</button>
+				<button class="button"> Odustani</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="poruka" class="modal">
+		<div align="center" class="modal-content">
+			<span class="close">&times;</span>
+			
+				
+				<form>
+					<table width="100%" cellpadding="10px" >
+						<tr>
+							<td align="left" colspan="2">
+								<font color="#9D907D">
+								To: Mean Girl
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td align= "left" colspan="2">
+								<textarea maxlength="500" placeholder="Napisite poruku..." ></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td align="center"> 
+								<input type="submit" value="Pošalji" class="button">
+							</td>
+							<td align="center">
+								<button class="button"> Odustani</button>
+							</td>
+						</tr>
+				
+					</table>
+				
+			
+				</form>
+			
+			
+		</div>
+	</div>
+
+	<div id="vreme" class="modal">
+		<div align="center" class="modal-content">
+			<span class="close">&times;</span>
+			
+				
+				<form>
+					<table width="100%" cellpadding="10px" >
+						<tr>
+							<td align="left" colspan="2">
+								<font color="#9D907D">
+								Kada Igram Lol:
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td align= "left" colspan="2">
+								<textarea maxlength="500" placeholder="Kada ste online..." ></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td align="center"> 
+								<input type="submit" value="Potvrdi" class="button">
+							</td>
+							<td align="center">
+								<button class="button"> Odustani</button>
+							</td>
+						</tr>
+				
+					</table>
+				
+			
+				</form>
+			
+			
+		</div>
+	</div>
+	
+	
+	<div id="oceni" class="modal">
+		<div align="center" class="modal-content">
+			<span class="close">&times;</span>
+			
+				
+				<form>
+					<table width="100%" cellpadding="10px" >
+						<tr>
+							<td align="left" colspan="2">
+								<font color="#9D907D">
+								Komentar:
+								</font>
+							</td>
+						</tr>
+						<tr>
+							<td align= "left" colspan="2">
+								<textarea maxlength="500" placeholder="Unesite Vaš komentar..." ></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td align="left" colspan="2">
+								<font color="#9D907D">
+								Ocena:
+								<input class="star star-5" id="star-5" type="radio" name="star"/>
+								<label class="star star-5" for="star-5"></label>
+								<input class="star star-4" id="star-4" type="radio" name="star"/>
+								<label class="star star-4" for="star-4"></label>
+								<input class="star star-3" id="star-3" type="radio" name="star"/>
+								<label class="star star-3" for="star-3"></label>
+								<input class="star star-2" id="star-2" type="radio" name="star"/>
+								<label class="star star-2" for="star-2"></label>
+								<input class="star star-1" id="star-1" type="radio" name="star"/>
+								<label class="star star-1" for="star-1"></label>
+
+								</font>
+								
+								
+							</td>
+						</tr>
+						
+						
+						<tr>
+							<td align="center"> 
+								<input type="submit" value="Potvrdi" class="button">
+							</td>
+							<td align="center">
+								<button class="button"> Odustani</button>
+							</td>
+						</tr>
+				
+					</table>
+				
+			
+				</form>
+			
+			
+		</div>
+	</div>
+	
+	
+	<div id="oglas1" class="modal ">
+		<div align="center" class="modal-content modal-content2">
+		<span class="close">&times;</span>
+			
+					
+		<form align="center" name="oglas" method="post" action="">
+		<table  align="center" cellpadding="10px" cellspacing="0">
+			<tr>
+				
+				<td width="12%" colspan="2"  class="naziv"><font color="#9D907D" >Mod igre:</font></td>
+				<td width="50%">
+					<select class="oglas">
+						<option>Svi</option>
+					</select>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				
+				<td colspan="2"  class="naziv"><font color="#9D907D" > Pozicija:</font></td>
+				<td>
+					<select class="oglas">
+						<option>Svi</option>
+						<option>ADC</option>
+						<option>Support</option>
+						<option>Jungler</option>
+						<option>Top</option>
+						<option>Mid Laner</option>
+					</select>
+				</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				
+				<td colspan="2" class="naziv"><font color="#9D907D" >Heroji:</font></td>
+				<td  colspan="2" width="85%" >
+					<input type='checkbox' name='slike' value='Aatrox' id="Aatrox"/><label for="Aatrox"><img src="slike/Aatrox.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Ahri' id="Ahri"/><label for="Ahri"><img src="slike/Ahri.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Akali' id="Akali"/><label for="Akali"><img src="slike/Akali.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Alistar' id="Alistar"/><label for="Alistar"><img src="slike/Alistar.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Amumu' id="Amumu"/><label for="Amumu"><img src="slike/Amumu.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Anivia' id="Anivia"/><label for="Anivia"><img src="slike/Anivia.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Annie' id="Annie"/><label for="Annie"><img src="slike/Annie.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Ashe' id="Ashe"/><label for="Ashe"><img src="slike/Ashe.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='AurelionSol' id="AurelionSol"/><label for="AurelionSol"><img src="slike/AurelionSol.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Azir' id="Azir"/><label for="Azir"><img src="slike/Azir.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Bard' id="Bard"/><label for="Bard"><img src="slike/Bard.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Blitzcrank' id="Blitzcrank"/><label for="Blitzcrank"><img src="slike/Blitzcrank.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Brand' id="Brand"/><label for="Brand"><img src="slike/Brand.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Braum' id="Braum"/><label for="Braum"><img src="slike/Braum.png" class="heroj"></label>
+					
+					<input type='checkbox' name='slike' value='Caitlyn' id="Caitlyn"/><label for="Caitlyn"><img src="slike/Caitlyn.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Camille' id="Camille"/><label for="Camille"><img src="slike/Camille.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Cassiopeia' id="Cassiopeia"/><label for="Cassiopeia"><img src="slike/Cassiopeia.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Chogath' id="Chogath"/><label for="Chogath"><img src="slike/Chogath.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Corki' id="Corki"/><label for="Corki"><img src="slike/Corki.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Darius' id="Darius"/><label for="Darius"><img src="slike/Darius.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Diana' id="Diana"/><label for="Diana"><img src="slike/Diana.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Draven' id="Draven"/><label for="Draven"><img src="slike/Draven.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='DrMundo' id="DrMundo"/><label for="DrMundo"><img src="slike/DrMundo.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Ekko' id="Ekko"/><label for="Ekko"><img src="slike/Ekko.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Elise' id="Elise"/><label for="Elise"><img src="slike/Elise.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Evelynn' id="Evelynn"/><label for="Evelynn"><img src="slike/Evelynn.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Ezreal' id="Ezreal"/><label for="Ezreal"><img src="slike/Ezreal.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Fiddlesticks' id="Fiddlesticks"/><label for="Fiddlesticks"><img src="slike/Fiddlesticks.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Fiora' id="Fiora"/><label for="Fiora"><img src="slike/Fiora.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Fizz' id="Fizz"/><label for="Fizz"><img src="slike/Fizz.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Galio' id="Galio"/><label for="Galio"><img src="slike/Galio.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Gangplank' id="Gangplank"/><label for="Gangplank"><img src="slike/Gangplank.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Garen' id="Garen"/><label for="Garen"><img src="slike/Garen.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Gnar' id="Gnar"/><label for="Gnar"><img src="slike/Gnar.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Gragas' id="Gragas"/><label for="Gragas"><img src="slike/Gragas.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Graves' id="Graves"/><label for="Graves"><img src="slike/Graves.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Hecarim' id="Hecarim"/><label for="Hecarim"><img src="slike/Hecarim.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Heimerdinger' id="Heimerdinger"/><label for="Heimerdinger"><img src="slike/Heimerdinger.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Illaoi' id="Illaoi"/><label for="Illaoi"><img src="slike/Illaoi.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Irelia' id="Irelia"/><label for="Irelia"><img src="slike/Irelia.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Ivern' id="Ivern"/><label for="Ivern"><img src="slike/Ivern.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Janna' id="Janna"/><label for="Janna"><img src="slike/Janna.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='JarvanIV' id="JarvanIV"/><label for="JarvanIV"><img src="slike/JarvanIV.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Jax' id="Jax"/><label for="Jax"><img src="slike/Jax.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Jayce' id="Jayce"/><label for="Jayce"><img src="slike/Jayce.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Jhin' id="Jhin"/><label for="Jhin"><img src="slike/Jhin.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Jinx' id="Jinx"/><label for="Jinx"><img src="slike/Jinx.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Kaisa' id="Kaisa"/><label for="Kaisa"><img src="slike/Kaisa.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Kalista' id="Kalista"/><label for="Kalista"><img src="slike/Kalista.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Karma' id="Karma"/><label for="Karma"><img src="slike/Karma.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Karthus' id="Karthus"/><label for="Karthus"><img src="slike/Karthus.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Kassadin' id="Kassadin"/><label for="Kassadin"><img src="slike/Kassadin.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Katarina' id="Katarina"/><label for="Katarina"><img src="slike/Katarina.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Kayle' id="Kayle"/><label for="Kayle"><img src="slike/Kayle.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Kayn' id="Kayn"/><label for="Kayn"><img src="slike/Kayn.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Kennen' id="Kennen"/><label for="Kennen"><img src="slike/Kennen.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Khazix' id="Khazix"/><label for="Khazix"><img src="slike/Khazix.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Kindred' id="Kindred"/><label for="Kindred"><img src="slike/Kindred.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Kled' id="Kled"/><label for="Kled"><img src="slike/Kled.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='KogMaw' id="KogMaw"/><label for="KogMaw"><img src="slike/KogMaw.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Leblanc' id="Leblanc"/><label for="Leblanc"><img src="slike/Leblanc.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='LeeSin' id="LeeSin"/><label for="LeeSin"><img src="slike/LeeSin.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Leona' id="Leona"/><label for="Leona"><img src="slike/Leona.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Lissandra' id="Lissandra"/><label for="Lissandra"><img src="slike/Lissandra.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Lucian' id="Lucian"/><label for="Lucian"><img src="slike/Lucian.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Lulu' id="Lulu"/><label for="Lulu"><img src="slike/Lulu.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Lux' id="Lux"/><label for="Lux"><img src="slike/Lux.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Malphite' id="Malphite"/><label for="Malphite"><img src="slike/Malphite.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Malzahar' id="Malzahar"/><label for="Malzahar"><img src="slike/Malzahar.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Maokai' id="Maokai"/><label for="Maokai"><img src="slike/Maokai.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='MasterYi' id="MasterYi"/><label for="MasterYi"><img src="slike/MasterYi.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='MissFortune' id="MissFortune"/><label for="MissFortune"><img src="slike/MissFortune.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='MonkeyKing' id="MonkeyKing"/><label for="MonkeyKing"><img src="slike/MonkeyKing.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Mordekaiser' id="Mordekaiser"/><label for="Mordekaiser"><img src="slike/Mordekaiser.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Morgana' id="Morgana"/><label for="Morgana"><img src="slike/Morgana.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Nami' id="Nami"/><label for="Nami"><img src="slike/Nami.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Nasus' id="Nasus"/><label for="Nasus"><img src="slike/Nasus.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Nautilus' id="Nautilus"/><label for="Nautilus"><img src="slike/Nautilus.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Nidalee' id="Nidalee"/><label for="Nidalee"><img src="slike/Nidalee.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Nocturne' id="Nocturne"/><label for="Nocturne"><img src="slike/Nocturne.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Nunu' id="Nunu"/><label for="Nunu"><img src="slike/Nunu.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Olaf' id="Olaf"/><label for="Olaf"><img src="slike/Olaf.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Orianna' id="Orianna"/><label for="Orianna"><img src="slike/Orianna.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Ornn' id="Ornn"/><label for="Ornn"><img src="slike/Ornn.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Pantheon' id="Pantheon"/><label for="Pantheon"><img src="slike/Pantheon.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Poppy' id="Poppy"/><label for="Poppy"><img src="slike/Poppy.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Quinn' id="Quinn"/><label for="Quinn"><img src="slike/Quinn.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Rakan' id="Rakan"/><label for="Rakan"><img src="slike/Rakan.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Rammus' id="Rammus"/><label for="Rammus"><img src="slike/Rammus.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='RekSai' id="RekSai"/><label for="RekSai"><img src="slike/RekSai.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Renekton' id="Renekton"/><label for="Renekton"><img src="slike/Renekton.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Rengar' id="Rengar"/><label for="Rengar"><img src="slike/Rengar.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Riven' id="Riven"/><label for="Riven"><img src="slike/Riven.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Rumble' id="Rumble"/><label for="Rumble"><img src="slike/Rumble.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Ryze' id="Ryze"/><label for="Ryze"><img src="slike/Ryze.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Sejuani' id="Sejuani"/><label for="Sejuani"><img src="slike/Sejuani.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Shaco' id="Shaco"/><label for="Shaco"><img src="slike/Shaco.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Shen' id="Shen"/><label for="Shen"><img src="slike/Shen.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Shyvana' id="Shyvana"/><label for="Shyvana"><img src="slike/Shyvana.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Singed' id="Singed"/><label for="Singed"><img src="slike/Singed.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Sion' id="Sion"/><label for="Sion"><img src="slike/Sion.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Sivir' id="Sivir"/><label for="Sivir"><img src="slike/Sivir.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Skarner' id="Skarner"/><label for="Skarner"><img src="slike/Skarner.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Sona' id="Sona"/><label for="Sona"><img src="slike/Sona.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Soraka' id="Soraka"/><label for="Soraka"><img src="slike/Soraka.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Swain' id="Swain"/><label for="Swain"><img src="slike/Swain.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Syndra' id="Syndra"/><label for="Syndra"><img src="slike/Syndra.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='TahmKench' id="TahmKench"/><label for="TahmKench"><img src="slike/TahmKench.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Taliyah' id="Taliyah"/><label for="Taliyah"><img src="slike/Taliyah.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Talon' id="Talon"/><label for="Talon"><img src="slike/Talon.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Taric' id="Taric"/><label for="Taric"><img src="slike/Taric.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Teemo' id="Teemo"/><label for="Teemo"><img src="slike/Teemo.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Thresh' id="Thresh"/><label for="Thresh"><img src="slike/Thresh.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Tristana' id="Tristana"/><label for="Tristana"><img src="slike/Tristana.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Trundle' id="Trundle"/><label for="Trundle"><img src="slike/Trundle.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Tryndamere' id="Tryndamere"/><label for="Tryndamere"><img src="slike/Tryndamere.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='TwistedFate' id="TwistedFate"/><label for="TwistedFate"><img src="slike/TwistedFate.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Twitch' id="Twitch"/><label for="Twitch"><img src="slike/Twitch.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Udyr' id="Udyr"/><label for="Udyr"><img src="slike/Udyr.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Urgot' id="Urgot"/><label for="Urgot"><img src="slike/Urgot.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Varus' id="Varus"/><label for="Varus"><img src="slike/Varus.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Vayne' id="Vayne"/><label for="Vayne"><img src="slike/Vayne.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Veigar' id="Veigar"/><label for="Veigar"><img src="slike/Veigar.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Velkoz' id="Velkoz"/><label for="Velkoz"><img src="slike/Velkoz.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Vi' id="Vi"/><label for="Vi"><img src="slike/Vi.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Viktor' id="Viktor"/><label for="Viktor"><img src="slike/Viktor.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Vladimir' id="Vladimir"/><label for="Vladimir"><img src="slike/Vladimir.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Volibear' id="Volibear"/><label for="Volibear"><img src="slike/Volibear.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Warwick' id="Warwick"/><label for="Warwick"><img src="slike/Warwick.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Xayah' id="Xayah"/><label for="Xayah"><img src="slike/Xayah.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Xerath' id="Xerath"/><label for="Xerath"><img src="slike/Xerath.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='XinZhao' id="XinZhao"/><label for="XinZhao"><img src="slike/XinZhao.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Yasuo' id="Yasuo"/><label for="Yasuo"><img src="slike/Yasuo.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Yorick' id="Yorick"/><label for="Yorick"><img src="slike/Yorick.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Zac' id="Zac"/><label for="Zac"><img src="slike/Zac.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Zed' id="Zed"/><label for="Zed"><img src="slike/Zed.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Ziggs' id="Ziggs"/><label for="Ziggs"><img src="slike/Ziggs.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Zilean' id="Zilean"/><label for="Zilean"><img src="slike/Zilean.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Zoe' id="Zoe"/><label for="Zoe"><img src="slike/Zoe.png" class="heroj"></label>
+					<input type='checkbox' name='slike' value='Zyra' id="Zyra"/><label for="Zyra"><img src="slike/Zyra.png" class="heroj"></label>
+				</td>
+			</tr>
+			<tr>
+				
+				<td class="naziv" colspan="2"><font color="#9D907D" >Opis:</font></td>
+				<td ><textarea rows="3" cols="1000" placeholder="Opis sta trazis od saigraca"></textarea></td>
+				
+			</tr>
+			<tr>
+				
+				<td colspan="4" align="center">
+				<button class="button">Odustani</button>	
+				<input class="button" 	type="submit" value="Potvrdi"></td>
+				
+			</tr>
+		</table>
+		</form>
+			
+				
+			
+			
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	<script>
+	// Get the modal
+	var modal = document.getElementById('blokiraj');
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("obrisi");
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+	
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+    modal.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+    modal.style.display = "none";
+	}
+
+	</script>
+
+	
+	<script>
+	
+	var modal2=document.getElementById('poruka');
+	// Get the button that opens the modal
+	var btn2=document.getElementById("slanjePoruke");
+	// Get the <span> element that closes the modal
+	var span2 = document.getElementsByClassName("close")[1];
+	
+	// When the user clicks the button, open the modal 
+	btn2.onclick = function(){
+	modal2.style.display = "block";
+		
+	}
+	// When the user clicks on <span> (x), close the modal
+	span2.onclick = function() {
+    modal2.style.display = "none";
+	}
+		
+	</script>
+	
+	
+	<script>
+	
+	var modal3=document.getElementById('vreme');
+	// Get the button that opens the modal
+	var btn3=document.getElementById("vremeOnline");
+	// Get the <span> element that closes the modal
+	var span3 = document.getElementsByClassName("close")[2];
+	
+	// When the user clicks the button, open the modal 
+	btn3.onclick = function(){
+	modal3.style.display = "block";
+		
+	}
+	// When the user clicks on <span> (x), close the modal
+	span3.onclick = function() {
+    modal3.style.display = "none";
+	}
+		
+	</script>
+	
+	<script>
+	// Get the modal
+	var modal4 = document.getElementById('oceni');
+
+	// Get the button that opens the modal
+	var btn4 = document.getElementById("ocena");
+	// Get the <span> element that closes the modal
+	var span4 = document.getElementsByClassName("close")[3];
+	
+	// When the user clicks the button, open the modal 
+	btn4.onclick = function() {
+    modal4.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span4.onclick = function() {
+    modal4.style.display = "none";
+	}
+	</script>
+	
+	
+	<script>
+	// Get the modal
+	var modal5 = document.getElementById('oglas1');
+
+	// Get the button that opens the modal
+	var btn5 = document.getElementById("editujOglas1");
+	// Get the <span> element that closes the modal
+	var span5 = document.getElementsByClassName("close")[4];
+	
+	// When the user clicks the button, open the modal 
+	btn5.onclick = function() {
+    modal5.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span5.onclick = function() {
+    modal5.style.display = "none";
+	}
+	</script>
+	
+	
+	<script>
+	// Get the modal
+	var modal5 = document.getElementById('oglas1');
+
+	// Get the button that opens the modal
+	var btn5 = document.getElementById("editujOglas2");
+	// Get the <span> element that closes the modal
+	var span5 = document.getElementsByClassName("close")[5];
+	
+	// When the user clicks the button, open the modal 
+	btn5.onclick = function() {
+    modal5.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span5.onclick = function() {
+    modal5.style.display = "none";
+	}
+	</script>
+	
+	
+	<script>
+	// Get the modal
+	var modal5 = document.getElementById('oglas1');
+
+	// Get the button that opens the modal
+	var btn5 = document.getElementById("editujOglas3");
+	// Get the <span> element that closes the modal
+	var span5 = document.getElementsByClassName("close")[6];
+	
+	// When the user clicks the button, open the modal 
+	btn5.onclick = function() {
+    modal5.style.display = "block";
+	}
+	
+	// When the user clicks on <span> (x), close the modal
+	span5.onclick = function() {
+    modal5.style.display = "none";
+	}
+	</script>
+	
+	
+	<script>
+	// Get the modal
+	var modal5 = document.getElementById('oglas1');
+
+	// Get the button that opens the modal
+	var btn5 = document.getElementById("editujOglas3");
+	// Get the <span> element that closes the modal
+	var span5 = document.getElementsByClassName("close")[6];
+	
+	// When the user clicks the button, open the modal 
+	btn5.onclick = function() {
+    modal5.style.display = "block";
+	}
+	
+	</script>
+
+	<script>
+	// Get the modal
+	var modal5 = document.getElementById('oglas1');
+
+	// Get the button that opens the modal
+	var btn5 = document.getElementById("kreirajOglas");
+	// Get the <span> element that closes the modal
+	var span5 = document.getElementsByClassName("close")[7];
+	
+	// When the user clicks the button, open the modal 
+	btn5.onclick = function() {
+    modal5.style.display = "block";
+	}
+	
+	</script>
+	
+	
+</body>
+</html>
+	
