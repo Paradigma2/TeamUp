@@ -1,3 +1,5 @@
+-- Create tables section -------------------------------------------------
+
 -- Table User
 
 CREATE TABLE `User`
@@ -12,6 +14,7 @@ CREATE TABLE `User`
   `Lvl` Int NOT NULL,
   `Age` Int,
   `Grade` Double,
+  `Description` Text,
   `Icon` Varchar(50),
   `RankID` Int NOT NULL
 )
@@ -314,5 +317,3 @@ ALTER TABLE `Ad` ADD CONSTRAINT `Relationship22` FOREIGN KEY (`MasteryID2`) REFE
 
 ALTER TABLE `Ad` ADD CONSTRAINT `Relationship23` FOREIGN KEY (`MasteryID3`) REFERENCES `Mastery` (`MasteryID`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ;
-
-
