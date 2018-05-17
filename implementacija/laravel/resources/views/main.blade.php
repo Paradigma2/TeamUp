@@ -1,9 +1,7 @@
 <!doctype html>
 <html>
-	<head>
-		 @include('_head') 
-
-	
+	<head> 
+		@include('_head');	
 	</head>
 	<body>
 		<div>
