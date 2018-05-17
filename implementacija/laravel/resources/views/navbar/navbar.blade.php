@@ -1,9 +1,15 @@
 		<div>
 			<nav class="navbar navbar-expand-sm navbar-dark mt-3">
+			
+					
 				<!-- Brand/logo -->
 				<a class="navbar-brand" href="#">TeamUp!</a>
 
+				 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+   					 <span class="navbar-toggler-icon"></span>
+  				</button>
 				<!-- Linkovi levo-->
+				<div class="collapse navbar-collapse" id="collapsibleNavbar">
 				<ul class="navbar-nav">
 					<li class="nav-item">
 						@yield('link1')
@@ -19,14 +25,15 @@
 
 				<!-- linkovi desno-->
 
-				<ul class="navbar-nav">
-					<li class="nav-item">
+				<ul class="navbar-nav mr-5  ml-auto" 	>
+					<li class=" nav-item">
 						@yield('link4')
 					</li>
-					<li class="nav-item">
+					<li class=" nav-item">	
 						@yield('link5')
 					</li>
 				</ul>
+				</div>
 
 			</nav>
 		</div>
