@@ -3,17 +3,30 @@
 				<!-- Brand/logo -->
 				<a class="navbar-brand" href="#">TeamUp!</a>
 
-				<!-- Links -->
+				<!-- Linkovi levo-->
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Lobi</a>
+						@yield('link1')
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Pretraga clanaka</a>
+						@yield('link2')
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Link 3</a>
+						@yield('link3')
+					</li>
+
+				</ul>
+
+				<!-- linkovi desno-->
+
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						@yield('link4')
+					</li>
+					<li class="nav-item">
+						@yield('link5')
 					</li>
 				</ul>
+
 			</nav>
 		</div>
