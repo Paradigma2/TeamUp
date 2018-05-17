@@ -1,14 +1,14 @@
-@extends('navbar')
+@extends('navbar/navbar')
 
 @section('link1')
-	<a href="#">Lobi</a>
+	<a class="nav-link" href="#">Lobi</a>
 @endsection
 
 
 @section('link4')
-	<a href="#">Register</a>
+	<a class="nav-link"  href="#">Register</a>
 @endsection
 
 @section('link5')
-	<a href="#">Login</a>
+	<a class="nav-link"  href="#">Login</a>
 @endsection

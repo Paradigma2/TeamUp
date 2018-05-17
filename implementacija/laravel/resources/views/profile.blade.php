@@ -2,7 +2,7 @@
 
 @section('navbar')
 
-	@include('navbar/navbarAdmin')
+	@include('navbar/navbarUser')
 
 @endsection
 
