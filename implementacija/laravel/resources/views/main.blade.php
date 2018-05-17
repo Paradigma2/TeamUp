@@ -1,6 +1,9 @@
+<!doctype html>
 <html>
 	<head>
-		@include('head.blade.php')
+		 @include('_head') 
+
+	
 	</head>
 	<body>
 		<div>
