@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 
-
+       
 
         <!-- za navbar -->
 
@@ -18,7 +18,7 @@
     <body>
         
 
-        <nav class="navbar navbar-expand-sm bg-dark  mt-3">
+        <nav class="navbar navbar-expand-sm navbar-dark mt-3" >
           <!-- Brand -->
           <a class="navbar-brand" href="#">Logo</a>
 
