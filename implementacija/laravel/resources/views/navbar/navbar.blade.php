@@ -25,7 +25,7 @@
 
 				<!-- linkovi desno-->
 
-				<ul class="navbar-nav mr-5  ml-auto" 	>
+				<ul class="navbar-nav   ml-auto" style="margin-right: 80px;"	>
 					<li class=" nav-item">
 						@yield('link4')
 					</li>

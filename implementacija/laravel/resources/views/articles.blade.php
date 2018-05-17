@@ -23,7 +23,7 @@
 								<div class="row">
 									<div class="col-sm-10">
 										<h4 class="card-title headline mt-1" >
-											<label>Naslov 1</label>
+											<label align="center">Naslov 1</label>
 										</h4>
 									</div>
 									<div class="col-sm-1">

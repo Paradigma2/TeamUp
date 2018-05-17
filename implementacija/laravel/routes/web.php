@@ -10,6 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('admin', function () {
+    return view('profile/profileAdmin');
+});
+
+
+Route::get('prof', function () {
+    return view('profile/profileUser');
+});
+
 Route::get('articles', function () {
     return view('articles');
 });
@@ -23,3 +32,5 @@ Route::get('/', function () {
 Route::get('/', function () {
     return view('main');
 });
+
+

@@ -1,0 +1,31 @@
+
+.navbar{
+	background-color: rgba(5,5,5,0.8);
+}
+/* ovaj bgcolor mora ovako zbog menija!!!!!!!!!!!1*/
+body{
+	background-color: rgba(5,5,5,0.1);
+}
+
+.dropdown:hover {
+      background-color: #192028;
+}
+
+.dropdown {
+   
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   
+}
+
+.dropdown-menu {background-color: rgba(5,5,5,0.8);}
+
+.dropdown-item:hover{
+	  background-color: #192028;
+	  color:white;
+
+}
+.dropdown-item{
+	color:white;
+}
+
+

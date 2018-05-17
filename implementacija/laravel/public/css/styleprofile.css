@@ -1,40 +1,126 @@
-.navbar{
-	background-color: rgba(5,5,5,0.8);
-}
-/* ovaj bgcolor mora ovako zbog menija!!!!!!!!!!!1*/
-body{
-	background-color: rgba(5,5,5,0.1);
-}
+
 
 html { 
   background: url('/slike/a.jpg')  no-repeat center fixed; 
   background-size: cover;
  
   font-family:"Trebuchet MS", Helvetica, sans-serif;
+
+}
+
+
+
+
+
+.blur{
+	border: solid 1px #555;
+	background-color: #eed;
+	box-shadow: 10px -10px 5px rgba(0,0,0,0.4);
+	-moz-box-shadow: 10px -10px 5px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 10px -10px 5px rgba(0,0,0,0.4);
+	-o-box-shadow: 10px -10px 5px rgba(0,0,0,0.4);
 }
 
 
-/* za meni */
-
-.dropdown:hover {
-      background-color: #192028;
+button.icon {
+  background-color: Transparent;
+  border: none;
+  outline: none;
+  color: white;
+  width:auto;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  font-family : inherit;
+  cursor: pointer;
+}
+button.icon:hover {
+	color:#184157;
+	opacity: 1
 }
 
-.dropdown {
-   
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-   
+
+div.stars {
+  width: 105px;
+  display: inline-block;
 }
 
-.dropdown-menu {background-color: rgba(5,5,5,0.8);}
+input.star { display: none; }
 
-.dropdown-item:hover{
-	  background-color: #192028;
-	  color:white;
-
+label.star {
+  float: right;
+  padding: 3px;
+  font-size: 16px;
+  color: #444;
+  transition: all .2s;
 }
-.dropdown-item{
+
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content: '\f006';
+  font-family:FontAwesome;
+}
+
+
+
+/*dugme*/
+
+
+.button {
+  background-color: #184157;
+  border: none;
+  color: white;
+  width:160px;
+  padding: 14px;	
+  text-align: center;
+  font-size: 16px;
+  margin: 10px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  font-family : inherit;
+  cursor: pointer;
+}
+.button:hover {opacity: 1}
+i {
+  background-color: Transparent;
+  border: none;
+  outline: none;
+  color: white;
+  width:auto;
+  font-size: 16px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  font-family : inherit;
+  cursor: pointer;
+}
+	i:hover {
+		color:#184157;
+		opacity: 1}
+
+.sidebarCards{
+	
 	color:white;
+	 padding: 10px;
+	 margin-top:10px; 
+	 background-color:rgba(5,5,5,0.6);
 }
-
-
