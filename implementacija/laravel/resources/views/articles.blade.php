@@ -133,6 +133,13 @@
 				
 		
 		<div class="col-sm-4">
+			<div class="row mt-3">
+				<div class="col-sm-12">
+					<button type="button" class="btn btn-primary" style="width:100%;"><a class="nav-link" href=/editArticle style="color:white;">Kreiraj clanak</a></button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
 			<div class="card mt-3 article">
 				<div class="card-body">
 					<div class="card-title">
@@ -146,6 +153,8 @@
 				</div>
 				
 			</div>
+		</div>
+	</div>
 		</div>
 		</div>
 	</div>
