@@ -12,9 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('');
-});
-
-Route::get('main', function () {
-    return view('main');
+    return view('welcome');
 });
