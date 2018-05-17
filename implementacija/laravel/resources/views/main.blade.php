@@ -2,12 +2,12 @@
 <html>
 
 	<head> 
-		@include('_head');	
+		@include('_head')
 
 	</head>
 	<body>
 		<div>
-			<nav class="navbar navbar-expand-sm navbar-dark">
+			<nav class="navbar navbar-expand-sm navbar-dark mt-3">
 				<!-- Brand/logo -->
 				<a class="navbar-brand" href="#">TeamUp!</a>
 
