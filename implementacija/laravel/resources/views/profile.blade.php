@@ -1,7 +1,13 @@
 @extends('main')
 
-@section('content')
-	<p> caoooooooooooooooooooo</p>
+@section('navbar')
 
+	@include('navbar/navbar')
+
+@endsection
+
+@section('content')
+
+	
 
 @endsection
