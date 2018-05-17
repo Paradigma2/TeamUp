@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<div>
-			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+			<nav class="navbar navbar-expand-sm navbar-dark">
 				<!-- Brand/logo -->
 				<a class="navbar-brand" href="#">TeamUp!</a>
 
