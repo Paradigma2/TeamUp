@@ -6,7 +6,7 @@
 
 @section('navbar')
 
-	@include('navbar/navbarUser')
+	@include('navbar/navbarModerator')
 
 @endsection
 
@@ -121,7 +121,7 @@
 				</div>
 			</div>
 					
-					<ul class="pagination nav nav-pills mt-3">
+					<ul class="pagination nav nav-pills mt-3 d-flex justify-content-center">
 						<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
 						<li class="page-item"><a class="page-link" data-toggle="pill" href="#page1">1</a></li>
 						<li class="page-item"><a class="page-link"  data-toggle="pill" href="#page2">2</a></li>

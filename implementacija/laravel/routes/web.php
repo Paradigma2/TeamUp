@@ -10,6 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('userLobby', function () {
+    return view('userLobby');
+});
+Route::get('registerForm', function () {
+    return view('registerForm');
+});
+Route::get('guestLobby', function () {
+    return view('guestLobby');
+});
+
 Route::get('editArticle', function () {
     return view('editArticle');
 });
