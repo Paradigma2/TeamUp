@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('adminLobby', function () {
+    return view('adminLobby');
+});
+Route::get('modLobby', function () {
+    return view('modLobby');
+});
 Route::get('userLobby', function () {
     return view('userLobby');
 });
@@ -21,9 +26,12 @@ Route::get('guestLobby', function () {
     return view('guestLobby');
 });
 
+
 Route::get('moderator', function () {
     return view('profile/profileModerator');
 });
+
+
 
 Route::get('admin', function () {
     return view('profile/profileAdmin');

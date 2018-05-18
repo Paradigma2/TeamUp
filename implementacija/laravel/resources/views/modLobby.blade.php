@@ -5,7 +5,7 @@
 @endsection
 
 @section('navbar')
-	@include('navbar/navbarUser')
+	@include('navbar/navbarModerator')
 @endsection
 
 @section('content')
