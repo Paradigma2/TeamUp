@@ -27,6 +27,19 @@ Route::get('guestLobby', function () {
 });
 
 
+Route::get('inboxAdmin', function () {
+    return view('inbox/inboxAdmin');
+});
+
+Route::get('inboxModerator', function () {
+    return view('inbox/inboxModerator');
+});
+
+Route::get('inboxUser', function () {
+    return view('inbox/inboxUser');
+});
+
+
 Route::get('moderator', function () {
     return view('profile/profileModerator');
 });
