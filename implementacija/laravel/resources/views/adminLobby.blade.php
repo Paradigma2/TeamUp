@@ -5,37 +5,14 @@
 @endsection
 
 @section('navbar')
-	@include('navbar/navbarUser')
+	@include('navbar/navbarAdmin')
 @endsection
 
 @section('content')
 	<div class="container">
 		<div class="row mt-3">
-			<div class="col-sm-3">
-				<div class="card mt-3 article">
-					<div class="card-body">
-						<div class="card-title">
-							<h2>Pratite</h2>
-							
-						</div>
-						<!-- Ovaj ili div ispod ce biti aktivni-->
-						<!--
-						<div class="pages p-3">
-							<h6>Jos uvek nikoga ne pratite</h6>
-						</div>
-						-->
-						<div class="list-group pages" style="height:300px; overflow-y:auto;">
-						   <a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/slike/alistar.png" width="30px" class="mr-2">meanGirl<i class="material-icons ml-4" style="font-size:15px; color:green;" >person</i></a>
-						  <a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/slike/alistar.png" width="30px" class="mr-2">meanGirl<i class="material-icons ml-4" style="color:green; font-size:15px;" >person</i></a>
-						   <a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/slike/alistar.png" width="30px" class="mr-2">meanGirl<i class="material-icons ml-4" style="color:gray; font-size:15px;" >person</i></a>
-
-						 </div>
-						
-					</div>
-					
-				</div>
-			</div>
-			<div class="col-sm-6">
+			
+			<div class="col-sm-8">
 				<div id="demo" class="carousel slide mt-3" data-ride="carousel">
 				  <ul class="carousel-indicators">
 				    <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -85,10 +62,16 @@
 										
 										<div class="card-body">
 											<div class="row">
-												<div class="col-sm-12">
+												<div class="col-sm-11">
 													<h4 class="card-title headline mt-1" >
 														<label>Naslov 1</label>
 													</h4>
+												</div>
+												<div class="col-sm-1">
+													<a data-toggle="modal" href="#deleteModal">
+														<i class="material-icons" style="cursor:pointer;">delete</i>
+													</a>
+													
 												</div>
 											</div>
 											<p class="card-text">Content 1</p>
@@ -108,12 +91,17 @@
 									<div class="card mt-2 article">
 										<div class="card-body">
 											<div class="row">
-												<div class="col-sm-12">
+												<div class="col-sm-11">
 													<h4 class="card-title headline mt-1" >
 														<label>Naslov 2</label>
 													</h4>
 												</div>
-												
+												<div class="col-sm-1">
+													<a data-toggle="modal" href="#deleteModal">
+														<i class="material-icons" style="cursor:pointer;">delete</i>
+													</a>
+													
+												</div>
 											</div>
 											<p class="card-text">Content 2</p>
 
@@ -134,12 +122,17 @@
 									<div class="card mt-2 article">
 										<div class="card-body">
 											<div class="row">
-												<div class="col-sm-12">
+												<div class="col-sm-11">
 													<h4 class="card-title headline mt-1" >
 														<label>Naslov 4</label>
 													</h4>
 												</div>
-												
+												<div class="col-sm-1">
+													<a data-toggle="modal" href="#deleteModal">
+														<i class="material-icons" style="cursor:pointer;">delete</i>
+													</a>
+													
+												</div>
 											</div>
 											<p class="card-text">Content 4</p>
 
@@ -167,7 +160,7 @@
 			</div>
 			
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-4">
 				<div class="card mt-3 article">
 					<div class="card-body">
 						<div class="card-title">
@@ -208,6 +201,36 @@
 				</div>
 			</div>
 		
+	</div>
+	<div class="modal fade" id="deleteModal">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content pages">
+
+	      <!-- Modal Header -->
+	      <div class="modal-header ">
+	        <h4 class="modal-title d-flex justify-content-center">Da li ste sigurni?</h4>
+	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <!-- Modal body -->
+	      
+
+	      <!-- Modal footer -->
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div class="col-sm-12  d-flex justify-content-center">
+	      			<button type="button" class="btn btn-primary mr-2" data-dismiss="modal" onclick="fjaZaBrisanje(idDelete)">Potvrdi</button>
+
+	      			<button type="button" class="btn btn-primary" data-dismiss="modal">Odustani</button>
+	      		</div>
+	      		
+	      	</div>
+	        
+	        
+	      </div>
+
+	    </div>
+	  </div>
 	</div>
 	<script language="javascript">
 		function proba(klik){
