@@ -21,13 +21,27 @@ Route::get('guestLobby', function () {
     return view('guestLobby');
 });
 
-=======
+Route::get('moderator', function () {
+    return view('profile/profileModerator');
+});
 
 Route::get('admin', function () {
     return view('profile/profileAdmin');
 });
 
+Route::get('userAnotherModerator', function () {
+    return view('profile/profileAnotherUserModerator');
+});
 
+
+
+Route::get('userAnother', function () {
+    return view('profile/profileAnotherUser');
+});
+
+Route::get('user', function () {
+    return view('profile/profileUser');
+});
 
 Route::get('editArticle', function () {
     return view('editArticle');

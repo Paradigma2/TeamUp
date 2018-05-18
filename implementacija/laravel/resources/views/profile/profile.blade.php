@@ -6,12 +6,15 @@
 
 @endsection
 @section('content')
+
 	<div class="row mt-3"  style="background-color: rgba(5,5,5,0.8); color:white;">
 		<div class="col-sm-2 " >
 			<div class="profilePicture m-4" width="185px">
 				<img class="blur" border="2px" src="{{URL::asset('/slike/icon.jpg')}}"alt="Profilna slika" width="185px">
-				<div class="editProfilePicture">
-					@yield('editProfilePicture')
+				<div class="editProfilePicture" >
+					<button class="icon mt-1" >
+						<i>@yield('editProfilePicture')</i>
+					</button>
 				</div>
 			</div>
 			
@@ -113,11 +116,149 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-sm-3" >
-			<div class=" card mt-3 sidebarCards" >
-				@yield('editDescription')
+
+
+	<div class="row mt-1">
+		
+
+
+	
+	<div class="col-sm-3 mt-3">
+			<div class="card  align-items-center" style="padding:10px;background-color: rgba(5,5,5,0.6); color:white">
+				<div class=" ml-auto">
+					<a href="#">
+							@yield('icon11')
+
+
+							<!--<i class="material-icons" style="cursor:pointer;">create</i>-->
+					</a>
+					<a href="#">
+						@yield('icon12')
+					</a> 	
+				</div>
+				<div class="card-title">
 				
+					<h2 >
+						<label id="pozicija1">
+							ADC
+						</label>
+					</h2>
+
+
+				</div>
+				<div class="card-title">
+					<h3 >
+						<label id="mapa1">
+							Summoner's Rift
+						</label>
+					</h3>
+				</div>
+
+				<div class="card-content  ">
+										<img class="round" border="3px" src="slike/Zyra.png" alt="Zyra">
+					<img class="round" border="3px" src="slike/Rakan.png" alt="Rakan">
+					<img class="round" border="3px" src="slike/Karma.png" alt="Karma">
+			
+		
+				</div>
+
+				<div class="card-text m-4"  style="color:#9D907D;">
+											Trazim partnera za ranked duo, junglera ili top laner-a, ali ok je i bilo koji igrac sa timskim duhom i voljom za pobedom.
+					
+				</div>
+
+			</div>
+	</div>
+	<div class="col-sm-3 mt-3">
+			<div class="card  align-items-center" style="padding:10px;background-color: rgba(5,5,5,0.6); color:white">
+				<div class=" ml-auto">
+					<a href="#">
+							@yield('icon11')
+
+
+							<!--<i class="material-icons" style="cursor:pointer;">create</i>-->
+					</a>
+					<a href="#">
+						@yield('icon12')
+					</a> 	
+				</div>
+				<div class="card-title">
+					<h2 >
+						<label id="pozicija1">
+							Mid
+						</label>
+					</h2>
+				</div>
+				<div class="card-title">
+					<h3 >
+						<label id="mapa1">
+							Summoner's Rift
+						</label>
+					</h3>
+				</div>
+
+				<div class="card-content  ">
+					<img class="round" border="3px" src="slike/Katarina.png" alt="Katarina">
+					<img class="round" border="3px" src="slike/Jayce.png" alt="Jayce">
+					<img class="round" border="3px" src="slike/Brand.png" alt="Brand">
+			
+				</div>
+
+				<div class="card-text m-4"  style="color:#9D907D;">
+											Trazim partnera za ranked duo, junglera ili top laner-a, ali ok je i bilo koji igrac sa timskim duhom i voljom za pobedom.
+					
+				</div>
+
+			</div>
+	</div>
+	<div class="col-sm-3 mt-3">
+			<div class="card  align-items-center" style="padding:10px;background-color: rgba(5,5,5,0.6); color:white">
+				<div class=" ml-auto">
+					<a href="#">
+							@yield('icon11')
+
+
+							<!--<i class="material-icons" style="cursor:pointer;">create</i>-->
+					</a>
+					<a href="#">
+						@yield('icon12')
+					</a> 	
+				</div>
+				<div class="card-title">
+					<h2 >
+						<label id="pozicija1">
+							Support
+						</label>
+					</h2>
+				</div>
+				<div class="card-title">
+					<h3 >
+						<label id="mapa1">
+							Summoner's Rift
+						</label>
+					</h3>
+				</div>
+
+				<div class="card-content  ">
+					<img class="round" border="3px" src="slike/Elise.png" alt="Elise">
+					<img class="round" border="3px" src="slike/Diana.png" alt="Diana">
+					<img class="round" border="3px" src="slike/Jax.png" alt="Jax">
+			
+				</div>
+
+				<div class="card-text m-4 "  style="color:#9D907D;">
+					Pretezno igram agresivne support-ove, trazi se adc sa dobrim skillom za farmu.. Posebno Jhin ili Vayne
+				
+				</div>
+
+			</div>
+	</div>
+
+	<div class="col-sm-3" >
+			<div class=" card mt-3 sidebarCards" style="background-color: rgba(5,5,5,0.8)">
+				<div class="ml-auto">
+				@yield('editDescription')
+				</div>
 				<h4 class="card-title">
 					Kada igram Lol:
 				</h4>
@@ -129,9 +270,12 @@
 			</div>
 
 			<div class="card mt-3 sidebarCards"  >
+				
   				  <h4 class="card-title ">Ocene i komentari:</h4>
-  				 <br>
-
+  			
+  				 	<div >
+					@yield("grade")
+				</div>
   				<div class="container-fluid">	
   					
 
@@ -139,15 +283,21 @@
   					<div class="row ">
   						<div class="card container-fluid " style="padding:15px;background-color: rgba(5,5,5,0.5);">
   							<div class="row">
-							<div class="col-sm-10">
-								<img style="margin-bottom:5px; margin-left:-5px; vertical-align:bottom " width="35px" alt="Profilna slika" src="slike/icon3.jpg">
+  								<div class=" mr-2 ml-auto">
+										@yield('btnSidebar1')
+								</div>
+							
+								
+								<div class="col-sm-12">
+										<img style="margin-bottom:5px; margin-left:-5px; vertical-align:bottom " width="35px" alt="Profilna slika" src="slike/icon3.jpg">
+									
+									
+								
+							    </div>
+							
 							</div>
-							<div class="col-sm-2">
-								@yield('btnSidebar1')
-							</div>
-						</div>
 						<div class="row" >
-							<div class="card-text mr-2" >
+							<div class="card-text ml-2 mr-2"  style="color:#9D907D;">
 								
 								Odlican ADC, kida kako farm-a, dogovr oko partije ispostovan maksimalno..
 							</div>
@@ -177,18 +327,27 @@
 					</div>
 					</div>
 
-  					<div class="row mt-3">
+  				
+  					
+  					
+  					<div class="row mt-3	 ">
   						<div class="card container-fluid " style="padding:15px;background-color: rgba(5,5,5,0.5);">
   							<div class="row">
-							<div class="col-sm-10">
-								<img style="margin-bottom:5px; margin-left:-5px; vertical-align:bottom " width="35px" alt="Profilna slika" src="slike/icon3.jpg">
+  								<div class=" mr-2 ml-auto">
+										@yield('btnSidebar2')
+								</div>
+							
+								
+								<div class="col-sm-12">
+										<img style="margin-bottom:5px; margin-left:-5px; vertical-align:bottom " width="35px" alt="Profilna slika" src="slike/icon3.jpg">
+									
+									
+								
+							    </div>
+							
 							</div>
-							<div class="col-sm-2">
-								@yield('btnSidebar1')
-							</div>
-						</div>
 						<div class="row" >
-							<div class="card-text mr-2" >
+							<div class="card-text ml-2 mr-2"  style="color:#9D907D;">
 								
 								Odlican ADC, kida kako farm-a, dogovr oko partije ispostovan maksimalno..
 							</div>
@@ -219,13 +378,9 @@
 					</div>
 			</div>
 
-		<div class="col-sm-3">
-		</div>
-
-		<div class="col-sm-3">
-		</div>
-
-		<div class="col-sm-3">
-		</div>
+		
 	</div>
+</div>
+</div>
+
 @endsection

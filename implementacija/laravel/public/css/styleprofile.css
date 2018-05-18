@@ -80,6 +80,18 @@ label.star:before {
 
 
 /*dugme*/
+.buttonGrade{
+	background-color: #184157;
+  border: none;
+  color: white;
+ font-size: 16px;
+transition: 0.3s;
+  opacity: 0.6;
+font-family : inherit;
+  cursor: pointer;
+}
+.buttonGrade:hover
+	{opacity: 1}
 
 
 .button {
@@ -123,4 +135,22 @@ i {
 	 padding: 10px;
 	 margin-top:10px; 
 	 background-color:rgba(5,5,5,0.6);
+}
+
+
+
+img.round{
+	border-radius:50%;
+	border-color: white;
+	width:60px;
+	margin:4px;
+	
+	border: solid 1px #555;
+	background-color: #eed;
+	box-shadow: 10px -10px  rgba(0,0,0,0.4);
+	-moz-box-shadow: 10px -10px  rgba(0,0,0,0.4);
+	-webkit-box-shadow: 10px -10px  rgba(0,0,0,0.4);
+	-o-box-shadow: 10px -10px  rgba(0,0,0,0.4);
+	border-radius:100px;
+
 }
