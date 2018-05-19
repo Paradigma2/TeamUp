@@ -22,6 +22,12 @@ Route::get('userLobby', function () {
 Route::get('registerForm', function () {
     return view('registerForm');
 });
+
+Route::get('createEditAdForm', function () {
+    return view('profile/forms/createEditAdForm');
+});
+
+
 Route::get('guestLobby', function () {
     return view('guestLobby');
 });

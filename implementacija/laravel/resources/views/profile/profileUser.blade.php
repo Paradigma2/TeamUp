@@ -24,16 +24,16 @@
 	
 @endsection
 
-@section('btn1')
-	<button  class="button" href="">Promeni lozinku</button>
+@section('promeniLozinku')
+	<button  class="button" >Promeni lozinku</button>
 @endsection
 
-@section('btn2')
-	<button  class="button" href="">Kreiraj oglas</button>
+@section('kreirajOglas')
+	<button  class="button"><a class="clearFormat" href="/createEditAdForm">Kreiraj oglas</a></button>
 @endsection
 
-@section('btn3')
-	<button  class="button" href="">Obriši nalog</button>
+@section('obrisiNalog')
+	<button  class="button" type="button" > Obriši nalog </button>
 @endsection
 
 @section("editDescription")
@@ -43,22 +43,25 @@
 @section("icon11")
 	<i class="material-icons" style="cursor:pointer;">create</i>	
 @endsection
+@section("icon12")
+	<i class="material-icons" style="cursor:pointer;">delete</i>	
+@endsection
 
 @section("icon21")
 	<i class="material-icons" style="cursor:pointer;">create</i>	
 @endsection
 
+@section("icon22")
+	<i class="material-icons" style="cursor:pointer;">delete</i>	
+@endsection
+
+
 @section("icon31")
 	<i class="material-icons" style="cursor:pointer;">create</i>	
 @endsection
 
-@section("icon12")
-	<i class="material-icons" style="cursor:pointer;">delete</i>	
-@endsection
 
-@section("icon22")
-	<i class="material-icons" style="cursor:pointer;">delete</i>	
-@endsection
+
 
 @section("icon32")
 	<i class="material-icons" style="cursor:pointer;">delete</i>	
