@@ -208,9 +208,9 @@
 			</div>
 			
 		</div>
-		<div class="row mt-5">
-			<div class="col-sm-6">
-				<div class="card article border border-primary">
+		<div class="row mt-3">
+			<div class="col-sm-6 mt-3">
+				<div class="card article  align-items-center">
 				  <div class="card-body">
 				  	<div class="row">
 				  		
@@ -235,7 +235,7 @@
 				  				<div class="col-sm-12 d-flex justify-content-center">
 				  					<div class="row">
 				  						<div class="col-sm-12">
-				  							<img src="/slike/Darius.png" style="width:70px;">
+				  							<img src="/slike/Darius.png" style="width:95px;">
 				  						</div>
 				  					</div>
 				  					
@@ -267,40 +267,292 @@
 				  	<div class="row mt-3">
 				  		<div class="col-sm-1">
 				  		</div>
-				  		<div class="col-sm-10 areatext border border-primary">
+				  		<div class="col-sm-10 areatext">
 				  			<label name="resultDescr">Trazim igraca za ranked 
 				  			</label>
 				  		</div>
 				  		<div class="col-sm-1">
 				  		</div>
 				  	</div>
-				  	<div class="row mt-3">
-				  		<!--
-				  		<div class="col-sm-12">
-				  			<div class="row">-->
-				  				<div class="col-sm-3">&nbsp;
-				  				</div>
-				  				<div class="col-sm-2">
-				  					<img src="/slike/Brand.png" style="width:35px;" class="m-2">
-				  				</div>
-				  				<div class="col-sm-2">
-				  					<img src="/slike/Brand.png" style="width:35px;"class="m-2">
-				  				</div>
-				  				<div class="col-sm-2">
-				  					<img src="/slike/Brand.png" style="width:35px;"class="m-2">
-				  				</div>
-				  				<div class="col-sm-3">&nbsp;
-				  				</div>
-				  		<!--	</div>
-				  			
-				  		</div>-->
+				  	
+				  </div>
+				  <div class="card-content">
+				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  		
 				  		
 				  	</div>
-				  </div>
+				  	<div class="card-content d-flex justify-content-center mt-3">
+				  		<h5>Online: </h5>&nbsp;<label name="resultOnline" id="resultOnline">posle 8</label>
+				  	</div>
 				</div>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-6 mt-3">
+				<div class="card article  align-items-center">
+				  <div class="card-body">
+				  	<div class="row">
+				  		
+				  		<div class="col-sm-5">
+				  			<div class="row">
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Rank: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultRank" id="resultRank"> Gold V</label>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Pozicija: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultPosition" id="resultPosition">Mid Laner</label>
+				  				</div>
+				  			</div>
+				  		</div>
+				  		<div class="col-sm-2 ">
+				  			<div class="row">
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<div class="row">
+				  						<div class="col-sm-12">
+				  							<img src="/slike/Darius.png" style="width:95px;">
+				  						</div>
+				  					</div>
+				  					
+				  				</div>
+				  				<div class="col-sm-12 mt-2 d-flex justify-content-center">
+				  					<button class="btn btn-sm btn-primary">jonny123
+				  					</button>
+				  				</div>
+				  			</div>
+				  			
+				  		</div>
+				  		<div class="col-sm-5">
+				  			<div class="row">
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Nivo: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultLevel" id="resultLevel">50</label>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Mod igre: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultGameMode" id="resultGameMode">Summoner's rift</label>
+				  				</div>
+				  			</div>
+				  		</div>
+				  	</div>
+				  	<div class="row mt-3">
+				  		<div class="col-sm-1">
+				  		</div>
+				  		<div class="col-sm-10 areatext">
+				  			<label name="resultDescr">Trazim igraca za ranked 
+				  			</label>
+				  		</div>
+				  		<div class="col-sm-1">
+				  		</div>
+				  	</div>
+				  	
+				  </div>
+				  <div class="card-content">
+				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  		
+				  		
+				  	</div>
+				  	<div class="card-content d-flex justify-content-center mt-3">
+				  		<h5>Online: </h5>&nbsp;<label name="resultOnline" id="resultOnline">posle 8</label>
+				  	</div>
+				</div>
 			</div>
 		</div>
+
+		<div class="row mt-3">
+			<div class="col-sm-6 mt-3">
+				<div class="card article  align-items-center">
+				  <div class="card-body">
+				  	<div class="row">
+				  		
+				  		<div class="col-sm-5">
+				  			<div class="row">
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Rank: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultRank" id="resultRank"> Gold V</label>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Pozicija: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultPosition" id="resultPosition">Mid Laner</label>
+				  				</div>
+				  			</div>
+				  		</div>
+				  		<div class="col-sm-2 ">
+				  			<div class="row">
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<div class="row">
+				  						<div class="col-sm-12">
+				  							<img src="/slike/Darius.png" style="width:95px;">
+				  						</div>
+				  					</div>
+				  					
+				  				</div>
+				  				<div class="col-sm-12 mt-2 d-flex justify-content-center">
+				  					<button class="btn btn-sm btn-primary">jonny123
+				  					</button>
+				  				</div>
+				  			</div>
+				  			
+				  		</div>
+				  		<div class="col-sm-5">
+				  			<div class="row">
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Nivo: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultLevel" id="resultLevel">50</label>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Mod igre: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultGameMode" id="resultGameMode">Summoner's rift</label>
+				  				</div>
+				  			</div>
+				  		</div>
+				  	</div>
+				  	<div class="row mt-3">
+				  		<div class="col-sm-1">
+				  		</div>
+				  		<div class="col-sm-10 areatext">
+				  			<label name="resultDescr">Trazim igraca za ranked 
+				  			</label>
+				  		</div>
+				  		<div class="col-sm-1">
+				  		</div>
+				  	</div>
+				  	
+				  </div>
+				  <div class="card-content">
+				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  		
+				  		
+				  	</div>
+				  	<div class="card-content d-flex justify-content-center mt-3">
+				  		<h5>Online: </h5>&nbsp;<label name="resultOnline" id="resultOnline">posle 8</label>
+				  	</div>
+				</div>
+			</div>
+			<div class="col-sm-6 mt-3">
+				<div class="card article  align-items-center">
+				  <div class="card-body">
+				  	<div class="row">
+				  		
+				  		<div class="col-sm-5">
+				  			<div class="row">
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Rank: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultRank" id="resultRank"> Gold V</label>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Pozicija: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultPosition" id="resultPosition">Mid Laner</label>
+				  				</div>
+				  			</div>
+				  		</div>
+				  		<div class="col-sm-2 ">
+				  			<div class="row">
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<div class="row">
+				  						<div class="col-sm-12">
+				  							<img src="/slike/Darius.png" style="width:95px;">
+				  						</div>
+				  					</div>
+				  					
+				  				</div>
+				  				<div class="col-sm-12 mt-2 d-flex justify-content-center">
+				  					<button class="btn btn-sm btn-primary">jonny123
+				  					</button>
+				  				</div>
+				  			</div>
+				  			
+				  		</div>
+				  		<div class="col-sm-5">
+				  			<div class="row">
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Nivo: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultLevel" id="resultLevel">50</label>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<h4>Mod igre: </h4>
+				  				</div>
+				  				<div class="col-sm-12 d-flex justify-content-center">
+				  					<label name="resultGameMode" id="resultGameMode">Summoner's rift</label>
+				  				</div>
+				  			</div>
+				  		</div>
+				  	</div>
+				  	<div class="row mt-3">
+				  		<div class="col-sm-1">
+				  		</div>
+				  		<div class="col-sm-10 areatext">
+				  			<label name="resultDescr">Trazim igraca za ranked 
+				  			</label>
+				  		</div>
+				  		<div class="col-sm-1">
+				  		</div>
+				  	</div>
+				  	
+				  </div>
+				  <div class="card-content">
+				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  				
+				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  				
+				  		
+				  		
+				  	</div>
+				  	<div class="card-content d-flex justify-content-center mt-3">
+				  		<h5>Online: </h5>&nbsp;<label name="resultOnline" id="resultOnline">posle 8</label>
+				  	</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 @endsection
