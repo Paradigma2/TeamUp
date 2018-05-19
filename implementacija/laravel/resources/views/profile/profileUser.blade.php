@@ -19,19 +19,47 @@
 
 @section('editProfilePicture')
 
-	<button class="icon" id="profilnaSlika">
-		<i class="material-icons " style="font-size: 20px">&#xe3c9;	</i> 
-	</button >
+	
+		Promeni sliku
+	
 @endsection
 
 @section('btn1')
-	<button id="promeniLozinku" class="button" href="">Promeni lozinku</button>
+	<button  class="button" href="">Promeni lozinku</button>
 @endsection
 
 @section('btn2')
-	<button id="kreirajOglas" class="button" href="">Kreiraj oglas</button>
+	<button  class="button" href="">Kreiraj oglas</button>
 @endsection
 
 @section('btn3')
-	<button id="obrisi" class="button" href="">Obriši nalog</button>
+	<button  class="button" href="">Obriši nalog</button>
+@endsection
+
+@section("editDescription")
+	<i class="material-icons" style="cursor:pointer;">create</i>	
+@endsection
+
+@section("icon11")
+	<i class="material-icons" style="cursor:pointer;">create</i>	
+@endsection
+
+@section("icon21")
+	<i class="material-icons" style="cursor:pointer;">create</i>	
+@endsection
+
+@section("icon31")
+	<i class="material-icons" style="cursor:pointer;">create</i>	
+@endsection
+
+@section("icon12")
+	<i class="material-icons" style="cursor:pointer;">delete</i>	
+@endsection
+
+@section("icon22")
+	<i class="material-icons" style="cursor:pointer;">delete</i>	
+@endsection
+
+@section("icon32")
+	<i class="material-icons" style="cursor:pointer;">delete</i>	
 @endsection

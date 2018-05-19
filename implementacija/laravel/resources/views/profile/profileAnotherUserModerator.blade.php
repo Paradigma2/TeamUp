@@ -9,7 +9,7 @@
 @section('navbar')
 
 
-	@include('navbar/navbarUser')
+	@include('navbar/navbarModerator')
 
 
 @endsection

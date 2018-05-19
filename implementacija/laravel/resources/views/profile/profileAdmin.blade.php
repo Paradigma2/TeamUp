@@ -18,15 +18,15 @@
 
 
 @section('btn1')
-	<button id="promeniLozinku" class="button" href="">Udalji sa sajta</button>
+	<button  class="button" href="">Udalji sa sajta</button>
 @endsection
 
 @section('btn2')
-	<button id="kreirajOglas" class="button" href="">Unapredi</button>
+	<button class="button" href="">Unapredi</button>
 @endsection
 
 @section('btn3')
-	<button id="obrisi" class="button" href="">Pošalji poruku</button>
+	<button  class="button" href="">Pošalji poruku</button>
 @endsection
 
 @section("btnSidebar1")
@@ -35,4 +35,16 @@
 
 @section("btnSidebar2")
 		<i class="material-icons" style="cursor:pointer;">delete</i>
+@endsection
+
+@section("icon12")
+	<i class="material-icons" style="cursor:pointer;">delete</i>
+@endsection
+
+@section("icon22")
+	<i class="material-icons" style="cursor:pointer;">delete</i>
+@endsection
+
+@section("icon32")
+	<i class="material-icons" style="cursor:pointer;">delete</i>
 @endsection

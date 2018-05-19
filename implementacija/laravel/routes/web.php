@@ -36,12 +36,42 @@ Route::get('guestLobby', function () {
 });
 
 
+Route::get('inboxAdmin', function () {
+    return view('inbox/inboxAdmin');
+});
+
+Route::get('inboxModerator', function () {
+    return view('inbox/inboxModerator');
+});
+
+Route::get('inboxUser', function () {
+    return view('inbox/inboxUser');
+});
+
+
+Route::get('moderator', function () {
+    return view('profile/profileModerator');
+});
+
+
 
 Route::get('admin', function () {
     return view('profile/profileAdmin');
 });
 
+Route::get('userAnotherModerator', function () {
+    return view('profile/profileAnotherUserModerator');
+});
 
+
+
+Route::get('userAnother', function () {
+    return view('profile/profileAnotherUser');
+});
+
+Route::get('user', function () {
+    return view('profile/profileUser');
+});
 
 Route::get('editArticle', function () {
     return view('editArticle');

@@ -5,7 +5,7 @@
 @endsection
 
 @section('link2')
-	<a class="nav-link"  href="#">Pretraga igrača</a>
+	<a class="nav-link"  href="#">Nađi saigrača</a>
 @endsection
 
 @section('link3')
