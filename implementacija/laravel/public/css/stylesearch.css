@@ -1,0 +1,21 @@
+.article{
+	background-color:rgba(3, 3, 3, 0.7);
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	color:white;
+}
+
+html { 
+  background: url(/slike/wallpaper4.jpg) no-repeat center fixed; 
+  background-size: cover;
+}
+
+.areatext{
+   
+	background-color:rgba(3, 3, 3, 0.3);
+	font-size:14px;
+	color:white;
+	cursor:none;
+	padding: 12px 12px;
+	 border-radius: 4px;
+	 text-align: center;
+}

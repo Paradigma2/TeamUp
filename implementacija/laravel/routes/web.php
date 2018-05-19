@@ -10,6 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('searchModerator', function () {
+    return view('search/searchModerator');
+});
+Route::get('searchUser', function () {
+    return view('search/searchUser');
+});
+Route::get('search', function () {
+    return view('search/search');
+});
 Route::get('adminLobby', function () {
     return view('adminLobby');
 });
