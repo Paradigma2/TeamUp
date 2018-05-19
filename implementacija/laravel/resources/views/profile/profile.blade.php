@@ -132,7 +132,7 @@
 
 							<!--<i class="material-icons" style="cursor:pointer;">create</i>-->
 					</a>
-					<a href="#">
+					<a data-toggle="modal" href="#deleteModal">
 						@yield('icon12')
 					</a> 	
 				</div>
@@ -178,7 +178,7 @@
 
 							<!--<i class="material-icons" style="cursor:pointer;">create</i>-->
 					</a>
-					<a href="#">
+					<a data-toggle="modal" href="#deleteModal">
 						@yield('icon12')
 					</a> 	
 				</div>
@@ -220,7 +220,7 @@
 
 							<!--<i class="material-icons" style="cursor:pointer;">create</i>-->
 					</a>
-					<a href="#">
+					<a data-toggle="modal" href="#deleteModal">
 						@yield('icon12')
 					</a> 	
 				</div>
@@ -381,6 +381,39 @@
 		
 	</div>
 </div>
+
+
+	<div class="modal fade" id="deleteModal">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content pages ">
+
+	      <!-- Modal Header -->
+	      <div class="modal-header ">
+	        <h4 class="modal-title d-flex justify-content-center">Da li ste sigurni?</h4>
+	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <!-- Modal body -->
+	      
+
+	      <!-- Modal footer -->
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div class="col-sm-6">
+	      			<button type="button" class="buttonGrade btn-block	" style="padding:7px;" data-dismiss="modal" onclick="fjaZaBrisanje(idDelete)">Potvrdi</button>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
+	      		</div>
+	      		
+	      	</div>
+	        
+	        
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
 </div>
 
 @endsection

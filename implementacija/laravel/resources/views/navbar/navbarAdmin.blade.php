@@ -9,21 +9,12 @@
 
 
 @section('link2')
-	<a class="nav-link"  href="#">Pretraga igrača</a>
+	<a class="nav-link"  href="#">Nađi saigrača</a>
 @endsection
 
 
 @section('link5')
-	 <div class="dropdown ">
-
-	 	<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Nick
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Log out</a>
-       
-      </div>
-
+	 
 
 
 

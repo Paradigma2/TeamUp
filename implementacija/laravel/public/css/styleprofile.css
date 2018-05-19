@@ -137,7 +137,15 @@ i {
 	 background-color:rgba(5,5,5,0.6);
 }
 
-
+.pages{
+  background:rgba(3, 3, 3, 0.8);
+  color:white;
+  border-color: #9D907D;;
+}
+.modal-backdrop
+{
+    opacity:0.9 !important;
+}
 
 img.round{
 	border-radius:50%;
