@@ -22,14 +22,14 @@
 @endsection
 
 
-@section('btn1')
+@section('blokiraj')
 	<button  class="button" href="">Blokiraj</button>
 @endsection
 
-@section('btn2')
+@section('zaprati')
 	<button  class="button" href="">Zaprati</button>
 @endsection
 
-@section('btn3')
+@section('posaljiPorukuAdmin')
 	<button id="obrisi" class="button" href="">Pošalji poruku</button>
 @endsection

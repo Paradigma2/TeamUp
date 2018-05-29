@@ -17,15 +17,15 @@
 
 
 
-@section('btn1')
+@section('udaljiSaSajta')
 	<button  class="button" href="">Udalji sa sajta</button>
 @endsection
 
-@section('btn2')
+@section('unapredi')
 	<button class="button" href="">Unapredi</button>
 @endsection
 
-@section('btn3')
+@section('posaljiPorukuAdmin')
 	<button  class="button" href="">Pošalji poruku</button>
 @endsection
 

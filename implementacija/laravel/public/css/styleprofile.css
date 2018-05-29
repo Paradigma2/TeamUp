@@ -22,6 +22,7 @@ html {
 }
 
 
+
 button.icon {
   background-color: Transparent;
   border: none;
@@ -97,6 +98,7 @@ font-family : inherit;
 .button {
   background-color: #184157;
   border: none;
+  outline: none;
   color: white;
   width:160px;
   padding: 14px;	
@@ -105,10 +107,13 @@ font-family : inherit;
   margin: 10px;
   opacity: 0.6;
   transition: 0.3s;
-  display: inline-block;
   text-decoration: none;
   font-family : inherit;
   cursor: pointer;
+}
+button.button:focus {
+    border:none;
+    outline: none:
 }
 .button:hover {opacity: 1}
 i {
@@ -161,4 +166,92 @@ img.round{
 	-o-box-shadow: 10px -10px  rgba(0,0,0,0.4);
 	border-radius:100px;
 
+}
+
+.heroj{
+  width:35px;
+  height:35px;
+}
+
+
+
+  input[type=checkbox] {
+    display:none;
+  }
+  input[type=checkbox] + label
+   {
+       background: #999;
+       height: 35px;
+       width: 35px;
+       display:inline-block;
+       padding: 0 0 0 0px;
+     margin-top:8px;
+     cursor: pointer;
+   }
+   
+   input[type=checkbox]:checked + label
+    {
+        background: #184157;
+        height: 35px;
+        width: 35px;
+        display:inline-block;
+    margin-top:8px;
+    border: 4px solid #184157;
+    border-radius: 4px;
+        padding: 0 0 0 0px;
+    cursor: pointer;
+  }
+
+.btn-block {
+    padding: 2% 0; 
+    /* define values in pixels / Percentage or em. whatever suits 
+       your requirements */
+}
+select.oglas {
+    width: 100%;
+  font-size:17;
+    padding: 1px 1px;
+    margin: 1px 0;
+    display: inline-block;
+    border: 2px solid #184157 ;
+    border-radius: 4px;
+    box-sizing: border-box;
+  font-family:"Trebuchet MS", Helvetica, sans-serif;
+
+  
+}
+
+ 
+option:focus  {
+   background-color:   #184157 ;
+
+}
+
+a.clearFormat{
+
+}
+a.clearFormat:focus{
+  outline: none;
+  border:none;
+  outline: 0;
+  border:0;
+}
+a.clearFormat:link {
+    text-decoration: none;
+    color:inherit;
+}
+
+a.clearFormat:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.clearFormat:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.clearFormat:active {
+    text-decoration: none;
+    color: inherit;
 }
