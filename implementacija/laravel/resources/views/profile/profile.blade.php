@@ -26,7 +26,7 @@
 					<div class="col-sm-12">
 						<h1>
 							<label>
-								Nick
+								{{Auth::user()->username}}
 							</label>
 
 
@@ -462,14 +462,15 @@
 	      <div class="modal-body">
 	      	<div class="container">
 	      		
-	      		<form class="m-3">
+	      		<form action="changePassword" method="post" class="m-3">
+	      			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	      			<div class="form-group">
 	      				<div class="row">
 	      					<div class="col-sm-6">
 	      						<label style="color:#9D907D;">	Stara lozinka:</label>
 	      					</div>
 	      					<div class="col-sm-6">
-	      						<input type="text" >
+	      						<input name="staraLozinka" type="text" >
 	      					</div>
 	      				</div>
 	      			</div>
@@ -479,7 +480,7 @@
 	      						<label style="color:#9D907D;">	Nova lozinka:</label>
 	      					</div>
 	      					<div class="col-sm-6">
-	      						<input type="text" >
+	      						<input name="novaLozinka" type="text" >
 	      					</div>
 	      				</div>
 	      			</div>
@@ -489,13 +490,13 @@
 	      						<label style="color:#9D907D;">	Ponovi lozinku:</label>
 	      					</div>
 	      					<div class="col-sm-6">
-	      						<input type="text" >
+	      						<input name="ponoviLozinku" type="text" >
 	      					</div>
 	      				</div>
 	      			</div>
 				<div class="row">
 	      		<div class="col-sm-6">
-	      			<button type="button" class="buttonGrade btn-block	" style="padding:7px;" data-dismiss="modal" onclick="obrisiOglas(idDelete)">Potvrdi</button>
+	      			<button type="submit" class="buttonGrade btn-block	"  style="padding:7px;" >Potvrdi</button>
 	      		</div>
 	      		<div class="col-sm-6">
 	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
@@ -535,14 +536,14 @@
 	      <div class="modal-body">
 	      	<div class="container">
 	      		
-	      		<form class="m-3">
+	      		<form class="m-3" action='editDescription' method='post' >
 	      			<div class="form-group">
-	      				
+	      			 <input type="hidden" name="_token" value="{{ csrf_token() }}">		
 	      					
 	      				
 	      				<div class="row">
 	      					<div class="col-sm-12">
-	      					<textarea style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača">
+	      					<textarea name="opis" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača">
 	      					</textarea>
 	      					</div>
 	      				</div>
@@ -550,10 +551,10 @@
 	      			
 	      				<div class="row">
 	      		<div class="col-sm-6">
-	      			<button type="button" class="buttonGrade btn-block	" style="padding:7px;" data-dismiss="modal" onclick="obrisiOglas(idDelete)">Potvrdi</button>
+	      			<button name="dugme" type="submit" class="buttonGrade btn-block	" style="padding:7px;"  >Potvrdi</button>
 	      		</div>
 	      		<div class="col-sm-6">
-	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
+	      			<button type="button" name="odustani" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
 	      		</div>
 	      		
 	      	</div>

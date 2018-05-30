@@ -89,4 +89,13 @@ Route::get('/', function () {
 
 Route::resource('users','UserController');
 
+Route::post('editDescription','UserController@editDescription');
+Route::post('changePassword','UserController@changePassword');      
+Route::post('login','SessionController@create');
+Route::get('logout','SessionController@destroy');
+Route::get('/home','UserController@home');//ove stavi na guest lobby
+
+
+Route::post('registerUser','UserController@registerUser');
+
 

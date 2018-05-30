@@ -67,7 +67,9 @@
 	<div class="row mt-3">
 		<div class="col-sm-12 d-flex justify-content-center">
 			<button class="btn btn-primary mr-2 btn-lg" type="button"><a class="nav-link" href=/registerForm style="color:white;">Registruj se</a></button>
-			<button class="btn btn-primary ml-2 btn-lg" type="button" data-toggle="modal" data-target="#logInModal">Uloguj se</button>
+		
+				<button class="btn btn-primary ml-2 btn-lg" type="button" data-toggle="modal" data-target="#logInModal">Uloguj se</button>
+			
 		</div>
 	</div>
 
@@ -170,8 +172,20 @@
 	       <!-- Modal body -->
 	       <div class="modal-body">
 	       	 <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
-	         <form class="m-5" name="logInForm">
+	         <form class="m-5" name="logInForm" method="post" action="login">
+	         	@if(count($errors)>0)
+	         		<div class="alert-danger">
+	         			<ul>
+	         				@foreach($errors->all() as $error)
+	         					<li>{{$error}} 	</li>
+	         				@endforeach
+	         			
+	         			</ul>
+	         		</div>
+
+	         	@endif
 	         	<div class="form-group">
+	         		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	         		<div class="row">
 	         			<div class="col-sm-5">
 	         				<h5><label for="username">Korisnicko ime:</label></h5>
@@ -187,7 +201,7 @@
 	         				<h5><label for="pass">Sifra:</label></h5>
 	         			</div>
 	         			<div class="col-sm-7">
-	         				 <input type="password" class="form-control" id="pass" name="pass">
+	         				 <input type="password" class="form-control" id="pass" name="password">
 	         			</div>
 	         		</div>
 	         	</div>
@@ -198,7 +212,7 @@
 	         				
 	         			</div>
 	         			<div class="col-sm-7">
-	         			 <button type="submit" class="btn btn-primary" style="width:100%;">Uloguj se</button>
+	         			<button type="submit" class="btn btn-primary" style="padding:7px;" >Uloguj se</button>
 	         		</div>
 	         			
 	         		</div>
