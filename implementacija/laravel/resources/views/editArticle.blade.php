@@ -14,7 +14,8 @@
 	<div class="container article mt-3">
 		<div class="row">
 			<div class="col-sm-12">
-				<form class="m-5">
+				<form class="m-5" action="makeArticle" method="post">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="form-group">
 						<div class="row">
 							<div class="col-sm-4 d-flex justify-content-center">
@@ -49,7 +50,7 @@
 							
 						</div>
 						<div class="col-sm-8">
-							 <button type="submit" class="btn btn-primary nav-link" style="width:100%;">Objavi</button>
+							 <button type="submit" name="bt" class="btn btn-primary nav-link" style="width:100%;">Objavi</button>
 						</div>
 					</div>
 					   

@@ -15,6 +15,7 @@
 	<div class="row">
 		<div class="col-sm-8 mt-3 tab-content">
 			<div class="tab-pane active" id="page1">
+				@foreach($articles as $a)
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="card mt-2 article">
@@ -23,7 +24,7 @@
 								<div class="row">
 									<div class="col-sm-10">
 										<h4 class="card-title headline mt-1" >
-											<label align="center">Naslov 1</label>
+											<label align="center">{{ $a->Headline }}</label>
 										</h4>
 									</div>
 									<div class="col-sm-1">
@@ -38,18 +39,18 @@
 										</a>
 									</div>
 								</div>
-								<p class="card-text">Content 1</p>
+								<p class="card-text">{{ $a->Content }}</p>
 
 
-								<div class="card-text collapse" id="collapseArticle1">Expand content 1</div>
-								<a data-toggle="collapse" href="#collapseArticle1" onclick="proba('klik1')" >
-									<i class="material-icons" > <label style="cursor:pointer;" id="klik1">expand_more</label></i>
+								<div class="card-text collapse" id="collapseArticle{{ $a->ArticleID }}">Expand content 1</div>
+								<a data-toggle="collapse" href="#collapseArticle{{ $a->ArticleID }}" onclick="proba('klik{{ $a->ArticleID }}')" >
+									<i class="material-icons" > <label style="cursor:pointer;" id="klik{{ $a->ArticleID }}">expand_more</label></i>
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>
-
+<!--
 				<div class="row">
 					<div class="col-sm-12 mt-2">
 						<div class="card mt-2 article">
@@ -83,7 +84,8 @@
 						</div>
 					</div>
 				</div>
-
+			-->
+				@endforeach
 			</div>
 			<div class="tab-pane fade" id="page2">
 				<div class="row">

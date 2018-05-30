@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('user/{id}', 'Controller@test');
+Route::resource('users','UserController');
+
+
+Route::post('registerUser','UserController@registerUser');
+Route::post('makeArticle','ArticleController@makeArticle');
 
 Route::get('searchModerator', function () {
     return view('search/searchModerator');
@@ -100,6 +104,5 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::resource('users','UserController');
 
 
