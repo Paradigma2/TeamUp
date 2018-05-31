@@ -25,7 +25,7 @@ class UserController extends Controller
 
     	//validacija
         $descr=$request->input('opis');
-      //  $user = User::where('Username', 'jana')->update(['Description'=>$descr]);
+        // $user = User::where('Username', 'jana')->update(['Description'=>$descr]);
     }
     
     public function changePassword(Request $request){
@@ -56,7 +56,7 @@ class UserController extends Controller
         $user->isAdmin = 0;
         $user->isMod=0;
         $user->lolNick = $request->input("lolUsername");
-        $user->level = 1; //sredi
+        $user->level = 1;//sredi
         $user->rank_id=1;//sredi
 
         $api_key='RGAPI-3295c182-2564-4de1-9e7e-53f0ddb04a13';
