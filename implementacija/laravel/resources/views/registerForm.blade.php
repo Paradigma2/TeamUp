@@ -41,7 +41,7 @@
 								 		if($error == "The username has already been taken."){
 								 			echo "Korisnicko ime je zauzeto";
 								 		}
-								 }
+								 	}
 								 }
 								 ?>">
 							</div>

@@ -26,7 +26,7 @@ class UserController extends Controller
 
     	//validacija
         $descr=$request->input('opis');
-      //  $user = User::where('Username', 'jana')->update(['Description'=>$descr]);
+        // $user = User::where('Username', 'jana')->update(['Description'=>$descr]);
     }
     
     public function changePassword(Request $request){
@@ -107,7 +107,7 @@ class UserController extends Controller
         $user->isAdmin = 0;
         $user->isMod=0;
         $user->lolNick = $request->input("lolUsername");
-       
+
 
         $summoner=json_decode($result);
         /*------------------------slika------------------------------*/
