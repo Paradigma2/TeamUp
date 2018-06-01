@@ -13,9 +13,11 @@
 
 Route::resource('users','UserController');
 
-
+Route::get('showUserLobby', 'UserController@showUserLobby');
 Route::post('registerUser','UserController@registerUser');
 Route::post('makeArticle','ArticleController@makeArticle');
+Route::get('searchUserByName','UserController@searchUserByName');
+Route::get('guestLobby','UserController@showGuestLobby');
 
 Route::get('searchModerator', function () {
     return view('search/searchModerator');
@@ -45,9 +47,7 @@ Route::get('createEditAdForm', function () {
 });
 
 
-Route::get('guestLobby', function () {
-    return view('guestLobby');
-});
+
 
 
 Route::get('inboxAdmin', function () {
