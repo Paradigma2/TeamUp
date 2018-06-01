@@ -216,13 +216,13 @@
 				  					<h4>Rank: </h4>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<label name="resultRank" id="resultRank"> Gold V</label>
+				  					<label name="resultRank" id="resultRank">{{$ad->rank}}</label>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
 				  					<h4>Pozicija: </h4>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<label name="resultPosition" id="resultPosition">Mid Laner</label>
+				  					<label name="resultPosition" id="resultPosition">{{$ad->position}}</label>
 				  				</div>
 				  			</div>
 				  		</div>
@@ -237,8 +237,7 @@
 				  					
 				  				</div>
 				  				<div class="col-sm-12 mt-2 d-flex justify-content-center">
-				  					<button class="btn btn-sm btn-primary">jonny123
-				  					</button>
+				  					<button class="btn btn-sm btn-primary">{{$ad->username}}</button>
 				  				</div>
 				  			</div>
 				  			
@@ -249,13 +248,13 @@
 				  					<h4>Nivo: </h4>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<label name="resultLevel" id="resultLevel">50</label>
+				  					<label name="resultLevel" id="resultLevel">{{$ad->level}}</label>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
 				  					<h4>Mod igre: </h4>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<label name="resultGameMode" id="resultGameMode">Summoner's rift</label>
+				  					<label name="resultGameMode" id="resultGameMode">{{$ad->mode}}</label>
 				  				</div>
 				  			</div>
 				  		</div>
@@ -264,7 +263,7 @@
 				  		<div class="col-sm-1">
 				  		</div>
 				  		<div class="col-sm-10 areatext">
-				  			<label name="resultDescr">Trazim igraca za ranked 
+				  			<label name="resultDescr">{{$ad->ad_description}}
 				  			</label>
 				  		</div>
 				  		<div class="col-sm-1">
@@ -281,12 +280,9 @@
 				  				
 				  				
 				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
-				  				
-				  		
-				  		
 				  	</div>
 				  	<div class="card-content d-flex justify-content-center mt-3">
-				  		<h5>Online: </h5>&nbsp;<label name="resultOnline" id="resultOnline">posle 8</label>
+				  		<h5>{{$ad->online}}</h5>&nbsp;<label name="resultOnline" id="resultOnline">{{$ad->user_description}}</label>
 				  	</div>
 				</div>
 			</div>
@@ -296,7 +292,8 @@
 		@empty
 		<div class="row mt-3" id="neuspela">		
 			<div class="col-sm-12" style="color:white;">
-				<h3 class="d-flex justify-content-center">Nažalost nijedan oglas ne zadovoljava pretragu za zadate parametre.</h3>
+				<h3 class="d-flex justify-content-center">Nažalost nijedan oglas ne zadovoljava pretragu za zadate parametre.
+				</h3>
 				<h3 class="d-flex justify-content-center">Pokušajte sa izmenjenim parametrima.</h3>
 			</div>
 		</div>

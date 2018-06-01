@@ -12,4 +12,12 @@ class Ad extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function position()
+    {
+        return $this->belongsTo('App\Position');
+    }
+    public function mode()
+    {
+        return $this->belongsTo('App\Mode');
+    }
 }
