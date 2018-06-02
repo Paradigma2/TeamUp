@@ -6,7 +6,11 @@
 
 
 @section('navbar')
+	@if($theUser->isMod)
+@include('navbar/navbarModerator')
+	@else
 	@include('navbar/navbarUser')
+	@endif
 @endsection
 
 @section('content')

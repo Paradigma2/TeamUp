@@ -24,6 +24,7 @@ Route::post('deleteArticle', 'ArticleController@deleteArticle');
 Route::get('editArticle', 'ArticleController@editArticle');
 Route::get('registerForm', 'UserController@registerForm');
 Route::post('updateArticle', 'ArticleController@updateArticle');
+Route::get('logOut', 'UserController@logOut');
 
 Route::get('searchModerator', function () {
     return view('search/searchModerator');

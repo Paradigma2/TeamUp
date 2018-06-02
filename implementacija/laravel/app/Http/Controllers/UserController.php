@@ -173,6 +173,11 @@ class UserController extends Controller
         $length = count($articles);
         return view('guestLobby')->with('articles', $articles)->with('length', $length)->with('users', $users);
     }
+
+    public function logOut(){
+        Auth::logout();
+         return redirect()->action('UserController@showGuestLobby');
+    }
     
 
     public function showUserLobby(Request $request){
@@ -201,7 +206,8 @@ class UserController extends Controller
             $users[0]="Ne postoji korisnik";
            }
         }
-        return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users)->with('authors', $authors)->with('p',$p);
+        $theUser = Auth::user();
+        return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser);
     }
     public function searchUserByName(Request $request){
         $this->validate($request,[
