@@ -62,21 +62,29 @@
 				    	<a href="#page1">
 				      <img src={{ URL::asset('slike/carousel1.jpg') }} alt="pic1" width="1100" height="300"></a>
 				      <div class="carousel-caption">
-				        <h6 class="display-4"><label>{{$articles[0]->headline}}</label></h6>
+				        <h6 class="display-4"><label>
+				        	@if($length>0)
+				        	{{$articles[0]->headline}}
+				        	@endif
+				        </label></h6>
 				      </div>   
 				    </div>
 				    <div class="carousel-item">
 				    	<a href="#page1">
 				      <img src={{ URL::asset('slike/carousel2.jpg') }} alt="pic2" width="1100" height="300"></a>
 				      <div class="carousel-caption">
-				        <h1 class="display-4"><label>{{$articles[1]->headline}}</label></h1>
+				        <h1 class="display-4"><label>@if($length>1)
+				        	{{$articles[1]->headline}}
+				        	@endif</label></h1>
 				      </div>   
 				    </div>
 				    <div class="carousel-item">
 				    	<a href="#page2">
 				      <img src={{ URL::asset('slike/carousel3.jpg') }} alt="pic3" width="1100" height="300"></a>
 				      <div class="carousel-caption">
-				        <h1 class="display-4"><label>{{$articles[2]->headline}}</label></h1>
+				        <h1 class="display-4"><label>@if($length>2)
+				        	{{$articles[2]->headline}}
+				        	@endif</label></h1>
 				      </div>   
 				    </div>
 				    
@@ -127,9 +135,19 @@
 													@endif
 												@endforeach
 											</div>
-											<a data-toggle="collapse" href="#collapseArticle{{ $articles[$j]->id }}" onclick="proba('klik{{ $articles[$j]->id }}')" >
-												<i class="material-icons" > <label style="cursor:pointer;" id="klik{{ $articles[$j]->id }}">expand_more</label></i>
-											</a>
+											<div class="row">
+								<div class="col-sm-2">
+								<a data-toggle="collapse" href="#collapseArticle{{ $articles[$j]->id }}" onclick="proba('klik{{ $articles[$j]->id }}')" >
+									<i class="material-icons" > <label style="cursor:pointer;" id="klik{{ $articles[$j]->id }}">expand_more</label></i>
+								</a>
+								</div>
+								<div class="col-sm-10 headline" style="text-align:right;">
+									<img src="/{{$authors[$j]->icon}}" width="15px">
+									<strong>{{$authors[$j]->username}}</strong>,
+									{{$articles[$j]->updated_at}}
+									
+								</div>
+								</div>
 										</div>
 									</div>
 								</div>
@@ -165,7 +183,7 @@
 									<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="row">
 									<div class="col-sm-8">
-										<input type="text" class="form-control form-control-sm" name="usernameSearch" id="usernameSearch" style="font-size=8pt;">
+										<input type="text" class="form-control form-control-sm" name="usernameSearch" id="usernameSearch" style="font-size=8pt;" value="{{$p}}">
 									</div>
 									<div class="col-sm-4">
 										<button type="submit" class="btn btn-primary btn-sm">Trazi</button>
@@ -178,7 +196,7 @@
 							$length = count($users);
 						@endphp
 						<!--      sredi ovooo   -->
-						@foreach($errors as $error)
+						@foreach($errors->all() as $error)
 							<p>{{$error}}</p>
 						@endforeach
 						@if($length > 0 && ($users[0] == "Ne postoji korisnik"))
