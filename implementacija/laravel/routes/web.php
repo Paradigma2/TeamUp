@@ -97,5 +97,6 @@ Route::get('/home','UserController@home');//ove stavi na guest lobby
 
 
 Route::post('registerUser','UserController@registerUser');
+Route::post('deleteAd','UserController@deleteAd');
 
 

@@ -33,7 +33,7 @@ return [
     'confirmed'            => 'The :attribute confirmation does not match.',
     'date'                 => 'The :attribute is not a valid date.',
     'date_format'          => 'The :attribute does not match the format :format.',
-    'different'            => 'The :attribute and :other must be different.',
+    'different'            => 'Polja :attribute i :other moraju biti različita.',
     'digits'               => 'The :attribute must be :digits digits.',
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
     'dimensions'           => 'The :attribute has invalid image dimensions.',
@@ -53,7 +53,7 @@ return [
     'max'                  => [
         'numeric' => 'The :attribute may not be greater than :max.',
         'file'    => 'The :attribute may not be greater than :max kilobytes.',
-        'string'  => 'The :attribute may not be greater than :max characters.',
+        'string'  => 'Polje :attribute ne sme biti veće od :max karaktera.',
         'array'   => 'The :attribute may not have more than :max items.',
     ],
     'mimes'                => 'The :attribute must be a file of type: :values.',
@@ -61,7 +61,7 @@ return [
     'min'                  => [
         'numeric' => 'The :attribute must be at least :min.',
         'file'    => 'The :attribute must be at least :min kilobytes.',
-        'string'  => 'The :attribute must be at least :min characters.',
+        'string'  => ':attribute mora imati najmanje :min karaktera.',
         'array'   => 'The :attribute must have at least :min items.',
     ],
     'not_in'               => 'The selected :attribute is invalid.',
@@ -75,7 +75,7 @@ return [
     'required_with_all'    => 'The :attribute field is required when :values is present.',
     'required_without'     => 'The :attribute field is required when :values is not present.',
     'required_without_all' => 'The :attribute field is required when none of :values are present.',
-    'same'                 => 'The :attribute and :other must match.',
+    'same'                 => 'Polja :attribute i :other moraju biti ista.',
     'size'                 => [
         'numeric' => 'The :attribute must be :size.',
         'file'    => 'The :attribute must be :size kilobytes.',

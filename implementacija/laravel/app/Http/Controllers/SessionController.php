@@ -42,8 +42,9 @@ class SessionController extends Controller
     //	}
     	
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
-    		
-    		return  redirect('users');
+    	//  $rank=Rank::find(Auth::user()->rank_id);
+            $rank='bla';
+    		return  redirect('users')->with( ['rank' =>'asd'] );
     	}else{
     		
     		return back()->withErrors("Pogrešan username ili password!");
