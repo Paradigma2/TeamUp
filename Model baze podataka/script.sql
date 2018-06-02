@@ -1,271 +1,319 @@
--- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Generation Time: May 30, 2018 at 06:05 PM
--- Server version: 5.7.19
--- PHP Version: 7.1.9
+-- Create tables section -------------------------------------------------
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+-- Table User
+
+CREATE TABLE `User`
+(
+  `UserID` Int NOT NULL,
+  `Username` Varchar(20) NOT NULL,
+  `Password` Varchar(20) NOT NULL,
+  `Online` Bool NOT NULL,
+  `isAdmin` Bool NOT NULL,
+  `isMod` Bool NOT NULL,
+  `LoLNick` Varchar(20) NOT NULL,
+  `Lvl` Int NOT NULL,
+  `Age` Int,
+  `Grade` Double,
+  `Description` Text,
+  `Icon` Varchar(50),
+  `RankID` Int NOT NULL
+)
+;
+
+CREATE INDEX `IX_Relationship1` ON `User` (`RankID`)
+;
+
+ALTER TABLE `User` ADD PRIMARY KEY (`UserID`)
+;
+
+-- Table Rank
+
+CREATE TABLE `Rank`
+(
+  `RankID` Int NOT NULL,
+  `Name` Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE `Rank` ADD PRIMARY KEY (`RankID`)
+;
+
+-- Table Message
+
+CREATE TABLE `Message`
+(
+  `MessageID` Int NOT NULL,
+  `UserFromID` Int NOT NULL,
+  `UserToID` Int NOT NULL,
+  `Content` Text NOT NULL,
+  `Time` Timestamp NOT NULL
+)
+;
+
+CREATE INDEX `IX_Relationship3` ON `Message` (`UserFromID`)
+;
+
+CREATE INDEX `IX_Relationship4` ON `Message` (`UserToID`)
+;
+
+ALTER TABLE `Message` ADD PRIMARY KEY (`MessageID`)
+;
+
+-- Table Follow
+
+CREATE TABLE `Follow`
+(
+  `UserID` Int NOT NULL,
+  `UserFollowedID` Int NOT NULL
+)
+;
+
+CREATE INDEX `IX_Relationship5` ON `Follow` (`UserID`)
+;
+
+CREATE INDEX `IX_Relationship6` ON `Follow` (`UserFollowedID`)
+;
+
+ALTER TABLE `Follow` ADD PRIMARY KEY (`UserFollowedID`,`UserID`)
+;
+
+-- Table Comment
+
+CREATE TABLE `Comment`
+(
+  `CommentID` Int NOT NULL,
+  `Content` Text,
+  `Grade` Int NOT NULL,
+  `Time` Timestamp NOT NULL,
+  `UserID` Int NOT NULL,
+  `UserCommentingID` Int NOT NULL
+)
+;
+
+CREATE INDEX `IX_Relationship7` ON `Comment` (`UserID`)
+;
+
+CREATE INDEX `IX_Relationship8` ON `Comment` (`UserCommentingID`)
+;
+
+ALTER TABLE `Comment` ADD PRIMARY KEY (`CommentID`)
+;
+
+-- Table Article
+
+CREATE TABLE `Article`
+(
+  `ArticleID` Int NOT NULL,
+  `Headline` Varchar(100) NOT NULL,
+  `Content` Text NOT NULL,
+  `Time` Timestamp NOT NULL,
+  `Image` Varchar(50),
+  `UserID` Int NOT NULL
+)
+;
+
+CREATE INDEX `IX_Relationship9` ON `Article` (`UserID`)
+;
+
+ALTER TABLE `Article` ADD PRIMARY KEY (`ArticleID`)
+;
+
+-- Table Block
+
+CREATE TABLE `Block`
+(
+  `UserID` Int NOT NULL,
+  `UserBlockedID` Int NOT NULL
+)
+;
+
+CREATE INDEX `IX_Relationship10` ON `Block` (`UserID`)
+;
+
+CREATE INDEX `IX_Relationship11` ON `Block` (`UserBlockedID`)
+;
+
+ALTER TABLE `Block` ADD PRIMARY KEY (`UserID`,`UserBlockedID`)
+;
+
+-- Table Ban
+
+CREATE TABLE `Ban`
+(
+  `UserID` Int NOT NULL,
+  `Username` Varchar(20) NOT NULL,
+  `LoLNick` Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE `Ban` ADD PRIMARY KEY (`UserID`)
+;
+
+-- Table Ad
+
+CREATE TABLE `Ad`
+(
+  `AdID` Int NOT NULL,
+  `Description` Text,
+  `Time` Timestamp NOT NULL,
+  `UserID` Int NOT NULL,
+  `PositionID` Int NOT NULL,
+  `ModeID` Int NOT NULL,
+  `MasteryID1` Int NOT NULL,
+  `MasteryID2` Int,
+  `MasteryID3` Int
+)
+;
+
+CREATE INDEX `IX_Relationship12` ON `Ad` (`UserID`)
+;
+
+CREATE INDEX `IX_Relationship18` ON `Ad` (`PositionID`)
+;
+
+CREATE INDEX `IX_Relationship19` ON `Ad` (`ModeID`)
+;
+
+CREATE INDEX `IX_Relationship21` ON `Ad` (`MasteryID1`)
+;
+
+CREATE INDEX `IX_Relationship22` ON `Ad` (`MasteryID2`)
+;
+
+CREATE INDEX `IX_Relationship23` ON `Ad` (`MasteryID3`)
+;
+
+ALTER TABLE `Ad` ADD PRIMARY KEY (`AdID`)
+;
+
+-- Table Champion
+
+CREATE TABLE `Champion`
+(
+  `ChampID` Int NOT NULL,
+  `Name` Varchar(20) NOT NULL,
+  `Icon` Varchar(50) NOT NULL
+)
+;
+
+ALTER TABLE `Champion` ADD PRIMARY KEY (`ChampID`)
+;
+
+-- Table Mastery
+
+CREATE TABLE `Mastery`
+(
+  `MasteryID` Int NOT NULL,
+  `MasteryLvl` Int NOT NULL,
+  `MasteryPoints` Double NOT NULL,
+  `UserID` Int NOT NULL,
+  `ChampID` Int NOT NULL
+)
+;
+
+CREATE INDEX `IX_Relationship17` ON `Mastery` (`UserID`)
+;
+
+CREATE INDEX `IX_Relationship20` ON `Mastery` (`ChampID`)
+;
+
+ALTER TABLE `Mastery` ADD PRIMARY KEY (`MasteryID`)
+;
+
+-- Table Position
+
+CREATE TABLE `Position`
+(
+  `PositionID` Int NOT NULL,
+  `Name` Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE `Position` ADD PRIMARY KEY (`PositionID`)
+;
+
+-- Table Mode
+
+CREATE TABLE `Mode`
+(
+  `ModeID` Int NOT NULL,
+  `Name` Varchar(20) NOT NULL
+)
+;
+
+ALTER TABLE `Mode` ADD PRIMARY KEY (`ModeID`)
+;
+
+-- Create foreign keys (relationships) section ------------------------------------------------- 
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+ALTER TABLE `User` ADD CONSTRAINT `Relationship1` FOREIGN KEY (`RankID`) REFERENCES `Rank` (`RankID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
---
--- Database: `teamup`
---
 
--- --------------------------------------------------------
+ALTER TABLE `Message` ADD CONSTRAINT `Relationship3` FOREIGN KEY (`UserFromID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
---
--- Table structure for table `ads`
---
 
-DROP TABLE IF EXISTS `ads`;
-CREATE TABLE IF NOT EXISTS `ads` (
-  `adID` int(11) NOT NULL AUTO_INCREMENT,
-  `description` text COLLATE utf8_unicode_ci,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `UserID` int(11) NOT NULL,
-  `positionID` int(11) NOT NULL,
-  `modeID` int(11) NOT NULL,
-  `masteryID1` int(11) NOT NULL,
-  `masteryID2` int(11) DEFAULT NULL,
-  `masteryID3` int(11) DEFAULT NULL,
-  PRIMARY KEY (`adID`),
-  KEY `IX_Relationship12` (`UserID`),
-  KEY `IX_Relationship18` (`positionID`),
-  KEY `IX_Relationship19` (`modeID`),
-  KEY `IX_Relationship21` (`masteryID1`),
-  KEY `IX_Relationship22` (`masteryID2`),
-  KEY `IX_Relationship23` (`masteryID3`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ALTER TABLE `Message` ADD CONSTRAINT `Relationship4` FOREIGN KEY (`UserToID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `articles`
---
+ALTER TABLE `Follow` ADD CONSTRAINT `Relationship5` FOREIGN KEY (`UserID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
-DROP TABLE IF EXISTS `articles`;
-CREATE TABLE IF NOT EXISTS `articles` (
-  `articleID` int(11) NOT NULL AUTO_INCREMENT,
-  `headline` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `content` text COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `image` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `userID` int(11) NOT NULL,
-  PRIMARY KEY (`articleID`),
-  KEY `IX_Relationship9` (`userID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
+ALTER TABLE `Follow` ADD CONSTRAINT `Relationship6` FOREIGN KEY (`UserFollowedID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
---
--- Table structure for table `bans`
---
 
-DROP TABLE IF EXISTS `bans`;
-CREATE TABLE IF NOT EXISTS `bans` (
-  `userID` int(11) NOT NULL,
-  `username` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `lolNick` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`userID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ALTER TABLE `Comment` ADD CONSTRAINT `Relationship7` FOREIGN KEY (`UserID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `blocks`
---
+ALTER TABLE `Comment` ADD CONSTRAINT `Relationship8` FOREIGN KEY (`UserCommentingID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
-DROP TABLE IF EXISTS `blocks`;
-CREATE TABLE IF NOT EXISTS `blocks` (
-  `userFromID` int(11) NOT NULL,
-  `userToID` int(11) NOT NULL,
-  PRIMARY KEY (`userFromID`,`userToID`),
-  KEY `IX_Relationship10` (`userFromID`),
-  KEY `IX_Relationship11` (`userToID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
+ALTER TABLE `Article` ADD CONSTRAINT `Relationship9` FOREIGN KEY (`UserID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
---
--- Table structure for table `champions`
---
 
-DROP TABLE IF EXISTS `champions`;
-CREATE TABLE IF NOT EXISTS `champions` (
-  `champID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `icon` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`champID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ALTER TABLE `Block` ADD CONSTRAINT `Relationship10` FOREIGN KEY (`UserID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `comments`
---
+ALTER TABLE `Block` ADD CONSTRAINT `Relationship11` FOREIGN KEY (`UserBlockedID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
-DROP TABLE IF EXISTS `comments`;
-CREATE TABLE IF NOT EXISTS `comments` (
-  `commentID` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text COLLATE utf8_unicode_ci,
-  `grade` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `userFromID` int(11) NOT NULL,
-  `userToID` int(11) NOT NULL,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`commentID`),
-  KEY `IX_Relationship7` (`userFromID`),
-  KEY `IX_Relationship8` (`userToID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
+ALTER TABLE `Ad` ADD CONSTRAINT `Relationship12` FOREIGN KEY (`UserID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
---
--- Table structure for table `conversations`
---
 
-DROP TABLE IF EXISTS `conversations`;
-CREATE TABLE IF NOT EXISTS `conversations` (
-  `conversationID` int(11) NOT NULL AUTO_INCREMENT,
-  `userID1` int(11) NOT NULL,
-  `userID2` int(11) NOT NULL,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`conversationID`),
-  KEY `IX_Relationship3` (`userID1`),
-  KEY `IX_Relationship4` (`userID2`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ALTER TABLE `Mastery` ADD CONSTRAINT `Relationship17` FOREIGN KEY (`UserID`) REFERENCES `User` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `follows`
---
+ALTER TABLE `Ad` ADD CONSTRAINT `Relationship18` FOREIGN KEY (`PositionID`) REFERENCES `Position` (`PositionID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
-DROP TABLE IF EXISTS `follows`;
-CREATE TABLE IF NOT EXISTS `follows` (
-  `userID` int(11) NOT NULL,
-  `userFollowedID` int(11) NOT NULL,
-  PRIMARY KEY (`userFollowedID`,`userID`),
-  KEY `IX_Relationship5` (`userID`),
-  KEY `IX_Relationship6` (`userFollowedID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
+ALTER TABLE `Ad` ADD CONSTRAINT `Relationship19` FOREIGN KEY (`ModeID`) REFERENCES `Mode` (`ModeID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
---
--- Table structure for table `masteries`
---
 
-DROP TABLE IF EXISTS `masteries`;
-CREATE TABLE IF NOT EXISTS `masteries` (
-  `masteryID` int(11) NOT NULL AUTO_INCREMENT,
-  `masteryLvl` int(11) NOT NULL,
-  `masteryPoints` double NOT NULL,
-  `userID` int(11) NOT NULL,
-  `champID` int(11) NOT NULL,
-  PRIMARY KEY (`masteryID`),
-  KEY `IX_Relationship17` (`userID`),
-  KEY `IX_Relationship20` (`champID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+ALTER TABLE `Mastery` ADD CONSTRAINT `Relationship20` FOREIGN KEY (`ChampID`) REFERENCES `Champion` (`ChampID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
--- --------------------------------------------------------
 
---
--- Table structure for table `messages`
---
+ALTER TABLE `Ad` ADD CONSTRAINT `Relationship21` FOREIGN KEY (`MasteryID1`) REFERENCES `Mastery` (`MasteryID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
-DROP TABLE IF EXISTS `messages`;
-CREATE TABLE IF NOT EXISTS `messages` (
-  `messageID` int(11) NOT NULL AUTO_INCREMENT,
-  `conversationID` int(11) NOT NULL,
-  `userID` int(11) NOT NULL,
-  `content` text COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`messageID`),
-  KEY `IX_Relationship24` (`conversationID`),
-  KEY `IX_Relationship25` (`userID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
+ALTER TABLE `Ad` ADD CONSTRAINT `Relationship22` FOREIGN KEY (`MasteryID2`) REFERENCES `Mastery` (`MasteryID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
 
---
--- Table structure for table `modes`
---
 
-DROP TABLE IF EXISTS `modes`;
-CREATE TABLE IF NOT EXISTS `modes` (
-  `modeID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`modeID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `positions`
---
-
-DROP TABLE IF EXISTS `positions`;
-CREATE TABLE IF NOT EXISTS `positions` (
-  `positionID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`positionID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `ranks`
---
-
-DROP TABLE IF EXISTS `ranks`;
-CREATE TABLE IF NOT EXISTS `ranks` (
-  `rankID` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`rankID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `userID` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `online` tinyint(1) NOT NULL,
-  `isAdmin` tinyint(1) NOT NULL,
-  `isMod` tinyint(1) NOT NULL,
-  `lolNick` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
-  `lvl` int(11) NOT NULL,
-  `age` int(11) DEFAULT NULL,
-  `grade` double DEFAULT NULL,
-  `description` text COLLATE utf8_unicode_ci,
-  `icon` varchar(64) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `rankID` int(11) NOT NULL,
-  PRIMARY KEY (`userID`),
-  KEY `IX_Relationship1` (`rankID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ALTER TABLE `Ad` ADD CONSTRAINT `Relationship23` FOREIGN KEY (`MasteryID3`) REFERENCES `Mastery` (`MasteryID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;

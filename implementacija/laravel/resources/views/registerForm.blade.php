@@ -13,10 +13,15 @@
 		<div class="row">
 			<div class="col-sm-1">&nbsp;</div>
 			<div class="col-sm-10 article">
-				@foreach($errors->all() as $error)
-					<li>{{$error}}</li>
-
-				@endforeach
+				
+				@isset($greska)
+					{{$greska}}
+				@endisset
+				@isset ($notMember)
+				    {{$notMember}}
+				@endisset
+				
+				
 				<form class="m-5" name="registerForm" action="registerUser" method="POST">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="form-group">
@@ -36,7 +41,7 @@
 								 		if($error == "The username has already been taken."){
 								 			echo "Korisnicko ime je zauzeto";
 								 		}
-								 }
+								 	}
 								 }
 								 ?>">
 							</div>

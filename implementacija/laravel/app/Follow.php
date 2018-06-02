@@ -4,9 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mode extends Model
+class Follow extends Model
 {
-
-    protected $table='mode';
-
+    protected $table='follow';
 }
