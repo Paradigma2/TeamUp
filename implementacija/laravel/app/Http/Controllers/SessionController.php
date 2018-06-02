@@ -44,18 +44,12 @@ class SessionController extends Controller
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
     		
     		return  redirect()->action('UserController@showUserLobby');
+
     	}else{
     		
     		return back()->withErrors("Pogrešan username ili password!");
     	}
-    	/* if (Auth::attempt($credentials)) {
-    	 	echo "da";
-    		//return  redirect('users/UserController');
-    	}else{
-    		
-    		return back()->withErrors("Pogrešan username ili password!");
-    	}
-*/
+    	
 
 
     }

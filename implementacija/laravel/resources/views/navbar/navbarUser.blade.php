@@ -16,8 +16,8 @@
 
         <div class="dropdown">
 
-	 	<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Nick
+	 	<a class="nav-link dropdown-toggle mr-1" href="#" id="navbardrop" data-toggle="dropdown">
+        {{Auth::user()->username}}
       </a>
       <div class="dropdown-menu">
 

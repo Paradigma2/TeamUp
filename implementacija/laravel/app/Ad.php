@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
+
     protected $table='ad';
 
     public function user()
@@ -21,3 +22,4 @@ class Ad extends Model
         return $this->belongsTo('App\Mode');
     }
 }
+

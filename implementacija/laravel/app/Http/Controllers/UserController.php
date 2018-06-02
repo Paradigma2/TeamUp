@@ -5,40 +5,159 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 
+use App\Rank;
+use App\Mode;
+use App\Champion;
+use App\Mastery;
+use App\Comment;
+
+
+
+
+
 use Validator;
 use Illuminate\Support\Facades\Auth;
 
-use App\Rank;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Ad;
+use App\Position;
+
+
 use App\Article;
 use App\Follow;
 
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 
 
 class UserController extends Controller
 {
     public function index(){
-    
-    	return view('profile.profileUser');
+        $rank=Rank::find(Auth::user()->rank_id);
+        
+        $adsModel=Ad::where('user_id',Auth::user()->id)->get();
+
+        $i=0;
+        $niz1=[];
+        $niz2=[];
+        $niz3=[];
+        foreach($adsModel as $ad){
+
+            $position= Position::where('id',$ad->position_id)->first();
+            $ime=$position->name;
+
+            $mode=Mode::where('id',$ad->mode_id)->first();
+            $imeMode=$mode->name;
+
+            $mastery1=Mastery::where('id',$ad->mastery1_id)->first();
+            $champ1=Champion::where('id',$mastery1->champion_id)->first();
+            $icon1=$champ1->icon;
+            if($ad->mastery2_id!=null){
+                $mastery2=Mastery::where('id',$ad->mastery2_id)->first();
+                $champ2=Champion::where('id',$mastery2->champion_id)->first();
+                $icon2=$champ2->icon;
+            }
+            else{
+                $icon2=null;
+            }
+            if($ad->mastery3_id!=null){
+                $mastery3=Mastery::where('id',$ad->mastery3_id)->first();
+                $champ3=Champion::where('id',$mastery3->champion_id)->first();
+                $icon3=$champ3->icon;
+            }
+            else{
+                $icon3=null;
+            }
+           
+            $description=$ad->description;
+
+
+            if($i==0){
+                $niz1['position']= $position->name;
+                $niz1['mode']= $mode->name;
+                $niz1['description']= $description;
+                $niz1['icon1']= $icon1;
+                $niz1['icon2']= $icon2;
+                $niz1['icon3']= $icon3;
+                $niz1['id']=$ad->id;
+            }else if ($i==1){
+                $niz2['position']= $position->name;
+                $niz2['mode']= $mode->name;
+                $niz2['description']= $description;
+                $niz2['icon1']= $icon1;
+                $niz2['icon2']= $icon2;
+                $niz2['icon3']= $icon3;
+                $niz2['id']=$ad->id;
+            }else{
+                $niz3['position']= $position->name;
+                $niz3['mode']= $mode->name;
+                $niz3['description']= $description;
+                $niz3['icon1']= $icon1;
+                $niz3['icon2']= $icon2;
+                $niz3['icon3']= $icon3;
+                $niz3['id']=$ad->id;
+            }
+            $i++;
+          
+        }
+
+        $descr=Auth::user()->description;
+        $grade=round(Auth::user()->grade);
+        $comments=Comment::where('user_id',Auth::user()->id)->get();
+        $commentingUsers=[];
+        $commentingIcons=[];
+        $i=0;
+        foreach($comments as $c){
+           
+            $userCommenting=User::where('id',$c->userCommenting_id)->first();
+             $commentingUsers[$i]=$userCommenting->username;
+             $commentingIcons[$i]=$userCommenting->icon;
+            $i++;
+        }
+
+    	return view('profile.profileUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons);
     }
     
     public function editDescription(Request $request){
 
-    	//validacija
-        $descr=$request->input('opis');
-        // $user = User::where('Username', 'jana')->update(['Description'=>$descr]);
+
+    	$this->validate($request,[
+            'description'      =>'required|max:255',
+          
+        ]);
+        
+        $descr=$request->input('description');
+        $user = User::where('Username', Auth::user()->username)->update(['Description'=>$descr]);
+        return  redirect('users');
+
     }
     
     public function changePassword(Request $request){
+        //validacija fali da se proveri stara loznka sa lozinkom u bazi
+       
+        $this->validate($request,[
+            'staraLozinka'      =>'required',
+            'novaLozinka'      =>'required|max:20|min:4|same:ponoviLozinku|different:staraLozinka',
+            'ponoviLozinku'      =>'required',
+        ]);
+        
         $stara=$request->input('staraLozinka');
         $nova=$request->input('novaLozinka');
+        $novaLozinka= bcrypt($nova);
         $ponovi=$request->input('ponoviLozinku');
-       // $user = User::where('Username', 'jana')->update(['Password'=>$nova]);
+       $user = User::where('Username', 'jana')->update(['Password'=>$novaLozinka]);
+       return  redirect('users');
     }	
 
     public function home(){
         return view('guestLobby');
     }
+
+    public function deleteAd(Request $request){
+        $adId=$request->id;
+        Ad::where('id', $adId)->delete();
+        return  redirect('users');
+    }
+
 
     function get_http_response_code($url) {
         $headers = get_headers($url);
@@ -137,7 +256,11 @@ class UserController extends Controller
         file_put_contents($img, file_get_contents($url_icon));
 
         $user->icon=$img;
+
+        $user->level=$summoner->summonerLevel;
+
         $user->level = $summoner->summonerLevel;
+
         /*------------------------slika------------------------------*/
 
 

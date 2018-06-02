@@ -1,3 +1,5 @@
+
+
 @extends('main')
 
 @section('styles')
@@ -25,8 +27,8 @@
 				<div class="row mt-3">
 					<div class="col-sm-12">
 						<h1>
-							<label>
-								{{Auth::user()->username}}
+							<label>{{Auth::user()->username}}
+								
 							</label>
 
 
@@ -37,7 +39,7 @@
 					<div class="col-sm-12">
 						<h4>
 							<label>
-								Silver IV
+								 {{ $rank }}
 							</label>
 						</h4>
 					</div>
@@ -46,27 +48,19 @@
 					<div class="col-sm-12">
 						<h4>
 							<label>
-								Lvl 36
+								Lvl {{Auth::user()->level}}
 							</label>
 						</h4>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<div class="stars">
-						<form action="">
-						<input class="star star-5" id="star-5" type="radio" name="star"/>
-						<label class="star star-5" for="star-5"></label>
-						<input class="star star-4" id="star-4" type="radio" name="star"/>
-						<label class="star star-4" for="star-4"></label>
-						<input class="star star-3" id="star-3" type="radio" name="star"/>
-						<label class="star star-3" for="star-3"></label>
-						<input class="star star-2" id="star-2" type="radio" name="star"/>
-						<label class="star star-2" for="star-2"></label>
-						<input class="star star-1" id="star-1" type="radio" name="star"/>
-						<label class="star star-1" for="star-1"></label>
-						</form>
-				</div>
+							
+					@if($grade!=null)
+						Ocena: {{$grade}}
+					@else
+						Ocena: 	Nema ocene
+					@endif
 					</div>
 				</div>
 
@@ -138,11 +132,13 @@
 
 
 	<div class="row mt-1">
-		
-
-
+	<div class="col-sm-9">
+		<div class="row">
 	
-	<div class="col-sm-3 mt-3">
+
+@if($niz1!=null)
+	<div class="col-sm-4 mt-3">
+			
 			<div class="card  align-items-center" style="padding:10px;background-color: rgba(5,5,5,0.6); color:white">
 				<div class=" ml-auto">
 					<a href=/createEditAdForm>
@@ -151,7 +147,7 @@
 
 							<!--<i class="material-icons" style="cursor:pointer;">create</i>-->
 					</a>
-					<a data-toggle="modal" href="#deleteModal">
+					<a data-toggle="modal" href="#deleteModal1">
 						@yield('icon12')
 					</a> 	
 				</div>
@@ -159,7 +155,7 @@
 				
 					<h2 >
 						<label id="pozicija1">
-							ADC
+						{{$niz1['position']}}
 						</label>
 					</h2>
 
@@ -168,110 +164,155 @@
 				<div class="card-title">
 					<h3 >
 						<label id="mapa1">
-							Summoner's Rift
+							{{$niz1['mode']}}
 						</label>
 					</h3>
 				</div>
 
 				<div class="card-content  ">
-										<img class="round" border="3px" src="slike/Zyra.png" alt="Zyra">
-					<img class="round" border="3px" src="slike/Rakan.png" alt="Rakan">
-					<img class="round" border="3px" src="slike/Karma.png" alt="Karma">
+					<img class="round" border="3px" src="{{$niz1['icon1']}}" alt="">
+					@if($niz1['icon2']!=null) 
+					<img class="round" border="3px" src="{{$niz1['icon2']}}" alt="">
+					@endif
+					@if($niz1['icon3']!=null) 
+					<img class="round" border="3px" src="{{$niz1['icon3']}}" alt="">
+					@endif
 			
 		
 				</div>
 
 				<div class="card-text m-4"  style="color:#9D907D;">
-											Trazim partnera za ranked duo, junglera ili top laner-a, ali ok je i bilo koji igrac sa timskim duhom i voljom za pobedom.
+				{{$niz1['description']}} 
 					
 				</div>
 
 			</div>
+
+	
 	</div>
-	<div class="col-sm-3 mt-3">
+@endif
+
+
+@if($niz2!=null)
+	<div class="col-sm-4 mt-3">
+			
 			<div class="card  align-items-center" style="padding:10px;background-color: rgba(5,5,5,0.6); color:white">
 				<div class=" ml-auto">
-					<a href="/createEditAdForm">
-							@yield('icon21')
+					<a href=/createEditAdForm>
+							@yield('icon11')
 
 
 							<!--<i class="material-icons" style="cursor:pointer;">create</i>-->
 					</a>
-					<a data-toggle="modal" href="#deleteModal">
-						@yield('icon22')
+					<a data-toggle="modal" href="#deleteModal2">
+						@yield('icon12')
 					</a> 	
 				</div>
 				<div class="card-title">
+				
 					<h2 >
 						<label id="pozicija1">
-							Mid
+						{{$niz2['position']}}
 						</label>
 					</h2>
+
+
 				</div>
 				<div class="card-title">
 					<h3 >
 						<label id="mapa1">
-							Summoner's Rift
+							{{$niz2['mode']}}
 						</label>
 					</h3>
 				</div>
 
 				<div class="card-content  ">
-					<img class="round" border="3px" src="slike/Katarina.png" alt="Katarina">
-					<img class="round" border="3px" src="slike/Jayce.png" alt="Jayce">
-					<img class="round" border="3px" src="slike/Brand.png" alt="Brand">
+					<img class="round" border="3px" src="{{$niz2['icon1']}}" alt="">
+					@if($niz2['icon2']!=null) 
+					<img class="round" border="3px" src="{{$niz2['icon2']}}" alt="">
+					@endif
+					@if($niz2['icon3']!=null) 
+					<img class="round" border="3px" src="{{$niz2['icon3']}}" alt="">
+					@endif
 			
+		
 				</div>
 
 				<div class="card-text m-4"  style="color:#9D907D;">
-											Trazim partnera za ranked duo, junglera ili top laner-a, ali ok je i bilo koji igrac sa timskim duhom i voljom za pobedom.
+				{{$niz2['description']}} 
 					
 				</div>
 
 			</div>
+
+	
 	</div>
-	<div class="col-sm-3 mt-3">
+	@endif
+
+
+
+	@if($niz3!=null)
+	<div class="col-sm-4 mt-3">
+			
 			<div class="card  align-items-center" style="padding:10px;background-color: rgba(5,5,5,0.6); color:white">
 				<div class=" ml-auto">
-					<a href="/createEditAdForm">
-							@yield('icon31')
+					<a href=/createEditAdForm>
+							@yield('icon11')
 
 
 							<!--<i class="material-icons" style="cursor:pointer;">create</i>-->
 					</a>
-					<a data-toggle="modal" href="#deleteModal">
-						@yield('icon32')
+					<a data-toggle="modal" href="#deleteModal3">
+						@yield('icon12')
 					</a> 	
 				</div>
 				<div class="card-title">
+				
 					<h2 >
 						<label id="pozicija1">
-							Support
+						{{$niz3['position']}}
 						</label>
 					</h2>
+
+
 				</div>
 				<div class="card-title">
 					<h3 >
 						<label id="mapa1">
-							Summoner's Rift
+							{{$niz3['mode']}}
 						</label>
 					</h3>
 				</div>
 
 				<div class="card-content  ">
-					<img class="round" border="3px" src="slike/Elise.png" alt="Elise">
-					<img class="round" border="3px" src="slike/Diana.png" alt="Diana">
-					<img class="round" border="3px" src="slike/Jax.png" alt="Jax">
+					<img class="round" border="3px" src="{{$niz3['icon1']}}" alt="">
+					@if($niz3['icon2']!=null) 
+					<img class="round" border="3px" src="{{$niz3['icon2']}}" alt="">
+					@endif
+					@if($niz3['icon3']!=null) 
+					<img class="round" border="3px" src="{{$niz3['icon3']}}" alt="">
+					@endif
 			
+		
 				</div>
 
-				<div class="card-text m-4 "  style="color:#9D907D;">
-					Pretezno igram agresivne support-ove, trazi se adc sa dobrim skillom za farmu.. Posebno Jhin ili Vayne
-				
+				<div class="card-text m-4"  style="color:#9D907D;">
+				{{$niz3['description']}} 
+					
 				</div>
 
 			</div>
+
+
 	</div>
+	@endif	
+	</div>	
+</div>
+
+
+
+
+
 
 	<div class="col-sm-3" >
 			<div class=" card mt-3 sidebarCards" style="background-color: rgba(5,5,5,0.8)">
@@ -285,7 +326,7 @@
 				</h4>
 				<br>
 				<label class="card-text" style="color:#9D907D;">
-						Radnim danima igram LoL posle 19h, dok sam vikendom online tokom celog dana. :)
+						{{$descr}}
 			
 				</label>
 			</div>
@@ -301,8 +342,9 @@
 				</div>
   				<div class="container-fluid">	
   					
+  					<?php $i=0;?>
+  					@foreach($comments as $comment)
 
-  					
   					<div class="row ">
   						<div class="card container-fluid " style="padding:15px;background-color: rgba(5,5,5,0.5);">
   							<div class="row">
@@ -313,9 +355,9 @@
 								</div>
 							
 								
-								<div class="col-sm-12">
-										<img style="margin-bottom:5px; margin-left:-5px; vertical-align:bottom " width="35px" alt="Profilna slika" src="slike/icon3.jpg">
-									
+								<div class="col-sm-12 ">
+										<img style="margin-bottom:5px; margin-left:-5px; vertical-align:bottom " width="35px" alt="Profilna slika" src="{{$icons[$i]}}">
+									{{$users[$i]}}
 									
 								
 							    </div>
@@ -324,7 +366,7 @@
 						<div class="row" >
 							<div class="card-text ml-2 mr-2"  style="color:#9D907D;">
 								
-								Odlican ADC, kida kako farm-a, dogovr oko partije ispostovan maksimalno..
+								{{$comment->content}}
 							</div>
 							</div>
 						
@@ -332,85 +374,24 @@
 
 
 							<div class=" flex-col-sm-6">
-							<div class="stars">
-								<form action="">
-									<input class="star star-5" id="star-5" type="radio" name="star"/>
-									<label class="star star-5" for="star-5"></label>
-									<input class="star star-4" id="star-4" type="radio" name="star"/>
-									<label class="star star-4" for="star-4"></label>
-									<input class="star star-3" id="star-3" type="radio" name="star"/>
-									<label class="star star-3" for="star-3"></label>
-									<input class="star star-2" id="star-2" type="radio" name="star"/>
-									<label class="star star-2" for="star-2"></label>
-									<input class="star star-1" id="star-1" type="radio" name="star"/>
-									<label class="star star-1" for="star-1"></label>
-								</form>
-							</div>
+								Ocena: {{$comment->grade}}
 							</div>
 						
 						</div>
 					</div>
 					</div>
-
+					<?php $i++;?>
+					@endforeach
   				
-  					
-  					
-  					<div class="row mt-3	 ">
-  						<div class="card container-fluid " style="padding:15px;background-color: rgba(5,5,5,0.5);">
-  							<div class="row">
-  								<div class=" mr-2 ml-auto">
-  									<a data-toggle="modal" href="deleteModal">
-										@yield('btnSidebar2')
-									</a>
-								</div>
-							
-								
-								<div class="col-sm-12">
-										<img style="margin-bottom:5px; margin-left:-5px; vertical-align:bottom " width="35px" alt="Profilna slika" src="slike/icon3.jpg">
-									
-									
-								
-							    </div>
-							
-							</div>
-						<div class="row" >
-							<div class="card-text ml-2 mr-2"  style="color:#9D907D;">
-								
-								Odlican ADC, kida kako farm-a, dogovr oko partije ispostovan maksimalno..
-							</div>
-							</div>
-						
-						<div class="row d-flex justify-content-end">
-
-
-							<div class=" flex-col-sm-6">
-							<div class="stars">
-								<form action="">
-									<input class="star star-5" id="star-5" type="radio" name="star"/>
-									<label class="star star-5" for="star-5"></label>
-									<input class="star star-4" id="star-4" type="radio" name="star"/>
-									<label class="star star-4" for="star-4"></label>
-									<input class="star star-3" id="star-3" type="radio" name="star"/>
-									<label class="star star-3" for="star-3"></label>
-									<input class="star star-2" id="star-2" type="radio" name="star"/>
-									<label class="star star-2" for="star-2"></label>
-									<input class="star star-1" id="star-1" type="radio" name="star"/>
-									<label class="star star-1" for="star-1"></label>
-								</form>
-							</div>
-							</div>
-						
-						</div>
-					</div>
-					</div>
+  				
 			</div>
 
 		
 	</div>
 </div>
 
-
-	<div class="modal fade" id="deleteModal">
+<!-- delete za prvo ad-->
+	<div class="modal fade" id="deleteModal1">
 	  <div class="modal-dialog modal-dialog-centered">
 	    <div class="modal-content pages ">
 
@@ -427,7 +408,17 @@
 	      <div class="modal-body">
 	      	<div class="row">
 	      		<div class="col-sm-6">
-	      			<button type="button" class="buttonGrade btn-block	" style="padding:7px;" data-dismiss="modal" onclick="obrisiOglas(idDelete)">Potvrdi</button>
+	      			<form name="prva" method="post" action="deleteAd">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="id" value="
+
+						@if($niz1!=null)
+						{{$niz1['id']}}
+						@endif
+						">
+		
+	      				<button type="submit" class="buttonGrade btn-block	" style="padding:7px;"  >Potvrdi</button>
+	      			</form>
 	      		</div>
 	      		<div class="col-sm-6">
 	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
@@ -443,6 +434,90 @@
 	</div>
 
 
+<!-- delete za drugi ad-->
+	<div class="modal fade" id="deleteModal2">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content pages ">
+
+	      <!-- Modal Header -->
+	      <div class="modal-header ">
+	        <h4 class="modal-title d-flex justify-content-center">Da li ste sigurni?</h4>
+	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <!-- Modal body -->
+	      
+
+	      <!-- Modal footer -->
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div class="col-sm-6">
+	      			<form name="druga" method="post" action="deleteAd">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="id" value="
+
+						@if($niz2!=null)
+						{{$niz2['id']}}
+						@endif
+						">
+		
+	      				<button type="submit" class="buttonGrade btn-block	" style="padding:7px;"  >Potvrdi</button>
+	      			</form>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
+	      		</div>
+	      		
+	      	</div>
+	        
+	        
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+
+
+<!-- delete za treci ad-->
+	<div class="modal fade" id="deleteModal3">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content pages ">
+
+	      <!-- Modal Header -->
+	      <div class="modal-header ">
+	        <h4 class="modal-title d-flex justify-content-center">Da li ste sigurni?</h4>
+	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <!-- Modal body -->
+	      
+
+	      <!-- Modal footer -->
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div class="col-sm-6">
+	      			<form name="treca" method="post" action="deleteAd">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="id" value="
+						@if($niz3!=null)
+						{{$niz3['id']}}">
+						@endif
+		
+	      				<button type="submit" class="buttonGrade btn-block	" style="padding:7px;"  >Potvrdi</button>
+	      			</form>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
+	      		</div>
+	      		
+	      	</div>
+	        
+	        
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
 
 
 <div class="modal fade" id="changePassword">
@@ -456,7 +531,24 @@
 	      </div>
 
 	      <!-- Modal body -->
-	      
+	      @if(count($errors)>0)
+	      	@if ($errors->has('staraLozinka') || $errors->has('novaLozinka') || $errors->has('ponoviLozinku'))
+	         		<div class="alert-danger">
+	         			<ul>
+	         					@foreach ($errors->get('novaLozinka') as $message) 
+	         					<li>{{$message }} 	</li>
+	         					@endforeach
+	         					@foreach ($errors->get('staraLozinka') as $message) 
+	         					<li>{{$message }} 	</li>
+	         					@endforeach
+	         					@foreach ($errors->get('ponoviLozinku') as $message) 
+	         					<li>{{$message }} 	</li>
+	         					@endforeach
+	         			
+	         			</ul>
+	         		</div>
+	         		@endif
+	         	@endif
 
 	      <!-- Modal footer -->
 	      <div class="modal-body">
@@ -470,7 +562,7 @@
 	      						<label style="color:#9D907D;">	Stara lozinka:</label>
 	      					</div>
 	      					<div class="col-sm-6">
-	      						<input name="staraLozinka" type="text" >
+	      						<input name="staraLozinka" type="password" >
 	      					</div>
 	      				</div>
 	      			</div>
@@ -480,7 +572,7 @@
 	      						<label style="color:#9D907D;">	Nova lozinka:</label>
 	      					</div>
 	      					<div class="col-sm-6">
-	      						<input name="novaLozinka" type="text" >
+	      						<input name="novaLozinka" type="password" >
 	      					</div>
 	      				</div>
 	      			</div>
@@ -490,7 +582,7 @@
 	      						<label style="color:#9D907D;">	Ponovi lozinku:</label>
 	      					</div>
 	      					<div class="col-sm-6">
-	      						<input name="ponoviLozinku" type="text" >
+	      						<input name="ponoviLozinku" type="password" >
 	      					</div>
 	      				</div>
 	      			</div>
@@ -531,6 +623,17 @@
 
 	      <!-- Modal body -->
 	      
+ 				 @if(count($errors)>0)
+			 		 @if($errors->has('description'))
+	         			<div class="alert-danger">
+	         				<ul>
+	         					@foreach ($errors->get('description') as $message) 
+	         					<li>{{$message }} 	</li>
+	         					@endforeach
+	         				</ul>
+	         			</div>
+	         		@endif
+	         	@endif
 
 	      <!-- Modal footer -->
 	      <div class="modal-body">
@@ -543,8 +646,7 @@
 	      				
 	      				<div class="row">
 	      					<div class="col-sm-12">
-	      					<textarea name="opis" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača">
-	      					</textarea>
+	      					<textarea name="description" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača"></textarea>
 	      					</div>
 	      				</div>
 	      			</div>

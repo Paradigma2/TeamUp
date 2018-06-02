@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
+
+	// sredjuje sve php artisan migrate:refresh --seed
     /**
      * Run the database seeds.
      *

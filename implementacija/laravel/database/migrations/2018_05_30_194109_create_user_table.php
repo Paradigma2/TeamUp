@@ -28,7 +28,7 @@ class CreateUserTable extends Migration
             $table->string('icon', 100)->nullable();
           
             $table->integer('rank_id')->unsigned();
-            $table->foreign('rank_id')->references('id')->on('rank')->onDelete('cascade');;
+            $table->foreign('rank_id')->references('id')->on('rank')->onDelete('cascade');
             $table->string('remember_token',100)->nullable();
             $table->timestamps();
 
