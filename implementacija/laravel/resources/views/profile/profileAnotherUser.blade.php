@@ -7,11 +7,11 @@
 
 
 @section('navbar')
-
-
-	@include('navbar/navbarUser')
-
-
+	@if(Auth::user()->isMod)
+		@include('navbar/navbarModerator')
+	@else
+		@include('navbar/navbarUser')
+	@endif
 @endsection
 
 
@@ -23,11 +23,16 @@
 
 
 @section('blokiraj')
-	<button  class="button" href="">Blokiraj</button>
+
+	<button  class="button"  href="">Blokiraj</button>
 @endsection
 
 @section('zaprati')
+	@if($prati==0)
 	<button  class="button" href="">Zaprati</button>
+	@else
+		<button  class="button" href="">Prekini praćenje</button>
+	@endif
 @endsection
 
 @section('posaljiPorukuAdmin')

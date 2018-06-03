@@ -6,12 +6,13 @@
 @endsection
 
 
+
 @section('navbar')
-
-
-	@include('navbar/navbarUser')
-
-
+	@if(Auth::user()->isMod)
+		@include('navbar/navbarModerator')
+	@else
+		@include('navbar/navbarUser')
+	@endif
 @endsection
 
 
@@ -29,7 +30,7 @@
 @endsection
 
 @section('kreirajOglas')
-	<button  class="button"><a class="clearFormat" href="/createEditAdForm">Kreiraj oglas</a></button>
+	<button  class="button"><a class="clearFormat" href="createEditAdForm">Kreiraj oglas</a></button>
 @endsection
 
 @section('obrisiNalog')

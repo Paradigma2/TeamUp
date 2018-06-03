@@ -8,12 +8,34 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{ URL::asset('css/styleProfile.css') }}">
 @endsection
+
+
+@if(Session::get('msgBlocked')!=null)
+
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+
+
+@if(Session::get('msgComment')!=null)
+
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+  <strong style="color:black;">{{Session::get('msgComment')}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
 @section('content')
 
 	<div class="row mt-3"  style="background-color: rgba(5,5,5,0.8); color:white;">
 		<div class="col-sm-2 " >
 			<div class="profilePicture m-4" width="185px">
-				<img class="blur" border="2px" src="{{URL::asset('/slike/icon.jpg')}}"alt="Profilna slika" width="185px">
+				<img class="blur" border="2px" src="{{$profilePic}}"alt="Profilna slika" width="185px">
 				<div class="editProfilePicture" >
 					<button class="icon mt-1" >
 						<i>@yield('editProfilePicture')</i>
@@ -27,7 +49,7 @@
 				<div class="row mt-3">
 					<div class="col-sm-12">
 						<h1>
-							<label>{{Auth::user()->username}}
+							<label>{{$username}}
 								
 							</label>
 
@@ -48,7 +70,7 @@
 					<div class="col-sm-12">
 						<h4>
 							<label>
-								Lvl {{Auth::user()->level}}
+								Lvl {{$level}}
 							</label>
 						</h4>
 					</div>
@@ -99,7 +121,7 @@
 						@yield('promeniLozinku')
 						</a>
 						@yield('oceniKorisnika')
-						<a class="clearFormat" data-toggle="modal" href="#deleteModal">
+						<a class="clearFormat" data-toggle="modal" href="#udaljiSaSajta">
 							@yield('udaljiSaSajta')
 						</a>
 					</div>
@@ -107,10 +129,10 @@
 				<div class="row">
 					<div class="col-sm-12">
 						@yield('kreirajOglas')
-						<a class="clearFormat" data-toggle="modal" href="#deleteModal">
+						<a class="clearFormat" data-toggle="modal" href="#blokirajKor">
 						@yield('blokiraj')
 						</a>
-						<a class="clearFormat" data-toggle="modal" href="#deleteModal">
+						<a class="clearFormat"  href="unaprediKor?korisnik={{$username}}">
 							@yield('unapredi')
 						</a>
 					</div>
@@ -120,7 +142,9 @@
 						<a class="clearFormat" data-toggle="modal" href="#deleteModal"> 
 						@yield('obrisiNalog')
 						</a>
-						@yield('zaprati')
+						<a class="clearFormat"  href="zapratiKor?pracenKorisnik={{$username}}">
+							@yield('zaprati')
+						</a>
 						<a class="clearFormat" data-toggle="modal" href="#sendMessage">
 							@yield('posaljiPorukuAdmin')
 						</a>
@@ -349,7 +373,7 @@
   						<div class="card container-fluid " style="padding:15px;background-color: rgba(5,5,5,0.5);">
   							<div class="row">
   								<div class=" mr-2 ml-auto">
-  									<a data-toggle="modal" href="#deleteModal">
+  									<a  href="obrisiKom?korisnik={{$username}}&komentar={{$comments[$i]->id}}">
 										@yield('btnSidebar1')
 									</a>
 								</div>
@@ -519,6 +543,93 @@
 	  </div>
 	</div>
 
+<!-- za bokiranje-->
+<div class="modal fade" id="blokirajKor">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content pages ">
+
+	      <!-- Modal Header -->
+	      <div class="modal-header ">
+	        <h4 class="modal-title d-flex justify-content-center">Da li ste sigurni?</h4>
+	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <!-- Modal body -->
+	      
+
+	      <!-- Modal footer -->
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div class="col-sm-6">
+	      			<form name="prva" method="post" action="blokirajKorisnika">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="username" value="
+						{{$username}}
+						">
+		
+	      				<button type="submit" class="buttonGrade btn-block	" style="padding:7px;"  >Potvrdi</button>
+	      			</form>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
+	      		</div>
+	      		
+	      	</div>
+	        
+	        
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+
+
+<!-- Banovanje sa sajta-->
+
+<div class="modal fade" id="udaljiSaSajta">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content pages ">
+
+	      <!-- Modal Header -->
+	      <div class="modal-header ">
+	        <h4 class="modal-title d-flex justify-content-center">Da li ste sigurni?</h4>
+	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <!-- Modal body -->
+	      
+
+	      <!-- Modal footer -->
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div class="col-sm-6">
+	      			<form name="prva" method="post" action="udaljiSaSajta">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="username" value="
+						{{$username}}
+						">
+		
+	      				<button type="submit" class="buttonGrade btn-block	" style="padding:7px;"  >Potvrdi</button>
+	      			</form>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
+	      		</div>
+	      		
+	      	</div>
+	        
+	        
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+
+
 
 <div class="modal fade" id="changePassword">
 	  <div class="modal-dialog modal-dialog-centered">
@@ -675,14 +786,14 @@
 
 
 
-
+<!-- Slanje poruke-->
 <div class="modal fade" id="sendMessage">
 	  <div class="modal-dialog modal-dialog-centered">
 	    <div class="modal-content pages ">
 
 	      <!-- Modal Header -->
 	      <div class="modal-header ">
-	        <h4 class="modal-title d-flex justify-content-center" >Pošalji poruku : Nick</h4>
+	        <h4 class="modal-title d-flex justify-content-center" >Pošalji poruku : {{$username}}</h4>
 	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
 	      </div>
 
@@ -693,20 +804,41 @@
 	      <div class="modal-body">
 	      	<div class="container">
 	      		
-	      		<form class="m-3">
+	      		<form class="m-3" method="post" action="slanjePoruke">
+
+
+ 	 @if(count($errors)>0)
+	      	@if ($errors->has('poruka') )
+	         		<div class="alert-danger">
+	         			<ul>
+	         					@foreach ($errors->get('poruka') as $message) 
+	         					<li>{{$message }} 	</li>
+	         					@endforeach
+	         					
+
+	         			
+	         			</ul>
+	         		</div>
+	         		@endif
+	         	@endif
+
+
+	      				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="username" value="
+						{{$username}}
+						">
 	      			<div class="form-group">
 	      				
 	      				<div class="row">
 	      					<div class="col-sm-12">
-	      					<textarea style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača">
-	      					</textarea>
+	      					<textarea name="poruka" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača"></textarea>
 	      					</div>
 	      				</div>
 	      			</div>
 	      			
 	      				<div class="row">
 	      		<div class="col-sm-6">
-	      			<button type="button" class="buttonGrade btn-block	" style="padding:7px;" data-dismiss="modal" onclick="obrisiOglas(idDelete)">Pošalji</button>
+	      			<button type="submit" class="buttonGrade btn-block	" style="padding:7px;">Pošalji</button>
 	      		</div>
 	      		<div class="col-sm-6">
 	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
@@ -745,7 +877,12 @@
 	      <div class="modal-body">
 	      	<div class="container">
 	      		
-	      		<form class="m-3">
+	      		<form class="m-3" method="post" action="oceniKorisnika">
+
+	      				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="username" value="
+						{{$username}}
+						">
 	      			<div class="form-group">
 	      				<div class="row">
 	      					<div class="col-sm-12">
@@ -756,8 +893,7 @@
 	      				</div>
 	      				<div class="row">
 	      					<div class="col-sm-12">
-	      					<textarea style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača">
-	      					</textarea>
+	      					<textarea name="komentar" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača"></textarea>
 	      					</div>
 	      				</div>
 	      				<div class="row mt-3">
@@ -766,28 +902,19 @@
 	      							Ostavi ocenu:
 	      						</label>
 	      					</div>
-	      					<div class="col-sm-6 ml-auto ">
-						<div class="stars">
-						<form action="">
-						<input class="star star-5" id="star-5" type="radio" name="star"/>
-						<label class="star star-5" for="star-5"></label>
-						<input class="star star-4" id="star-4" type="radio" name="star"/>
-						<label class="star star-4" for="star-4"></label>
-						<input class="star star-3" id="star-3" type="radio" name="star"/>
-						<label class="star star-3" for="star-3"></label>
-						<input class="star star-2" id="star-2" type="radio" name="star"/>
-						<label class="star star-2" for="star-2"></label>
-						<input class="star star-1" id="star-1" type="radio" name="star"/>
-						<label class="star star-1" for="star-1"></label>
-						</form>
-					</div>
+	      				<div class="col-sm-6 ml-auto ">
+							<input type="radio" name="ocena" checked value="1">1 &nbsp;
+							<input type="radio" name="ocena"  value="2">2 &nbsp;
+							<input type="radio" name="ocena"  value="3">3 &nbsp;
+							<input type="radio" name="ocena"  value="4">4 &nbsp;
+							<input type="radio" name="ocena"  value="5">5 &nbsp;
 	      				</div>
 	      				
 	      			</div>
 	      			
 	      				<div class="row">
 	      		<div class="col-sm-6">
-	      			<button type="button" class="buttonGrade btn-block	" style="padding:7px;" data-dismiss="modal" onclick="obrisiOglas(idDelete)">Pošalji</button>
+	      			<button type="submit" class="buttonGrade btn-block	" style="padding:7px;" >Postavi</button>
 	      		</div>
 	      		<div class="col-sm-6">
 	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
