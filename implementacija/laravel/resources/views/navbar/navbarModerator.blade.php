@@ -1,7 +1,7 @@
 @extends('navbar/navbar')
 
 @section('link1')
-	<a class="nav-link"  href="#">Lobi</a>
+	<a class="nav-link"  href="/home">Lobi</a>
 @endsection
 
 @section('link2')
@@ -9,7 +9,7 @@
 @endsection
 
 @section('link3')
-	<a class="nav-link"  href="#">Članci</a>
+	<a class="nav-link"  href="/articles">Članci</a>
 @endsection
 
 
@@ -20,13 +20,13 @@
 	<div class="dropdown ">
 
 	 	<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Nick
+        {{Auth::user()->username}}
       </a>
       <div class="dropdown-menu">
 
         <a class="dropdown-item" href="#">Profil</a>
         <a class="dropdown-item" href="#">Inbox</a>
-        <a class="dropdown-item" href="#">Log out</a>
+        <a class="dropdown-item" href="/logOut">Log out</a>
 
       
        

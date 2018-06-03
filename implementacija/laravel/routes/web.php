@@ -13,11 +13,18 @@
 use  App\Http\Controllers\CreateEditAdForm;
 
 
-Route::get('showUserLobby', 'UserController@showUserLobby');
+Route::get('home', 'UserController@home');
 Route::post('registerUser','UserController@registerUser');
 Route::post('makeArticle','ArticleController@makeArticle');
 Route::get('searchUserByName','UserController@searchUserByName');
 Route::get('guestLobby','UserController@showGuestLobby');
+Route::get('articles', 'ArticleController@showArticles');
+Route::get('createArticle', 'ArticleController@createArticle');
+Route::post('deleteArticle', 'ArticleController@deleteArticle');
+Route::get('editArticle', 'ArticleController@editArticle');
+Route::get('registerForm', 'UserController@registerForm');
+Route::post('updateArticle', 'ArticleController@updateArticle');
+Route::get('logOut', 'UserController@logOut');
 
 Route::get('searchModerator', function () {
     return view('search/searchModerator');
@@ -38,9 +45,7 @@ Route::get('modLobby', function () {
 Route::get('userLobby', function () {
     return view('userLobby');
 });
-Route::get('registerForm', function () {
-    return view('registerForm');
-});
+
 
 
 
@@ -77,14 +82,9 @@ Route::get('user', function () {
     return view('profile/profileUser');
 });
 
-Route::get('editArticle', function () {
-    return view('editArticle');
 
-});
 
-Route::get('articles', function () {
-    return view('articles');
-});
+
 Route::get('profile', function () {
     return view('profile');
 });

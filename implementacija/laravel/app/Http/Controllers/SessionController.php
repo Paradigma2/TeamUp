@@ -43,7 +43,7 @@ class SessionController extends Controller
     	
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
     		
-    		return  redirect()->action('UserController@showUserLobby');
+    		return  redirect()->action('UserController@home');
 
     	}else{
     		

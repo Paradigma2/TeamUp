@@ -1,7 +1,7 @@
 @extends('navbar/navbar')
 
 @section('link1')
-	<a class="nav-link"  href="#">Lobi</a>
+	<a class="nav-link"  href="/home">Lobi</a>
 @endsection
 
 @section('link2')
@@ -23,7 +23,7 @@
 
         <a class="dropdown-item" href="#">Profil</a>
         <a class="dropdown-item" href="#">Inbox</a>
-        <a class="dropdown-item" href="#">Log out</a>
+        <a class="dropdown-item" href="/logOut">Log out</a>
 
       
        

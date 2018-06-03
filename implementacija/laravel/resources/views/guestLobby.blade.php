@@ -110,9 +110,19 @@
 													<p>{{$c}}</p>
 													@endif
 												@endforeach</div>
+								<div class="row">
+								<div class="col-sm-2">
 								<a data-toggle="collapse" href="#collapseArticle{{ $articles[$j]->id }}" onclick="proba('klik{{ $articles[$j]->id }}')" >
 									<i class="material-icons" > <label style="cursor:pointer;" id="klik{{ $articles[$j]->id }}">expand_more</label></i>
 								</a>
+								</div>
+								<div class="col-sm-10 headline" style="text-align:right;">
+									<img src="/{{$users[$j]->icon}}" width="15px">
+									<strong>{{$users[$j]->username}}</strong>,
+									{{$articles[$j]->updated_at}}
+									
+								</div>
+								</div>
 							</div>
 						</div>
 					</div>

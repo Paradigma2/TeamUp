@@ -392,9 +392,7 @@ class UserController extends Controller
        return  redirect('users');
     }	
 
-    public function home(){
-        return view('guestLobby');
-    }
+   
 
     public function deleteAd(Request $request){
         $adId=$request->id;
@@ -410,32 +408,55 @@ class UserController extends Controller
 
     public function showGuestLobby(){
         $articles = Article::orderBy('updated_at', 'desc')->get();
+        $users = [];
+        foreach($articles as $article){
+            $users[] = User::where('id', $article->user_id)->first();
+        }
         $length = count($articles);
-        return view('guestLobby')->with('articles', $articles)->with('length', $length);
+        return view('guestLobby')->with('articles', $articles)->with('length', $length)->with('users', $users);
     }
+
+    public function logOut(){
+        Auth::logout();
+         return redirect()->action('UserController@showGuestLobby');
+    }
+
+
     
 
-    public function showUserLobby(Request $request){
+    public function home(Request $request){
        
        $articles = Article::orderBy('updated_at', 'desc')->get();
+       $authors = [];
+        foreach($articles as $article){
+            $authors[] = User::where('id', $article->user_id)->first();
+        }
         $length = count($articles);
         $username = Auth::user()->username;
-        $myId = User::where('username', $username)->first()->id;
-        $followedUsers = Follow::where('user_id', $myId)->get();
-        $followed = [];
-        foreach($followedUsers as $f){
-            $followed[] = Users::where('id', $f->userFollowedId)->first();
+        //$myId = User::where('username', $username)->first()->id;
+        $myId = Auth::user()->id;
+        if(Auth::user()->isAdmin == 0){
+            $followedUsers = Follow::where('user_id', $myId)->get();
+            $followed = [];
+            foreach($followedUsers as $f){
+            $followed[] = User::where('id', $f->userFollowed_id)->first();
+            }
         }
-
         $users=[];
+        $p="";
 
         if(isset($request->usernameSearch)){
+            $p=$request->usernameSearch;
             $users = User::where('username', 'like', $request->usernameSearch."%")->get();
            if(count($users)==0){
-            $users[1]="Ne postoji korisnik";
+            $users[0]="Ne postoji korisnik";
            }
         }
-        return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users);
+        $theUser = Auth::user();
+        if(Auth::user()->isAdmin){
+            return view('adminLobby')->with('articles',$articles)->with('length', $length)->with('users', $users)->with('authors', $authors)->with('p',$p);
+        }
+        return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser);
     }
     public function searchUserByName(Request $request){
         $this->validate($request,[
@@ -443,17 +464,25 @@ class UserController extends Controller
         ]);
        
      
-       return redirect()->action('UserController@showUserLobby', ['usernameSearch' => $request->input('usernameSearch')]);
+       return redirect()->action('UserController@home', ['usernameSearch' => $request->input('usernameSearch')]);
+    }
+
+    public function registerForm(){
+        return view('registerForm');
     }
 
      public function registerUser(Request $request){
 
         $this->validate($request,[
-            'username' => 'required|unique:user,Username',
-            'pass' => 'required',
-            'passConfirm' => 'required',
-            'lolUsername' => 'required',//unique:user,LoLNick'
+            'korisnickoIme' => 'required|unique:user,username',
+            'sifra' => 'required',
+            'potvrdaSifre' => 'required',
+            'lolUsername' => 'required|unique:user,lolNick'
         ]);
+        
+        if($request->input('sifra')!=$request->input('potvrdaSifre')){
+             return view("registerForm")->with('notSame', "Niste ispravno potvrdili sifru");
+        }
 
         $api_key='RGAPI-3295c182-2564-4de1-9e7e-53f0ddb04a13';
         $summonerName=$request->input("lolUsername");
@@ -462,10 +491,11 @@ class UserController extends Controller
        if($this->get_http_response_code($filename) != 200 ){
              return view("registerForm")->with('notMember', "Niste clan LoL zajednice");
        }
+
         $result= file_get_contents($filename);
         $user = new User();
-        $user->username = $request->input("username");
-        $user->password = bcrypt($request->input("pass"));
+        $user->username = $request->input("korisnickoIme");
+        $user->password = bcrypt($request->input("sifra"));
         $user->online = 1;
         $user->isAdmin = 0;
         $user->isMod=0;
@@ -509,10 +539,10 @@ class UserController extends Controller
 
         $user->save();
 
-        $credentials = ['username' => $request->input("username"), 'password' => $request->input("pass")];
+        $credentials = ['username' => $request->input("korisnickoIme"), 'password' => $request->input("sifra")];
 
         if (Auth::attempt($credentials)) {
-          return redirect()->action('UserController@showUserLobby');
+          return redirect()->action('UserController@home');
            
         }
         else{
