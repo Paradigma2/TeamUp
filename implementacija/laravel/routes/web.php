@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use  App\Http\Controllers\CreateEditAdForm;
+
 
 Route::resource('users','UserController');
 Route::get('proba', 'UserController@proba');
@@ -48,9 +50,6 @@ Route::get('userLobby', function () {
 });
 
 
-Route::get('createEditAdForm', function () {
-    return view('profile/forms/createEditAdForm');
-});
 
 
 
@@ -103,9 +102,20 @@ Route::post('changePassword','UserController@changePassword');
 Route::post('login','SessionController@create');
 Route::get('logout','SessionController@destroy');
 Route::get('/home','UserController@home');//ove stavi na guest lobby
-
+Route::get('createEditAdForm','UserController@openFormCreateAd');
 Route::get('search', 'AdController@search');
 Route::post('registerUser','UserController@registerUser');
 Route::post('deleteAd','UserController@deleteAd');
+Route::get('anotherUser', 'UserController@anotherUser');
+Route::get('another', 'UserController@redirectoAnotherUser');
+Route::post('blokirajKorisnika', 'UserController@blokirajKorisnika');
+Route::post('udaljiSaSajta','UserController@udaljiSaSajta');
+Route::get('zapratiKor','UserController@zapratiKorisnika');
+Route::get('obrisiKom','UserController@obrisiKom');
+Route::get('unaprediKor','UserController@unaprediKorisnika');
+Route::post('oceniKorisnika', 'UserController@oceniKorisnika');
+Route::post('slanjePoruke', 'UserController@slanjePoruke');
+Route::get('showFormAd', 'CreateEditAdController@showFormAd');
+Route::post('createAd', 'CreateEditAdController@createAd');
 
-
+//  Route::get('ads','CreateEditAdController@showFormAd');

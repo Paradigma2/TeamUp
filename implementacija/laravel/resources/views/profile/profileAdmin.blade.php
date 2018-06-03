@@ -21,9 +21,18 @@
 	<button  class="button" href="">Udalji sa sajta</button>
 @endsection
 
+
+
+
 @section('unapredi')
-	<button class="button" href="">Unapredi</button>
+	@if($isMod==0)
+	<button class="button" href="">Postavi mod</button>
+	@else
+	<button  class="button" href="">Ukloni mod</button>
+@endif
 @endsection
+
+
 
 @section('posaljiPorukuAdmin')
 	<button  class="button" href="">Pošalji poruku</button>

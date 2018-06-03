@@ -22,14 +22,29 @@
 			<form   method="post" action="/proba" name="forma">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="container">
+					@if(count($errors)>0)
+				
+	         		<div class="mt-3 alert-danger">
+	         		
+	         			<ul>
+	         				
+	         				@foreach($errors->all() as $m)
+	         				
+	         					<li>{{$m}}</li>
+	         				@endforeach
+	         		
+	         			</ul>
+	         		</div>
+	         		
+	         	@endif
 				<div class=" mt-3  	row">	
 				<div class="col-sm-6">
 				<div class=" form-group">
 					<label style="color:#9D907D;">
 						Mod igre:
 					</label>
-					<select class="oglas">
-						<option>Svi</option>			
+					<select name="mod" class="oglas">
+							
 						<option>Summoner's Rift</option>
 						<option>Twisted Treeline</option>
 						<option>Aram</option>
@@ -43,8 +58,8 @@
 					<label style="color:#9D907D;">
 						Pozicija:
 					</label>
-					<select class="oglas">
-									<option>Svi</option>
+					<select name="pozicija" class="oglas">
+								
 									<option>ADC</option>
 									<option>Support</option>
 									<option>Jungler</option>
@@ -53,7 +68,9 @@
 					</select>
 				</div>
 				</div>	
-					</div>		
+					</div>	
+				
+
 				<div class="form-group">
 					<label style="color:#9D907D;">
 						Heroji:
@@ -204,6 +221,7 @@
 								<input type='checkbox' name='slike' value='Zoe' id="Zoe"/><label for="Zoe"><img src="slike/Zoe.png" class="heroj"></label>
 								<input type='checkbox' name='slike' value='Zyra' id="Zyra"/><label for="Zyra"><img src="slike/Zyra.png" class="heroj"></label>
 							-->
+							
 					</div>
 
 				</div>
@@ -213,16 +231,13 @@
 					<label style="color:#9D907D;">
 						Opis:
 					</label>
-					<textarea style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača">
-							
-
-					</textarea>
+					<textarea name="opis" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača"></textarea>
 				</div>
 </div>
 </div>
 <div class="row mb-3">
 				<div class="col-sm-6 mt-3">
-					<input type="submit"  class="buttonGrade btn-block" value="Potvrdi"> 
+					<button type="submit"  class="buttonGrade btn-block" >Potvrdi</button>
 				</div>				
 				<div class="col-sm-6 mt-3" >
 					<button class="buttonGrade  btn-block">Odustani</button> 

@@ -10,8 +10,8 @@ use App\Mode;
 use App\Champion;
 use App\Mastery;
 use App\Comment;
-
-
+use App\Block;
+use App\Ban;
 
 
 
@@ -34,6 +34,7 @@ use App\Follow;
 class UserController extends Controller
 {
     public function index(){
+
         $rank=Rank::find(Auth::user()->rank_id);
         
         $adsModel=Ad::where('user_id',Auth::user()->id)->get();
@@ -101,7 +102,8 @@ class UserController extends Controller
             $i++;
           
         }
-
+        $profilePic=Auth::user()->icon;
+        
         $descr=Auth::user()->description;
         $grade=round(Auth::user()->grade);
         $comments=Comment::where('user_id',Auth::user()->id)->get();
@@ -113,12 +115,254 @@ class UserController extends Controller
             $userCommenting=User::where('id',$c->userCommenting_id)->first();
              $commentingUsers[$i]=$userCommenting->username;
              $commentingIcons[$i]=$userCommenting->icon;
+
             $i++;
         }
 
-    	return view('profile.profileUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons);
+    	return view('profile.profileUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',Auth::user()->username)->with('level',Auth::user()->level)->with('profilePic',$profilePic);
     }
-    
+
+    public function redirectoAnotherUser(Request $request){
+        $korisnik=User::find(5);
+       
+
+        return redirect()->action('UserController@anotherUser', ['korisnik' => $korisnik->id]);
+        
+    }
+
+    public function anotherUser(Request $request){
+
+        
+        $kor=$request->korisnik;
+        
+        $blok=Block::where('user_id',Auth::user()->id)->orWhere('userBlocked_id',$kor)->first();
+   
+        $blok2=Block::where('userBlocked_id',Auth::user()->id)->orwhere('user_id',$kor)->first();
+       echo $blok;
+       echo $blok2;
+   
+
+        if($blok!=null || $blok2!=null){
+            
+               return redirect('users')->with('msgBlocked', 'Nije moguce pristupiti željenom profilu!');
+        }
+
+        $korisnik=User::find($kor);
+        $rank=Rank::find($korisnik->rank_id);
+        
+        $adsModel=Ad::where('user_id',$korisnik->id)->get();
+
+        $i=0;
+        $niz1=[];
+        $niz2=[];
+        $niz3=[];
+        foreach($adsModel as $ad){
+
+            $position= Position::where('id',$ad->position_id)->first();
+            $ime=$position->name;
+
+            $mode=Mode::where('id',$ad->mode_id)->first();
+            $imeMode=$mode->name;
+
+            $mastery1=Mastery::where('id',$ad->mastery1_id)->first();
+            $champ1=Champion::where('id',$mastery1->champion_id)->first();
+            $icon1=$champ1->icon;
+            if($ad->mastery2_id!=null){
+                $mastery2=Mastery::where('id',$ad->mastery2_id)->first();
+                $champ2=Champion::where('id',$mastery2->champion_id)->first();
+                $icon2=$champ2->icon;
+            }
+            else{
+                $icon2=null;
+            }
+            if($ad->mastery3_id!=null){
+                $mastery3=Mastery::where('id',$ad->mastery3_id)->first();
+                $champ3=Champion::where('id',$mastery3->champion_id)->first();
+                $icon3=$champ3->icon;
+            }
+            else{
+                $icon3=null;
+            }
+           
+            $description=$ad->description;
+
+
+            if($i==0){
+                $niz1['position']= $position->name;
+                $niz1['mode']= $mode->name;
+                $niz1['description']= $description;
+                $niz1['icon1']= $icon1;
+                $niz1['icon2']= $icon2;
+                $niz1['icon3']= $icon3;
+                $niz1['id']=$ad->id;
+            }else if ($i==1){
+                $niz2['position']= $position->name;
+                $niz2['mode']= $mode->name;
+                $niz2['description']= $description;
+                $niz2['icon1']= $icon1;
+                $niz2['icon2']= $icon2;
+                $niz2['icon3']= $icon3;
+                $niz2['id']=$ad->id;
+            }else{
+                $niz3['position']= $position->name;
+                $niz3['mode']= $mode->name;
+                $niz3['description']= $description;
+                $niz3['icon1']= $icon1;
+                $niz3['icon2']= $icon2;
+                $niz3['icon3']= $icon3;
+                $niz3['id']=$ad->id;
+            }
+            $i++;
+          
+        }
+        $follow=Follow::where('user_id',Auth::user()->id)->orWhere('userFollowed_id',$korisnik->id)->first();
+        $prati=1;
+        if($follow==null){
+            $prati=0;
+        }
+        $isMod=$korisnik->isMod;
+        $profilePic=$korisnik->icon;
+        $descr=$korisnik->description;
+        $grade=round($korisnik->grade);
+        $comments=Comment::where('user_id',$korisnik->id)->get();
+        $commentingUsers=[];
+        $commentingIcons=[];
+        $i=0;
+        foreach($comments as $c){
+           
+            $userCommenting=User::where('id',$c->userCommenting_id)->first();
+             $commentingUsers[$i]=$userCommenting->username;
+             $commentingIcons[$i]=$userCommenting->icon;
+            $i++;
+        }
+        
+        if(Auth::user()->isAdmin){
+            return view('profile.profileAdmin')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',$korisnik->username)->with('level',$korisnik->level)->with('profilePic',$profilePic)->with('prati',$prati  )->with('isMod',$isMod);
+        }else{
+        return view('profile.profileAnotherUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',$korisnik->username)->with('level',$korisnik->level)->with('profilePic',$profilePic)->with('prati',$prati  )->with('isMod',$isMod);
+        }
+    }
+
+
+    public function blokirajKorisnika(Request $request){
+        $username=$request->username;
+        $user = User::where('username', $username)->first();
+        $userBlocked_id=$user->id;
+        $user_id=Auth::user()->id;
+        $block= new Block();
+        $block->user_id=$user_id;
+        $block->userBlocked_id=$userBlocked_id;
+        $block->save();
+        return  redirect('users');
+    }
+
+    public function zapratiKorisnika(Request $request){
+        $pracenKorisnik=$request->pracenKorisnik;
+        $pracenId=User::where('username', $pracenKorisnik)->first()->id;
+        $id=Auth::user()->id;
+
+        $follow= Follow::where('user_id',$id)->orWhere('userFollowed_id', $pracenId)->first();
+        if($follow==null){
+            $f=new Follow;
+            $f->user_id=$id;
+            $f->userFollowed_id=$pracenId;
+            $f->save();
+        }
+        else{
+            $follow->delete();
+        }
+        return  redirect()->back();
+
+    }
+
+    public function obrisiKom(Request $request){
+        $korisnik=$request->korisnik;
+        $id=User::where('username', $korisnik)->first()->id;
+        $komentar=$request->komentar;
+        Comment::where('user_id',$id)->orWhere('id',$komentar)->delete();
+    }
+  public function unaprediKorisnika(Request $request){
+        $korisnik=$request->korisnik;
+        $mod=User::where('username', $korisnik)->first();
+       
+
+       
+        if($mod->isMod){
+            $user = User::where('username', $korisnik)->update(['isMod'=>0]);
+        }
+        else{
+             $user = User::where('username', $korisnik)->update(['isMod'=>1]);
+        }
+        return  redirect()->back();
+
+    }
+
+
+
+    public function oceniKorisnika(Request $request){
+        
+        $username=$request->username;
+        $komentarisanUser=User::where('username', $username)->first()->id;
+        $id=Auth::user()->id;
+        $komentar=Comment::where('user_id', $komentarisanUser)->orWhere('userCommenting_id',$id)->first();
+        if($komentar!=null){
+            return redirect()->back()->with('msgComment','Maksimalno možete ostaviti jedan komentar.');
+        }
+        else{
+             $komentar=$request->komentar;
+             $ocena=$request->ocena;
+             $novi= new Comment();
+             if($komentar!=null){
+                $novi->content=$komentar;
+
+             }
+             $novi->grade=$ocena;
+             $novi->user_id=$komentarisanUser;
+             $novi->userCommenting_id=$id;
+             $novi->save();
+             if(Auth::user()->grade==0){
+                   $novaOcena= Auth::user()->grade;
+             }else{
+                $novaOcena= ($ocena+ Auth::user()->grade)/2;
+             }
+            $user = User::where('username', $username)->update(['grade'=>$novaOcena]);
+
+             return redirect()->back();
+         }
+
+    }
+
+    public function udaljiSaSajta(Request $request){
+        $username=$request->username;
+        $user=User::where('username', $username)->first();
+
+        $ban=new Ban();
+        $ban->username=$username;
+        $ban->lolNick=$user->lolNick;
+        $ban->save();
+        User::where('username', $username)->delete();
+    }
+
+    public function openFormCreateAd(){
+          return redirect()->action('CreateEditAdController@showFormAd');
+    }
+
+
+
+    public function slanjePoruke(Request $request){
+        $this->validate($request,[
+            'poruka'      =>'required|max:255',
+          
+        ]);
+        
+        $poruka=$request->poruka;
+        echo $poruka;
+        
+      //  $user = User::where('username', Auth::user()->username)->update(['description'=>$descr]);
+      //  return  redirect('users');
+
+    }
+
     public function editDescription(Request $request){
 
 
@@ -128,7 +372,7 @@ class UserController extends Controller
         ]);
         
         $descr=$request->input('description');
-        $user = User::where('Username', Auth::user()->username)->update(['Description'=>$descr]);
+        $user = User::where('username', Auth::user()->username)->update(['description'=>$descr]);
         return  redirect('users');
 
     }
@@ -155,7 +399,7 @@ class UserController extends Controller
     public function deleteAd(Request $request){
         $adId=$request->id;
         Ad::where('id', $adId)->delete();
-        return  redirect('users');
+        return  redirect()->back();
     }
 
 
