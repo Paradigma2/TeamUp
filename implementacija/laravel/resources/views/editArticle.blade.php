@@ -57,11 +57,7 @@
 								<h4><label for="tekst">Tekst:</label></h4>
 							</div>
 							<div class="col-sm-8">
-								<textarea name="tekst" id="tekst" class="form-control" rows="13">
-									@if($type=='edit')
-									{{$article->content}}
-									@endif
-								</textarea>
+								<textarea name="tekst" id="tekst" class="form-control" rows="13">@if($type=='edit'){{$article->content}}@endif</textarea>
 							</div>
 						</div>
 					</div>

@@ -13,7 +13,7 @@
 
 Route::resource('users','UserController');
 
-Route::get('showUserLobby', 'UserController@showUserLobby');
+Route::get('home', 'UserController@home');
 Route::post('registerUser','UserController@registerUser');
 Route::post('makeArticle','ArticleController@makeArticle');
 Route::get('searchUserByName','UserController@searchUserByName');

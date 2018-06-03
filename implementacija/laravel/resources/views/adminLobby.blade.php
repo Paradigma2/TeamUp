@@ -24,21 +24,29 @@
 				    	<a href="#page1">
 				      <img src={{ URL::asset('slike/carousel1.jpg') }} alt="pic1" width="1100" height="300"></a>
 				      <div class="carousel-caption">
-				        <h6 class="display-4"><label>Naslov 1</label></h6>
+				        <h6 class="display-4"><label>
+				        	@if($length>0)
+				        	{{$articles[0]->headline}}
+				        	@endif
+				        </label></h6>
 				      </div>   
 				    </div>
 				    <div class="carousel-item">
 				    	<a href="#page1">
 				      <img src={{ URL::asset('slike/carousel2.jpg') }} alt="pic2" width="1100" height="300"></a>
 				      <div class="carousel-caption">
-				        <h1 class="display-4"><label>Naslov 2</label></h1>
+				        <h1 class="display-4"><label>@if($length>1)
+				        	{{$articles[1]->headline}}
+				        	@endif</label></h1>
 				      </div>   
 				    </div>
 				    <div class="carousel-item">
 				    	<a href="#page2">
 				      <img src={{ URL::asset('slike/carousel3.jpg') }} alt="pic3" width="1100" height="300"></a>
 				      <div class="carousel-caption">
-				        <h1 class="display-4"><label>Naslov 4</label></h1>
+				        <h1 class="display-4"><label>@if($length>2)
+				        	{{$articles[2]->headline}}
+				        	@endif</label></h1>
 				      </div>   
 				    </div>
 				    
@@ -54,107 +62,71 @@
 				<div class="row">
 					
 					<div class="col-sm-12 mt-3 tab-content">
+						<label hidden>{{$l = $length}}</label>
+						@for($j=0, $page=0; $j<$l; $page++)
+						@if($j==0)
+							<div class="tab-pane active" id="page{{$page + 1}}">
+						@else
+							<div class="tab-pane fade" id="page{{$page + 1}}">
+						@endif
 
-						<div class="tab-pane active" id="page1">
+						@for($i=0; $i<3 && $j<$l; $i++, $j++)
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="card mt-2 article">
 										
 										<div class="card-body">
 											<div class="row">
-												<div class="col-sm-11">
+												<div class="col-sm-12">
 													<h4 class="card-title headline mt-1" >
-														<label>Naslov 1</label>
+														<label>{{ $articles[$j]->headline }}</label>
 													</h4>
 												</div>
-												<div class="col-sm-1">
-													<a data-toggle="modal" href="#deleteModal">
-														<i class="material-icons" style="cursor:pointer;">delete</i>
-													</a>
-													
-												</div>
 											</div>
-											<p class="card-text">Content 1</p>
+											<?php
+												$content = $articles[$j]->content;
+												$splitContent = explode(PHP_EOL, $content);
+											?>
+											<p class="card-text">{{ $splitContent[0]}}</p>
 
 
-											<div class="card-text collapse" id="collapseArticle1">Expand content 1</div>
-											<a data-toggle="collapse" href="#collapseArticle1" onclick="proba('klik1')" >
-												<i class="material-icons" > <label style="cursor:pointer;" id="klik1">expand_more</label></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-sm-12 mt-2">
-									<div class="card mt-2 article">
-										<div class="card-body">
+											<div class="card-text collapse" id="collapseArticle{{ $articles[$j]->id }}">
+												@foreach($splitContent as $c)
+												@if($c != $splitContent[0])
+													<p>{{$c}}</p>
+													@endif
+												@endforeach
+											</div>
 											<div class="row">
-												<div class="col-sm-11">
-													<h4 class="card-title headline mt-1" >
-														<label>Naslov 2</label>
-													</h4>
-												</div>
-												<div class="col-sm-1">
-													<a data-toggle="modal" href="#deleteModal">
-														<i class="material-icons" style="cursor:pointer;">delete</i>
-													</a>
-													
-												</div>
-											</div>
-											<p class="card-text">Content 2</p>
-
-
-											<div class="card-text collapse" id="collapseArticle2">Expand content 2</div>
-											<a data-toggle="collapse" href="#collapseArticle2" onclick="proba('klik2')" >
-												<i class="material-icons" > <label style="cursor:pointer;" id="klik2">expand_more</label></i>
-											</a>
+								<div class="col-sm-2">
+								<a data-toggle="collapse" href="#collapseArticle{{ $articles[$j]->id }}" onclick="proba('klik{{ $articles[$j]->id }}')" >
+									<i class="material-icons" > <label style="cursor:pointer;" id="klik{{ $articles[$j]->id }}">expand_more</label></i>
+								</a>
+								</div>
+								<div class="col-sm-10 headline" style="text-align:right;">
+									<img src="/{{$authors[$j]->icon}}" width="15px">
+									<strong>{{$authors[$j]->username}}</strong>,
+									{{$articles[$j]->updated_at}}
+									
+								</div>
+								</div>
 										</div>
 									</div>
 								</div>
 							</div>
 
+							
+						@endfor
 						</div>
-						<div class="tab-pane fade" id="page2">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="card mt-2 article">
-										<div class="card-body">
-											<div class="row">
-												<div class="col-sm-11">
-													<h4 class="card-title headline mt-1" >
-														<label>Naslov 4</label>
-													</h4>
-												</div>
-												<div class="col-sm-1">
-													<a data-toggle="modal" href="#deleteModal">
-														<i class="material-icons" style="cursor:pointer;">delete</i>
-													</a>
-													
-												</div>
-											</div>
-											<p class="card-text">Content 4</p>
-
-
-											<div class="card-text collapse" id="collapseArticle4">Expand content 4</div>
-											<a data-toggle="collapse" href="#collapseArticle4" onclick="proba('klik4')" >
-												<i class="material-icons" > <label style="cursor:pointer;" id="klik4">expand_more</label></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						@endfor
+					
 								
 								<ul class="pagination nav nav-pills mt-3 d-flex justify-content-center">
-									<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-									<li class="page-item"><a class="page-link" data-toggle="pill" href="#page1">1</a></li>
-									<li class="page-item"><a class="page-link"  data-toggle="pill" href="#page2">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#">Next</a></li>
+								@for($i=0; $i<$page; $i++)
+								<li class="page-item"><a class="page-link" data-toggle="pill" href="#page{{$i + 1}}">{{$i + 1}}</a></li>
+								@endfor
 								</ul>
-
+								
 					</div>
 
 			</div>
@@ -167,18 +139,13 @@
 							<h2>Pretrazi</h2>
 							
 						</div>
-						<!-- Ovaj ili div ispod ce biti aktivni-->
-						<!--
-						<div class="pages p-3">
-							<h6>Jos uvek nikoga ne pratite</h6>
-						</div>
-						-->
 						<div class="row">
 							<div class="col-sm-12 mb-3">
-								<form name="searchUserForm" >
+								<form name="searchUserForm" method="GET" action="searchUserByName">
+									<input type="hidden" name="_token" value="{{ csrf_token() }}">
 									<div class="row">
 									<div class="col-sm-8">
-										<input type="text" class="form-control form-control-sm" name="usernameSearch" id="usernameSearch" style="font-size=8pt;">
+										<input type="text" class="form-control form-control-sm" name="usernameSearch" id="usernameSearch" style="font-size=8pt;" value="{{$p}}">
 									</div>
 									<div class="col-sm-4">
 										<button type="submit" class="btn btn-primary btn-sm">Trazi</button>
@@ -187,50 +154,29 @@
 								</form>
 							</div>
 						</div>
+						@php
+							$length = count($users);
+						@endphp
+						<!--      sredi ovooo   -->
+						@foreach($errors->all() as $error)
+							<p>{{$error}}</p>
+						@endforeach
+						@if($length > 0 && ($users[0] == "Ne postoji korisnik"))
+							<p>{{$users[0]}}</p>
+						@elseif($length>0)
 						<div class="list-group pages" style="height:150px; overflow-y:auto;">
-						  
-							<a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/slike/alistar.png" width="30px" class="mr-2">meanGirl</a>
-						 
-						  <a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/slike/alistar.png" width="30px" class="mr-2">meanGirl</a>
-						   <a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/slike/alistar.png" width="30px" class="mr-2">meanGirl</a>
+						  @foreach($users as $u)
+							<a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+						 @endforeach
 
 						 </div>
+						 @endif
 						
 					</div>
 					
 				</div>
 			</div>
 		
-	</div>
-	<div class="modal fade" id="deleteModal">
-	  <div class="modal-dialog modal-dialog-centered">
-	    <div class="modal-content pages">
-
-	      <!-- Modal Header -->
-	      <div class="modal-header ">
-	        <h4 class="modal-title d-flex justify-content-center">Da li ste sigurni?</h4>
-	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
-	      </div>
-
-	      <!-- Modal body -->
-	      
-
-	      <!-- Modal footer -->
-	      <div class="modal-body">
-	      	<div class="row">
-	      		<div class="col-sm-12  d-flex justify-content-center">
-	      			<button type="button" class="btn btn-primary mr-2" data-dismiss="modal" onclick="fjaZaBrisanje(idDelete)">Potvrdi</button>
-
-	      			<button type="button" class="btn btn-primary" data-dismiss="modal">Odustani</button>
-	      		</div>
-	      		
-	      	</div>
-	        
-	        
-	      </div>
-
-	    </div>
-	  </div>
 	</div>
 	<script language="javascript">
 		function proba(klik){

@@ -148,9 +148,7 @@ class UserController extends Controller
        return  redirect('users');
     }	
 
-    public function home(){
-        return view('guestLobby');
-    }
+   
 
     public function deleteAd(Request $request){
         $adId=$request->id;
@@ -178,9 +176,11 @@ class UserController extends Controller
         Auth::logout();
          return redirect()->action('UserController@showGuestLobby');
     }
+
+
     
 
-    public function showUserLobby(Request $request){
+    public function home(Request $request){
        
        $articles = Article::orderBy('updated_at', 'desc')->get();
        $authors = [];
@@ -189,13 +189,15 @@ class UserController extends Controller
         }
         $length = count($articles);
         $username = Auth::user()->username;
-        $myId = User::where('username', $username)->first()->id;
-        $followedUsers = Follow::where('user_id', $myId)->get();
-        $followed = [];
-        foreach($followedUsers as $f){
+        //$myId = User::where('username', $username)->first()->id;
+        $myId = Auth::user()->id;
+        if(Auth::user()->isAdmin == 0){
+            $followedUsers = Follow::where('user_id', $myId)->get();
+            $followed = [];
+            foreach($followedUsers as $f){
             $followed[] = User::where('id', $f->userFollowed_id)->first();
+            }
         }
-
         $users=[];
         $p="";
 
@@ -207,6 +209,9 @@ class UserController extends Controller
            }
         }
         $theUser = Auth::user();
+        if(Auth::user()->isAdmin){
+            return view('adminLobby')->with('articles',$articles)->with('length', $length)->with('users', $users)->with('authors', $authors)->with('p',$p);
+        }
         return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser);
     }
     public function searchUserByName(Request $request){
@@ -215,7 +220,7 @@ class UserController extends Controller
         ]);
        
      
-       return redirect()->action('UserController@showUserLobby', ['usernameSearch' => $request->input('usernameSearch')]);
+       return redirect()->action('UserController@home', ['usernameSearch' => $request->input('usernameSearch')]);
     }
 
     public function registerForm(){
@@ -293,7 +298,7 @@ class UserController extends Controller
         $credentials = ['username' => $request->input("korisnickoIme"), 'password' => $request->input("sifra")];
 
         if (Auth::attempt($credentials)) {
-          return redirect()->action('UserController@showUserLobby');
+          return redirect()->action('UserController@home');
            
         }
         else{
