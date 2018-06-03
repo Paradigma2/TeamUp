@@ -19,7 +19,8 @@
 		</div>
 
 					<div class="col-sm-10" style="  border: 2px solid #184157; color:white;background-color: rgba(5,5,5,0.9); border-radius: 5px">
-			<form   method="post" action="">
+			<form   method="post" action="/proba" name="forma">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="container">
 				<div class=" mt-3  	row">	
 				<div class="col-sm-6">
@@ -58,9 +59,12 @@
 						Heroji:
 					</label>
 					<div class="form-control" style="background-color: rgba(5,5,5,0.8); border:none; padding:0px background-color:transparent; ">
-							<input type='checkbox' name='slike' value='Aatrox' id="Aatrox"/><label for="Aatrox"><img src="slike/Aatrox.png" class="heroj"></label>
-								<input type='checkbox' name='slike' value='Ahri' id="Ahri"/><label for="Ahri"><img src="slike/Ahri.png" class="heroj"></label>
-								<input type='checkbox' name='slike' value='Akali' id="Akali"/><label for="Akali"><img src="slike/Akali.png" class="heroj"></label>
+						@foreach($champions as $champion)
+							<input type='checkbox' name='slike[]' value='{{$champion->name}}' id="{{$champion->name}}"/><label for="{{$champion->name}}"><img src="{{$champion->icon}}" class="heroj"></label>
+						@endforeach
+							<!--
+								<input type='checkbox' name='slike[]' value='Ahri' id="Ahri"/><label for="Ahri"><img src="slike/Ahri.png" class="heroj"></label>
+								<input type='checkbox' name='slike[]' value='Akali' id="Akali"/><label for="Akali"><img src="slike/Akali.png" class="heroj"></label>
 								<input type='checkbox' name='slike' value='Alistar' id="Alistar"/><label for="Alistar"><img src="slike/Alistar.png" class="heroj"></label>
 								<input type='checkbox' name='slike' value='Amumu' id="Amumu"/><label for="Amumu"><img src="slike/Amumu.png" class="heroj"></label>
 								<input type='checkbox' name='slike' value='Anivia' id="Anivia"/><label for="Anivia"><img src="slike/Anivia.png" class="heroj"></label>
@@ -199,6 +203,7 @@
 								<input type='checkbox' name='slike' value='Zilean' id="Zilean"/><label for="Zilean"><img src="slike/Zilean.png" class="heroj"></label>
 								<input type='checkbox' name='slike' value='Zoe' id="Zoe"/><label for="Zoe"><img src="slike/Zoe.png" class="heroj"></label>
 								<input type='checkbox' name='slike' value='Zyra' id="Zyra"/><label for="Zyra"><img src="slike/Zyra.png" class="heroj"></label>
+							-->
 					</div>
 
 				</div>

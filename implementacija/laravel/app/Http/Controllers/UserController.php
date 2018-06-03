@@ -15,6 +15,8 @@ use App\Comment;
 
 
 
+
+
 use Validator;
 use Illuminate\Support\Facades\Auth;
 
@@ -306,6 +308,12 @@ class UserController extends Controller
             return view('registerForm')->with('greska', $greska);
         }
         
+    }
+
+    public function proba(){
+
+       $champions = Champion::all();
+       return view('profile/forms/createEditAdForm')->with('champions', $champions);
     }
 
 }

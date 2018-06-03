@@ -12,6 +12,7 @@
 */
 
 Route::resource('users','UserController');
+Route::get('proba', 'UserController@proba');
 
 Route::get('home', 'UserController@home');
 Route::post('registerUser','UserController@registerUser');
