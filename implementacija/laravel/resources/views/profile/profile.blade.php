@@ -139,7 +139,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12">
-						<a class="clearFormat" data-toggle="modal" href="#deleteModal"> 
+						<a class="clearFormat" data-toggle="modal" href="#obrisiNalog"> 
 						@yield('obrisiNalog')
 						</a>
 						<a class="clearFormat"  href="zapratiKor?pracenKorisnik={{$username}}">
@@ -165,7 +165,7 @@
 			
 			<div class="card  align-items-center" style="padding:10px;background-color: rgba(5,5,5,0.6); color:white">
 				<div class=" ml-auto">
-					<a href=/createEditAdForm>
+					<a href="showFormAd?ad={{$niz1['id']}}">
 							@yield('icon11')
 
 
@@ -222,7 +222,7 @@
 			
 			<div class="card  align-items-center" style="padding:10px;background-color: rgba(5,5,5,0.6); color:white">
 				<div class=" ml-auto">
-					<a href=/createEditAdForm>
+					<a href="showFormAd?ad={{$niz2['id']}}">
 							@yield('icon11')
 
 
@@ -280,7 +280,7 @@
 			
 			<div class="card  align-items-center" style="padding:10px;background-color: rgba(5,5,5,0.6); color:white">
 				<div class=" ml-auto">
-					<a href=/createEditAdForm>
+					<a href="showFormAd?ad={{$niz3['id']}}">
 							@yield('icon11')
 
 
@@ -624,10 +624,46 @@
 	    </div>
 	  </div>
 	</div>
+<!-- Brisanj enaloga-->
 
+<div class="modal fade" id="obrisiNalog">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content pages ">
 
+	      <!-- Modal Header -->
+	      <div class="modal-header ">
+	        <h4 class="modal-title d-flex justify-content-center">Da li ste sigurni?</h4>
+	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
+	      </div>
 
+	      <!-- Modal body -->
+	      
 
+	      <!-- Modal footer -->
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div class="col-sm-6">
+	      			<form name="prva" method="post" action="obrisiNalog">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="username" value="
+						{{$username}}
+						">
+		
+	      				<button type="submit" class="buttonGrade btn-block	" style="padding:7px;"  >Potvrdi</button>
+	      			</form>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<button type="button" class="buttonGrade btn-block" style="padding:7px;" data-dismiss="modal">Odustani</button>
+	      		</div>
+	      		
+	      	</div>
+	        
+	        
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
 
 
 

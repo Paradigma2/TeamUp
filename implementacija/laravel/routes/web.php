@@ -111,6 +111,7 @@ Route::get('anotherUser', 'UserController@anotherUser');
 Route::get('another', 'UserController@redirectoAnotherUser');
 Route::post('blokirajKorisnika', 'UserController@blokirajKorisnika');
 Route::post('udaljiSaSajta','UserController@udaljiSaSajta');
+Route::post('obrisiNalog','UserController@obrisiNalog');
 Route::get('zapratiKor','UserController@zapratiKorisnika');
 Route::get('obrisiKom','UserController@obrisiKom');
 Route::get('unaprediKor','UserController@unaprediKorisnika');

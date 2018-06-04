@@ -341,9 +341,17 @@ class UserController extends Controller
         $ban->lolNick=$user->lolNick;
         $ban->save();
         User::where('username', $username)->delete();
+        // nzm sta da radim sa banovanim
     }
 
+   public function obrisiNalog(Request $request){
+        $username=$request->username;
+        User::where('username', $username)->delete();
+           return redirect()->action('UserController@showGuestLobby');
+       
+    }
     public function openFormCreateAd(){
+         
           return redirect()->action('CreateEditAdController@showFormAd');
     }
 

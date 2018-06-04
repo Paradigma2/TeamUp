@@ -18,9 +18,10 @@
 		<div class="col-sm-1">
 		</div>
 
-					<div class="col-sm-10" style="  border: 2px solid #184157; color:white;background-color: rgba(5,5,5,0.9); border-radius: 5px">
-			<form   method="post" action="/proba" name="forma">
+			<div class="col-sm-10" style="  border: 2px solid #184157; color:white;background-color: rgba(5,5,5,0.9); border-radius: 5px">
+			<form   method="post" action="createAd" name="forma">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input type="hidden" name="idAd" value="{{ $id }}">
 				<div class="container">
 					@if(count($errors)>0)
 				
@@ -32,10 +33,41 @@
 	         				
 	         					<li>{{$m}}</li>
 	         				@endforeach
-	         		
+	         				
 	         			</ul>
 	         		</div>
 	         		
+	         	@endif
+
+	         	@if(Session::get('nemaHeroja')!=null)
+	         		<div class="mt-3 alert-danger">
+	         		
+	         			<ul>
+	         				<li>
+	         				{{Session::get('nemaHeroja')}}
+	         				</li>
+	         			</ul>
+	         		</div>
+	         	@endif
+	         	@if(Session::get('nemasHeroja')!=null)
+	         		<div class="mt-3 alert-danger">
+	         		
+	         			<ul>
+	         				<li>
+	         				{{Session::get('nemasHeroja')}}
+	         				</li>
+	         			</ul>
+	         		</div>
+	         	@endif
+	         	@if(Session::get('previseHeroja')!=null)
+	         		<div class="mt-3 alert-danger">
+	         		
+	         			<ul>
+	         				<li>
+	         				{{Session::get('previseHeroja')}}
+	         				</li>
+	         			</ul>
+	         		</div>
 	         	@endif
 				<div class=" mt-3  	row">	
 				<div class="col-sm-6">
@@ -45,11 +77,16 @@
 					</label>
 					<select name="mod" class="oglas">
 							
-						<option>Summoner's Rift</option>
-						<option>Twisted Treeline</option>
-						<option>Aram</option>
-						<option>Featured</option>
-						<option>Custom Game</option>
+						<option @if($ad!=null) @if($mode
+										=="Summoners Rift") {{"selected"}}@endif @endif>Summoners Rift</option>
+						<option @if($ad!=null) @if($mode
+										=="Twisted Treeline") {{"selected"}}@endif @endif>Twisted Treeline</option>
+						<option  @if($ad!=null) @if($mode
+										=="Aram") {{"selected"}}@endif @endif>Aram</option>
+						<option @if($ad!=null) @if($mode
+										=="Featured") {{"selected"}}@endif @endif>Featured</option>
+						<option @if($ad!=null) @if($mode
+										=="Custom Game") {{"selected"}}@endif @endif>Custom Game</option>
 					</select>
 				</div>
 			</div>
@@ -59,12 +96,18 @@
 						Pozicija:
 					</label>
 					<select name="pozicija" class="oglas">
-								
-									<option>ADC</option>
-									<option>Support</option>
-									<option>Jungler</option>
-									<option>Top Laner</option>
-									<option>Mid Laner</option>
+						
+									<option @if($ad!=null) @if($position
+										=="ADC") {{"selected"}}@endif @endif>ADC</option>
+									<option  @if($ad!=null) @if($position
+										=="Support") {{"selected"}}@endif @endif>Support</option>
+									
+									<option @if($ad!=null) @if($position
+										=="Jungle") {{"selected"}}@endif @endif>Jungle</option>
+									<option @if($ad!=null) @if($position
+										=="Top") {{"selected"}}@endif @endif>Top</option>
+									<option @if($ad!=null) @if($position
+										=="Mid") {{"selected"}}@endif @endif>Mid</option>
 					</select>
 				</div>
 				</div>	
@@ -231,7 +274,7 @@
 					<label style="color:#9D907D;">
 						Opis:
 					</label>
-					<textarea name="opis" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača"></textarea>
+					<textarea name="opis" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača">@if($ad!=null) {{$ad->description}}@endif</textarea>
 				</div>
 </div>
 </div>
