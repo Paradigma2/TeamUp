@@ -11,6 +11,20 @@
 @section('content')
 
 <div class="container">
+
+	@if(count($errors)>0)
+	         		<div class="row">
+	         			<div class="col-sm-12 mt-3">
+	         				@foreach($errors->all() as $error)
+	         				<div class="alert alert-primary" style="text-align:center;">
+	         					{{$error}} 	
+	         					</div>
+	         				@endforeach
+	         			</div>
+	         		</div>	
+	         			
+
+	         	@endif
 	
 	<div id="demo" class="carousel slide mt-3" data-ride="carousel">
 	  <ul class="carousel-indicators">
@@ -102,12 +116,12 @@
 									$content = $articles[$j]->content;
 									$splitContent = explode(PHP_EOL, $content);
 								?>
-								<p class="card-text">{{ $splitContent[0]}}</p>
+								<p class="card-text" style="text-align: justify;">{{ $splitContent[0]}}</p>
 
 
 								<div class="card-text collapse" id="collapseArticle{{ $articles[$j]->id }}">@foreach($splitContent as $c)
 												@if($c != $splitContent[0])
-													<p>{{$c}}</p>
+													<p style="text-align: justify;">{{$c}}</p>
 													@endif
 												@endforeach</div>
 								<div class="row">
@@ -151,17 +165,7 @@
 	       <div class="modal-body">
 	       	 <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
 	         <form class="m-5" name="logInForm" method="post" action="login">
-	         	@if(count($errors)>0)
-	         		<div class="alert-danger">
-	         			<ul>
-	         				@foreach($errors->all() as $error)
-	         					<li>{{$error}} 	</li>
-	         				@endforeach
-	         			
-	         			</ul>
-	         		</div>
-
-	         	@endif
+	         	
 	         	<div class="form-group">
 	         		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	         		<div class="row">

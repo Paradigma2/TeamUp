@@ -10,6 +10,11 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Validator;
 class ArticleController extends Controller
 {
+    public function deleteArticleAdmin(Request $request){
+        $id =  $request->input('id');
+        Article::where('id', $id)->delete();
+        return redirect()->action('UserController@home');
+    }
 
     public function deleteArticle(Request $request){
         $id =  $request->input('id');

@@ -77,10 +77,16 @@
 										
 										<div class="card-body">
 											<div class="row">
-												<div class="col-sm-12">
+												<div class="col-sm-11">
 													<h4 class="card-title headline mt-1" >
 														<label>{{ $articles[$j]->headline }}</label>
 													</h4>
+												</div>
+												<div class="col-sm-1">
+													<a data-toggle="modal" href="#deleteModal{{ $articles[$j]->id }}">
+														<i class="material-icons" style="cursor:pointer;">delete</i>
+													</a>
+													
 												</div>
 											</div>
 											<?php
@@ -178,6 +184,41 @@
 			</div>
 		
 	</div>
+	@foreach($articles as $article)
+	<div class="modal fade" id="deleteModal{{$article->id}}">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content pages">
+
+	      <!-- Modal Header -->
+	      <div class="modal-header ">
+	        <h4 class="modal-title d-flex justify-content-center">Da li ste sigurni?</h4>
+	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <!-- Modal body -->
+	      
+
+	      <!-- Modal footer -->
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div class="col-sm-12  d-flex justify-content-center">
+	      			<form name="deleteArticleAdmin" action="deleteArticleAdmin" method="POST">
+	      				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	      				<input type="hidden" name="id" value="{{$article->id}}">
+	      			<button type="submit" class="btn btn-primary mr-2" >Potvrdi</button>
+	      			</form>
+	      			<button type="button" class="btn btn-primary" data-dismiss="modal">Odustani</button>
+	      		</div>
+	      		
+	      	</div>
+	        
+	        
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	@endforeach
 	<script language="javascript">
 		function proba(klik){
 			labela = document.getElementById(klik);

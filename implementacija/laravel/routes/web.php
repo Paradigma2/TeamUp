@@ -24,6 +24,7 @@ Route::get('guestLobby','UserController@showGuestLobby');
 Route::get('articles', 'ArticleController@showArticles');
 Route::get('createArticle', 'ArticleController@createArticle');
 Route::post('deleteArticle', 'ArticleController@deleteArticle');
+Route::post('deleteArticleAdmin', 'ArticleController@deleteArticleAdmin');
 Route::get('editArticle', 'ArticleController@editArticle');
 Route::get('registerForm', 'UserController@registerForm');
 Route::post('updateArticle', 'ArticleController@updateArticle');
