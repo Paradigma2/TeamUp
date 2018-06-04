@@ -17,6 +17,7 @@ class CreateChampionTable extends Migration
             $table->increments('id');
             $table->string('name',32);
             $table->string('icon',100);
+            $table->integer('champion_id');
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@ class ChampionTableSeeder extends Seeder{
 			DB::table('champion')->insert([
 		 	'name'=>$champ->key,
 		 	'icon'=>'slike/'.$champ->key.'.png',
+		 	'champion_id'=>$champ->id,
 		 ]);
 			
 		}
