@@ -14,6 +14,15 @@
 @endsection
 
 @section('content')
+@if(Session::get('msgBlocked')!=null)
+
+<div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
+  <strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
 	<div class="container">
 		<div class="row mt-3">
 			
@@ -36,7 +45,7 @@
 						@else
 						<div class="list-group pages" style="height:300px; overflow-y:auto;">
 							@foreach($followed as $f)
-						   <a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$f->icon}}" width="30px" class="mr-2">{{$f->username}}
+						   <a href="/another?id={{$f->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$f->icon}}" width="30px" class="mr-2">{{$f->username}}
 						   	@if($f->online)
 						   	<i class="material-icons ml-4" style="font-size:15px;color:green;">person</i>
 						   	@else
@@ -208,7 +217,28 @@
 						@elseif($length>0)
 						<div class="list-group pages" style="height:150px; overflow-y:auto;">
 						  @foreach($users as $u)
-							<a href="/another?id={{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+
+							@if($theUser->id == $u->id)
+							<a href="/showUser" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+							@else
+								{{$blokiran=false}}
+								@foreach($blocked as $b)
+						  			@if($u->id == $b->id)
+						  				{{$blokiran = true}}
+						  				@break
+						  			@endif
+						  		@endforeach
+						  		@if($blokiran)
+
+						  		
+						  			<a href="#deleteModal{{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+						  		@else
+
+									<a href="/another?id={{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+								@endif
+							@endif
+							
+							
 						 @endforeach
 
 						 </div>
@@ -220,6 +250,44 @@
 			</div>
 		
 	</div>
+
+	@foreach($blocked as $b)
+	<div class="modal fade" id="deleteModal{{$b->id}}">
+	  <div class="modal-dialog modal-dialog-centered">
+	    <div class="modal-content pages">
+
+	      <!-- Modal Header -->
+	      <div class="modal-header ">
+	        <h4 class="modal-title d-flex justify-content-center">Odblokirajte korisnika?</h4>
+	        <button type="button" class="close" style="color:white;" data-dismiss="modal">&times;</button>
+	      </div>
+
+	      <!-- Modal body -->
+	      
+
+	      <!-- Modal footer -->
+	      <div class="modal-body">
+	      	<div class="row">
+	      		<div class="col-sm-12  d-flex justify-content-center">
+	      			<form name="deleteBlock" action="odblokirajKorisnik" method="POST">
+	      				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	      				<input type="hidden" name="id" value="{{$b->id}}">
+	      			<button type="submit" class="btn btn-primary mr-2" >Potvrdi</button>
+	      			</form>
+	      			<button type="button" class="btn btn-primary" data-dismiss="modal">Odustani</button>
+	      		</div>
+	      		
+	      	</div>
+	        
+	        
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	@endforeach
+
+
 	<script language="javascript">
 		function proba(klik){
 			labela = document.getElementById(klik);

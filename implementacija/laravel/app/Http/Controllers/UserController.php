@@ -140,16 +140,15 @@ class UserController extends Controller
         
         $kor=$request->korisnik;
         
-        $blok=Block::where('user_id',Auth::user()->id)->orWhere('userBlocked_id',$kor)->first();
+       // $blok=Block::where('user_id',Auth::user()->id)->orWhere('userBlocked_id',$kor)->firs//t();
    
-        $blok2=Block::where('userBlocked_id',Auth::user()->id)->orwhere('user_id',$kor)->first();
-       echo $blok;
-       echo $blok2;
+        $blok=Block::where('userBlocked_id',Auth::user()->id)->orwhere('user_id',$kor)->first();
+     
    
 
-        if($blok!=null || $blok2!=null){
+        if($blok!=null){
             
-               return redirect('users')->with('msgBlocked', 'Nije moguce pristupiti željenom profilu!');
+               return redirect()->back()->with('msgBlocked', 'Nije moguce pristupiti željenom profilu!');
         }
 
         $korisnik=User::find($kor);
@@ -226,6 +225,7 @@ class UserController extends Controller
             $prati=0;
         }
         $isMod=$korisnik->isMod;
+        $isAdmin=$korisnik->isAdmin;
         $profilePic=$korisnik->icon;
         $descr=$korisnik->description;
         $grade=round($korisnik->grade);
@@ -244,20 +244,44 @@ class UserController extends Controller
         if(Auth::user()->isAdmin){
             return view('profile.profileAdmin')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',$korisnik->username)->with('level',$korisnik->level)->with('profilePic',$profilePic)->with('prati',$prati  )->with('isMod',$isMod);
         }else{
-        return view('profile.profileAnotherUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',$korisnik->username)->with('level',$korisnik->level)->with('profilePic',$profilePic)->with('prati',$prati  )->with('isMod',$isMod);
+        return view('profile.profileAnotherUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',$korisnik->username)->with('level',$korisnik->level)->with('profilePic',$profilePic)->with('prati',$prati  )->with('isMod',$isMod)->with('isAdmin',$isAdmin);
         }
     }
 
+    public function odblokirajKorisnika(Request $request){
+        $idBlocked=$request->id;
+        $id=Auth::user()->id;
 
+        Block::where('user_id',$id)->orWhere('userBlocked_id',$idBlocked)->delete();
+    
+        return redirect()->action('UserController@anotherUser', ['korisnik' => $idBlocked]);
+
+    }
+
+    
     public function blokirajKorisnika(Request $request){
         $username=$request->username;
         $user = User::where('username', $username)->first();
+
         $userBlocked_id=$user->id;
         $user_id=Auth::user()->id;
+
         $block= new Block();
         $block->user_id=$user_id;
         $block->userBlocked_id=$userBlocked_id;
         $block->save();
+
+        $follow1=Follow::where('user_id',$user_id)->first();
+        $follow2=Follow::where('userFollowed_id',$userBlocked_id)->first();
+
+        if($follow1!=null){
+            Follow::where('user_id',$user_id)->orwhere('userFollowed_id',$userBlocked_id)->delete();
+        }
+
+        if($follow2!=null){
+           $follow2=Follow::where('user_id',$userBlocked_id)->orWhere('userFollowed_id',$user_id)->delete(); 
+        }
+
         return  redirect('users');
     }
 
@@ -285,6 +309,7 @@ class UserController extends Controller
         $id=User::where('username', $korisnik)->first()->id;
         $komentar=$request->komentar;
         Comment::where('user_id',$id)->orWhere('id',$komentar)->delete();
+        return redirect()->back();
     }
   public function unaprediKorisnika(Request $request){
         $korisnik=$request->korisnik;
@@ -346,7 +371,7 @@ class UserController extends Controller
         $ban->lolNick=$user->lolNick;
         $ban->save();
         User::where('username', $username)->delete();
-        // nzm sta da radim sa banovanim
+        return redirect()->action('UserController@home');
     }
 
    public function obrisiNalog(Request $request){
@@ -456,20 +481,34 @@ class UserController extends Controller
         }
         $users=[];
         $p="";
+        $blocked=[];
 
         if(isset($request->usernameSearch)){
             $p=$request->usernameSearch;
             $users = User::where('username', 'like', $request->usernameSearch."%")->get();
+            $blockedUsers = Block::where('user_id', $myId)->get();
+            foreach($users as $u){
+                foreach($blockedUsers as $b){
+                    if($u->id == $b->userBlocked_id){
+                     $blocked[] = $u;
+                        break;
+                 }
+                }
+            }
            if(count($users)==0){
             $users[0]="Ne postoji korisnik";
            }
         }
         $theUser = Auth::user();
         if(Auth::user()->isAdmin){
-            return view('adminLobby')->with('articles',$articles)->with('length', $length)->with('users', $users)->with('authors', $authors)->with('p',$p);
+            return view('adminLobby')->with('articles',$articles)->with('length', $length)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser);
         }
-        return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser);
+
+      
+        
+        return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser)->with('blocked', $blocked);
     }
+
     public function searchUserByName(Request $request){
         $this->validate($request,[
             'usernameSearch' => 'required',
@@ -491,6 +530,12 @@ class UserController extends Controller
             'potvrdaSifre' => 'required',
             'lolUsername' => 'required|unique:user,lolNick'
         ]);
+
+        $bannedUser = Ban::where('username', $request->input('korisnickoIme'))->first();
+        $bannedLol = Ban::where('lolNick', $request->input('lolUsername'))->first();
+        if($bannedUser!=null || $bannedLol!=null){
+            return view('registerForm')->with('banned', "Banovani ste sa sajta");
+        }
         
         if($request->input('sifra')!=$request->input('potvrdaSifre')){
              return view("registerForm")->with('notSame', "Niste ispravno potvrdili sifru");
