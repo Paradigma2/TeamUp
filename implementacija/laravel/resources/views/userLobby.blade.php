@@ -14,16 +14,17 @@
 @endsection
 
 @section('content')
-@if(Session::get('msgBlocked')!=null)
 
-<div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
-  <strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-@endif
 	<div class="container">
+		@if(Session::get('msgBlocked')!=null)
+
+			<div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
+  				<strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+   				 <span aria-hidden="true">&times;</span>
+  		</button>
+			</div>
+		@endif
 		<div class="row mt-3">
 			
 			<div class="col-sm-3">
@@ -224,14 +225,14 @@
 								{{$blokiran=false}}
 								@foreach($blocked as $b)
 						  			@if($u->id == $b->id)
-						  				{{$blokiran = true}}
+						  				<label hidden>{{$blokiran = true}}</label>
 						  				@break
 						  			@endif
 						  		@endforeach
 						  		@if($blokiran)
 
 						  		
-						  			<a href="#deleteModal{{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+						  			<a href="#deleteModal{{$u->id}}" data-toggle='modal' class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
 						  		@else
 
 									<a href="/another?id={{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
@@ -269,7 +270,7 @@
 	      <div class="modal-body">
 	      	<div class="row">
 	      		<div class="col-sm-12  d-flex justify-content-center">
-	      			<form name="deleteBlock" action="odblokirajKorisnik" method="POST">
+	      			<form name="deleteBlock" action="odblokirajKorisnika" method="POST">
 	      				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	      				<input type="hidden" name="id" value="{{$b->id}}">
 	      			<button type="submit" class="btn btn-primary mr-2" >Potvrdi</button>
