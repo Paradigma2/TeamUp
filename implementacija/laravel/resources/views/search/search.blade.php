@@ -231,7 +231,7 @@
 				  				<div class="col-sm-12 d-flex justify-content-center">
 				  					<div class="row">
 				  						<div class="col-sm-12">
-				  							<img src="/slike/Darius.png" style="width:95px;">
+				  							<img src="{{$ad->icon}}" style="width:95px;">
 				  						</div>
 				  					</div>
 				  					
@@ -282,7 +282,11 @@
 				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
 				  	</div>
 				  	<div class="card-content d-flex justify-content-center mt-3">
-				  		<h5>{{$ad->online}}</h5>&nbsp;<label name="resultOnline" id="resultOnline">{{$ad->user_description}}</label>
+				  		@if($ad->online == 1)
+				  		<h5>online</h5>&nbsp;<label name="resultOnline" id="resultOnline">{{$ad->user_description}}</label>
+				  		@else
+				  		<h5>offline</h5>&nbsp;<label name="resultOnline" id="resultOnline">{{$ad->user_description}}</label>
+				  		@endif
 				  	</div>
 				</div>
 			</div>

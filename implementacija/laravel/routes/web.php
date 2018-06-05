@@ -50,10 +50,6 @@ Route::get('userLobby', function () {
     return view('userLobby');
 });
 
-
-
-
-
 Route::get('inboxAdmin', function () {
     return view('inbox/inboxAdmin');
 });
@@ -86,9 +82,6 @@ Route::get('user', function () {
     return view('profile/profileUser');
 });
 
-
-
-
 Route::get('profile', function () {
     return view('profile');
 });
@@ -97,13 +90,14 @@ Route::get('/', function () {
     return view('main');
 });
 
-
 Route::post('editDescription','UserController@editDescription');
 Route::post('changePassword','UserController@changePassword');      
 Route::post('login','SessionController@create');
 
 Route::get('createEditAdForm','UserController@openFormCreateAd');
 Route::get('search', 'AdController@search');
+Route::get('inbox', 'MessageController@show');
+Route::post('sendMessage', 'MessageController@post');
 Route::post('registerUser','UserController@registerUser');
 Route::post('deleteAd','UserController@deleteAd');
 Route::get('anotherUser', 'UserController@anotherUser');
@@ -121,4 +115,3 @@ Route::post('slanjePoruke', 'UserController@slanjePoruke');
 Route::get('showFormAd', 'CreateEditAdController@showFormAd');
 Route::post('createAd', 'CreateEditAdController@createAd');
 Route::get('showUser','UserController@showUser');
-//  Route::get('ads','CreateEditAdController@showFormAd');
