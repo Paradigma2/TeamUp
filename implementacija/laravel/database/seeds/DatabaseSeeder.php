@@ -14,8 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     	Eloquent::unguard();
+        $this->call(ModeTableSeeder::class);
+        $this->call(PositionTableSeeder::class);
+        $this->call(RankTableSeeder::class);
         $this->call(ChampionTableSeeder::class);
-        
+
                
     }
 }
