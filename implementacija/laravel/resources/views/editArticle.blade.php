@@ -64,12 +64,10 @@
 					<div class="row">
 						<div class="col-sm-4">
 							<div class="row">
-								<div class="col-sm-6">
+								<div class="col-sm-12 d-flex justify-content-center">
 									 <button type="button" class="btn btn-primary"><a class="nav-link" href=/articles style="color:white;">Odustani</a></button>
 								</div>
-								<div class="col-sm-6">
-									 <button type="button" class="btn btn-primary"><a class="nav-link" href="#" style="color:white;">Ubaci sliku</a></button>
-								</div>
+								
 							</div>
 							
 							
