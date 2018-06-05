@@ -4,7 +4,26 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/stylesearch.css') }}">
 @endsection
 
+@section('navbar')
+	@if(Auth::user()->isMod)
+@include('navbar/navbarModerator')
+	@elseif(Auth::user()->isAdmin)
+	@include('navbar/navbarAdmin')
+	@else
+	@include('navbar/navbarUser')
+	@endif
+@endsection
+
 @section('content')
+	@if(Session::get('msgBlocked')!=null)
+
+<div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
+  <strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
 	<div class="container">
 		<div class="row mt-5">
 			<div class="col-sm-2">
@@ -213,16 +232,16 @@
 				  		<div class="col-sm-5">
 				  			<div class="row">
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<h4>Rank: </h4>
+				  					<h6>Rank: </h6>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<label name="resultRank" id="resultRank">{{$ad->rank}}</label>
+				  					<label name="resultRank" id="resultRank" style="font-size: 25px;">{{$ad->rank}}</label>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<h4>Pozicija: </h4>
+				  					<h6>Pozicija: </h6>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<label name="resultPosition" id="resultPosition">{{$ad->position}}</label>
+				  					<label name="resultPosition" id="resultPosition" style="font-size: 25px;">{{$ad->position}}</label>
 				  				</div>
 				  			</div>
 				  		</div>
@@ -237,7 +256,8 @@
 				  					
 				  				</div>
 				  				<div class="col-sm-12 mt-2 d-flex justify-content-center">
-				  					<button class="btn btn-sm btn-primary">{{$ad->username}}</button>
+				  					<a class="nav-link" href="/another?id={{$ad->user_id}}" style="color:white;"><button class="btn btn-primary">{{$ad->username}}</button>
+				  					</a>
 				  				</div>
 				  			</div>
 				  			
@@ -245,16 +265,16 @@
 				  		<div class="col-sm-5">
 				  			<div class="row">
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<h4>Nivo: </h4>
+				  					<h6>Nivo: </h6>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<label name="resultLevel" id="resultLevel">{{$ad->level}}</label>
+				  					<label name="resultLevel" id="resultLevel" style="font-size: 25px;">{{$ad->level}}</label>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<h4>Mod igre: </h4>
+				  					<h6>Mod igre: </h6>
 				  				</div>
 				  				<div class="col-sm-12 d-flex justify-content-center">
-				  					<label name="resultGameMode" id="resultGameMode">{{$ad->mode}}</label>
+				  					<label name="resultGameMode" id="resultGameMode" style="font-size: 22px;">{{$ad->mode}}</label>
 				  				</div>
 				  			</div>
 				  		</div>
