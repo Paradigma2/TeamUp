@@ -46,10 +46,6 @@ Route::get('userLobby', function () {
     return view('userLobby');
 });
 
-
-
-
-
 Route::get('inboxAdmin', function () {
     return view('inbox/inboxAdmin');
 });
@@ -82,9 +78,6 @@ Route::get('user', function () {
     return view('profile/profileUser');
 });
 
-
-
-
 Route::get('profile', function () {
     return view('profile');
 });
@@ -93,7 +86,6 @@ Route::get('/', function () {
     return view('main');
 });
 
-
 Route::post('editDescription','UserController@editDescription');
 Route::post('changePassword','UserController@changePassword');      
 Route::post('login','SessionController@create');
@@ -101,6 +93,7 @@ Route::get('logout','SessionController@destroy');
 Route::get('/home','UserController@home');//ove stavi na guest lobby
 Route::get('createEditAdForm','UserController@openFormCreateAd');
 Route::get('search', 'AdController@search');
+Route::get('inbox', 'MessageController@show');
 Route::post('registerUser','UserController@registerUser');
 Route::post('deleteAd','UserController@deleteAd');
 Route::get('anotherUser', 'UserController@anotherUser');
