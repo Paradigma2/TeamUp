@@ -123,7 +123,7 @@ class UserController extends Controller
     }
 
     public function redirectoAnotherUser(Request $request){
-        $korisnik=User::find(5);
+        $korisnik=User::where('id', $request->id)->first();
        
 
         return redirect()->action('UserController@anotherUser', ['korisnik' => $korisnik->id]);
@@ -426,10 +426,7 @@ class UserController extends Controller
         return view('guestLobby')->with('articles', $articles)->with('length', $length)->with('users', $users);
     }
 
-    public function logOut(){
-        Auth::logout();
-         return redirect()->action('UserController@showGuestLobby');
-    }
+   
 
 
     
