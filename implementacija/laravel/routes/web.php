@@ -28,7 +28,7 @@ Route::post('deleteArticleAdmin', 'ArticleController@deleteArticleAdmin');
 Route::get('editArticle', 'ArticleController@editArticle');
 Route::get('registerForm', 'UserController@registerForm');
 Route::post('updateArticle', 'ArticleController@updateArticle');
-Route::get('logOut', 'UserController@logOut');
+Route::get('logOut', 'SessionController@destroy');
 
 Route::get('searchModerator', function () {
     return view('search/searchModerator');
@@ -101,8 +101,7 @@ Route::get('/', function () {
 Route::post('editDescription','UserController@editDescription');
 Route::post('changePassword','UserController@changePassword');      
 Route::post('login','SessionController@create');
-Route::get('logout','SessionController@destroy');
-Route::get('/home','UserController@home');//ove stavi na guest lobby
+
 Route::get('createEditAdForm','UserController@openFormCreateAd');
 Route::get('search', 'AdController@search');
 Route::post('registerUser','UserController@registerUser');
