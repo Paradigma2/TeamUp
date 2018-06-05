@@ -135,11 +135,6 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-4">
-									<div class="row">
-										<div class="col-sm-6">
-											 <button type="button" class="btn btn-primary"><a class="nav-link" href="#" style="color:white;">Ubaci sliku</a></button>
-										</div>
-									</div>
 									
 									
 								</div>

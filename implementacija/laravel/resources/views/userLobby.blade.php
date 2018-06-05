@@ -36,7 +36,7 @@
 						@else
 						<div class="list-group pages" style="height:300px; overflow-y:auto;">
 							@foreach($followed as $f)
-						   <a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$f->icon}}" width="30px" class="mr-2">{{$f->username}}
+						   <a href="/another?id={{$f->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$f->icon}}" width="30px" class="mr-2">{{$f->username}}
 						   	@if($f->online)
 						   	<i class="material-icons ml-4" style="font-size:15px;color:green;">person</i>
 						   	@else
@@ -208,7 +208,9 @@
 						@elseif($length>0)
 						<div class="list-group pages" style="height:150px; overflow-y:auto;">
 						  @foreach($users as $u)
+						
 							<a href="/another?id={{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+							
 						 @endforeach
 
 						 </div>
