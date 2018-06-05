@@ -140,16 +140,15 @@ class UserController extends Controller
         
         $kor=$request->korisnik;
         
-        $blok=Block::where('user_id',Auth::user()->id)->orWhere('userBlocked_id',$kor)->first();
+       // $blok=Block::where('user_id',Auth::user()->id)->orWhere('userBlocked_id',$kor)->firs//t();
    
-        $blok2=Block::where('userBlocked_id',Auth::user()->id)->orwhere('user_id',$kor)->first();
-       echo $blok;
-       echo $blok2;
+        $blok=Block::where('userBlocked_id',Auth::user()->id)->orwhere('user_id',$kor)->first();
+     
    
 
-        if($blok!=null || $blok2!=null){
+        if($blok!=null){
             
-               return redirect('users')->with('msgBlocked', 'Nije moguce pristupiti željenom profilu!');
+               return redirect()->back()->with('msgBlocked', 'Nije moguce pristupiti željenom profilu!');
         }
 
         $korisnik=User::find($kor);
@@ -249,16 +248,40 @@ class UserController extends Controller
         }
     }
 
+    public function odblokirajKorisnika(Request $request){
+        $idBlocked=$request->id;
+        $id=Auth::user()->id;
 
+        Block::where('user_id',$id)->orWhere('userBlocked_id',$idBlocked)->delete();
+    
+        return redirect()->action('UserController@anotherUser', ['korisnik' => $idBlocked]);
+
+    }
+
+    
     public function blokirajKorisnika(Request $request){
         $username=$request->username;
         $user = User::where('username', $username)->first();
+
         $userBlocked_id=$user->id;
         $user_id=Auth::user()->id;
+
         $block= new Block();
         $block->user_id=$user_id;
         $block->userBlocked_id=$userBlocked_id;
         $block->save();
+
+        $follow1=Follow::where('user_id',$user_id)->first();
+        $follow2=Follow::where('userFollowed_id',$userBlocked_id)->first();
+
+        if($follow1!=null){
+            Follow::where('user_id',$user_id)->orwhere('userFollowed_id',$userBlocked_id)->delete();
+        }
+
+        if($follow2!=null){
+           $follow2=Follow::where('user_id',$userBlocked_id)->orWhere('userFollowed_id',$user_id)->delete(); 
+        }
+
         return  redirect('users');
     }
 
@@ -286,6 +309,7 @@ class UserController extends Controller
         $id=User::where('username', $korisnik)->first()->id;
         $komentar=$request->komentar;
         Comment::where('user_id',$id)->orWhere('id',$komentar)->delete();
+        return redirect()->back();
     }
   public function unaprediKorisnika(Request $request){
         $korisnik=$request->korisnik;
@@ -347,7 +371,7 @@ class UserController extends Controller
         $ban->lolNick=$user->lolNick;
         $ban->save();
         User::where('username', $username)->delete();
-        // nzm sta da radim sa banovanim
+        return redirect()->action('UserController@home');
     }
 
    public function obrisiNalog(Request $request){

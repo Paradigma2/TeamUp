@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\User;
-
+use App\Ban;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -29,6 +29,14 @@ class SessionController extends Controller
             'username' => $request['username'],
             'password' => $request['password'],
         ];
+
+        $ban = Ban::where('username',$request->username)->first();
+
+        if($ban!=null){
+            return redirect()->back()->with('banovanSi','Pristup sajtu nije moguć, banovani ste');
+        }
+
+
 
     	//$checkLogin= User::where('Username',$username)->where('Password',$password)->first();
     	//count($checkLogin)>0

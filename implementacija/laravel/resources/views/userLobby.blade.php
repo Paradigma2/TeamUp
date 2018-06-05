@@ -14,6 +14,15 @@
 @endsection
 
 @section('content')
+@if(Session::get('msgBlocked')!=null)
+
+<div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
+  <strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
 	<div class="container">
 		<div class="row mt-3">
 			
@@ -210,6 +219,7 @@
 						  @foreach($users as $u)
 						
 							<a href="/another?id={{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+							
 							
 						 @endforeach
 

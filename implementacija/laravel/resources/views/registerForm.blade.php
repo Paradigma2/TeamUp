@@ -119,4 +119,56 @@
 		</div>
 
 	</div>
+
+	<div class="modal fade" id="logInModal">
+	   <div class="modal-dialog modal-dialog-centered">
+	     <div class="modal-content pages">
+	     	
+	       <!-- Modal body -->
+	       <div class="modal-body">
+	       	 <button type="button" class="close" data-dismiss="modal" style="color:white;">&times;</button>
+	         <form class="m-5" name="logInForm" method="post" action="login">
+	         	
+	         	<div class="form-group">
+	         		<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	         		<div class="row">
+	         			<div class="col-sm-5">
+	         				<h5><label for="username">Korisnicko ime:</label></h5>
+	         			</div>
+	         			<div class="col-sm-7">
+	         				 <input type="text" class="form-control" id="username" name="username">
+	         			</div>
+	         		</div>
+	         	</div>
+	         	<div class="form-group">
+	         		<div class="row">
+	         			<div class="col-sm-5 ">
+	         				<h5><label for="pass">Sifra:</label></h5>
+	         			</div>
+	         			<div class="col-sm-7">
+	         				 <input type="password" class="form-control" id="pass" name="password">
+	         			</div>
+	         		</div>
+	         	</div>
+	         	<div class="row">
+	         		<div class="col-sm-5 d-flex justify-content-center">
+	         			
+	         					 <button type="button" class="btn btn-primary" data-dismiss="modal">Odustani</button>
+	         				
+	         			</div>
+	         			<div class="col-sm-7">
+	         			<button type="submit" class="btn btn-primary" style="padding:7px;" >Uloguj se</button>
+	         		</div>
+	         			
+	         		</div>
+	         		
+	         	</div>
+	         	   
+	         </form>
+	       </div>
+	      
+	       
+	     </div>
+	   </div>
+	 </div>
 @endsection

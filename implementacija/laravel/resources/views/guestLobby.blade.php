@@ -25,6 +25,16 @@
 	         			
 
 	         	@endif
+
+@if(Session::get('banovanSi')!=null)
+
+<div class="alert mt-3 alert-primary alert-dismissible fade show" role="alert">
+ {{Session::get('banovanSi')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
 	
 	<div id="demo" class="carousel slide mt-3" data-ride="carousel">
 	  <ul class="carousel-indicators">
