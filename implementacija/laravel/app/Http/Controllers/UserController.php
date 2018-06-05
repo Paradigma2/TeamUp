@@ -456,20 +456,34 @@ class UserController extends Controller
         }
         $users=[];
         $p="";
+        $blocked=[];
 
         if(isset($request->usernameSearch)){
             $p=$request->usernameSearch;
             $users = User::where('username', 'like', $request->usernameSearch."%")->get();
+            $blockedUsers = Block::where('user_id', $myId)->get();
+            foreach($users as $u){
+                foreach($blockedUsers as $b){
+                    if($u->id == $b->userBlocked_id){
+                     $blocked[] = $u;
+                        break;
+                 }
+                }
+            }
            if(count($users)==0){
             $users[0]="Ne postoji korisnik";
            }
         }
         $theUser = Auth::user();
         if(Auth::user()->isAdmin){
-            return view('adminLobby')->with('articles',$articles)->with('length', $length)->with('users', $users)->with('authors', $authors)->with('p',$p);
+            return view('adminLobby')->with('articles',$articles)->with('length', $length)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser);
         }
-        return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser);
+
+      
+        
+        return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser)->with('blocked', $blocked);
     }
+
     public function searchUserByName(Request $request){
         $this->validate($request,[
             'usernameSearch' => 'required',
@@ -491,6 +505,12 @@ class UserController extends Controller
             'potvrdaSifre' => 'required',
             'lolUsername' => 'required|unique:user,lolNick'
         ]);
+
+        $bannedUser = Ban::where('username', $request->input('korisnickoIme'))->first();
+        $bannedLol = Ban::where('lolNick', $request->input('lolUsername'))->first();
+        if($bannedUser!=null || $bannedLol!=null){
+            return view('registerForm')->with('banned', "Banovani ste sa sajta");
+        }
         
         if($request->input('sifra')!=$request->input('potvrdaSifre')){
              return view("registerForm")->with('notSame', "Niste ispravno potvrdili sifru");

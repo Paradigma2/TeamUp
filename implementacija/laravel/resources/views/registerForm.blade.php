@@ -45,6 +45,17 @@
 			<div class="col-sm-1">&nbsp;</div>
 		</div>
 		@endisset
+		@isset ($banned)
+			<div class="row">
+			<div class="col-sm-1">&nbsp;</div>
+			<div class="col-sm-10">
+				 <div class="alert alert-primary" style="text-align: center;">
+				    {{$banned}}
+				    </div>
+				    </div>
+			<div class="col-sm-1">&nbsp;</div>
+		</div>
+		@endisset
 		<div class="row">
 			<div class="col-sm-1">&nbsp;</div>
 			<div class="col-sm-10 article">

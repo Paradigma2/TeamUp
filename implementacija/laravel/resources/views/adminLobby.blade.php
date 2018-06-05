@@ -172,7 +172,11 @@
 						@elseif($length>0)
 						<div class="list-group pages" style="height:150px; overflow-y:auto;">
 						  @foreach($users as $u)
+							@if($theUser->id == $u->id)
+							<a href="/showUser" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+							@else
 							<a href="/another?id={{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+							@endif
 						 @endforeach
 
 						 </div>

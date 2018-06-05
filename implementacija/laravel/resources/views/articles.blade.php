@@ -135,8 +135,6 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-4">
-									
-									
 								</div>
 								<div class="col-sm-8">
 									 <button type="submit" name="bt" class="btn btn-primary nav-link" style="width:100%;">Objavi</button>
