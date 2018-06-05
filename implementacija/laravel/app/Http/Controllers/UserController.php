@@ -226,6 +226,7 @@ class UserController extends Controller
             $prati=0;
         }
         $isMod=$korisnik->isMod;
+        $isAdmin=$korisnik->isAdmin;
         $profilePic=$korisnik->icon;
         $descr=$korisnik->description;
         $grade=round($korisnik->grade);
@@ -244,7 +245,7 @@ class UserController extends Controller
         if(Auth::user()->isAdmin){
             return view('profile.profileAdmin')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',$korisnik->username)->with('level',$korisnik->level)->with('profilePic',$profilePic)->with('prati',$prati  )->with('isMod',$isMod);
         }else{
-        return view('profile.profileAnotherUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',$korisnik->username)->with('level',$korisnik->level)->with('profilePic',$profilePic)->with('prati',$prati  )->with('isMod',$isMod);
+        return view('profile.profileAnotherUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',$korisnik->username)->with('level',$korisnik->level)->with('profilePic',$profilePic)->with('prati',$prati  )->with('isMod',$isMod)->with('isAdmin',$isAdmin);
         }
     }
 

@@ -23,8 +23,9 @@
 
 
 @section('blokiraj')
-
+	@if($isAdmin==0)
 	<button  class="button"  href="">Blokiraj</button>
+	@endif
 @endsection
 
 @section('zaprati')
