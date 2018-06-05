@@ -32,21 +32,22 @@ class MessageController extends Controller
     	$i = 0;
     	foreach ($temp as $key => $value) {
     		if ($value->user1_id == $id) {
-    			$name = User::find($value->user2_id)->username;
-    			$value->username = $name;
+    			$user = User::find($value->user2_id);
     		}
     		else {
-    			$name = User::find($value->user1_id)->username;
-    			$value->username = $name;
+    			$user = User::find($value->user1_id);
     		}
+    		$value->username = $user->username;
+    		$value->icon = $user->icon;
     		$message = DB::table('message')
     			->where('conversation_id', $value->id)
     			->oldest();
     		$value->lastMsg = $message->value('content');
     	}
     	foreach ($messages as $key => $value) {
-    		$name = User::find($value->user_id)->username;
-    		$value->username = $name;
+    		$user = User::find($value->user_id);
+    		$value->username = $user->username;
+    		$value->icon = $user->icon;
     		if ($value->user_id == $id) {
     			$value->mine = true;
     		}
@@ -55,8 +56,18 @@ class MessageController extends Controller
     		}
     	}
 
-    	$res = collect(['conversations' => $temp, 'messages' => $messages]);
-    	// dd($res);
+    	$res = collect(['conversations' => $temp, 'messages' => $messages, 'focus' => $focus]);
     	return view('inbox/inboxUser')->with('res', $res);
+    }
+
+    public function post(Request $request) {
+    	$id = Auth::user()->id;
+    	$focus = $request->input('conversation');
+    	$message = new Message;
+    	$message->user_id = $id;
+    	$message->conversation_id = $focus;
+    	$message->content = $request->input('msgToSend');
+    	$message->save();
+    	return redirect()->action('MessageController@show', ['conversation' => $focus]);
     }
 }

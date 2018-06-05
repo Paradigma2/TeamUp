@@ -21,5 +21,9 @@ class Ad extends Model
     {
         return $this->belongsTo('App\Mode');
     }
+    public function mode()
+    {
+        return $this->belongsTo('App\Mastery', 'mastery1_id');
+    }
 }
 
