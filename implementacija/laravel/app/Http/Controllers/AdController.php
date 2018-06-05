@@ -13,7 +13,7 @@ class AdController extends Controller
 {
 	public function search(Request $request) 
 	{
-		$ads = DB::table('ad');
+		$ads = DB::table('ad')->latest();
 		$ads->join('user', 'user_id', '=', 'user.id');
 		if ($request->input('minRank') > 0) {
 			$ads->where('user.rank_id', '>', $request->input('minRank'));
@@ -34,8 +34,8 @@ class AdController extends Controller
 			$ads->where('position_id', $request->input('position'));
 		}
 		$res = $ads;
-		$ads = $ads->get();
-		$res = $res->select('ad.description as ad_description', 'user.description as user_description', 'user.username', 'user.online', 'user.lolNick', 'user.level');
+		$ads = $ads->select('ad.id as id', 'user_id', 'position_id', 'mode_id', 'mastery1_id', 'mastery2_id', 'mastery3_id', 'ad.created_at as created_at', 'ad.updated_at as updated_at')->get();
+		$res = $res->select('ad.description as ad_description', 'user.description as user_description', 'user.username', 'user.online', 'user.lolNick', 'user.level', 'user.icon', 'ad.created_at as created_at', 'ad.updated_at as updated_at');
 		$res = $res->get();
 		$i = 0;
 		foreach ($ads as $key => $value) {
@@ -45,6 +45,7 @@ class AdController extends Controller
 			$temp->mode = $ad->mode()->value('name');
 			$user = User::find($ad->user()->value('id'));
 			$temp->rank = $user->rank()->value('name');
+			
 		}
         return view('search/search')->with('ads', $res);
 	}
