@@ -15,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
     	Eloquent::unguard();
         $this->call(ChampionTableSeeder::class);
-        
-               
+        $this->call(ModeTableSeeder::class);
+        $this->call(PositionTableSeeder::class);
+        $this->call(RankTableSeeder::class);   
     }
 }

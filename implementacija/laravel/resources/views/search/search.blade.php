@@ -293,13 +293,14 @@
 				  </div>
 				  <div class="card-content">
 				
-				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  					<img src="{{$ad->champ1}}" style="width:40px;" class="ml-1 mr-1 rounded-circle">
 				  				
-				  				
-				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
-				  				
-				  				
-				  					<img src="/slike/Brand.png" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  					@if ($ad->champ2 != null)
+				  					<img src="{{$ad->champ2}}" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  					@endif
+				  					@if ($ad->champ3 != null)
+				  					<img src="{{$ad->champ3}}" style="width:40px;" class="ml-1 mr-1 rounded-circle">
+				  					@endif
 				  	</div>
 				  	<div class="card-content d-flex justify-content-center mt-3">
 				  		@if($ad->online == 1)

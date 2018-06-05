@@ -99,7 +99,7 @@ class CreateEditAdController extends Controller
         $m1->user_id=$user_id;
         $m1->champion_id=$champ1->id;
         $m1->save();
-
+        
         $ad=new Ad();
         $ad->description=$opis;
         $ad->user_id=$user_id;
