@@ -15,6 +15,8 @@ use App\Ban;
 
 
 
+
+
 use Validator;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,6 +33,7 @@ use App\Follow;
 
 class UserController extends Controller
 {
+
     public function index(){
 
         $rank=Rank::find(Auth::user()->rank_id);
@@ -120,9 +123,13 @@ class UserController extends Controller
     	return view('profile.profileUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',Auth::user()->username)->with('level',Auth::user()->level)->with('profilePic',$profilePic);
     }
 
+    public function showUser(){
+        return redirect('users');
+    }
+
     public function redirectoAnotherUser(Request $request){
-        $korisnik=User::find(5);
-       
+
+        $korisnik=User::where('id', $request->id)->first();      
 
         return redirect()->action('UserController@anotherUser', ['korisnik' => $korisnik->id]);
         
@@ -339,9 +346,17 @@ class UserController extends Controller
         $ban->lolNick=$user->lolNick;
         $ban->save();
         User::where('username', $username)->delete();
+        // nzm sta da radim sa banovanim
     }
 
+   public function obrisiNalog(Request $request){
+        $username=$request->username;
+        User::where('username', $username)->delete();
+           return redirect()->action('UserController@showGuestLobby');
+       
+    }
     public function openFormCreateAd(){
+         
           return redirect()->action('CreateEditAdController@showFormAd');
     }
 
@@ -416,10 +431,7 @@ class UserController extends Controller
         return view('guestLobby')->with('articles', $articles)->with('length', $length)->with('users', $users);
     }
 
-    public function logOut(){
-        Auth::logout();
-         return redirect()->action('UserController@showGuestLobby');
-    }
+   
 
 
     
@@ -550,6 +562,12 @@ class UserController extends Controller
             return view('registerForm')->with('greska', $greska);
         }
         
+    }
+
+    public function proba(){
+
+       $champions = Champion::all();
+       return view('profile/forms/createEditAdForm')->with('champions', $champions);
     }
 
 }

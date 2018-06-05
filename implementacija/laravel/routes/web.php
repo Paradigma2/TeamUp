@@ -13,6 +13,9 @@
 use  App\Http\Controllers\CreateEditAdForm;
 
 
+Route::resource('users','UserController');
+Route::get('proba', 'UserController@proba');
+
 Route::get('home', 'UserController@home');
 Route::post('registerUser','UserController@registerUser');
 Route::post('makeArticle','ArticleController@makeArticle');
@@ -21,10 +24,11 @@ Route::get('guestLobby','UserController@showGuestLobby');
 Route::get('articles', 'ArticleController@showArticles');
 Route::get('createArticle', 'ArticleController@createArticle');
 Route::post('deleteArticle', 'ArticleController@deleteArticle');
+Route::post('deleteArticleAdmin', 'ArticleController@deleteArticleAdmin');
 Route::get('editArticle', 'ArticleController@editArticle');
 Route::get('registerForm', 'UserController@registerForm');
 Route::post('updateArticle', 'ArticleController@updateArticle');
-Route::get('logOut', 'UserController@logOut');
+Route::get('logOut', 'SessionController@destroy');
 
 Route::get('searchModerator', function () {
     return view('search/searchModerator');
@@ -89,8 +93,7 @@ Route::get('/', function () {
 Route::post('editDescription','UserController@editDescription');
 Route::post('changePassword','UserController@changePassword');      
 Route::post('login','SessionController@create');
-Route::get('logout','SessionController@destroy');
-Route::get('/home','UserController@home');//ove stavi na guest lobby
+
 Route::get('createEditAdForm','UserController@openFormCreateAd');
 Route::get('search', 'AdController@search');
 Route::get('inbox', 'MessageController@show');
@@ -100,6 +103,7 @@ Route::get('anotherUser', 'UserController@anotherUser');
 Route::get('another', 'UserController@redirectoAnotherUser');
 Route::post('blokirajKorisnika', 'UserController@blokirajKorisnika');
 Route::post('udaljiSaSajta','UserController@udaljiSaSajta');
+Route::post('obrisiNalog','UserController@obrisiNalog');
 Route::get('zapratiKor','UserController@zapratiKorisnika');
 Route::get('obrisiKom','UserController@obrisiKom');
 Route::get('unaprediKor','UserController@unaprediKorisnika');
@@ -107,6 +111,5 @@ Route::post('oceniKorisnika', 'UserController@oceniKorisnika');
 Route::post('slanjePoruke', 'UserController@slanjePoruke');
 Route::get('showFormAd', 'CreateEditAdController@showFormAd');
 Route::post('createAd', 'CreateEditAdController@createAd');
-
-Route::resource('users','UserController');
+Route::get('showUser','UserController@showUser');
 //  Route::get('ads','CreateEditAdController@showFormAd');

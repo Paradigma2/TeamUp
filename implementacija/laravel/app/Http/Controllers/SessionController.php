@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use Validator;
+use App\User;
 
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -42,7 +43,7 @@ class SessionController extends Controller
     //	}
     	
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
-    		
+    		$user = User::where('username', $username)->update(['online' => 1]);
     		return  redirect()->action('UserController@home');
 
     	}else{
@@ -56,7 +57,10 @@ class SessionController extends Controller
 
     
     public function destroy(){
-    	auth()->logout();
-    	return redirect()->home();
+      User::where('id', Auth::user()->id)->update(['online' => 0]);
+
+        Auth::logout();
+         return redirect()->action('UserController@showGuestLobby');
+   
     }
 }

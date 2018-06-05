@@ -129,13 +129,13 @@
 												$content = $articles[$j]->content;
 												$splitContent = explode(PHP_EOL, $content);
 											?>
-											<p class="card-text">{{ $splitContent[0]}}</p>
+											<p class="card-text" style="text-align: justify;">{{ $splitContent[0]}}</p>
 
 
 											<div class="card-text collapse" id="collapseArticle{{ $articles[$j]->id }}">
 												@foreach($splitContent as $c)
 												@if($c != $splitContent[0])
-													<p>{{$c}}</p>
+													<p style="text-align: justify;">{{$c}}</p>
 													@endif
 												@endforeach
 											</div>
@@ -208,7 +208,7 @@
 						@elseif($length>0)
 						<div class="list-group pages" style="height:150px; overflow-y:auto;">
 						  @foreach($users as $u)
-							<a href="#" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+							<a href="/another?id={{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
 						 @endforeach
 
 						 </div>
