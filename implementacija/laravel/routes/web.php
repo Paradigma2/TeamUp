@@ -119,5 +119,5 @@ Route::post('oceniKorisnika', 'UserController@oceniKorisnika');
 Route::post('slanjePoruke', 'UserController@slanjePoruke');
 Route::get('showFormAd', 'CreateEditAdController@showFormAd');
 Route::post('createAd', 'CreateEditAdController@createAd');
-
+Route::get('showUser','UserController@showUser');
 //  Route::get('ads','CreateEditAdController@showFormAd');
