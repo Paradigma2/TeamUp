@@ -109,6 +109,8 @@ Route::post('deleteAd','UserController@deleteAd');
 Route::get('anotherUser', 'UserController@anotherUser');
 Route::get('another', 'UserController@redirectoAnotherUser');
 Route::post('blokirajKorisnika', 'UserController@blokirajKorisnika');
+Route::post('odblokirajKorisnika', 'UserController@odblokirajKorisnika');
+
 Route::post('udaljiSaSajta','UserController@udaljiSaSajta');
 Route::post('obrisiNalog','UserController@obrisiNalog');
 Route::get('zapratiKor','UserController@zapratiKorisnika');
