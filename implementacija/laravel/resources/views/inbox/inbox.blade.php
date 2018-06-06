@@ -6,20 +6,23 @@
 
 @endsection
 @section('content')
-<script>
-
-	</script>
+<script type="text/javascript">
+	public function resizeFun() {
+   		document.getElementById("collapseInbox").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 100 + "px;");
+   		document.getElementById("messages").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.7*screen.availHeight + "px;");
+   		document.getElementById("msgSendDiv").setAttribute("style","width: 100%; margin-top: " + 0.02*screen.availHeight + "px;");
+   	}
+</script>
 	<div class="container-fluid" style="min-height: 100%;">
 		<div class="row mt-3">
-			<div class="col-sm-3"  style=" background-color: rgba(5,5,5,0.4); width: 100%; min-width: 250px;">
-				<div  class="collapse" id="collapseInbox" style="  overflow-x: hidden; overflow-y:scroll; height:560px; width: 100%;"	 >
-					<button id="collapseButton"  class="btn-block btn buttonGrade mt-2 mb-2 " style="border-radius: 5px;"type="button" data-toggle="collapse" data-target="#collapseInbox" class="visible-xs visible-sm collapsed">Prikazi ćaskanja</button>
+			<div class="col-md-3"  style=" background-color: rgba(5,5,5,0.4); width: 100%; padding: 0em">
+				<button id="collapseButton"  class="btn-block btn buttonGrade mt-2 mb-2 " style="border-radius: 5px;" type="button" data-toggle="collapse" data-target="#collapseInbox" class="visible-xs visible-sm collapsed">Prikazi ćaskanja</button>
+				<div  class="collapse" id="collapseInbox" onresize="resizeFun()">
   					@isset($res)
 					@forelse($res['conversations'] as $item)
-					<form class="m-5" name="selectMessageForm" action="inbox" method="GET">
-					<!-- <input type="hidden" name="_token" value="{{csrf_token()}}">					 -->
+					<form name="selectMessageForm" action="inbox" method="GET">
 					<a href="/inbox?conversation={{$item->id}}">
-					<div  class="message row">	
+					<div  class="message row" style="margin: 30px; min-width: 150px;">	
 						<div class="col-sm-12 mb-2">
 							<img src="{{$item->icon}}" width="30px">
 							<label style="color: white;">
@@ -27,28 +30,27 @@
 							</label>
 						</div>
 						<div class="col-sm-12">
-						<textarea readonly style="overflow:hidden" class="form-control " style="min-width: 100%">{{$item->lastMsg}}</textarea>
+						<label style="min-width:100%; color:white;" >{{$item->lastMsg}}</label>
 						</div>
 					</div>
 					</a>
 					</form>
 					@empty
 					<div  class=" message row ">
-							<div class="col-sm-12 mb-2">
-								<label style="color: white;">
-									Ni sa kim niste razgovarali
-								</label>
-							</div>
+						<div class="col-sm-12 mb-2">
+							<label style="color: white;">
+								Ni sa kim niste razgovarali
+							</label>
+						</div>
 					</div>
 					@endforelse
 					@endisset
 				</div>
 			</div>
 
-
-			<div class="col-sm-9  " style="background-color: rgba(5,5,5,0.4); width: 100%;">
+			<div class="col-md-9  " style="background-color: rgba(5,5,5,0.4); width: 100%;">
 				<div class="row " >
-					<div id="messages" style="  overflow-x: hidden; overflow-y:scroll; height:460px; width: 100%;"	>
+					<div id="messages">
 					@isset($res)
 					@forelse($res['messages'] as $item)
 						@if ($item->mine)
@@ -73,14 +75,14 @@
 					@endisset
 
 					</div>
-					<div class="mt-2" style="width: 100%;">
-						<form class="m-5" name="postMessageForm" action="sendMessage" method="POST">
+					<div id="msgSendDiv" style="width: 100%;">
+						<form name="postMessageForm" action="sendMessage" method="POST">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<textarea class="form-control"  placeholder="Napisite poruku..." cols="115" name="msgToSend" id="msgToSend"></textarea>
 
 						<input type="hidden" name="conversation" value={{$res['focus']}}>	
 
-						<button class="btn-block mt-2 buttonGrade" >
+						<button class="btn-block mt-2 buttonGrade">
 							Posalji
 						</button>
 					</div>
@@ -89,9 +91,12 @@
 		</div>
 	</div>
 
-	<script>
+<script>
 	var objDiv = document.getElementById("messages");
-objDiv.scrollTop = objDiv.scrollHeight;
-		
-	</script>
+	objDiv.scrollTop = objDiv.scrollHeight;
+   	document.getElementById("collapseInbox").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.8*screen.availHeight + "px;");
+   	document.getElementById("messages").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.7*screen.availHeight + "px;");
+   	document.getElementById("msgSendDiv").setAttribute("style","width: 100%; margin-top: " + 0.02*screen.availHeight + "px;");
+
+</script>
 @endsection

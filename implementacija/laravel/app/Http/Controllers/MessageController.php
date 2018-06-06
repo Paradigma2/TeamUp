@@ -54,7 +54,7 @@ class MessageController extends Controller
     		$value->icon = $user->icon;
     		$message = DB::table('message')
     			->where('conversation_id', $value->id)
-    			->oldest();
+    			->latest();
     		$value->lastMsg = $message->value('content');
     	}
     	foreach ($messages as $key => $value) {
@@ -79,8 +79,10 @@ class MessageController extends Controller
     	$message = new Message;
     	$message->user_id = $id;
     	$message->conversation_id = $focus;
-    	$message->content = $request->input('msgToSend');
-    	$message->save();
+    	$message->content = $request->input('msgToSend');	
+        $message->save();
+        Conversation::where('id', $focus)->
+            update(['updated_at' => $message->updated_at]);
     	return redirect()->action('MessageController@show', ['conversation' => $focus]);
     }
 }
