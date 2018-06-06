@@ -93,8 +93,16 @@ class AdController extends Controller
                 $temp->champ3 = null;
             }
 		}
-		// dd($res);
-        return view('search/search')->with('ads', $res);
+		if ($res->count() > 0) {
+        	return view('search/search')->with('ads', $res);
+		}
+		else {
+			return redirect()->back()->with('noResults', 'Nijedan oglas ne zadovoljava kriterijume pretrage');
+		}
 	}
+    
+    public function showSearch() {
+    	return view('search/search');
+    }
     
 }
