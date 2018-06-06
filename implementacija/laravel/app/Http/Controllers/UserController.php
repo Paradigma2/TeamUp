@@ -586,7 +586,6 @@ class UserController extends Controller
 
         $user->icon=$img;
 
-        $user->level=$summoner->summonerLevel;
 
         $user->level = $summoner->summonerLevel;
 

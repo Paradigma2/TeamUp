@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PositionTableSeeder::class);
         $this->call(RankTableSeeder::class);
         $this->call(ChampionTableSeeder::class);
+        $this->call(UserTableSeeder::class);
+        $this->call(ArticleTableSeeder::class);
 
     }
 }
