@@ -46,7 +46,7 @@
 	  </ul>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src={{ URL::asset('slike/carousel1.jpg') }} alt="pic1" width="1100" height="500">
+	      <img src={{ URL::asset('slike/carousel1.jpg') }} alt="pic1" width="100%" height="500">
 	      <div class="carousel-caption">
 	        <h6 class="display-4">Postani clan najvece LoL zajednice u regionu</h6>
 	      </div>   
