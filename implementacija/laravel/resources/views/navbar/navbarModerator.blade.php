@@ -26,7 +26,7 @@
 
         <a class="dropdown-item" href="showUser">Profil</a>
         
-        <a class="dropdown-item" href="#">Inbox</a>
+        <a class="dropdown-item" href="inbox">Inbox</a>
         <a class="dropdown-item" href="/logOut">Log out</a>
 
       
