@@ -15,19 +15,8 @@
 
 @section('content')
 
-<<<<<<< HEAD
-	<div class="container">
 		@if(Session::get('msgBlocked')!=null)
 
-			<div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
-  				<strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-   				 <span aria-hidden="true">&times;</span>
-  		</button>
-			</div>
-		@endif
-		<div class="row mt-3">
-=======
 <div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
   <strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -37,7 +26,7 @@
 @endif
 	
 		<div class="row mt-3 p-3">
->>>>>>> ebd03a8448c5f246131193f09648a19ca2ad37d8
+
 			
 			<div class="col-sm-3">
 				<div class="card mt-3 article">
