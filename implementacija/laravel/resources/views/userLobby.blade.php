@@ -15,6 +15,7 @@
 
 @section('content')
 
+<<<<<<< HEAD
 	<div class="container">
 		@if(Session::get('msgBlocked')!=null)
 
@@ -26,6 +27,17 @@
 			</div>
 		@endif
 		<div class="row mt-3">
+=======
+<div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
+  <strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+	
+		<div class="row mt-3 p-3">
+>>>>>>> ebd03a8448c5f246131193f09648a19ca2ad37d8
 			
 			<div class="col-sm-3">
 				<div class="card mt-3 article">
@@ -222,17 +234,25 @@
 							@if($theUser->id == $u->id)
 							<a href="/showUser" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
 							@else
-								{{$blokiran=false}}
+							{{$blokiran=false}}
 								@foreach($blocked as $b)
 						  			@if($u->id == $b->id)
 						  				<label hidden>{{$blokiran = true}}</label>
+<<<<<<< HEAD
+=======
+						  				
+>>>>>>> ebd03a8448c5f246131193f09648a19ca2ad37d8
 						  				@break
 						  			@endif
 						  		@endforeach
 						  		@if($blokiran)
 
 						  		
+<<<<<<< HEAD
 						  			<a href="#deleteModal{{$u->id}}" data-toggle='modal' class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+=======
+						  			<a href="#deleteModal{{$u->id}}" data-toggle="modal" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
+>>>>>>> ebd03a8448c5f246131193f09648a19ca2ad37d8
 						  		@else
 
 									<a href="/another?id={{$u->id}}" class="list-group-item list-group-item-action pages list-group-item-dark"><img src="/{{$u->icon}}" width="30px" class="mr-2">{{$u->username}}</a>
@@ -300,5 +320,5 @@
 			}
 		}
 	</script>
-</div>
+
 @endsection

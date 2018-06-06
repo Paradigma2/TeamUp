@@ -6,7 +6,7 @@ class UserTableSeeder extends Seeder{
 
 		 DB::table('user')->insert([
 		 	'username'=> 'jana',
-		 	'password'=> bcrypt('drazenjekreten'),
+		 	'password'=> bcrypt('aaaa'),
 		 	'online' => 1,
 		 	'isAdmin'=> 0,
 		 	'isMod'=> 0,
