@@ -78,7 +78,7 @@
 				<div class="row">
 					<div class="col-sm-12">
 							
-					@if($grade!=null)
+					@if($grade!=0)
 						Ocena: {{$grade}}
 					@else
 						Ocena: 	Nema ocene
