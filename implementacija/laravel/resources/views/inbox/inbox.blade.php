@@ -54,9 +54,9 @@
 					@isset($res)
 					@forelse($res['messages'] as $item)
 						@if ($item->mine)
-						<div  class="  col-sm-6 ml-auto mt-3" style="padding:10px;  background-color: rgba(5,5,10,0.8); border-radius: 15px;">
+						<div  class="  col-sm-6 ml-auto mt-3" style="padding:10px; margin: 10px; background-color: rgba(5,5,10,0.8); border-radius: 15px;">
 						@else
-						<div  class="  col-sm-6  mt-3" style="padding:10px;  background-color: rgba(5,10,5,0.8);  border-radius: 15px;">
+						<div  class="  col-sm-6  mt-3" style="padding:10px; margin: 10px; background-color: rgba(5,10,5,0.8);  border-radius: 15px;">
 						@endif
 							<div class="col-sm-12 mb-2">
 								<img src="{{$item->icon}}" width="30px">
@@ -70,7 +70,6 @@
 						</div>
 
 					@empty
-
 					@endforelse
 					@endisset
 

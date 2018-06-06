@@ -15,6 +15,15 @@
 @endsection
 
 @section('content')
+	@if(Session::get('noResults')!=null)
+
+	<div class="alert alert-primary alert-dismissible fade show" role="alert">
+ 		<strong style="color:black;">{{Session::get('noResults')}}</strong> 
+  		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    		<span aria-hidden="true">&times;</span>
+  		</button>
+	</div>
+	@endif
 	@if(Session::get('msgBlocked')!=null)
 
 <div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
@@ -32,8 +41,7 @@
 				<div class="card article">
 					<div class="card-body">
 
-				<form class="m-5" name="searchAdForm" action="search" method="GET">
-					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<form class="m-5" name="searchAdForm" action="searchAds" method="GET">
 					<h1 class="card-title mb-2">Pretraga igraca</h1>
 					<div class="form-group">
 						<div class="row mt-4">
@@ -314,13 +322,6 @@
 			</div>
 			@endif
 		@empty
-		<div class="row mt-3" id="neuspela">		
-			<div class="col-sm-12" style="color:white;">
-				<h3 class="d-flex justify-content-center">Nažalost nijedan oglas ne zadovoljava pretragu za zadate parametre.
-				</h3>
-				<h3 class="d-flex justify-content-center">Pokušajte sa izmenjenim parametrima.</h3>
-			</div>
-		</div>
 		@endforelse
 		@endisset
 
