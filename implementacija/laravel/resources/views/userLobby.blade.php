@@ -75,7 +75,7 @@
 				  <div class="carousel-inner">
 				    <div class="carousel-item active">
 				    	<a href="#page1">
-				      <img src={{ URL::asset('slike/carousel1.jpg') }} alt="pic1" width="1100" height="300"></a>
+				      <img src={{ URL::asset('slike/carousel1.jpg') }} alt="pic1" width="100%" height="300"></a>
 				      <div class="carousel-caption">
 				        <h6 class="display-4"><label>
 				        	@if($length>0)
@@ -86,7 +86,7 @@
 				    </div>
 				    <div class="carousel-item">
 				    	<a href="#page1">
-				      <img src={{ URL::asset('slike/carousel2.jpg') }} alt="pic2" width="1100" height="300"></a>
+				      <img src={{ URL::asset('slike/carousel2.jpg') }} alt="pic2" width="100%" height="300"></a>
 				      <div class="carousel-caption">
 				        <h1 class="display-4"><label>@if($length>1)
 				        	{{$articles[1]->headline}}
@@ -95,7 +95,7 @@
 				    </div>
 				    <div class="carousel-item">
 				    	<a href="#page2">
-				      <img src={{ URL::asset('slike/carousel3.jpg') }} alt="pic3" width="1100" height="300"></a>
+				      <img src={{ URL::asset('slike/carousel3.jpg') }} alt="pic3" width="100%" height="300"></a>
 				      <div class="carousel-caption">
 				        <h1 class="display-4"><label>@if($length>2)
 				        	{{$articles[2]->headline}}

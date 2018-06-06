@@ -46,34 +46,34 @@
 	  </ul>
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src={{ URL::asset('slike/carousel1.jpg') }} alt="pic1" width="1100" height="500">
+	      <img src={{ URL::asset('slike/carousel1.jpg') }} alt="pic1" width="100%" height="500">
 	      <div class="carousel-caption">
-	        <h6 class="display-4">Postani clan najvece LoL zajednice u regionu</h6>
+	        <h6 class="display-4">Postani član najveće LoL zajednice u regionu</h6>
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
 
 	      <img src={{ URL::asset('slike/carousel2.jpg') }} alt="pic2" width="1100" height="500">
 	      <div class="carousel-caption">
-	        <h1 class="display-4">Pronadji svog idealnog saigraca</h1>
+	        <h1 class="display-4">Pronađi svog idealnog saigrača</h1>
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
 	    	<a href="#page1">
 	      <img src={{ URL::asset('slike/carousel3.jpg') }} alt="pic3" width="1100" height="500"></a>
 	      <div class="carousel-caption">
-	        <h1 class="display-4">Saznaj prvi najnovija desavanja</h1>
+	        <h1 class="display-4">Saznaj prvi najnovija dešavanja</h1>
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
 	      <img src={{ URL::asset('slike/carousel4.jpg') }} alt="pic4" width="1100" height="500">
 	      <div class="carousel-caption">
-	        <h1 class="display-4">Ucestvuj u turnirima zajedno sa ostalim clanovima</h1>
+	        <h1 class="display-4">Učestvuj u turnirima zajedno sa ostalim članovima</h1>
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
 	    	<div class="carousel-caption">
-	        <h1 class="display-4">Pridruzi se danas!</h1>
+	        <h1 class="display-4">Pridruži se danas!</h1>
 	       
 	     	 </div>   
 	      <img src={{ URL::asset('slike/carousel5.jpg') }} alt="pic5" width="1100" height="500">

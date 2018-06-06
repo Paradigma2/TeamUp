@@ -15,6 +15,15 @@
 @endsection
 
 @section('content')
+	@if(Session::get('noResults')!=null)
+
+	<div class="alert alert-primary alert-dismissible fade show" role="alert">
+ 		<strong style="color:black;">{{Session::get('noResults')}}</strong> 
+  		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    		<span aria-hidden="true">&times;</span>
+  		</button>
+	</div>
+	@endif
 	@if(Session::get('msgBlocked')!=null)
 
 <div class="mt-3 alert alert-primary alert-dismissible fade show" role="alert">
@@ -32,21 +41,20 @@
 				<div class="card article">
 					<div class="card-body">
 
-				<form class="m-5" name="searchAdForm" action="search" method="GET">
-					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<form class="m-5" name="searchAdForm" action="searchAds" method="GET">
 					<h1 class="card-title mb-2">Pretraga igraca</h1>
 					<div class="form-group">
 						<div class="row mt-4">
 							<div class="col-sm-4">
 								<h4>Rank</h4>
 							</div>
-							<div class="col-sm-2 d-flex justify-content-end">
+							<div class="col-sm-1 d-flex justify-content-center">
 								<h5><label for="minRank">min:</label></h5>
 							</div>
-							<div class="col-sm-2">
+							<div class="col-sm-3">
 								<select class="form-control" name="minRank" id="minRank">
-									<option value=0>Svi</option>
-											<option value=1>Bronze V</option>
+									
+											<option value=1 selected="true">Bronze V</option>
 											<option value=2>Bronze IV</option>
 											<option value=3>Bronze III</option>
 											<option value=4>Bronze II</option>
@@ -75,12 +83,11 @@
 											<option value=27>Challenger I</option>
 								</select>
 							</div>
-							<div class="col-sm-2 d-flex justify-content-end">
+							<div class="col-sm-1 d-flex justify-content-center">
 								<h5><label for="maxRank ">max:</label></h5>
 							</div>
-							<div class="col-sm-2">
+							<div class="col-sm-3">
 								<select class="form-control" name="maxRank" id="maxRank">
-									<option value=0>Svi</option>
 											<option value=1>Bronze V</option>
 											<option value=2>Bronze IV</option>
 											<option value=3>Bronze III</option>
@@ -107,7 +114,7 @@
 											<option value=24>Diamond II</option>
 											<option value=25>Diamond I</option>
 											<option value=26>Master I</option>
-											<option value=27>Challenger I</option>
+											<option value=27 selected="true">Challenger I</option>
 								</select>
 							</div>
 						</div>
@@ -122,7 +129,7 @@
 							</div>
 							<div class="col-sm-2">
 								<select class="form-control" name="minLevel" id="minLevel">
-									<option value=0>Svi</option>
+									<option selected="true" value=0>0</option>
 											<option value=10>10</option>
 											<option value=20>20</option>
 											<option value=30>30</option>
@@ -145,7 +152,7 @@
 							</div>
 							<div class="col-sm-2">
 								<select class="form-control" name="maxLevel" id="maxLevel">
-									<option value=0>Svi</option>
+									
 											<option value=10>10</option>
 											<option value=20>20</option>
 											<option value=30>30</option>
@@ -160,7 +167,7 @@
 											<option value=120>120</option>
 											<option value=130>130</option>
 											<option value=140>140</option>
-											<option value=150>150</option>
+											<option value=150 selected="true">150</option>
 								</select>
 							</div>
 						</div>
@@ -315,13 +322,6 @@
 			</div>
 			@endif
 		@empty
-		<div class="row mt-3" id="neuspela">		
-			<div class="col-sm-12" style="color:white;">
-				<h3 class="d-flex justify-content-center">Nažalost nijedan oglas ne zadovoljava pretragu za zadate parametre.
-				</h3>
-				<h3 class="d-flex justify-content-center">Pokušajte sa izmenjenim parametrima.</h3>
-			</div>
-		</div>
 		@endforelse
 		@endisset
 

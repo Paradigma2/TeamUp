@@ -112,7 +112,7 @@
 					<div class="row">
 						<div class="col-sm-4 d-flex justify-content-center">
 							
-									 <button type="button" class="btn btn-primary btn-sm"><a class="nav-link" href=/guestLobby style="color:white;">Odustani</a></button>
+									 <a class="nav-link" href=/guestLobby style="color:white;"><button type="button" class="btn btn-primary" >Odustani</button></a>
 								
 							</div>
 							<div class="col-sm-8">

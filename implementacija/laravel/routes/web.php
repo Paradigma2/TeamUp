@@ -95,7 +95,8 @@ Route::post('changePassword','UserController@changePassword');
 Route::post('login','SessionController@create');
 
 Route::get('createEditAdForm','UserController@openFormCreateAd');
-Route::get('search', 'AdController@search');
+Route::get('search', 'AdController@showSearch');
+Route::get('searchAds', 'AdController@search');
 Route::get('inbox', 'MessageController@show');
 Route::post('sendMessage', 'MessageController@post');
 Route::post('registerUser','UserController@registerUser');

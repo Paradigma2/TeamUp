@@ -413,30 +413,28 @@ class UserController extends Controller
             'poruka'      =>'required|max:255',
           
         ]);
+        $id = Auth::user()->id;
         $userSS=$request->username;
         $userS=User::where('username',$userSS)->first()->id;
         $poruka=$request->poruka;
         $konverzacija_id=null;
-       $kon1= Conversation::where('user1_id',Auth::user()->id)->where('user2_id',$userS)->first();
-       $kon2=Conversation::where('user1_id', $userS)->where('user2_id',Auth::user()->id)->first(); 
-       if($kon1!=null){
+
+        $kon1 = Conversation::where('user1_id', $id)->where('user2_id',$userS)->first();
+        $kon2 = Conversation::where('user1_id', $userS)->where('user2_id', $id)->first(); 
+        if($kon1 != null) {
+
             $konverzacija_id=$kon1->id;
-       }else if($kon2!=null){
-        $konverzacija_id=$kon2->id;
-       }else{
+        }else if($kon2!=null){
+            $konverzacija_id=$kon2->id;
+        }else{
             $konverzacija=new Conversation();
             $konverzacija->user1_id=Auth::user()->id;
             $konverzacija->user2_id=$userS;
             $konverzacija->save();
             $konverzacija_id=$konverzacija->id;
-       }
+        }
 
-        $message = new Message;
-        $message->user_id = Auth::user()->id;
-        $message->conversation_id = $konverzacija_id;
-        $message->content=$poruka;
-        $message->save();
-        return redirect()->action('MessageController@show', ['conversation' => $konverzacija_id]);
+        return redirect()->action('MessageController@post', ['conversation' => $konverzacija_id, 'msgToSend' => $poruka]);
     }
 
     public function editDescription(Request $request){
@@ -607,7 +605,6 @@ class UserController extends Controller
 
         $user->icon=$img;
 
-        $user->level=$summoner->summonerLevel;
 
         $user->level = $summoner->summonerLevel;
 
