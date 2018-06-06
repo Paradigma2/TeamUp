@@ -11,13 +11,13 @@
 	</script>
 	<div class="container-fluid" style="min-height: 100%;">
 		<div class="row mt-3">
-			<div class="col-sm-3"  style=" background-color: rgba(5,5,5,0.4);">
-				<div  class="collapse" id="collapseInbox" style="  overflow-x: hidden; overflow-y:scroll;height:560px;"	 >
+			<div class="col-sm-3"  style=" background-color: rgba(5,5,5,0.4); width: 100%; min-width: 250px;">
+				<div  class="collapse" id="collapseInbox" style="  overflow-x: hidden; overflow-y:scroll; height:560px; width: 100%;"	 >
 					<button id="collapseButton"  class="btn-block btn buttonGrade mt-2 mb-2 " style="border-radius: 5px;"type="button" data-toggle="collapse" data-target="#collapseInbox" class="visible-xs visible-sm collapsed">Prikazi ćaskanja</button>
   					@isset($res)
 					@forelse($res['conversations'] as $item)
 					<form class="m-5" name="selectMessageForm" action="inbox" method="GET">
-					<input type="hidden" name="_token" value="{{csrf_token()}}">					
+					<!-- <input type="hidden" name="_token" value="{{csrf_token()}}">					 -->
 					<a href="/inbox?conversation={{$item->id}}">
 					<div  class="message row">	
 						<div class="col-sm-12 mb-2">
@@ -48,7 +48,7 @@
 
 			<div class="col-sm-9  " style="background-color: rgba(5,5,5,0.4); width: 100%;">
 				<div class="row " >
-					<div id="messages" style="  overflow-x: hidden; overflow-y:scroll; height:460px;"	>
+					<div id="messages" style="  overflow-x: hidden; overflow-y:scroll; height:460px; width: 100%;"	>
 					@isset($res)
 					@forelse($res['messages'] as $item)
 						@if ($item->mine)

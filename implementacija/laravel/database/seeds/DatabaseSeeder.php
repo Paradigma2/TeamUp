@@ -19,6 +19,5 @@ class DatabaseSeeder extends Seeder
         $this->call(RankTableSeeder::class);
         $this->call(ChampionTableSeeder::class);
 
-               
     }
 }

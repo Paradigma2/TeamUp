@@ -5,7 +5,7 @@
 @endsection
 
 @section('link2')
-	<a class="nav-link"  href="#">Nađi saigrača</a>
+	<a class="nav-link"  href="/search">Nađi saigrača</a>
 @endsection
 
 @section('link3')

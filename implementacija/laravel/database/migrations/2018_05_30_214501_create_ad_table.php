@@ -15,7 +15,7 @@ class CreateAdTable extends Migration
     {
         Schema::create('ad', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('escription');
+            $table->text('description');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
             $table->integer('position_id')->unsigned();

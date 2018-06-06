@@ -14,9 +14,22 @@ class MessageController extends Controller
 {
     public function show(Request $request) {
     	$id = Auth::user()->id;
+    	$blocking = DB::table('block')
+			->where('user_id', $id)
+			->select('userBlocked_id as user_id');
+		$blocked = DB::table('block')
+			->where('userBlocked_id', $id)
+			->select('user_id')
+			->union($blocking)
+			->get()
+			->flatten()
+			->all();
+    	$array = array_map(function ($data) { return $data->user_id; }, $blocked);
     	$conversations = DB::table('conversation')
+    		->whereNotIn('user2_id', $array)
     		->where('user1_id', $id)
     		->orWhere('user2_id', $id)
+    		->whereNotIn('user1_id', $array)
     		->orderBy('updated_at', 'desc');
     	$temp = $conversations->get();
     	if ($request->has('conversation')) {
