@@ -357,7 +357,7 @@ class UserController extends Controller
         else{
              $komentar=$request->komentar;
              $ocena=$request->ocena;
-              $novaOcena=0;
+          
              $novi= new Comment();
              if($komentar!=null){
                 $novi->content=$komentar;
@@ -367,18 +367,22 @@ class UserController extends Controller
              $novi->user_id=$komentarisanUser_id;
              $novi->userCommenting_id=$id;
              $novi->save();
+           
+            if($komentarisanUser->grade==null ||$komentarisanUser->grade==0){
+             
 
-             if($komentarisanUser->grade==null){
-                   $novaOcena=0;
+              
+                $komentarisanUser->grade=$ocena;
+              $komentarisanUser->update();
              }else{
-
+              
                 $cnt=DB::table('comment')->where('user_id', $komentarisanUser_id)->count();
-                $novaOcena= ($ocena+ Auth::user()->grade)/$cnt;
+                $novaOcena= ($ocena+ $komentarisanUser->grade)/$cnt;
+                  $komentarisanUser->grade=$novaOcena;
+                $komentarisanUser->update();
              }
 
-            $user = User::where('username', $username)->update(['grade'=>$novaOcena]);
-          //  echo $novaOcena;
-            return redirect()->back();
+           return redirect()->back();
          }
 
     }
@@ -418,7 +422,7 @@ class UserController extends Controller
         $userS=User::where('username',$userSS)->first()->id;
         $poruka=$request->poruka;
         $konverzacija_id=null;
-
+        
         $kon1 = Conversation::where('user1_id', $id)->where('user2_id',$userS)->first();
         $kon2 = Conversation::where('user1_id', $userS)->where('user2_id', $id)->first(); 
         if($kon1 != null) {
