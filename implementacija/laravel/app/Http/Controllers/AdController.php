@@ -92,7 +92,6 @@ class AdController extends Controller
             else{
                 $temp->champ2 = null;
             }
-            print_r($temp->champ2);
             if($ad->mastery3_id!=null){
                 $mastery = DB::table('mastery')
 					->where('id', $value->mastery3_id)

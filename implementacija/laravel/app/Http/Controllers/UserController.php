@@ -513,27 +513,32 @@ class UserController extends Controller
           
         ]);
         $id = Auth::user()->id;
-        $userSS=$request->username;
-        $userS=User::where('username',$userSS)->first()->id;
-        $poruka=$request->poruka;
-        $konverzacija_id=null;
+        $userSS = $request->username;
+        $userS = User::where('username',$userSS)->first()->id;
+        $focus = null;
         
         $kon1 = Conversation::where('user1_id', $id)->where('user2_id',$userS)->first();
         $kon2 = Conversation::where('user1_id', $userS)->where('user2_id', $id)->first(); 
         if($kon1 != null) {
-
-            $konverzacija_id=$kon1->id;
-        }else if($kon2!=null){
-            $konverzacija_id=$kon2->id;
+            $focus = $kon1->id;
+        }else if($kon2 != null){
+            $focus = $kon2->id;
         }else{
-            $konverzacija=new Conversation();
-            $konverzacija->user1_id=Auth::user()->id;
-            $konverzacija->user2_id=$userS;
+            $konverzacija = new Conversation();
+            $konverzacija->user1_id = $id;
+            $konverzacija->user2_id = $userS;
             $konverzacija->save();
-            $konverzacija_id=$konverzacija->id;
+            $focus = $konverzacija->id;
         }
 
-        return redirect()->action('MessageController@post', ['conversation' => $konverzacija_id, 'msgToSend' => $poruka]);
+        $message = new Message;
+        $message->user_id = $id;
+        $message->conversation_id = $focus;
+        $message->content = $request->input('poruka');   
+        $message->save();
+        Conversation::where('id', $focus)->
+            update(['updated_at' => $message->updated_at]);
+        return redirect()->action('MessageController@show', ['conversation' => $focus]);
     }
 
       /**
