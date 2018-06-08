@@ -1,9 +1,7 @@
-    
 <?php
+namespace App\Http\Controllers;
 
 /* Jana Kragovic 0023/2015*/
-
-namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;

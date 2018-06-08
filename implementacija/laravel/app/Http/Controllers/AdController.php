@@ -66,27 +66,44 @@ class AdController extends Controller
 			$user = User::find($ad->user()->value('id'));
 			$temp->rank = $user->rank()->value('name');
 
-			$mastery = Mastery::find($value->mastery1_id)->first();
+			$mastery = DB::table('mastery')
+				->where('id', $value->mastery1_id)
+				->first();
 			$temp->points1 = $mastery->points;
             $temp->lvl1 = $mastery->level;
-            $temp->champ1 = Champion::find($mastery->champion_id)->value('icon');
+            $temp->champ1 = DB::table('champion')
+				->where('id', $mastery->champion_id)
+				->first()
+				->icon;
             if($ad->mastery2_id!=null){
-                $mastery = Mastery::find($value->mastery2_id)->first();
+                $mastery = DB::table('mastery')
+					->where('id', $value->mastery2_id)
+					->first();
                 if ($mastery != null) {
                 	$temp->points2 = $mastery->points;
                 	$temp->lvl2 = $mastery->level;
-                	$temp->champ2 = Champion::find($mastery->champion_id)->value('icon');
+                	$temp->champ2 = DB::table('champion')
+						->where('id', $mastery->champion_id)
+						->first()
+						->icon;
                 }
             }
+
             else{
                 $temp->champ2 = null;
             }
+            print_r($temp->champ2);
             if($ad->mastery3_id!=null){
-                $mastery = Mastery::find($value->mastery3_id)->first();
+                $mastery = DB::table('mastery')
+					->where('id', $value->mastery3_id)
+					->first();
                 if ($mastery != null) {
                 	$temp->points3 = $mastery->points;
                 	$temp->lvl3 = $mastery->level;
-                	$temp->champ3 = Champion::find($mastery->champion_id)->value('icon');
+                	$temp->champ3 = DB::table('champion')
+						->where('id', $mastery->champion_id)
+						->first()
+						->icon;
                 }
             }
             else{
