@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+/* autor: Stevan Tulovic, 45/2015 */
+
 use Illuminate\Http\Request;
 use DB;
 use App\User;
@@ -10,8 +12,20 @@ use App\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+/**
+ * MessageController - klasa za prikaz konverzacija, poruka iz odabrane konverzacije i slanje poruka
+ *
+ * @version 1.0
+ */
 class MessageController extends Controller
 {
+    /**
+     * Funkcija za prikaz konverzacija i poruka iz odabrane konverzacije
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
     public function show(Request $request) {
     	$id = Auth::user()->id;
     	$blocking = DB::table('block')
@@ -73,6 +87,13 @@ class MessageController extends Controller
     	return view('inbox/inboxUser')->with('res', $res);
     }
 
+    /**
+     * Funkcija za slanje poruka
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
     public function post(Request $request) {
     	$id = Auth::user()->id;
     	$focus = $request->input('conversation');
