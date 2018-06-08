@@ -1,3 +1,4 @@
+<!--autori: Jana Kragovic 23/2015, Sanja Perisic 97/2015-->
 @extends('main')
 
 @section('styles')

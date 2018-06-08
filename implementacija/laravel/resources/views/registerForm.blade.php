@@ -1,3 +1,4 @@
+<!--autor: Sanja Perisic 97/2015-->
 @extends('main')
 
 @section('styles')
@@ -112,7 +113,7 @@
 					<div class="row">
 						<div class="col-sm-4 d-flex justify-content-center">
 							
-									 <a class="nav-link" href=/guestLobby style="color:white;"><button type="button" class="btn btn-primary" >Odustani</button></a>
+									 <a class="nav-link" href="/"" style="color:white;"><button type="button" class="btn btn-primary" >Odustani</button></a>
 								
 							</div>
 							<div class="col-sm-8">

@@ -1,6 +1,6 @@
 <?php
-
-/*Klasa za kreiranje tabele rank*/
+/* Jana Kragovic 0023/2015*/
+/* autor: Sanja Perisic, 97/2015 */
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;

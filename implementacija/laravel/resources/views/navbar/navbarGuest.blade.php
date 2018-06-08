@@ -1,7 +1,8 @@
+<!--autor: Jana Kragovic 23/2015-->
 @extends('navbar/navbar')
 
 @section('link1')
-	<a class="nav-link" href="/guestLobby">Lobi</a>
+	<a class="nav-link" href="/">Lobi</a>
 @endsection
 
 

@@ -1,3 +1,4 @@
+<!--autori: Sanja Perisic 97/2015, Stevan Tulovic 45/2015-->
 @extends('main')
 
 @section('styles')
