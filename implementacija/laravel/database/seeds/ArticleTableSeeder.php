@@ -1,4 +1,5 @@
 <?php
+/* autor: Sanja Perisic, 97/2015 */
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;

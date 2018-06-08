@@ -1,5 +1,6 @@
 <?php
-
+/* Jana Kragovic 0023/2015*/
+/* autor: Sanja Perisic, 97/2015 */
 /*Klasa za kreiranje tabele ad*/
 
 use Illuminate\Support\Facades\Schema;
