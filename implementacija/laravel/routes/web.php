@@ -16,17 +16,17 @@ use  App\Http\Controllers\CreateEditAdForm;
 Route::resource('users','UserController');
 Route::get('proba', 'UserController@proba');
 
-Route::get('home', 'UserController@home');
-Route::post('registerUser','UserController@registerUser');
+Route::get('home', 'LobbyController@home');
+Route::post('registerUser','LobbyController@registerUser');
 Route::post('makeArticle','ArticleController@makeArticle');
-Route::get('searchUserByName','UserController@searchUserByName');
-Route::get('guestLobby','UserController@showGuestLobby');
+Route::get('searchUserByName','LobbyController@searchUserByName');
+Route::get('guestLobby','LobbyController@showGuestLobby');
 Route::get('articles', 'ArticleController@showArticles');
 Route::get('createArticle', 'ArticleController@createArticle');
 Route::post('deleteArticle', 'ArticleController@deleteArticle');
 Route::post('deleteArticleAdmin', 'ArticleController@deleteArticleAdmin');
 Route::get('editArticle', 'ArticleController@editArticle');
-Route::get('registerForm', 'UserController@registerForm');
+Route::get('registerForm', 'LobbyController@registerForm');
 Route::post('updateArticle', 'ArticleController@updateArticle');
 Route::get('logOut', 'SessionController@destroy');
 
@@ -99,7 +99,7 @@ Route::get('search', 'AdController@showSearch');
 Route::get('searchAds', 'AdController@search');
 Route::get('inbox', 'MessageController@show');
 Route::post('sendMessage', 'MessageController@post');
-Route::post('registerUser','UserController@registerUser');
+
 Route::post('deleteAd','UserController@deleteAd');
 Route::get('anotherUser', 'UserController@anotherUser');
 Route::get('another', 'UserController@redirectoAnotherUser');

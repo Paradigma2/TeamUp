@@ -52,7 +52,7 @@ class SessionController extends Controller
     	
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
     		$user = User::where('username', $username)->update(['online' => 1]);
-    		return  redirect()->action('UserController@home');
+    		return  redirect()->action('LobbyController@home');
 
     	}else{
     		
@@ -68,7 +68,7 @@ class SessionController extends Controller
       User::where('id', Auth::user()->id)->update(['online' => 0]);
 
         Auth::logout();
-         return redirect()->action('UserController@showGuestLobby');
+         return redirect()->action('LobbyController@showGuestLobby');
    
     }
 }
