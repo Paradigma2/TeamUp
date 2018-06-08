@@ -15,7 +15,7 @@ use App\Ban;
 use App\Conversation;
 use App\Message;
 
-
+use DB;
 
 use Validator;
 use Illuminate\Support\Facades\Auth;
@@ -147,10 +147,7 @@ class UserController extends Controller
         
        // $blok=Block::where('user_id',Auth::user()->id)->orWhere('userBlocked_id',$kor)->firs//t();
    
-        $blok=Block::where('userBlocked_id',Auth::user()->id)->orwhere('user_id',$kor)->first();
-     
-   
-
+        $blok=Block::where('userBlocked_id',Auth::user()->id)->where('user_id',$kor)->first();
         if($blok!=null){
             
                return redirect()->back()->with('msgBlocked', 'Nije moguce pristupiti željenom profilu!');
@@ -224,7 +221,9 @@ class UserController extends Controller
             $i++;
           
         }
-        $follow=Follow::where('user_id',Auth::user()->id)->orWhere('userFollowed_id',$korisnik->id)->first();
+        $follow=Follow::where('user_id',Auth::user()->id)->where('userFollowed_id',$korisnik->id)->first();
+
+        
         $prati=1;
         if($follow==null){
             $prati=0;
@@ -253,12 +252,18 @@ class UserController extends Controller
         }
     }
 
+    public function odustaniOglas(){
+       
+        return redirect('users');
+    }
+
     public function odblokirajKorisnika(Request $request){
         $idBlocked=$request->id;
         $id=Auth::user()->id;
 
-        Block::where('user_id',$id)->orWhere('userBlocked_id',$idBlocked)->delete();
-    
+        Block::where('user_id',$id)->where('userBlocked_id',$idBlocked)->delete();
+        
+
         return redirect()->action('UserController@anotherUser', ['korisnik' => $idBlocked]);
 
     }
@@ -280,11 +285,11 @@ class UserController extends Controller
         $follow2=Follow::where('userFollowed_id',$userBlocked_id)->first();
 
         if($follow1!=null){
-            Follow::where('user_id',$user_id)->orwhere('userFollowed_id',$userBlocked_id)->delete();
+            Follow::where('user_id',$user_id)->where('userFollowed_id',$userBlocked_id)->delete();
         }
 
         if($follow2!=null){
-           $follow2=Follow::where('user_id',$userBlocked_id)->orWhere('userFollowed_id',$user_id)->delete(); 
+           $follow2=Follow::where('user_id',$userBlocked_id)->Where('userFollowed_id',$user_id)->delete(); 
         }
 
         return  redirect('users');
@@ -295,7 +300,9 @@ class UserController extends Controller
         $pracenId=User::where('username', $pracenKorisnik)->first()->id;
         $id=Auth::user()->id;
 
-        $follow= Follow::where('user_id',$id)->orWhere('userFollowed_id', $pracenId)->first();
+        $follow= Follow::where('user_id',$id)->where('userFollowed_id', $pracenId)->first();
+       
+       
         if($follow==null){
             $f=new Follow;
             $f->user_id=$id;
@@ -313,7 +320,14 @@ class UserController extends Controller
         $korisnik=$request->korisnik;
         $id=User::where('username', $korisnik)->first()->id;
         $komentar=$request->komentar;
-        Comment::where('user_id',$id)->orWhere('id',$komentar)->delete();
+        Comment::where('user_id',$id)->where('id',$komentar)->delete();
+       /* $comment=null;
+        foreach($comments as $c){
+            if($c->user_id==$id && $id==$komentar){
+                $comment=$c;
+            }
+        }
+        $comment->delete;*/
         return redirect()->back();
     }
   public function unaprediKorisnika(Request $request){
@@ -337,32 +351,43 @@ class UserController extends Controller
     public function oceniKorisnika(Request $request){
         
         $username=$request->username;
-        $komentarisanUser=User::where('username', $username)->first()->id;
+        $komentarisanUser=User::where('username', $username)->first();
+        $komentarisanUser_id=$komentarisanUser->id;
         $id=Auth::user()->id;
-        $komentar=Comment::where('user_id', $komentarisanUser)->orWhere('userCommenting_id',$id)->first();
+        $komentar=Comment::where('user_id', $komentarisanUser_id)->where('userCommenting_id',$id)->first();
+        
         if($komentar!=null){
             return redirect()->back()->with('msgComment','Maksimalno možete ostaviti jedan komentar.');
         }
         else{
              $komentar=$request->komentar;
              $ocena=$request->ocena;
+          
              $novi= new Comment();
              if($komentar!=null){
                 $novi->content=$komentar;
 
              }
              $novi->grade=$ocena;
-             $novi->user_id=$komentarisanUser;
+             $novi->user_id=$komentarisanUser_id;
              $novi->userCommenting_id=$id;
              $novi->save();
-             if(Auth::user()->grade==0){
-                   $novaOcena= Auth::user()->grade;
-             }else{
-                $novaOcena= ($ocena+ Auth::user()->grade)/2;
-             }
-            $user = User::where('username', $username)->update(['grade'=>$novaOcena]);
+           
+            if($komentarisanUser->grade==null ||$komentarisanUser->grade==0){
+             
 
-             return redirect()->back();
+              
+                $komentarisanUser->grade=$ocena;
+              $komentarisanUser->update();
+             }else{
+              
+                $cnt=DB::table('comment')->where('user_id', $komentarisanUser_id)->count();
+                $novaOcena= ($ocena+ $komentarisanUser->grade)/$cnt;
+                  $komentarisanUser->grade=$novaOcena;
+                $komentarisanUser->update();
+             }
+
+           return redirect()->back();
          }
 
     }
@@ -402,9 +427,11 @@ class UserController extends Controller
         $userS=User::where('username',$userSS)->first()->id;
         $poruka=$request->poruka;
         $konverzacija_id=null;
+        
         $kon1 = Conversation::where('user1_id', $id)->where('user2_id',$userS)->first();
         $kon2 = Conversation::where('user1_id', $userS)->where('user2_id', $id)->first(); 
         if($kon1 != null) {
+
             $konverzacija_id=$kon1->id;
         }else if($kon2!=null){
             $konverzacija_id=$kon2->id;

@@ -30,7 +30,7 @@
 @endsection
 
 @section('kreirajOglas')
-	<button  class="button"><a class="clearFormat" href="createEditAdForm">Kreiraj oglas</a></button>
+	<a class="clearFormat" href="createEditAdForm"><button  class="button">Kreiraj oglas</button></a>
 @endsection
 
 @section('obrisiNalog')

@@ -283,12 +283,13 @@
 					<button type="submit"  class="buttonGrade btn-block" >Potvrdi</button>
 				</div>				
 				<div class="col-sm-6 mt-3" >
-					<button class="buttonGrade  btn-block">Odustani</button> 
+					<a href="/odustaniOglas" > <button type="button" class="buttonGrade  btn-block">Odustani</button> </a>
 				</div>
 			</div>
 			</div>
 				</form>
 			</div>
+
 			<div class="col-sm-1">
 		</div>
 
