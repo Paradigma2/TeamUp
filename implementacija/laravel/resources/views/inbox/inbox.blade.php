@@ -1,3 +1,4 @@
+<!--autori: Jana Kragovic 23/2015, Stevan Tulovic 45/2015-->
 @extends('main')
 @section('styles')
 	<link rel="icon" href="slike/icon.png" type="image/png">
