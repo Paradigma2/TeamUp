@@ -1,5 +1,8 @@
 <?php
 
+/* Jana Kragovic 0023/2015*/
+
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -13,6 +16,13 @@ use App\Ad;
 use Illuminate\Support\Facades\Auth;
 class CreateEditAdController extends Controller
 {
+      /**
+    * Funkcija za prikaz forme za kreiranje i izmenu oglasa
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function showFormAd(Request $request){
         $id=$request->ad;
         $ad=null;
@@ -31,6 +41,13 @@ class CreateEditAdController extends Controller
         return view('profile/forms/createEditAdForm')->with('champions', $champions)->with('ad',$ad)->with('position',$position)->with('mode',$mode)->with('id',$id);
     }
 
+      /**
+    * Funkcija za kreiranje i edit oglasa
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function createAd(Request $request){
     	
     	$this->validate($request,[
@@ -169,7 +186,13 @@ class CreateEditAdController extends Controller
 
     }
 
-
+      /**
+    * Funkcija za response koda
+    *
+    * @param Request $url
+    *
+    * @return response 
+    */
     function get_http_response_code($url) {
         $headers = get_headers($url);
         return substr($headers[0], 9, 3);

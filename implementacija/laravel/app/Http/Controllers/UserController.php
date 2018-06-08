@@ -1,4 +1,7 @@
+    
 <?php
+
+/* Jana Kragovic 0023/2015*/
 
 namespace App\Http\Controllers;
 
@@ -33,12 +36,29 @@ use App\Follow;
 
 class UserController extends Controller
 {
+    /**
+    * UserController – klasa za edit profila, kreiranje oglasa, slanje poruka na profilu, blokiranje korisnika, ostavljanje komentaraa, pregleda profila drugih korisnika, pracenje korisnika
+    *
+    * @version 1.0
+    */
 
-     function get_http_response_code($url) {
+    /**
+    * Dohvata response kod
+    *
+    * @param $url
+    *
+    * @return response kod
+    */
+    function get_http_response_code($url) {
         $headers = get_headers($url);
         return substr($headers[0], 9, 3);
     }
 
+    /**
+    * Funkcija za prikaz profila vlasnika
+    *
+    * @return response 
+    */
     public function index(){
 
         $rank=Rank::find(Auth::user()->rank_id);
@@ -128,10 +148,22 @@ class UserController extends Controller
     	return view('profile.profileUser')->with('rank',$rank->name)->with('niz1',$niz1)->with('niz2',$niz2)->with('niz3',$niz3)->with('descr',$descr)->with('grade',$grade)->with('comments',$comments)->with('users',$commentingUsers)->with('icons',$commentingIcons)->with('username',Auth::user()->username)->with('level',Auth::user()->level)->with('profilePic',$profilePic);
     }
 
+    /**
+    * Funkcija za prikaz profila vlasnika
+    *
+    * @return response 
+    */
     public function showUser(){
         return redirect('users');
     }
 
+    /**
+    * Funkcija za dohvatanje id-a drugog korisnika, i prebacivanje na njegov profil
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function redirectoAnotherUser(Request $request){
 
         $korisnik=User::where('id', $request->id)->first();      
@@ -140,6 +172,13 @@ class UserController extends Controller
         
     }
 
+    /**
+    * Funkcija za prikaz profila drugog korisnika
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function anotherUser(Request $request){
 
         
@@ -252,11 +291,13 @@ class UserController extends Controller
         }
     }
 
-    public function odustaniOglas(){
-       
-        return redirect('users');
-    }
-
+      /**
+    * Funkcija za odblokiranje korisnika
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function odblokirajKorisnika(Request $request){
         $idBlocked=$request->id;
         $id=Auth::user()->id;
@@ -268,7 +309,13 @@ class UserController extends Controller
 
     }
 
-    
+      /**
+    * Funkcija za blokiranje korisnika
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function blokirajKorisnika(Request $request){
         $username=$request->username;
         $user = User::where('username', $username)->first();
@@ -295,6 +342,13 @@ class UserController extends Controller
         return  redirect('users');
     }
 
+      /**
+    * Funkcija za pracenje korisnika
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function zapratiKorisnika(Request $request){
         $pracenKorisnik=$request->pracenKorisnik;
         $pracenId=User::where('username', $pracenKorisnik)->first()->id;
@@ -315,22 +369,29 @@ class UserController extends Controller
         return  redirect()->back();
 
     }
-
+      /**
+    * Funkcija za brisanje komentara od strane admina
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function obrisiKom(Request $request){
         $korisnik=$request->korisnik;
         $id=User::where('username', $korisnik)->first()->id;
         $komentar=$request->komentar;
         Comment::where('user_id',$id)->where('id',$komentar)->delete();
-       /* $comment=null;
-        foreach($comments as $c){
-            if($c->user_id==$id && $id==$komentar){
-                $comment=$c;
-            }
-        }
-        $comment->delete;*/
         return redirect()->back();
     }
-  public function unaprediKorisnika(Request $request){
+    
+      /**
+    * Funkcija za dodeljivanje moderatorskih privilegija
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
+    public function unaprediKorisnika(Request $request){
         $korisnik=$request->korisnik;
         $mod=User::where('username', $korisnik)->first();
        
@@ -347,7 +408,13 @@ class UserController extends Controller
     }
 
 
-
+      /**
+    * Funkcija za ostavljanjeocene i komentara  korisniku
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function oceniKorisnika(Request $request){
         
         $username=$request->username;
@@ -392,6 +459,13 @@ class UserController extends Controller
 
     }
 
+      /**
+    * Funkcija za banovanje korisnika
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function udaljiSaSajta(Request $request){
         $username=$request->username;
         $user=User::where('username', $username)->first();
@@ -404,19 +478,37 @@ class UserController extends Controller
         return redirect()->action('UserController@home');
     }
 
-   public function obrisiNalog(Request $request){
+      /**
+    * Funkcija za brisanje naloga
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
+    public function obrisiNalog(Request $request){
         $username=$request->username;
         User::where('username', $username)->delete();
            return redirect()->action('UserController@showGuestLobby');
        
     }
+      /**
+    * Funkcija za prebacivanje na kontroler za oglase
+    *
+    * @return response 
+    */
     public function openFormCreateAd(){
          
           return redirect()->action('CreateEditAdController@showFormAd');
     }
 
 
-
+      /**
+    * Funkcija za slanje poruke
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function slanjePoruke(Request $request){
         $this->validate($request,[
             'poruka'      =>'required|max:255',
@@ -446,6 +538,13 @@ class UserController extends Controller
         return redirect()->action('MessageController@post', ['conversation' => $konverzacija_id, 'msgToSend' => $poruka]);
     }
 
+      /**
+    * Funkcija za menjanje opisa na profilu
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function editDescription(Request $request){
 
 
@@ -460,8 +559,15 @@ class UserController extends Controller
 
     }
     
+      /**
+    * Funkcija za promenu lozinke
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function changePassword(Request $request){
-        //validacija fali da se proveri stara loznka sa lozinkom u bazi
+        
        
         $this->validate($request,[
             'staraLozinka'      =>'required',
@@ -478,13 +584,27 @@ class UserController extends Controller
     }	
 
    
-
+      /**
+    * Funkcija za brisanje oglasa
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function deleteAd(Request $request){
         $adId=$request->id;
         Ad::where('id', $adId)->delete();
         return  redirect()->back();
     }
-
+      /**
+    * Funkcija za odustajanje od izmene oglasa
+    *
+    * @return response 
+    */
+    public function odustaniOglas(){
+       
+        return redirect('users');
+    }
 
   
 }

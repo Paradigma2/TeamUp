@@ -1,5 +1,7 @@
 <?php
 
+/* Jana Kragovic 0023/2015*/
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -16,6 +18,14 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 class SessionController extends Controller
 {
     use AuthenticatesUsers;
+
+     /**
+    * Funkcija za logovanje
+    *
+    * @param Request $request
+    *
+    * @return response 
+    */
     public function create(Request $request){
     	$this->validate($request,[
     		'username'		=>'required',
@@ -35,20 +45,6 @@ class SessionController extends Controller
         if($ban!=null){
             return redirect()->back()->with('banovanSi','Pristup sajtu nije moguć, banovani ste');
         }
-
-
-
-    	//$checkLogin= User::where('Username',$username)->where('Password',$password)->first();
-    	//count($checkLogin)>0
-
-    	
-    //	if (Auth::login($checkLogin)) {
-    	// 	echo "da";
-    		//return  redirect('users/UserController');
-    //	}else{
-    //		
-    //		return back()->withErrors("Pogrešan username ili password!");
-    //	}
     	
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
     		$user = User::where('username', $username)->update(['online' => 1]);
@@ -63,12 +59,16 @@ class SessionController extends Controller
 
     }
 
-    
+     /**
+    * Funkcija za log out
+    *
+    * @return response 
+    */
     public function destroy(){
-      User::where('id', Auth::user()->id)->update(['online' => 0]);
+        User::where('id', Auth::user()->id)->update(['online' => 0]);
 
         Auth::logout();
-         return redirect()->action('LobbyController@showGuestLobby');
+        return redirect()->action('LobbyController@showGuestLobby');
    
     }
 }
