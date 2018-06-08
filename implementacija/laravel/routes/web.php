@@ -20,7 +20,7 @@ Route::get('home', 'LobbyController@home');
 Route::post('registerUser','LobbyController@registerUser');
 Route::post('makeArticle','ArticleController@makeArticle');
 Route::get('searchUserByName','LobbyController@searchUserByName');
-Route::get('guestLobby','LobbyController@showGuestLobby');
+Route::get('/','LobbyController@showGuestLobby');
 Route::get('articles', 'ArticleController@showArticles');
 Route::get('createArticle', 'ArticleController@createArticle');
 Route::post('deleteArticle', 'ArticleController@deleteArticle');
@@ -30,65 +30,7 @@ Route::get('registerForm', 'LobbyController@registerForm');
 Route::post('updateArticle', 'ArticleController@updateArticle');
 Route::get('logOut', 'SessionController@destroy');
 
-Route::get('searchModerator', function () {
-    return view('search/searchModerator');
-});
-Route::get('searchUser', function () {
-    return view('search/searchUser');
-});
-Route::get('search', function () {
-    return view('search/search');
-});
 
-Route::get('adminLobby', function () {
-    return view('adminLobby');
-});
-Route::get('modLobby', function () {
-    return view('modLobby');
-});
-Route::get('userLobby', function () {
-    return view('userLobby');
-});
-
-Route::get('inboxAdmin', function () {
-    return view('inbox/inboxAdmin');
-});
-
-Route::get('inboxModerator', function () {
-    return view('inbox/inboxModerator');
-});
-
-Route::get('inboxUser', function () {
-    return view('inbox/inboxUser');
-});
-
-Route::get('moderator', function () {
-    return view('profile/profileModerator');
-});
-
-Route::get('admin', function () {
-    return view('profile/profileAdmin');
-});
-
-Route::get('userAnotherModerator', function () {
-    return view('profile/profileAnotherUserModerator');
-});
-
-Route::get('userAnother', function () {
-    return view('profile/profileAnotherUser');
-});
-
-Route::get('user', function () {
-    return view('profile/profileUser');
-});
-
-Route::get('profile', function () {
-    return view('profile');
-});
-
-Route::get('/', function () {
-    return view('main');
-});
 
 Route::post('editDescription','UserController@editDescription');
 Route::post('changePassword','UserController@changePassword');      

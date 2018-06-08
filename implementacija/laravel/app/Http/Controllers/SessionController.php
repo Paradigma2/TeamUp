@@ -1,7 +1,7 @@
 <?php
 
 /* Jana Kragovic 0023/2015*/
-
+/* autor: Sanja Perisic, 97/2015 */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\User;
 use App\Ban;
+use App\Rank;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -47,7 +48,36 @@ class SessionController extends Controller
         }
     	
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
-    		$user = User::where('username', $username)->update(['online' => 1]);
+    		//$user = User::where('username', $username)->update(['online' => 1]);
+            $user=User::where('username', $username)->first();
+            $user->online=1;
+              $api_key='RGAPI-3295c182-2564-4de1-9e7e-53f0ddb04a13';
+        $summonerName=$user->lolNick;
+        $filename='https://eun1.api.riotgames.com/lol/summoner/v3/summoners/by-name/'.$summonerName.'?api_key='.$api_key;
+         $result= file_get_contents($filename);
+          $summoner=json_decode($result);
+           $url_icon="http://avatar.leagueoflegends.com/eun1/".$summonerName.".png";
+        $img_id=$summoner->profileIconId;
+
+        $img='slike/icons/'.$img_id.".png";
+        file_put_contents($img, file_get_contents($url_icon));
+
+        $user->icon=$img;
+
+
+        $user->level = $summoner->summonerLevel;
+         $summonerId=$summoner->id;
+
+         $filename='https://eun1.api.riotgames.com/lol/league/v3/positions/by-summoner/'.$summonerId.'?api_key='.$api_key;
+
+        $result= file_get_contents($filename);
+        $rankInfo=json_decode($result);
+       
+        $rank=$rankInfo[0]->tier." ".$rankInfo[0]->rank;
+        //proveri za koji mod igre vrca rank na poziciji 0 , da li je uvek ranked solo duo na 0
+        $rankTable= Rank::where('name',$rank)->first();
+        $user->rank_id=$rankTable->id;
+        $user->update();
     		return  redirect()->action('LobbyController@home');
 
     	}else{

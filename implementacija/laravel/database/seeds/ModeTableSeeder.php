@@ -1,4 +1,6 @@
 <?php
+/* Jana Kragovic 0023/2015*/
+/* autor: Sanja Perisic, 97/2015 */
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 

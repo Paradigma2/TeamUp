@@ -1,5 +1,5 @@
 <?php
-
+/* autor: Sanja Perisic, 97/2015 */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -211,8 +211,14 @@ class LobbyController extends Controller{
 
         $result= file_get_contents($filename);
         $rankInfo=json_decode($result);
+        if($rankInfo==null){
+            $rank = "BRONZE V";
+        }
+        else{
+             $rank=$rankInfo[0]->tier." ".$rankInfo[0]->rank;
+        }
        
-        $rank=$rankInfo[0]->tier." ".$rankInfo[0]->rank;
+       
         //proveri za koji mod igre vrca rank na poziciji 0 , da li je uvek ranked solo duo na 0
         $rankTable= Rank::where('name',$rank)->first();
         $user->rank_id=$rankTable->id;
