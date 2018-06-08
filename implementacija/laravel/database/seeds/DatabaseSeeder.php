@@ -2,10 +2,14 @@
 
 use Illuminate\Database\Seeder;
 
+/**
+ * DatabaseSeeder - klasa za ubacivanje podataka u tabelu champion u bazi
+ *
+ * @version 1.0
+ */
 class DatabaseSeeder extends Seeder
 {
 
-	// sredjuje sve php artisan migrate:refresh --seed
     /**
      * Run the database seeds.
      *

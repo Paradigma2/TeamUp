@@ -1,7 +1,19 @@
 <?php
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
+/**
+ * ChampionTableSeeder - klasa za ubacivanje podataka u tabelu champion u bazi
+ *
+ * @version 1.0
+ */
 class ChampionTableSeeder extends Seeder{
+
+	/**
+     * Run the seed.
+     *
+     * @return void
+     */
 	public function run (){
 
 		$api_key='RGAPI-3295c182-2564-4de1-9e7e-53f0ddb04a13';

@@ -1,7 +1,19 @@
 <?php
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
+/**
+ * PositionTableSeeder - klasa za ubacivanje podataka u tabelu position u bazi
+ *
+ * @version 1.0
+ */
 class PositionTableSeeder extends Seeder{
+
+	/**
+	 * Run the seed.
+	 *
+	 * @return void
+	 */
 	public function run (){
 
 		 DB::table('position')->insert([

@@ -1,7 +1,19 @@
 <?php
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
+/**
+ * RankTableSeeder - klasa za ubacivanje podataka u tabelu rank u bazi
+ *
+ * @version 1.0
+ */
 class RankTableSeeder extends Seeder{
+
+	/**
+	 * Run the seed.
+	 *
+	 * @return void
+	 */
 	public function run (){
 
 		 DB::table('rank')->insert([

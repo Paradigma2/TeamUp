@@ -2,13 +2,20 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+
+/**
+ * ArticleTableSeeder - klasa za ubacivanje podataka u tabelu article u bazi
+ *
+ * @version 1.0
+ */
 class ArticleTableSeeder extends Seeder{
+    /**
+     * Run the seed.
+     *
+     * @return void
+     */
 	public function run (){
-
-
-       
-
-		 DB::table('article')->insert([
+        DB::table('article')->insert([
 		 	'headline'=> 'Vip napravio karticu za igrače LoL-a',
 		 	'content'=> 'Vip je jedini od tri mobilna operatara u našoj zemlji koji posvećuje posebnu pažnju gejming zajednici. Predstavili su posebnu ponudu u okviru njihove delatnosti  u vidu kartica za gejmere za akcentom na benefite u vidu bonus RP-a za League of Legends.
             Danas je aktuelna ponuda Vip Gaming prepaidcard. Dakle u pitanju je prepaid kartica na koju uplaćujete kredit. Karticu je moguće kupiti u svim Vip centrima.
