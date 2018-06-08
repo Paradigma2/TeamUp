@@ -1,7 +1,7 @@
 @extends('profile/profile')
 	
 @section('styles')
-	<link rel="stylesheet" href="{{ URL::asset('css/styleProfile.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('css/styleprofile.css') }}">
 
 @endsection
 

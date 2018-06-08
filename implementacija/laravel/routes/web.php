@@ -98,7 +98,7 @@ Route::get('createEditAdForm','UserController@openFormCreateAd');
 Route::get('search', 'AdController@showSearch');
 Route::get('searchAds', 'AdController@search');
 Route::get('inbox', 'MessageController@show');
-Route::post('sendMessage', 'MessageController@post');
+Route::get('sendMessage', 'MessageController@post');
 
 Route::post('deleteAd','UserController@deleteAd');
 Route::get('anotherUser', 'UserController@anotherUser');

@@ -1,6 +1,7 @@
 <?php
 
-/* Jana Kragovic 0023/2015*/
+/* Jana Kragovic 0023/2015
+    Sanja Perišić 0097/2015*/
 
 namespace App\Http\Controllers;
 
