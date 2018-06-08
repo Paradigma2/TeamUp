@@ -14,7 +14,7 @@ use  App\Http\Controllers\CreateEditAdForm;
 
 
 Route::resource('users','UserController');
-Route::get('proba', 'UserController@proba');
+
 
 Route::get('home', 'LobbyController@home');
 Route::post('registerUser','LobbyController@registerUser');

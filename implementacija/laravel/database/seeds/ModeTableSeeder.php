@@ -1,7 +1,19 @@
 <?php
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
+/**
+ * ModeTableSeeder - klasa za ubacivanje podataka u tabelu mode u bazi
+ *
+ * @version 1.0
+ */
 class ModeTableSeeder extends Seeder{
+
+	/**
+	 * Run the seed.
+	 *
+	 * @return void
+	 */
 	public function run (){
 
 		 DB::table('mode')->insert([

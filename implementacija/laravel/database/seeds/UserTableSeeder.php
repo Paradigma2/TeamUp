@@ -1,7 +1,19 @@
 <?php
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+
+/**
+ * UserTableSeeder - klasa za ubacivanje podataka u tabelu user u bazi
+ *
+ * @version 1.0
+ */
 class UserTableSeeder extends Seeder{
+
+	/**
+	 * Run the seed.
+	 *
+	 * @return void
+	 */
 	public function run (){
 
 

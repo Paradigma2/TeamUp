@@ -28,18 +28,32 @@ use App\Position;
 use App\Article;
 use App\Follow;
 
+/**
+ * LobbyController - klasa za prikaz lobija i informacija u njemu, kao i pretragu korisnika
+ *
+ * @version 1.0
+ */
 class LobbyController extends Controller{
 
-	/*
-
-	*/
-
-	  function get_http_response_code($url) {
+	
+	/**
+	 * Funkcija za dohvatanje response koda html stranice
+	 *
+	 * @param $url
+	 *
+	 * @return Response
+	 */
+	 function get_http_response_code($url) {
         $headers = get_headers($url);
         return substr($headers[0], 9, 3);
     }
 
-	 public function showGuestLobby(){
+    /**
+     * Funkcija za prikaz lobija gostu
+     *
+     * @return Response
+     */
+	public function showGuestLobby(){
         $articles = Article::orderBy('updated_at', 'desc')->get();
         $users = [];
         foreach($articles as $article){
@@ -49,6 +63,13 @@ class LobbyController extends Controller{
         return view('guestLobby')->with('articles', $articles)->with('length', $length)->with('users', $users);
     }
 
+    /**
+     * Funkcija za prikaz lobija ulogovanom korisniku
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
     public function home(Request $request){
        
        $articles = Article::orderBy('updated_at', 'desc')->get();
@@ -97,6 +118,13 @@ class LobbyController extends Controller{
         return view('userLobby')->with('articles', $articles)->with('length', $length)->with('followed', $followed)->with('users', $users)->with('authors', $authors)->with('p',$p)->with('theUser', $theUser)->with('blocked', $blocked);
     }
 
+    /**
+     * Funkcija za dohvatanja korisnickog imena kao parametra pretrage
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
     public function searchUserByName(Request $request){
         $this->validate($request,[
             'usernameSearch' => 'required',
@@ -106,11 +134,23 @@ class LobbyController extends Controller{
        return redirect()->action('LobbyController@home', ['usernameSearch' => $request->input('usernameSearch')]);
     }
 
+    /**
+     * Funkcija za prikaz forme za registrovanje korisnika
+     *
+     * @return Response
+     */
     public function registerForm(){
         return view('registerForm');
     }
 
-     public function registerUser(Request $request){
+    /**
+     * Funkcija za registrovanje korisnika
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function registerUser(Request $request){
 
         $this->validate($request,[
             'korisnickoIme' => 'required|unique:user,username',
@@ -160,7 +200,7 @@ class LobbyController extends Controller{
 
         $user->level = $summoner->summonerLevel;
 
-        /*------------------------slika------------------------------*/
+       
 
 
         /*-------------------------rank-------------------*/
@@ -176,10 +216,6 @@ class LobbyController extends Controller{
         //proveri za koji mod igre vrca rank na poziciji 0 , da li je uvek ranked solo duo na 0
         $rankTable= Rank::where('name',$rank)->first();
         $user->rank_id=$rankTable->id;
-
-
-
-
 
         $user->save();
 
