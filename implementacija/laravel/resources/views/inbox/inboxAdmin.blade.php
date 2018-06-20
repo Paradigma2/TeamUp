@@ -2,7 +2,7 @@
 	
 @section('styles')
 	<link rel="stylesheet" href="{{ URL::asset('css/styleInbox.css') }}">
-
+<link rel="stylesheet" href="{{ URL::asset('css/styleprofile.css') }}">	
 @endsection
 
 
@@ -11,6 +11,6 @@
 
 	@include('navbar/navbarAdmin')
 
-
+	
 @endsection
 

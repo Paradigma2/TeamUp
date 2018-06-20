@@ -14,6 +14,12 @@
 @endsection
 
 
+@section ('link4')
+ <div style="margin-top: 10px; "> 
+
+<a class="clearFormat" href="inbox"><i class="material-icons">&#xe625;</i></a>
+ </div> 
+@endsection
 
 
 

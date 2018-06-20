@@ -169,9 +169,7 @@ class UserController extends Controller
            
    
         $korisnik=User::where('id', $request->id)->first();      
-        if($korisnik->id == Auth::user()->id){
-            throw new Exception();
-        }
+       
         return redirect()->action('UserController@anotherUser', ['korisnik' => $korisnik->id]);
         
     }
@@ -187,9 +185,7 @@ class UserController extends Controller
       
         
         $kor=$request->korisnik;
-        if($kor == Auth::user()->id){
-            throw new Exception();
-        }
+      
        // $blok=Block::where('user_id',Auth::user()->id)->orWhere('userBlocked_id',$kor)->firs//t();
    
         $blok=Block::where('userBlocked_id',Auth::user()->id)->where('user_id',$kor)->first();

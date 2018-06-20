@@ -9,7 +9,12 @@
 	<a class="nav-link"  href="/search">Nađi saigrača</a>
 @endsection
 
+@section ('link4')
+ <div style="margin-top: 10px; "> 
 
+<i class="material-icons">&#xe625;</i>
+ </div> 
+@endsection
 
 
 

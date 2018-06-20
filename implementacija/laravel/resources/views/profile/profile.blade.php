@@ -2,12 +2,7 @@
 
 @extends('main')
 
-@section('levo4')
-<b>
-@endsection
-@section('desno4')
-</b>
-@endsection
+
 @section('styles')
 	<link rel="icon" href="slike/icon.png" type="image/png">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
