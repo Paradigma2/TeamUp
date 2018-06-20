@@ -50,7 +50,7 @@
         if(this.status==200 && this.readyState==4){
           if(this.responseText == "nova"){
 
-            document.getElementById("inboxlink").innerHTML="ima";
+            //jano tvoj kod ovde
           }
         }
       }

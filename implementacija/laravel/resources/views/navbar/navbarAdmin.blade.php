@@ -33,3 +33,21 @@
 
 
 @endsection
+
+<script>
+    function proveri(){
+       alert("cao");
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+        if(this.status==200 && this.readyState==4){
+          if(this.responseText == "nova"){
+
+            //jano tvoj kod ovde
+          }
+        }
+      }
+
+      xmlhttp.open("GET", "novaporuka", true);
+      xmlhttp.send();
+    }
+</script>
