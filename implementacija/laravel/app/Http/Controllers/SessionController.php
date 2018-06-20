@@ -77,7 +77,7 @@ class SessionController extends Controller
         $rankInfo=json_decode($result);
        
         $rank=$rankInfo[0]->tier." ".$rankInfo[0]->rank;
-        //proveri za koji mod igre vrca rank na poziciji 0 , da li je uvek ranked solo duo na 0
+        
         $rankTable= Rank::where('name',$rank)->first();
         $user->rank_id=$rankTable->id;
         $user->update();

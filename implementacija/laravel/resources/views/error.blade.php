@@ -7,11 +7,19 @@
 @section('content')
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<img src={{ URL::asset('slike/carousel3.jpg') }} alt="Error_img" style="width: 800px; height: 450px; margin: 30px;"/>
+			<div class="col-md-6">
+				<img src={{ URL::asset('slike/greska.png') }} alt="Error_img"  />
 			</div>
-			<div class="col-md-12">
-				<label style="position: center; font-size: 30px;">ERROR</label>
+			<div class="col-md-6">
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+<br>
+				<br>
+				<br>
+				<label style="position: center; font-size: 50px;">404 - Nije pronadjena stranica</label>
 			</div>
 		</div>
 	</div>
