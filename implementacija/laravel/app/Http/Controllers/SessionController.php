@@ -14,7 +14,7 @@ use Validator;
 use App\User;
 use App\Ban;
 use App\Rank;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 
@@ -51,6 +51,7 @@ class SessionController extends Controller
         }
     	
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
+
     		//$user = User::where('username', $username)->update(['online' => 1]);
             $user=User::where('username', $username)->first();
             $user->online=1;
@@ -77,7 +78,7 @@ class SessionController extends Controller
         $rankInfo=json_decode($result);
        
         $rank=$rankInfo[0]->tier." ".$rankInfo[0]->rank;
-        
+        //proveri za koji mod igre vrca rank na poziciji 0 , da li je uvek ranked solo duo na 0
         $rankTable= Rank::where('name',$rank)->first();
         $user->rank_id=$rankTable->id;
         $user->update();
