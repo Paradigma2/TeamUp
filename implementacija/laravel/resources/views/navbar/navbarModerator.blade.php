@@ -21,11 +21,6 @@
  </div> 
 @endsection
 
-@section('link4')
-
-<a href="" id="inboxlink"><i class="material-icons">chat</i></a>
-
-@endsection
 
 
 @section('link5')

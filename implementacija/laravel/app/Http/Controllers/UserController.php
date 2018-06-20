@@ -282,7 +282,10 @@ if($korisnik==null)  {
         $isAdmin=$korisnik->isAdmin;
         $profilePic=$korisnik->icon;
         $descr=$korisnik->description;
+
         $grade=round($korisnik->grade);
+
+
         $comments=Comment::where('user_id',$korisnik->id)->get();
         $commentingUsers=[];
         $commentingIcons=[];
@@ -392,6 +395,22 @@ if($korisnik==null)  {
         $id=User::where('username', $korisnik)->first()->id;
         $komentar=$request->komentar;
         Comment::where('user_id',$id)->where('id',$komentar)->delete();
+
+        $cnt=DB::table('comment')->where('user_id', $id)->count();
+        $ocene= $cnt=DB::table('comment')->where('user_id',  $id)->sum('grade');
+        if($cnt!=0){
+            //ovde
+            $kor=User::where('username', $korisnik)->first();
+            $kor->grade=($ocene/$cnt);
+            $kor->update();
+            $grade=round($ocene/$cnt);
+        
+         }else{
+               $kor=User::where('username', $korisnik)->first();
+             $kor->grade=0;
+            $kor->update();
+            $grade=0;
+         }
         return redirect()->back();
     }
     
@@ -486,7 +505,7 @@ if($korisnik==null)  {
         $ban->lolNick=$user->lolNick;
         $ban->save();
         User::where('username', $username)->delete();
-        return redirect()->action('LobbyController@showGuestLobby');
+        return redirect()->action('LobbyController@showUserLobby');
     }
 
       /**
@@ -589,12 +608,12 @@ if($korisnik==null)  {
         
        
         $this->validate($request,[
-            'staraLozinka'      =>'required',
-            'novaLozinka'      =>'required|max:20|min:4|same:ponoviLozinku|different:staraLozinka',
+           
+            'novaLozinka'      =>'required|max:20|min:4|same:ponoviLozinku|',
             'ponoviLozinku'      =>'required',
         ]);
         
-        $stara=$request->input('staraLozinka');
+       
         $nova=$request->input('novaLozinka');
         $novaLozinka= bcrypt($nova);
         $ponovi=$request->input('ponoviLozinku');

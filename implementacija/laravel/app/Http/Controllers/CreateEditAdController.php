@@ -24,7 +24,18 @@ class CreateEditAdController extends Controller
     * @return response 
     */
     public function showFormAd(Request $request){
-        $id=$request->ad;
+
+  $id=$request->ad;
+         $broj=0;
+        $oglasi=Ad::where('user_id',Auth::user()->id)->get();
+        foreach($oglasi as $o){
+            $broj++;
+        }
+        if($broj==3 &&$id==null){
+            return redirect('users')->with("previseOglasa",'Ne mozete kreirati vise od tri oglasa!');
+        }
+
+      
         $ad=null;
         $position=null;
         $mode=null;
@@ -56,18 +67,8 @@ class CreateEditAdController extends Controller
         ]);
 
 
-        $broj=0;
-        $oglasi=Ad::where('user_id',Auth::user()->id)->get();
-        foreach($oglasi as $o){
-            $broj++;
-        }
-        if($broj==3){
-            return redirect('users')->with("previseOglasa",'Ne mozete kreirati vise od tri oglasa!');
-        }
-        $idAd=$request->idAd;
-        if($idAd!=null){
-            Ad::where('id',$idAd)->delete();
-        }        
+       
+        
         $opis=$request->opis;
         $mod=$request->mod;
         $mod_id=Mode::where('name',$mod)->first()->id;
@@ -126,6 +127,13 @@ class CreateEditAdController extends Controller
         $m1->champion_id=$champ1->id;
         $m1->save();
         
+
+        $idAd=$request->idAd;
+        if($idAd!=null){
+            Ad::where('id',$idAd)->delete();
+        }       
+
+
         $ad=new Ad();
         $ad->description=$opis;
         $ad->user_id=$user_id;

@@ -746,12 +746,8 @@
 	      			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	      			<div class="form-group">
 	      				<div class="row">
-	      					<div class="col-sm-6">
-	      						<label style="color:#9D907D;">	Stara lozinka:</label>
-	      					</div>
-	      					<div class="col-sm-6">
-	      						<input name="staraLozinka" type="password" >
-	      					</div>
+	      					
+	      					
 	      				</div>
 	      			</div>
 	      			<div class="form-group">
