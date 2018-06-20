@@ -598,11 +598,11 @@ if($korisnik==null)  {
         $nova=$request->input('novaLozinka');
         $novaLozinka= bcrypt($nova);
         $ponovi=$request->input('ponoviLozinku');
-        $u= User::where('username', Auth::user()->username)->first();
-        if ($stara!= encrypt($u->Password))   {
+        // $u= User::where('username', Auth::user()->username)->first();
+        // if ($stara!= bcrypt($u->Password))   {
 
-             return  redirect('users')->with("msgPass","Pogrešno ste uneli staru lozinku.");
-        }
+        //      return  redirect('users')->with("msgPass","Pogrešno ste uneli staru lozinku.");
+        // }
 
 
 

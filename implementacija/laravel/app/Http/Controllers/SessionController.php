@@ -50,8 +50,8 @@ class SessionController extends Controller
             return redirect()->back()->with('banovanSi','Pristup sajtu nije moguć, banovani ste');
         }
     	
-    	//if (Auth::attempt(['username' => $username, 'password' => $password])) {
-        if(Hash::check($password,Auth::user()->password)){
+    	if (Auth::attempt(['username' => $username, 'password' => $password])) {
+
     		//$user = User::where('username', $username)->update(['online' => 1]);
             $user=User::where('username', $username)->first();
             $user->online=1;
