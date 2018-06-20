@@ -16,6 +16,9 @@ use  App\Http\Controllers\CreateEditAdForm;
 Route::resource('users','UserController');
 
 
+Route::get('novaporuka', 'MessageController@novaporuka');
+
+
 Route::get('home', 'LobbyController@home');
 Route::post('registerUser','LobbyController@registerUser');
 Route::post('makeArticle','ArticleController@makeArticle');
@@ -29,6 +32,7 @@ Route::get('editArticle', 'ArticleController@editArticle');
 Route::get('registerForm', 'LobbyController@registerForm');
 Route::post('updateArticle', 'ArticleController@updateArticle');
 Route::get('logOut', 'SessionController@destroy');
+
 
 
 
