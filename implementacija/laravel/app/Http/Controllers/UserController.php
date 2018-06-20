@@ -473,7 +473,7 @@ class UserController extends Controller
         $ban->lolNick=$user->lolNick;
         $ban->save();
         User::where('username', $username)->delete();
-        return redirect()->action('UserController@home');
+        return redirect()->action('LobbyController@showGuestLobby');
     }
 
       /**
