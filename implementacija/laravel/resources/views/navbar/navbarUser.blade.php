@@ -35,3 +35,29 @@
        
     </div>
 @endsection
+
+<script>
+  var timerID;
+    function proveri(){
+       alert("cao");
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+        if(this.status==200 && this.readyState==4){
+          if(this.responseText == "nova"){
+
+            //jano tvoj kod ovde
+          }
+        }
+      }
+
+      xmlhttp.open("GET", "novaporuka", true);
+      xmlhttp.send();
+      timerID  = setTimeout("proveri()", 5000);
+    }
+    function prekini(){
+      if(timerID) {
+         clearTimeout(timerID);   
+         timerID  = 0;
+     }
+    }
+</script>

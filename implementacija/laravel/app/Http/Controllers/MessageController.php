@@ -106,4 +106,17 @@ class MessageController extends Controller
             update(['updated_at' => $message->updated_at]);
     	return redirect()->action('MessageController@show', ['conversation' => $focus]);
     }
+
+    public function novaporuka(){
+        $id=Auth::user()->id;
+        $neprocitane1 = Conversation::where('user1_id', $id)->where('user1_read', 0)->get();
+        $nova = "nova";
+        if(count($neprocitane1)==0){
+            $neprocitane2 = Conversation::where('user2_id', $id)->where('user2_read', 0)->get();
+            if(count($neprocitane2)==0){
+                $nova="nema";
+            }
+        }
+        echo $nova;
+    }
 }

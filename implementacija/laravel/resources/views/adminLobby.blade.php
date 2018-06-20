@@ -162,7 +162,7 @@
 										<input type="text" class="form-control form-control-sm" name="usernameSearch" id="usernameSearch" style="font-size=8pt;" value="{{$p}}">
 									</div>
 									<div class="col-sm-4">
-										<button type="submit" class="btn btn-primary btn-sm">Trazi</button>
+										<button id="searchBt" type="submit" class="btn btn-primary btn-sm">Trazi</button>
 									</div>
 									</div>
 								</form>
@@ -242,5 +242,6 @@
 			}
 		}
 	</script>
+	
 </div>
 @endsection
