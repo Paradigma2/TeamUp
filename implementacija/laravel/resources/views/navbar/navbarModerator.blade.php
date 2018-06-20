@@ -15,6 +15,11 @@
 
 
 
+@section('link4')
+
+<a href="" id="inboxlink"><i class="material-icons">chat</i></a>
+
+@endsection
 
 
 @section('link5')
@@ -36,3 +41,21 @@
 
 
 @endsection
+
+<script>
+    function proveri(){
+       alert("cao");
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function(){
+        if(this.status==200 && this.readyState==4){
+          if(this.responseText == "nova"){
+
+            document.getElementById("inboxlink").innerHTML="ima";
+          }
+        }
+      }
+
+      xmlhttp.open("GET", "novaporuka", true);
+      xmlhttp.send();
+    }
+</script>

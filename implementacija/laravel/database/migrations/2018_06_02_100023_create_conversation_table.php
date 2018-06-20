@@ -19,6 +19,8 @@ class CreateConversationTable extends Migration
             $table->integer('user2_id')->unsigned();
             $table->foreign('user2_id')->references('id')->on('user')->onDelete('cascade');
             $table->unique(['user1_id', 'user2_id']);
+            $table->tinyInteger('user1_read');
+            $table->tinyInteger('user2_read');
             $table->timestamps();
         });
     }

@@ -106,4 +106,8 @@ class MessageController extends Controller
             update(['updated_at' => $message->updated_at]);
     	return redirect()->action('MessageController@show', ['conversation' => $focus]);
     }
+
+    public function novaporuka(){
+        echo "nova";
+    }
 }
