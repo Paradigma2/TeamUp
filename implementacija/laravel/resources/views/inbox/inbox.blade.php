@@ -9,8 +9,16 @@
 @endsection
 @section('content')
 @if(Session::get('noConversation')!=null)
-	<div class="alert alert-primary alert-dismissible fade show" role="alert">
+	<div class="alert alert-primary alert-dismissible fade show mt-2" role="alert">
  		<strong style="color:black;">{{Session::get('noConversation')}}</strong> 
+  		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    		<span aria-hidden="true">&times;</span>
+  		</button>
+	</div>
+@endif
+@if(Session::get('noText')!=null)
+	<div class="alert alert-primary alert-dismissible fade show mt-2" role="alert">
+ 		<strong style="color:black;">{{Session::get('noText')}}</strong> 
   		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
     		<span aria-hidden="true">&times;</span>
   		</button>
