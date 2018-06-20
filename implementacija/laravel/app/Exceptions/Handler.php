@@ -45,8 +45,8 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof \Symfony\Component\HttpKernel\Exception\HttpException) {
             return response()->view('error');
-        }
-        // return parent::render($request, $exception);
+        }else
+        return parent::render($request, $exception);
     }
 
     /**
@@ -63,5 +63,6 @@ class Handler extends ExceptionHandler
         }
 
         return redirect()->guest(route('login'));
+
     }
 }

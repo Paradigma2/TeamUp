@@ -55,6 +55,15 @@ class CreateEditAdController extends Controller
           
         ]);
 
+
+        $broj=0;
+        $oglasi=Ad::where('user_id',Auth::user()->id)->get();
+        foreach($oglasi as $o){
+            $broj++;
+        }
+        if($broj==3){
+            return redirect('users')->with("previseOglasa",'Ne mozete kreirati vise od tri oglasa!');
+        }
         $idAd=$request->idAd;
         if($idAd!=null){
             Ad::where('id',$idAd)->delete();

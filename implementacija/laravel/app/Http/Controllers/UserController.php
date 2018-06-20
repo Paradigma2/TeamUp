@@ -485,8 +485,9 @@ class UserController extends Controller
     */
     public function obrisiNalog(Request $request){
         $username=$request->username;
+          Auth::logout();
         User::where('username', $username)->delete();
-           return redirect()->action('UserController@showGuestLobby');
+           return redirect()->action('LobbyController@showGuestLobby');
        
     }
       /**
