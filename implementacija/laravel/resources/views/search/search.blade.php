@@ -50,7 +50,7 @@
 					<div class="card-body">
 
 				<form class="m-5" name="searchAdForm" action="searchAds" method="GET">
-					<h1 class="card-title mb-2">Pretraga igraca</h1>
+					<h1 class="card-title mb-2">Pretraga igrača</h1>
 					<div class="form-group">
 						<div class="row mt-4">
 							<div class="col-sm-4">
