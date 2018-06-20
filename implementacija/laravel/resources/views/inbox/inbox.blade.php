@@ -1,3 +1,4 @@
+<!--autori: Jana Kragovic 23/2015, Stevan Tulovic 45/2015-->
 @extends('main')
 @section('styles')
 	<link rel="icon" href="slike/icon.png" type="image/png">
@@ -21,16 +22,16 @@
   					@isset($res)
 					@forelse($res['conversations'] as $item)
 					<form name="selectMessageForm" action="inbox" method="GET">
-					<a href="/inbox?conversation={{$item->id}}">
+					<a class="clearFormat" href="/inbox?conversation={{$item->id}}">
 					<div  class="message row" style="margin: 30px; min-width: 150px;">	
 						<div class="col-sm-12 mb-2">
 							<img src="{{$item->icon}}" width="30px">
-							<label style="color: white;">
+							<label style=" color: white;">
 								{{$item->username}}
 							</label>
 						</div>
 						<div class="col-sm-12">
-						<label style="min-width:100%; color:white;" >{{$item->lastMsg}}</label>
+						<div style="color:white;word-break: break-all;" >{{$item->lastMsg}}</div>
 						</div>
 					</div>
 					</a>
@@ -38,7 +39,7 @@
 					@empty
 					<div  class=" message row ">
 						<div class="col-sm-12 mb-2">
-							<label style="color: white;">
+							<label style=" white-space: pre-wrap; color: white;">
 								Ni sa kim niste razgovarali
 							</label>
 						</div>
@@ -60,12 +61,17 @@
 						@endif
 							<div class="col-sm-12 mb-2">
 								<img src="{{$item->icon}}" width="30px">
-								<label style="color: white;">
+								<label style="color:
+								 white;">
 									{{$item->username}}
 								</label>
 							</div>
 							<div class="col-sm-12" >
-								<label style="color:white;">{{$item->content}}</label>
+								<!--<label style="white-space: pre-wrap; color:white;">-->
+
+							<div style=""><div style=" color:white;		word-break: break-all;">{{$item->content}}</div></div>
+
+								<!--</label>-->
 							</div>
 						</div>
 
@@ -91,11 +97,22 @@
 	</div>
 
 <script>
-	var objDiv = document.getElementById("messages");
+   	document.getElementById("collapseInbox").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.77*screen.availHeight + "px;");
+   	document.getElementById("messages").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.61*screen.availHeight + "px;");
+   	var objDiv = document.getElementById("messages");
 	objDiv.scrollTop = objDiv.scrollHeight;
-   	document.getElementById("collapseInbox").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.8*screen.availHeight + "px;");
-   	document.getElementById("messages").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.7*screen.availHeight + "px;");
    	document.getElementById("msgSendDiv").setAttribute("style","width: 100%; margin-top: " + 0.02*screen.availHeight + "px;");
 
+   	var scrolled = false;
+	function updateScroll(){
+    	if(!scrolled){
+        	var element = document.getElementById("yourDivID");
+        	element.scrollTop = element.scrollHeight;
+    	}
+	}
+
+$("#yourDivID").on('scroll', function(){
+    scrolled=true;
+});
 </script>
 @endsection

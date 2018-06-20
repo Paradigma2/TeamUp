@@ -793,7 +793,7 @@
 	      				
 	      				<div class="row">
 	      					<div class="col-sm-12">
-	      					<textarea name="description" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača"></textarea>
+	      					<textarea name="description" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Kada ste online"></textarea>
 	      					</div>
 	      				</div>
 	      			</div>
@@ -867,7 +867,7 @@
 	      				
 	      				<div class="row">
 	      					<div class="col-sm-12">
-	      					<textarea name="poruka" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Šta tražiš od saigrača"></textarea>
+	      					<textarea name="poruka" style="border:  2px solid #184157; "type="text" class="form-control"  placeholder="Unesite vašu poruku..."></textarea>
 	      					</div>
 	      				</div>
 	      			</div>

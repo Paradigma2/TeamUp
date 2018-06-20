@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+/* autor: Stevan Tulovic, 45/2015 */
+
 use Illuminate\Http\Request;
 use DB;
 use App\Ad;
@@ -14,8 +16,20 @@ use App\Block;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
+/**
+ * AdController - klasa za pretragu, filtriranje i prikaz forme za pretragu oglasa.
+ *
+ * @version 1.0
+ */
 class AdController extends Controller
 {
+	/**
+     * Funkcija za pretragu i filtriranje oglasa.
+ 	 *
+     * @param Request $request
+     *
+     * @return Response
+     */
 	public function search(Request $request) 
 	{	
 		$id = Auth::user()->id;
@@ -92,7 +106,6 @@ class AdController extends Controller
             else{
                 $temp->champ2 = null;
             }
-            print_r($temp->champ2);
             if($ad->mastery3_id!=null){
                 $mastery = DB::table('mastery')
 					->where('id', $value->mastery3_id)
@@ -117,7 +130,14 @@ class AdController extends Controller
 			return redirect()->back()->with('noResults', 'Nijedan oglas ne zadovoljava kriterijume pretrage');
 		}
 	}
-    
+	
+   	/**
+     * Funkcija za prikaz forme za pretragu oglasa.
+ 	 *
+     * @param Request $request
+     *
+     * @return Response
+     */
     public function showSearch() {
     	return view('search/search');
     }
