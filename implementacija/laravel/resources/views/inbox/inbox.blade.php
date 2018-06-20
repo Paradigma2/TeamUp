@@ -94,8 +94,8 @@
 <script>
 	var objDiv = document.getElementById("messages");
 	objDiv.scrollTop = objDiv.scrollHeight;
-   	document.getElementById("collapseInbox").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.8*screen.availHeight + "px;");
-   	document.getElementById("messages").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.7*screen.availHeight + "px;");
+   	document.getElementById("collapseInbox").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.77*screen.availHeight + "px;");
+   	document.getElementById("messages").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 0.61*screen.availHeight + "px;");
    	document.getElementById("msgSendDiv").setAttribute("style","width: 100%; margin-top: " + 0.02*screen.availHeight + "px;");
 
 </script>
