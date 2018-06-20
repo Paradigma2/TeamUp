@@ -22,7 +22,7 @@
   					@isset($res)
 					@forelse($res['conversations'] as $item)
 					<form name="selectMessageForm" action="inbox" method="GET">
-					<a href="/inbox?conversation={{$item->id}}">
+					<a class="clearFormat" href="/inbox?conversation={{$item->id}}">
 					<div  class="message row" style="margin: 30px; min-width: 150px;">	
 						<div class="col-sm-12 mb-2">
 							<img src="{{$item->icon}}" width="30px">
@@ -69,7 +69,7 @@
 							<div class="col-sm-12" >
 								<!--<label style="white-space: pre-wrap; color:white;">-->
 
-							<div style=""><div style=" color:white;word-break: break-all;">{{$item->content}}</div></div>
+							<div style=""><div style=" color:white;		word-break: break-all;">{{$item->content}}</div></div>
 
 								<!--</label>-->
 							</div>
