@@ -505,7 +505,7 @@ if($korisnik==null)  {
         $ban->lolNick=$user->lolNick;
         $ban->save();
         User::where('username', $username)->delete();
-        return redirect()->action('LobbyController@showUserLobby');
+        return redirect()->action('LobbyController@home');
     }
 
       /**
