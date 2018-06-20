@@ -51,7 +51,7 @@ class SessionController extends Controller
         }
     	
     	if (Auth::attempt(['username' => $username, 'password' => $password])) {
-       // if(Hash::check($password,Auth::user()->password)){
+
     		//$user = User::where('username', $username)->update(['online' => 1]);
             $user=User::where('username', $username)->first();
             $user->online=1;
