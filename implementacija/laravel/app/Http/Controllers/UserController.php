@@ -58,7 +58,9 @@ class UserController extends Controller
     * @return response 
     */
     public function index(){
-
+        if(Auth::user()==NULL){
+             throw new HttpException(404);
+       }
         $rank=Rank::find(Auth::user()->rank_id);
         
         $adsModel=Ad::where('user_id',Auth::user()->id)->get();
@@ -152,6 +154,9 @@ class UserController extends Controller
     * @return response 
     */
     public function showUser(){
+        if(Auth::user()==NULL){
+             throw new HttpException(404);
+       }
         return redirect('users');
     }
 
@@ -184,7 +189,9 @@ class UserController extends Controller
     * @return response 
     */
     public function anotherUser(Request $request){
-
+if(Auth::user()==NULL){
+             throw new HttpException(404);
+       }
         
         $kor=$request->korisnik;
          
@@ -195,7 +202,7 @@ class UserController extends Controller
    
         $blok=Block::where('userBlocked_id',Auth::user()->id)->where('user_id',$kor)->first();
         if($blok!=null){
-            
+           //srediti ovde
                return redirect()->back()->with('msgBlocked', 'Nije moguce pristupiti željenom profilu!');
         }
 
@@ -343,7 +350,7 @@ if($korisnik==null)  {
         $block->save();
 
         $follow1=Follow::where('user_id',$user_id)->first();
-        $follow2=Follow::where('userFollowed_id',$userBlocked_id)->first();
+        $follow2=Follow::where('user_id',$userBlocked_id)->first();
 
         if($follow1!=null){
             Follow::where('user_id',$user_id)->where('userFollowed_id',$userBlocked_id)->delete();

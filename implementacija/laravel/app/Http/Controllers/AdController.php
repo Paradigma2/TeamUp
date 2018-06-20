@@ -15,6 +15,7 @@ use App\Champion;
 use App\Block;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use \Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
  * AdController - klasa za pretragu, filtriranje i prikaz forme za pretragu oglasa.
@@ -32,6 +33,7 @@ class AdController extends Controller
      */
 	public function search(Request $request) 
 	{	
+
 		$id = Auth::user()->id;
 		$blocking = DB::table('block')
 			->where('user_id', $id)
@@ -139,6 +141,9 @@ class AdController extends Controller
      * @return Response
      */
     public function showSearch() {
+    	if(Auth::user()==NULL){
+             throw new HttpException(404);
+        }
     	return view('search/search');
     }
     

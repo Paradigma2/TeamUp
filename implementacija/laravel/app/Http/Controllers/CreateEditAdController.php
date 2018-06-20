@@ -14,6 +14,7 @@ use App\Mode;
 use App\Position;
 use App\Ad;
 use Illuminate\Support\Facades\Auth;
+use \Symfony\Component\HttpKernel\Exception\HttpException;
 class CreateEditAdController extends Controller
 {
       /**
@@ -24,7 +25,9 @@ class CreateEditAdController extends Controller
     * @return response 
     */
     public function showFormAd(Request $request){
-
+ if(Auth::user()==NULL){
+             throw new HttpException(404);
+       }
   $id=$request->ad;
          $broj=0;
         $oglasi=Ad::where('user_id',Auth::user()->id)->get();

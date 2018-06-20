@@ -24,7 +24,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Ad;
 use App\Position;
 
-
+use \Symfony\Component\HttpKernel\Exception\HttpException;
 use App\Article;
 use App\Follow;
 
@@ -54,6 +54,9 @@ class LobbyController extends Controller{
      * @return Response
      */
 	public function showGuestLobby(){
+         if(Auth::user()!=NULL){
+             throw new HttpException(404);
+       }
         $articles = Article::orderBy('updated_at', 'desc')->get();
         $users = [];
         foreach($articles as $article){
@@ -71,7 +74,9 @@ class LobbyController extends Controller{
      * @return Response
      */
     public function home(Request $request){
-       
+       if(Auth::user()==NULL){
+             throw new HttpException(404);
+       }
        $articles = Article::orderBy('updated_at', 'desc')->get();
        $authors = [];
         foreach($articles as $article){
@@ -140,6 +145,9 @@ class LobbyController extends Controller{
      * @return Response
      */
     public function registerForm(){
+         if(Auth::user()!=NULL){
+             throw new HttpException(404);
+       }
         return view('registerForm');
     }
 

@@ -318,11 +318,19 @@
 				  					@endif
 				  	</div>
 				  	<div class="card-content d-flex justify-content-center mt-3">
-				  		@if($ad->online == 1)
-				  		<h5>online</h5>&nbsp;<label name="resultOnline" id="resultOnline">{{$ad->user_description}}</label>
-				  		@else
-				  		<h5>offline</h5>&nbsp;<label name="resultOnline" id="resultOnline">{{$ad->user_description}}</label>
-				  		@endif
+				  		
+				  		<div class="row">
+				  			<div class="col-sm-12">
+				  				<h5 style="text-align:center;">Kada igram LoL:</h5>
+				  			</div>
+				  			<div class="col-sm-12" style="text-align:center;">
+				  				<label name="resultOnline" id="resultOnline">{{$ad->user_description}}</label>
+				  			</div>
+				  		</div>
+				  		
+
+				  		
+				  		
 				  	</div>
 				</div>
 			</div>

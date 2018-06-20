@@ -11,6 +11,7 @@ use App\Conversation;
 use App\Message;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use \Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
  * MessageController - klasa za prikaz konverzacija, poruka iz odabrane konverzacije i slanje poruka
@@ -27,6 +28,9 @@ class MessageController extends Controller
      * @return Response
      */
     public function show(Request $request) {
+        if(Auth::user()==NULL){
+             throw new HttpException(404);
+       }
     	$id = Auth::user()->id;
     	$blocking = DB::table('block')
 			->where('user_id', $id)

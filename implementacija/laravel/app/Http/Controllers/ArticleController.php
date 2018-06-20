@@ -7,6 +7,7 @@ use App\Article;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use \Symfony\Component\HttpKernel\Exception\HttpException;
 use Validator;
 
 /**
@@ -25,9 +26,12 @@ class ArticleController extends Controller
      * @return Response
      */
     public function deleteArticleAdmin(Request $request){
+        if(Auth::user()->isAdmin==0){
+             throw new HttpException(404);
+        }
         $id =  $request->input('id');
         Article::where('id', $id)->delete();
-        return redirect()->action('UserController@home');
+        return redirect()->action('LobbyController@home');
     }
 
     /**
@@ -38,6 +42,9 @@ class ArticleController extends Controller
      * @return Response
      */
     public function deleteArticle(Request $request){
+        if(Auth::user()->isMod==0){
+             throw new HttpException(404);
+        }
         $id =  $request->input('id');
         Article::where('id', $id)->delete();
         return redirect()->action('ArticleController@showArticles');
@@ -51,6 +58,9 @@ class ArticleController extends Controller
      * @return Response
      */
     public function createArticle(Request $request){
+        if(Auth::user()->isMod==0){
+             throw new HttpException(404);
+        }
         return view('editArticle')->with('type', 'create');
     }
 
@@ -66,7 +76,9 @@ class ArticleController extends Controller
             'naslov' => 'required',
             'tekst' => 'required',
         ]);
-
+ if(Auth::user()->isMod==0){
+             throw new HttpException(404);
+        }
          $article = Article::where('id', $request->input('articleId'))->first();
         $now = time(); // or your date as well
         $your_date = strtotime($article->created_at);
@@ -93,7 +105,9 @@ class ArticleController extends Controller
      * @return Response
      */
     public function editArticle(Request $request){
-        
+        if(Auth::user()->isMod==0){
+             throw new HttpException(404);
+        }
         $article = Article::where('id', $request->input('id'))->first();
         //provera da li postoji clanak
         if($article == null){
@@ -120,6 +134,10 @@ class ArticleController extends Controller
             'naslov' => 'required',
             'tekst' => 'required',
         ]);
+        if(Auth::user()->isMod==0){
+             throw new HttpException(404);
+        }
+        
 
     	$article = new Article();
     	$article->headline = $request->input('naslov');
@@ -142,6 +160,9 @@ class ArticleController extends Controller
      * @return Response
      */
     public function showArticles(){
+        if(Auth::user()->isMod==0){
+             throw new HttpException(404);
+        }
         $id = Auth::user()->id;
        // $id=23;
         $articles = Article::where('user_id', $id)->orderBy('updated_at', 'desc')->get();
