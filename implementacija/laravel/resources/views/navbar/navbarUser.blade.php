@@ -48,8 +48,9 @@
           if(this.responseText == "nova"){
 
          document.getElementById("sanduce").innerHTML="&#xe85a";
-         document.getElementById("sanduce").style.color="red";
-          
+         document.getElementById("sanduce").style.color="aqua";
+             document.getElementById("sanduce").style.opacity="1";
+         
           }else{
              document.getElementById("sanduce").innerHTML="&#xe625";
           }

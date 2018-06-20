@@ -6,7 +6,7 @@
   color: white;
   width:auto;
   font-size: 16px;
-  opacity: 0.6;
+  opacity: 1;
   transition: 0.3s;
   display: inline-block;
   text-decoration: none;
@@ -14,7 +14,7 @@
   cursor: pointer;
   }
   .bla:hover {
-    color:#184157;
+    
     opacity: 1}
   
 

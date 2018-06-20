@@ -61,9 +61,11 @@
 	    </div>
 	    <div class="carousel-item">
 
-	      <img src={{ URL::asset('slike/carousel2.jpg') }} alt="pic2" width="1100" height="500">
+	      <img   src={{ URL::asset('slike/carousel2.jpg') }} alt="pic2" width="1100" height="500">
 	      <div class="carousel-caption">
-	        <h1 class="display-4">Pronađi svog idealnog saigrača</h1>
+	        <h1 class="display-4" 
+
+	        	> Pronađi svog idealnog saigrača</h1>
 	      </div>   
 	    </div>
 	    <div class="carousel-item">
