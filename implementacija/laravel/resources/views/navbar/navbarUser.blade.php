@@ -32,6 +32,7 @@
 @endsection
 
 <script>
+  var timerID;
     function proveri(){
        alert("cao");
       var xmlhttp = new XMLHttpRequest();
@@ -46,5 +47,12 @@
 
       xmlhttp.open("GET", "novaporuka", true);
       xmlhttp.send();
+      timerID  = setTimeout("proveri()", 5000);
+    }
+    function prekini(){
+      if(timerID) {
+         clearTimeout(timerID);   
+         timerID  = 0;
+     }
     }
 </script>
