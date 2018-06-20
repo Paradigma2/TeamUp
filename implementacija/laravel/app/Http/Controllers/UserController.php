@@ -15,7 +15,7 @@ use App\Block;
 use App\Ban;
 use App\Conversation;
 use App\Message;
-
+use Illuminate\Support\Facades\Hash;
 use DB;
 
 use Validator;
@@ -598,6 +598,14 @@ if($korisnik==null)  {
         $nova=$request->input('novaLozinka');
         $novaLozinka= bcrypt($nova);
         $ponovi=$request->input('ponoviLozinku');
+        $u= User::where('Username', 'jana')->first();
+        if ((Hash::check($stara, $u->Password)))   {
+             return  redirect('users')->with("msgPass","Pogrešno ste uneli staru lozinku.");
+        }
+
+
+
+
        $user = User::where('Username', 'jana')->update(['Password'=>$novaLozinka]);
        return  redirect('users');
     }	
