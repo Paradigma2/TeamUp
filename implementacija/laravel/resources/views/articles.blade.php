@@ -1,6 +1,12 @@
 <!--autor: Sanja Perisic 97/2015-->
 @extends('main')
 
+@section('levo3')
+<b>
+@endsection
+@section('desno3')
+</b>
+@endsection
 @section('styles')
 	<link rel="stylesheet" href="{{ URL::asset('css/stylearticles.css') }}">
 @endsection

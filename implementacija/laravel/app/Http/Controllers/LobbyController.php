@@ -153,8 +153,8 @@ class LobbyController extends Controller{
     public function registerUser(Request $request){
 
         $this->validate($request,[
-            'korisnickoIme' => 'required|unique:user,username',
-            'sifra' => 'required',
+            'korisnickoIme' => 'required|unique:user,username|max:32|min:4',
+            'sifra' => 'required|max:32|min:4',
             'potvrdaSifre' => 'required',
             'lolUsername' => 'required|unique:user,lolNick'
         ]);
