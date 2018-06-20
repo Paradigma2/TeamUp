@@ -45,8 +45,10 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof \Symfony\Component\HttpKernel\Exception\HttpException) {
             return response()->view('error');
+        }else{
+            return parent::render($request, $exception);
         }
-        // return parent::render($request, $exception);
+        // 
     }
 
     /**

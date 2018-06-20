@@ -23,10 +23,22 @@
 				{{$error}}
 				</div>
    			 @endforeach
+   			 
 			</div>
 		</div>
 		
 		@endif
+		@isset ($greska)
+		<div class="row mt-3">
+	
+	<div class="col-sm-12 mt-3">
+   			 	 <div class="alert alert-primary" style="text-align: center;">
+					{{$greska}}
+				</div>
+				</div>
+		</div>
+		
+   			@endisset
 		<div class="row">
 			<div class="col-sm-12">
 

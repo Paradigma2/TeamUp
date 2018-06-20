@@ -34,7 +34,7 @@
 <script>
   var timerID;
     function proveri(){
-       alert("cao");
+       
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function(){
         if(this.status==200 && this.readyState==4){

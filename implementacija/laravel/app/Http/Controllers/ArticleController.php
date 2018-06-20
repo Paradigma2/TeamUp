@@ -68,8 +68,19 @@ class ArticleController extends Controller
         ]);
 
          $article = Article::where('id', $request->input('articleId'))->first();
+        $now = time(); // or your date as well
+        $your_date = strtotime($article->created_at);
+        $datediff = $now - $your_date;
+
+        $days =  $datediff / (60 * 60 * 24);
+        
+         if($days>1){
+            $greska = "Ne mozete da menjate clanak objavljen pre vise od dana.";
+            return view('editArticle')->with('type', 'edit')->with('article', $article)->with('greska', $greska);
+         }
          $article->headline = $request->input('naslov');
         $article->content = $request->input('tekst');
+
         $article->update(); //srediti da nije dozvoljeno ako je clanak objavljen pre vise od dana
         return redirect()->action('ArticleController@showArticles');
     }
