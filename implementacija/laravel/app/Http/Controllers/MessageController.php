@@ -65,17 +65,19 @@ class MessageController extends Controller
 		}
 		else {
 			$focus = $conversations->take(1)->value('id');
-            $conversation = DB::table('conversation')->where('id',$focus);
-            $reading = $conversation->first();
-            if ($reading->user1_id == $id) {
-                if ($reading->user1_read != 1) {
-                    $conversation->update(['user1_read' => 1]);
-                    $untracked = 1;
-                }
-            } else {
-                if ($reading->user2_read != 1) {
-                    $conversation->update(['user2_read' => 1]);
-                    $untracked = 1;
+            if ($focus != null) {
+                $conversation = DB::table('conversation')->where('id',$focus);
+                $reading = $conversation->first();
+                if ($reading->user1_id == $id) {
+                    if ($reading->user1_read != 1) {
+                        $conversation->update(['user1_read' => 1]);
+                        $untracked = 1;
+                    }
+                } else {
+                    if ($reading->user2_read != 1) {
+                        $conversation->update(['user2_read' => 1]);
+                        $untracked = 1;
+                    }
                 }
             }
 		}
@@ -135,6 +137,9 @@ class MessageController extends Controller
     	   $focus = $request->input('conversation');
         } else {
             return redirect()->back()->with('noConversation', 'Nemate kome da posaljete poruku');
+        }
+        if (!$request->has('msgToSend')) {
+            return redirect()->back()->with('noText', 'Ne mozete poslati praznu poruku');
         }
     	$message = new Message;
     	$message->user_id = $id;
