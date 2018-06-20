@@ -527,7 +527,9 @@ class UserController extends Controller
         }else{
             $konverzacija = new Conversation();
             $konverzacija->user1_id = $id;
+            $konverzacija->user1_read = 1;
             $konverzacija->user2_id = $userS;
+            $konverzacija->user2_read = 0;
             $konverzacija->save();
             $focus = $konverzacija->id;
         }
@@ -537,7 +539,7 @@ class UserController extends Controller
         $message->conversation_id = $focus;
         $message->content = $request->input('poruka');   
         $message->save();
-        Conversation::where('id', $focus)->
+        DB::table('conversation')->where('id', $focus)->
             update(['updated_at' => $message->updated_at]);
         return redirect()->action('MessageController@show', ['conversation' => $focus]);
     }

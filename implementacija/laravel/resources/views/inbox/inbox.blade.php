@@ -8,6 +8,14 @@
 
 @endsection
 @section('content')
+@if(Session::get('noConversation')!=null)
+	<div class="alert alert-primary alert-dismissible fade show" role="alert">
+ 		<strong style="color:black;">{{Session::get('noConversation')}}</strong> 
+  		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    		<span aria-hidden="true">&times;</span>
+  		</button>
+	</div>
+@endif
 <script type="text/javascript">
 	public function resizeFun() {
    		document.getElementById("collapseInbox").setAttribute("style","overflow-x: hidden; overflow-y:scroll; width: 100%; height: " + 100 + "px;");
@@ -24,7 +32,12 @@
 					@forelse($res['conversations'] as $item)
 					<form name="selectMessageForm" action="inbox" method="GET">
 					<a class="clearFormat" href="/inbox?conversation={{$item->id}}">
-					<div  class="message row" style="margin: 30px; min-width: 150px;">	
+					@if($item->read == 0)
+						<div  class="message unread row" style="margin: 30px; min-width: 150px;">
+					@else
+						<div  class="message read row" style="margin: 30px; min-width: 150px;">
+					@endif
+					{{-- <div  class="message row" style="margin: 30px; min-width: 150px;">	 --}}
 						<div class="col-sm-12 mb-2">
 							<img src="{{$item->icon}}" width="30px">
 							<label style=" color: white;">
