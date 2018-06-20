@@ -9,7 +9,7 @@
 @endsection
 @section('styles')
 	<link rel="stylesheet" href="{{ URL::asset('css/stylearticles.css') }}">
-	<link rel="stylesheet" href="{{ URL::asset('css/styleprofile.css') }}">
+	
 @endsection
 
 @section('navbar')

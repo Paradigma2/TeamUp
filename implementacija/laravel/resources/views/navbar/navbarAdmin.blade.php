@@ -39,17 +39,24 @@
 
 @endsection
 
+
 <script>
   var timerID;
+  var timerBlink;
+  var b=0;
+  var flag=true;
     function proveri(){
 
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function(){
         if(this.status==200 && this.readyState==4){
           if(this.responseText == "nova"){
-         document.getElementById("sanduce").innerHTML="&#xe85a";
-               document.getElementById("sanduce").style.color="red";
-          
+
+            if(flag){
+              flag=false;
+             blink();
+            }
+         
           }else{
              document.getElementById("sanduce").innerHTML="&#xe625";
           }
@@ -62,8 +69,34 @@
     }
     function prekini(){
       if(timerID) {
-         clearTimeout(timerID);   
+         clearTimeout(timerID);
+     
          timerID  = 0;
+
      }
+       if(timerBlink) {
+         clearTimeout(timerBlink); 
+          flag=true;
+         timerBlink  = 0;
+
+     }
+         
+    }
+
+    function blink(){
+      if(b==0){
+       document.getElementById("sanduce").innerHTML="&#xe85a";
+            document.getElementById("sanduce").style.color="#184157";
+             document.getElementById("sanduce").style.opacity="1";
+             timerBlink=setTimeout("blink()", 500);
+             b=1;
+      }
+      else{
+           document.getElementById("sanduce").innerHTML="&#xe85a";
+            document.getElementById("sanduce").style.color="DodgerBlue";
+             document.getElementById("sanduce").style.opacity="1";
+             timerBlink=setTimeout("blink()", 500);
+             b=0;
+      }
     }
 </script>

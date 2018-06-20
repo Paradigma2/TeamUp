@@ -14,7 +14,7 @@ use Validator;
 use App\User;
 use App\Ban;
 use App\Rank;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 
@@ -50,7 +50,8 @@ class SessionController extends Controller
             return redirect()->back()->with('banovanSi','Pristup sajtu nije moguć, banovani ste');
         }
     	
-    	if (Auth::attempt(['username' => $username, 'password' => $password])) {
+    	//if (Auth::attempt(['username' => $username, 'password' => $password])) {
+        if(Hash::check($password,Auth::user()->password)){
     		//$user = User::where('username', $username)->update(['online' => 1]);
             $user=User::where('username', $username)->first();
             $user->online=1;

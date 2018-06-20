@@ -32,6 +32,15 @@
   </button>
 </div>
 @endif 
+@if(Session::get('msgPass')!=null)
+
+<div class="mt-2 alert alert-primary alert-dismissible fade show" role="alert">
+  <font style="color:black;">{{Session::get('msgPass')}}</font> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif 
 
 @if(Session::get('msgComment')!=null)
 

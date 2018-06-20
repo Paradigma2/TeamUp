@@ -15,7 +15,7 @@ use App\Block;
 use App\Ban;
 use App\Conversation;
 use App\Message;
-
+use Illuminate\Support\Facades\Hash;
 use DB;
 
 use Validator;
@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Ad;
 use App\Position;
-
+use \Symfony\Component\HttpKernel\Exception\HttpException;
 
 use App\Article;
 use App\Follow;
@@ -164,8 +164,14 @@ class UserController extends Controller
     */
     public function redirectoAnotherUser(Request $request){
 
-        $korisnik=User::where('id', $request->id)->first();      
 
+        $korisnik=User::where('id', $request->id)->first();    
+        if($korisnik==null)  {
+             throw new HttpException(404);
+        }
+        if(Auth::user()->id==$korisnik->id){
+            throw new HttpException(404);
+        }
         return redirect()->action('UserController@anotherUser', ['korisnik' => $korisnik->id]);
         
     }
@@ -181,7 +187,10 @@ class UserController extends Controller
 
         
         $kor=$request->korisnik;
-
+         
+    if(Auth::user()->id==$kor){
+            throw new  HttpException(404);
+        }
        // $blok=Block::where('user_id',Auth::user()->id)->orWhere('userBlocked_id',$kor)->firs//t();
    
         $blok=Block::where('userBlocked_id',Auth::user()->id)->where('user_id',$kor)->first();
@@ -191,6 +200,10 @@ class UserController extends Controller
         }
 
         $korisnik=User::find($kor);
+
+if($korisnik==null)  {
+             throw new HttpException(404);
+        }
         $rank=Rank::find($korisnik->rank_id);
         
         $adsModel=Ad::where('user_id',$korisnik->id)->get();
@@ -585,7 +598,16 @@ class UserController extends Controller
         $nova=$request->input('novaLozinka');
         $novaLozinka= bcrypt($nova);
         $ponovi=$request->input('ponoviLozinku');
-       $user = User::where('Username', 'jana')->update(['Password'=>$novaLozinka]);
+        $u= User::where('username', Auth::user()->username)->first();
+        if ($stara!= encrypt($u->Password))   {
+
+             return  redirect('users')->with("msgPass","Pogrešno ste uneli staru lozinku.");
+        }
+
+
+
+
+       $user = User::where('username', Auth::user()->username)->update(['Password'=>$novaLozinka]);
        return  redirect('users');
     }	
 

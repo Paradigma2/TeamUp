@@ -15,7 +15,7 @@ use App\Ban;
 use App\Conversation;
 use App\Message;
 
-
+use Illuminate\Support\Facades\Hash;
 
 use Validator;
 use Illuminate\Support\Facades\Auth;
