@@ -223,7 +223,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<button class="btn btn-lg btn-primary"style="width:100%;">Nadji</button>
+							<button class="btn btn-lg btn-primary"style="width:100%;">Nađi</button>
 						</div>
 					</div>
 				</form>

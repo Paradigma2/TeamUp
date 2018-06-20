@@ -51,7 +51,7 @@
 <script>
   var timerID;
     function proveri(){
- 
+
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function(){
         if(this.status==200 && this.readyState==4){
