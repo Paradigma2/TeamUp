@@ -138,6 +138,9 @@ class MessageController extends Controller
         } else {
             return redirect()->back()->with('noConversation', 'Nemate kome da posaljete poruku');
         }
+        if (!$request->has('msgToSend')) {
+            return redirect()->back()->with('noText', 'Ne mozete poslati praznu poruku');
+        }
     	$message = new Message;
     	$message->user_id = $id;
     	$message->conversation_id = $focus;
