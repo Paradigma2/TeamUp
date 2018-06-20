@@ -2,12 +2,7 @@
 
 @extends('main')
 
-@section('levo4')
-<b>
-@endsection
-@section('desno4')
-</b>
-@endsection
+
 @section('styles')
 	<link rel="icon" href="slike/icon.png" type="image/png">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,37 +11,85 @@
 @endsection
 
 
+
+
+
+
+
+
+
+ 
+
+
+@section('content')
+
 @if(Session::get('msgBlocked')!=null)
 
-<div class="alert alert-primary alert-dismissible fade show" role="alert">
-  <strong style="color:black;">{{Session::get('msgBlocked')}}</strong> 
+<div class="mt-2 alert alert-primary alert-dismissible fade show" role="alert">
+  <font style="color:black;">{{Session::get('msgBlocked')}}</font> 
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-@endif
-
+@endif 
 
 @if(Session::get('msgComment')!=null)
 
-<div class="alert alert-primary alert-dismissible fade show" role="alert">
-  <strong style="color:black;">{{Session::get('msgComment')}}</strong> 
+<div class=" mt-2 alert alert-primary alert-dismissible fade show" role="alert">
+  <font style="color:black;">{{Session::get('msgComment')}}</font> 
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 @endif
-@section('content')
+@if(Session::get('previseOglasa')!=null)
+
+<div class=" mt-2 alert alert-primary alert-dismissible fade show" role="alert">
+  <font style="color:black;">{{Session::get('previseOglasa')}}</font> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+
+  @if(count($errors)>0)
+	      
+	      	<div class="mt-2 alert alert-primary alert-dismissible fade show" role="alert">
+	         	
+	         			
+	         					@foreach ($errors->get('novaLozinka') as $message) 
+	         					<font style="color:black;">{{$message }} 	</font> <br>
+	         					@endforeach
+	         					@foreach ($errors->get('staraLozinka') as $message) 
+	         					<font style="color:black;">{{$message }} </font> <br>
+	         					@endforeach
+	         					@foreach ($errors->get('ponoviLozinku') as $message) 
+	         					<font style="color:black;">{{$message }} 	</font> <br>
+	         					@endforeach
+	         					@foreach ($errors->get('description') as $message) 
+	         					<font style="color:black;">{{$message }} </font> <br>
+	         					@endforeach
+	         			
+	         			
+	         		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+	         	@endif
+
+
+
 
 	<div class="row mt-3"  style="background-color: rgba(5,5,5,0.8); color:white;">
 		<div class="col-sm-2 " >
 			<div class="profilePicture m-4" width="185px">
 				<img class="blur" border="2px" src="{{$profilePic}}"alt="Profilna slika" width="185px">
-				<div class="editProfilePicture" >
+				{{-- <div class="editProfilePicture" >
 					<button class="icon mt-1" >
 						<i>@yield('editProfilePicture')</i>
 					</button>
-				</div>
+				</div> --}}
 			</div>
 			
 		</div>
@@ -684,24 +727,7 @@
 	      </div>
 
 	      <!-- Modal body -->
-	      @if(count($errors)>0)
-	      	@if ($errors->has('staraLozinka') || $errors->has('novaLozinka') || $errors->has('ponoviLozinku'))
-	         		<div class="alert-danger">
-	         			<ul>
-	         					@foreach ($errors->get('novaLozinka') as $message) 
-	         					<li>{{$message }} 	</li>
-	         					@endforeach
-	         					@foreach ($errors->get('staraLozinka') as $message) 
-	         					<li>{{$message }} 	</li>
-	         					@endforeach
-	         					@foreach ($errors->get('ponoviLozinku') as $message) 
-	         					<li>{{$message }} 	</li>
-	         					@endforeach
-	         			
-	         			</ul>
-	         		</div>
-	         		@endif
-	         	@endif
+	     
 
 	      <!-- Modal footer -->
 	      <div class="modal-body">

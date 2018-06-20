@@ -14,6 +14,12 @@
 @endsection
 
 
+@section ('link4')
+ <div style="margin-top: 10px; "> 
+
+<a class="bla"  href="inbox"><i  id="sanduce" class="material-icons">&#xe625;</i></a>
+ </div> 
+@endsection
 
 @section('link4')
 
@@ -43,19 +49,32 @@
 @endsection
 
 <script>
+  var timerID;
     function proveri(){
-       alert("cao");
+ 
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function(){
         if(this.status==200 && this.readyState==4){
           if(this.responseText == "nova"){
 
-            document.getElementById("inboxlink").innerHTML="ima";
+         document.getElementById("sanduce").innerHTML="&#xe85a";
+                 document.getElementById("sanduce").style.color="red";
+          
+          
+          }else{
+             document.getElementById("sanduce").innerHTML="&#xe625";
           }
         }
       }
 
       xmlhttp.open("GET", "novaporuka", true);
       xmlhttp.send();
+      timerID  = setTimeout("proveri()", 5000);
+    }
+    function prekini(){
+      if(timerID) {
+         clearTimeout(timerID);   
+         timerID  = 0;
+     }
     }
 </script>

@@ -15,3 +15,8 @@
 	<a class="nav-link"  href="#logInModal" data-toggle='modal'>Log In</a>
 @endsection
 
+<script>
+    function proveri(){
+       
+    }
+</script>

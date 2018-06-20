@@ -1,6 +1,7 @@
 <!--autor: Jana Kragovic 23/2015-->
-		<div>
-			<nav class="navbar navbar-expand-sm navbar-dark mt-3">
+
+		<div  >
+			<nav  class="navbar navbar-expand-sm navbar-dark mt-3">
 			
 					
 				<!-- Brand/logo -->
@@ -32,16 +33,19 @@
 
 				<!-- linkovi desno-->
 
-				<ul class="navbar-nav   ml-auto" style="margin-right: 80px;"	>
-					<li class=" nav-item">
-							@yield('levo4')
-						@yield('link4')
-							@yield('desno4')
-					</li>
+				<ul  class="navbar-nav   ml-auto" style="margin-right: 80px;"	>
+					
 					<li class=" nav-item">	
 							@yield('levo5')
 						@yield('link5')
 							@yield('desno5')
+					</li>
+					<li   class=" nav-item">
+							@yield('levo4')
+						
+								@yield('link4')
+						
+							@yield('desno4')
 					</li>
 				</ul>
 				</div>
