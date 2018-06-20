@@ -50,7 +50,7 @@
 						@endphp
 						@if($len==0)
 						<div class="pages p-3">
-							<h6>Jos uvek nikoga ne pratite</h6>
+							<h6>Još uvek nikoga ne pratite</h6>
 						</div>
 						@else
 						<div class="list-group pages" style="height:300px; overflow-y:auto;">
@@ -197,7 +197,7 @@
 				<div class="card mt-3 article">
 					<div class="card-body">
 						<div class="card-title">
-							<h2>Pretrazi</h2>
+							<h2>Pretraži</h2>
 							
 						</div>
 						<div class="row">

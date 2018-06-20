@@ -33,7 +33,7 @@
 @endsection
 
 @section('obrisiNalog')
-	<button id="obrisi" class="button" href="">Obrisi nalog</button>
+	<button id="obrisi" class="button" href="">Obriši nalog</button>
 @endsection
 
 @section("editDescription")

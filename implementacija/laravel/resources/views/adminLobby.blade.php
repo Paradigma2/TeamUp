@@ -150,7 +150,7 @@
 				<div class="card mt-3 article">
 					<div class="card-body">
 						<div class="card-title">
-							<h2>Pretrazi</h2>
+							<h2>Pretraži</h2>
 							
 						</div>
 						<div class="row">
