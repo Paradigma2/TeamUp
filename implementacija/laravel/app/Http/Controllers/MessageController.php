@@ -121,7 +121,13 @@ class MessageController extends Controller
     	}
 
     	$res = collect(['conversations' => $temp, 'messages' => $messages, 'focus' => $focus]);
-    	return view('inbox/inboxUser')->with('res', $res);
+        if (Auth::user()->isAdmin) {
+            return view('inbox/inboxAdmin')->with('res', $res);
+        }
+        if (Auth::user()->isMod) {
+            return view('inbox/inboxModerator')->with('res', $res);
+        }
+        return view('inbox/inboxUser')->with('res', $res);
     }
 
     /**

@@ -34,7 +34,7 @@
 	<div class="container-fluid" style="min-height: 100%;">
 		<div class="row mt-3">
 			<div class="col-md-3"  style="background-color: rgba(5,5,5,0.4); width: 100%; padding: 0em">
-				<button id="collapseButton"  class="btn-block btn buttonGrade mt-2 mb-2 " style="border-radius: 5px;" type="button" data-toggle="collapse" data-target="#collapseInbox" class="visible-xs visible-sm collapsed">Prikazi ćaskanja</button>
+				<button id="collapseButton"  class="btn-block btn buttonGrade mt-2 mb-2 " style="border-radius: 5px;" type="button" data-toggle="collapse" data-target="#collapseInbox" class="visible-xs visible-sm collapsed">Prikaži ćaskanja</button>
 				<div  class="collapse" id="collapseInbox" onresize="resizeFun()">
   					@isset($res)
 					@forelse($res['conversations'] as $item)
@@ -110,7 +110,7 @@
 						<input type="hidden" name="conversation" value={{$res['focus']}}>	
 
 						<button class="btn-block mt-2 buttonGrade">
-							Posalji
+							Pošalji
 						</button>
 					</div>
 				</div>

@@ -7,12 +7,12 @@
 
 
 @section('link4')
-	<a class="nav-link"  href="/registerForm">Register</a>
+	<a class="nav-link"  href="/registerForm">Registruj se</a>
 	
 @endsection
 
 @section('link5')
-	<a class="nav-link"  href="#logInModal" data-toggle='modal'>Log In</a>
+	<a class="nav-link"  href="#logInModal" data-toggle='modal'>Uloguj se</a>
 @endsection
 
 <script>

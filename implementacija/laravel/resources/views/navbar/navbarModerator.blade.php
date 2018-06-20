@@ -39,7 +39,7 @@
         <a class="dropdown-item" href="showUser">Profil</a>
         
         <a class="dropdown-item" href="inbox">Inbox</a>
-        <a class="dropdown-item" href="/logOut">Log out</a>
+        <a class="dropdown-item" href="/logOut">Izloguj se</a>
 
       
        
