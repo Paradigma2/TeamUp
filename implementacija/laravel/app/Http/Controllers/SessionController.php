@@ -33,6 +33,7 @@ class SessionController extends Controller
     	$this->validate($request,[
     		'username'		=>'required',
     		'password'  	=>'required',
+            
     	]);
 
     	$username=$request->get('username');

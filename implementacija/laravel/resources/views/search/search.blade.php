@@ -1,6 +1,12 @@
 <!--autori: Sanja Perisic 97/2015, Stevan Tulovic 45/2015-->
 @extends('main')
 
+@section('levo2')
+<b>
+@endsection
+@section('desno2')
+</b>
+@endsection
 @section('styles')
 	<link rel="stylesheet" href="{{ URL::asset('css/stylesearch.css') }}">
 @endsection

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-
+use App\Exceptions;
 use App\Rank;
 use App\Mode;
 use App\Champion;
@@ -163,9 +163,15 @@ class UserController extends Controller
     * @return response 
     */
     public function redirectoAnotherUser(Request $request){
-
+        
+          
+           
+           
+   
         $korisnik=User::where('id', $request->id)->first();      
-
+        if($korisnik->id == Auth::user()->id){
+            throw new Exception();
+        }
         return redirect()->action('UserController@anotherUser', ['korisnik' => $korisnik->id]);
         
     }
@@ -178,10 +184,12 @@ class UserController extends Controller
     * @return response 
     */
     public function anotherUser(Request $request){
-
+      
         
         $kor=$request->korisnik;
-        
+        if($kor == Auth::user()->id){
+            throw new Exception();
+        }
        // $blok=Block::where('user_id',Auth::user()->id)->orWhere('userBlocked_id',$kor)->firs//t();
    
         $blok=Block::where('userBlocked_id',Auth::user()->id)->where('user_id',$kor)->first();
@@ -269,7 +277,19 @@ class UserController extends Controller
         $isAdmin=$korisnik->isAdmin;
         $profilePic=$korisnik->icon;
         $descr=$korisnik->description;
+
+
+        $cnt=DB::table('comment')->where('user_id', $korisnik->id)->count();
+        $ocene=DB::table('comment')->where('user_id', $korisnik->id)->sum("grade");
+                $novaOcena= $ocene/$cnt;
+                  $korisnik->grade=$novaOcena;
+                $korisnik->update();
+
+
         $grade=round($korisnik->grade);
+
+
+
         $comments=Comment::where('user_id',$korisnik->id)->get();
         $commentingUsers=[];
         $commentingIcons=[];
@@ -443,7 +463,7 @@ class UserController extends Controller
 
               
                 $komentarisanUser->grade=$ocena;
-              $komentarisanUser->update();
+                  $komentarisanUser->update();
              }else{
               
                 $cnt=DB::table('comment')->where('user_id', $komentarisanUser_id)->count();

@@ -1,6 +1,12 @@
 <!--autor: Sanja Perisic 97/2015-->
 @extends('main')
 
+@section('levo1')
+<b>
+@endsection
+@section('desno1')
+</b>
+@endsection
 @section('styles')
 	<link rel="stylesheet" href="{{ URL::asset('css/stylelobby.css') }}">
 @endsection

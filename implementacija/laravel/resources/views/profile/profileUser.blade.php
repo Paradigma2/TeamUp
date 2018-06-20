@@ -17,14 +17,20 @@
 @endsection
 
 
+@if(Auth::user()->isAdmin)
+@section("btnSidebar1")
+		<i class="material-icons" style="cursor:pointer;">delete</i>
+@endsection
+@endif
 
 
-@section('editProfilePicture')
+
+{{-- @section('editProfilePicture')
 
 	
 		Promeni sliku
 	
-@endsection
+@endsection --}}
 
 @section('promeniLozinku')
 	<button  class="button" >Promeni lozinku</button>
