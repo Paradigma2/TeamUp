@@ -91,7 +91,7 @@
 
 	<div class="row mt-3">
 		<div class="col-sm-12 d-flex justify-content-center">
-			<button class="btn btn-primary mr-2 btn-lg" type="button"><a class="nav-link" href=/registerForm style="color:white;">Registruj se</a></button>
+			<a class="nav-link" href=/registerForm style="color:white; padding: 0em;"><button class="btn btn-primary mr-2 btn-lg" type="button">Registruj se</button></a>
 		
 				<button class="btn btn-primary ml-2 btn-lg" type="button" data-toggle="modal" data-target="#logInModal">Uloguj se</button>
 			
