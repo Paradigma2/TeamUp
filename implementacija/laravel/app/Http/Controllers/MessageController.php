@@ -158,15 +158,28 @@ class MessageController extends Controller
 
     public function novaporuka(){
          $id=Auth::user()->id;
-         $neprocitane1 = Conversation::where('user1_id', $id)->where('user1_read', 0)->get();
-         $nova = "nova";
-         if(count($neprocitane1)==0){
-             $neprocitane2 = Conversation::where('user2_id', $id)->where('user2_read', 0)->get();
-            if(count($neprocitane2)==0){
-                 $nova="nema";
+         $blocking = DB::table('block')
+            ->where('user_id', $id)
+            ->select('userBlocked_id as user_id');
+        $blocked = DB::table('block')
+            ->where('userBlocked_id', $id)
+            ->select('user_id')
+            ->union($blocking)
+            ->get()
+            ->flatten()
+            ->all();
+        $array = array_map(function ($data) { return $data->user_id; }, $blocked);
+        $conversations = DB::table('conversation')
+            ->whereNotIn('user2_id', $array)
+            ->whereNotIn('user1_id', $array);
+        $unread = $conversations->where('user1_id', $id)->where('user1_read', 0)->get();
+        $nova = "nova";
+        if(count($unread) == 0){
+            $unread = $conversations->where('user2_id', $id)->where('user2_read', 0)->get();
+            if(count($unread) == 0){
+                $nova="nema";
             }
-         }
-         echo $nova;
-    
+        }
+        echo $nova;
     }
 }
