@@ -103,7 +103,7 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-sm-4 ">
-								<h5><label for="lolUsername">Korisnicko ime na LoL-u:</label></h5>
+								<h5><label for="lolUsername">Summoners name na Lol-u</label></h5>
 							</div>
 							<div class="col-sm-8">
 								 <input type="text" class="form-control" id="lolUsername" name="lolUsername">
