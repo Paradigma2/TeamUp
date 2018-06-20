@@ -10,7 +10,7 @@ use Illuminate\Database\Seeder;
  */
 class DatabaseSeeder extends Seeder
 {
-
+    //php artisan migrate:refresh --seeds
     /**
      * Run the database seeds.
      *

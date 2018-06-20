@@ -9,7 +9,14 @@
 	<a class="nav-link"  href="/search">Nađi saigrača</a>
 @endsection
 
+@section ('link4')
+<a class="clearFormat bla"  href="inbox">
+ <div style="margin-top: 10px; "> 
 
+<i  id="sanduce" class="material-icons">&#xe625;</i>
+ </div> 
+</a>
+@endsection
 
 
 
@@ -34,13 +41,17 @@
 <script>
   var timerID;
     function proveri(){
-       
+
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function(){
         if(this.status==200 && this.readyState==4){
           if(this.responseText == "nova"){
 
-            //jano tvoj kod ovde
+         document.getElementById("sanduce").innerHTML="&#xe85a";
+         document.getElementById("sanduce").style.color="red";
+          
+          }else{
+             document.getElementById("sanduce").innerHTML="&#xe625";
           }
         }
       }
