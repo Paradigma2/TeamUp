@@ -40,16 +40,27 @@ a.clearFormat:active {
 .message{
 	padding: 10px;
 	margin-top: 10px;
-	background:rgba(3, 3, 3, 0.8);
+	
 	font-family:"Trebuchet MS", Helvetica, sans-serif;
-
-
 }
+.read{
+  background:rgba(3, 3, 3, 0.8);
+}
+.unread{
+  background-color: #184157;
+  opacity: 0.6;
+}
+
 textarea{
 	font-family:"Trebuchet MS", Helvetica, sans-serif;
 }
-div.message:hover{
+
+div.read:hover{
 	background-color:rgba(3, 3, 3, 0.2);
+}
+div.unread:hover{
+  background-color: #184157;
+  opacity: 0.2;
 }
 
 textarea{

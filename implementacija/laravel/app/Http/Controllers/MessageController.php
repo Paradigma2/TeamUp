@@ -46,11 +46,38 @@ class MessageController extends Controller
     		->whereNotIn('user1_id', $array)
     		->orderBy('updated_at', 'desc');
     	$temp = $conversations->get();
+        $untracked = 0;
     	if ($request->has('conversation')) {
     		$focus = $request->input('conversation');
+            $conversation = DB::table('conversation')->where('id',$focus);
+            $reading = $conversation->first();
+            if ($reading->user1_id == $id) {
+                if ($reading->user1_read != 1) {
+                    $conversation->update(['user1_read' => 1]);
+                    $untracked = 1;
+                }
+            } else {
+                if ($reading->user2_read != 1) {
+                    $conversation->update(['user2_read' => 1]);
+                    $untracked = 1;
+                }
+            }
 		}
 		else {
 			$focus = $conversations->take(1)->value('id');
+            $conversation = DB::table('conversation')->where('id',$focus);
+            $reading = $conversation->first();
+            if ($reading->user1_id == $id) {
+                if ($reading->user1_read != 1) {
+                    $conversation->update(['user1_read' => 1]);
+                    $untracked = 1;
+                }
+            } else {
+                if ($reading->user2_read != 1) {
+                    $conversation->update(['user2_read' => 1]);
+                    $untracked = 1;
+                }
+            }
 		}
     	$messages = DB::table('message')
     		->where('conversation_id', $focus)
@@ -60,9 +87,17 @@ class MessageController extends Controller
     	foreach ($temp as $key => $value) {
     		if ($value->user1_id == $id) {
     			$user = User::find($value->user2_id);
+                $value->read = $value->user1_read;
+                if ($focus == $value->id && $untracked > $value->read) {
+                    $value->read = $untracked;
+                }
     		}
     		else {
     			$user = User::find($value->user1_id);
+                $value->read = $value->user2_read;
+                if ($focus == $value->id && $untracked > $value->read) {
+                    $value->read = $untracked;
+                }
     		}
     		$value->username = $user->username;
     		$value->icon = $user->icon;
@@ -96,14 +131,23 @@ class MessageController extends Controller
      */
     public function post(Request $request) {
     	$id = Auth::user()->id;
-    	$focus = $request->input('conversation');
+        if ($request->has('conversation')) {
+    	   $focus = $request->input('conversation');
+        } else {
+            return redirect()->back()->with('noConversation', 'Nemate kome da posaljete poruku');
+        }
     	$message = new Message;
     	$message->user_id = $id;
     	$message->conversation_id = $focus;
     	$message->content = $request->input('msgToSend');	
         $message->save();
-        Conversation::where('id', $focus)->
-            update(['updated_at' => $message->updated_at]);
+        $conversation = DB::table('conversation')->where('id',$focus);
+        $reading = $conversation->first();
+        if ($reading->user1_id == $id) {
+            $conversation->update(['user2_read' => 0, 'updated_at' => $message->updated_at]);
+        } else {
+            $conversation->update(['user1_read' => 0, 'updated_at' => $message->updated_at]);
+        }
     	return redirect()->action('MessageController@show', ['conversation' => $focus]);
     }
 
