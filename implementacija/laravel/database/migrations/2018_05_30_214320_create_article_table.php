@@ -20,7 +20,6 @@ class CreateArticleTable extends Migration
             $table->increments('id');
             $table->string('headline',100);
             $table->text('content');
-            $table->string('image',100)->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
             $table->timestamps();
