@@ -121,7 +121,13 @@ class MessageController extends Controller
     	}
 
     	$res = collect(['conversations' => $temp, 'messages' => $messages, 'focus' => $focus]);
-    	return view('inbox/inboxUser')->with('res', $res);
+        if (Auth::user()->isAdmin) {
+            return view('inbox/inboxAdmin')->with('res', $res);
+        }
+        if (Auth::user()->isMod) {
+            return view('inbox/inboxModerator')->with('res', $res);
+        }
+        return view('inbox/inboxUser')->with('res', $res);
     }
 
     /**
@@ -169,13 +175,10 @@ class MessageController extends Controller
             ->flatten()
             ->all();
         $array = array_map(function ($data) { return $data->user_id; }, $blocked);
-        $conversations = DB::table('conversation')
-            ->whereNotIn('user2_id', $array)
-            ->whereNotIn('user1_id', $array);
-        $unread = $conversations->where('user1_id', $id)->where('user1_read', 0)->get();
+        $unread = DB::table('conversation')->where('user1_id', $id)->where('user1_read', 0)->whereNotIn('user2_id', $array)->get();
         $nova = "nova";
         if(count($unread) == 0){
-            $unread = $conversations->where('user2_id', $id)->where('user2_read', 0)->get();
+            $unread = DB::table('conversation')->where('user2_id', $id)->where('user2_read', 0)->whereNotIn('user1_id', $array)->get();
             if(count($unread) == 0){
                 $nova="nema";
             }

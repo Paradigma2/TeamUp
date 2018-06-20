@@ -78,7 +78,7 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-sm-4 ">
-								<h4><label for="username">Korisnicko ime:</label></h4>
+								<h4><label for="username">Korisničko ime:</label></h4>
 							</div>
 							<div class="col-sm-8">
 								
@@ -89,7 +89,7 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-sm-4 ">
-								<h4><label for="pass">Sifra:</label></h4>
+								<h4><label for="pass">Šifra:</label></h4>
 							</div>
 							<div class="col-sm-8">
 								 <input type="password" class="form-control" id="pass" name="sifra">
@@ -99,7 +99,7 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="col-sm-4 ">
-								<h4><label for="passConfirm">Potvrdite sifru:</label></h4>
+								<h4><label for="passConfirm">Potvrdite šifru:</label></h4>
 							</div>
 							<div class="col-sm-8">
 								 <input type="password" class="form-control" id="passConfirm" name="potvrdaSifre">
@@ -151,7 +151,7 @@
 	         		<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	         		<div class="row">
 	         			<div class="col-sm-5">
-	         				<h5><label for="username">Korisnicko ime:</label></h5>
+	         				<h5><label for="username">Korisničko ime:</label></h5>
 	         			</div>
 	         			<div class="col-sm-7">
 	         				 <input type="text" class="form-control" id="username" name="username">
@@ -161,7 +161,7 @@
 	         	<div class="form-group">
 	         		<div class="row">
 	         			<div class="col-sm-5 ">
-	         				<h5><label for="pass">Sifra:</label></h5>
+	         				<h5><label for="pass">Šifra:</label></h5>
 	         			</div>
 	         			<div class="col-sm-7">
 	         				 <input type="password" class="form-control" id="pass" name="password">

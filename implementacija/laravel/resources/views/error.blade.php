@@ -19,7 +19,7 @@
 <br>
 				<br>
 				<br>
-				<label style="position: center; font-size: 50px;">404 - Nije pronadjena stranica</label>
+				<label style="position: center; font-size: 50px;">404 - Stranica nije pronađena</label>
 			</div>
 		</div>
 	</div>

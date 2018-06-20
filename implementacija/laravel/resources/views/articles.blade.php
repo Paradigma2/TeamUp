@@ -161,7 +161,7 @@
 		<div class="col-sm-4">
 			<div class="row mt-3">
 				<div class="col-sm-12">
-					<button type="button" class="btn btn-primary" style="width:100%;"><a class="nav-link" href=/createArticle style="color:white;">Kreiraj clanak</a></button>
+					<button type="button" class="btn btn-primary" style="width:100%;"><a class="nav-link" href=/createArticle style="color:white;">Kreiraj članak</a></button>
 				</div>
 			</div>
 			<div class="row">
@@ -172,10 +172,10 @@
 						<h2>Pravila</h2>
 						
 					</div>
-					<p>Moderator ne sme davati svoj profil drugim igracima na koriscenje. U suprotnom, moderator ce biti banovan sa sajta.</p>
-				<p>Clanci moraju biti vezani za desavanja u LoL-u i sadrzati korisne i zanimljive informacije. U suprotnom, clanci ce biti uklonjeni sa sajta.</p>
-				<p>Clanci ne smeju imati vulgaran sadrzaj. U suprotnom, moderator ce biti banovan, a svi njegovi clanci uklonjeni sa sajta.</p>
-				<p>Clanci ne smeju sluziti za prozivanje drugih igraca ili korisnika sajta. U suprotnom, moderator ce biti banovan, a svi njegovi clanci uklonjeni sa sajta.</p>
+					<p>Moderator ne sme davati svoj profil drugim igračima na korišćenje. U suprotnom, moderator će biti banovan sa sajta.</p>
+				<p>Članci moraju biti vezani za dešavanja u LoL-u i sadržati korisne i zanimljive informacije. U suprotnom, članci će biti uklonjeni sa sajta.</p>
+				<p>Članci ne smeju imati vulgaran sadržaj. U suprotnom, moderator će biti banovan, a svi njegovi članci uklonjeni sa sajta.</p>
+				<p>Članci ne smeju služiti za prozivanje drugih igrača ili korisnika sajta. U suprotnom, moderator će biti banovan, a svi njegovi članci uklonjeni sa sajta.</p>
 				</div>
 				
 			</div>
