@@ -209,8 +209,8 @@
 <XPD:REF name="Participant">A8GR9TdW+kKM1jRcZkNWcwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">+vlOPj9wbE+vpI9WQgEQIAAA</XPD:REF>
-<XPD:REF name="Views[1]">0x1nf5NVn0io0zNmyPQwnAAA</XPD:REF>
-<XPD:REF name="Views[2]">WIxXbcehAEqt/w0J3q+0XQAA</XPD:REF>
+<XPD:REF name="Views[1]">WIxXbcehAEqt/w0J3q+0XQAA</XPD:REF>
+<XPD:REF name="Views[2]">0x1nf5NVn0io0zNmyPQwnAAA</XPD:REF>
 <XPD:REF name="Views[3]">9GcDJgkUvk27RuxQSMX0mQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="60uiJHiGm0iykiMy9/YRgAAA">
@@ -218,8 +218,8 @@
 <XPD:REF name="Participant">6Yw+xRjtJky4DjxyfsNSvQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">8NHwxyYkuk6Xgjq7b79OgAAA</XPD:REF>
-<XPD:REF name="Views[1]">gl5GP+5x7Ua9s+hX1IztyAAA</XPD:REF>
-<XPD:REF name="Views[2]">ivEP1Esuj0qeSePFKrTJfgAA</XPD:REF>
+<XPD:REF name="Views[1]">ivEP1Esuj0qeSePFKrTJfgAA</XPD:REF>
+<XPD:REF name="Views[2]">gl5GP+5x7Ua9s+hX1IztyAAA</XPD:REF>
 <XPD:REF name="Views[3]">YKRByLNeTEqgf6BvzSasgwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -240,7 +240,7 @@
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">40</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">56</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">293</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">306</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">109</XPD:ATTR>
 <XPD:ATTR name="StereotypeDisplay" type="UMLStereotypeDisplayKind">sdkIcon</XPD:ATTR>
 <XPD:REF name="Model">wXYF/aIrs0qjllfX1NxcngAA</XPD:REF>
@@ -311,7 +311,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="jw6dImrndkyv6y3yihnUpQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="BsM5duqu30yNBUJ+X6zIAwAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Articles.html</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Articles.blade.php</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="W9OVjSMW6kSxaMVImRmX7QAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -343,7 +343,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="KmJdF1mgxEmtHZX+oYydJQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="Z5RRYbl5skugfgn2jpwXeAAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">ArticleModel</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Article</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="KTNWG+d2w0aM3IcTViGbjAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -366,7 +366,7 @@
 <XPD:OBJ name="OwnedViews[4]" type="UMLAssociationView" guid="5pg61yYZuUWRI0JNX2cPQAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">186,164;186,264</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">190,164;187,264</XPD:ATTR>
 <XPD:REF name="Model">Qua0RxwT0k277ncJFLVdAQAA</XPD:REF>
 <XPD:REF name="Head">GRScBnWLPkKlUaHwcWCVYAAA</XPD:REF>
 <XPD:REF name="Tail">5y8P3uR+B0ybaTD2fkrITAAA</XPD:REF>
@@ -450,7 +450,7 @@
 <XPD:OBJ name="OwnedViews[5]" type="UMLAssociationView" guid="/hAxSow8u0yQaGRvCdGgpgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">588,112;332,111</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">588,112;345,111</XPD:ATTR>
 <XPD:REF name="Model">VTiVEFdy+UKD2lnunCgcZwAA</XPD:REF>
 <XPD:REF name="Head">5y8P3uR+B0ybaTD2fkrITAAA</XPD:REF>
 <XPD:REF name="Tail">vrQmN1Fro0a3w5pNNSxOjgAA</XPD:REF>
@@ -534,7 +534,7 @@
 <XPD:OBJ name="OwnedViews[6]" type="UMLDependencyView" guid="a939GPYJxkqd14jb6/ZKDgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">320,164;558,260</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">324,164;559,260</XPD:ATTR>
 <XPD:REF name="Model">f3183keVVEWI2XtTCTLRrgAA</XPD:REF>
 <XPD:REF name="Head">diDi/5Q1o0uDurK2NhW0kAAA</XPD:REF>
 <XPD:REF name="Tail">5y8P3uR+B0ybaTD2fkrITAAA</XPD:REF>
@@ -658,22 +658,17 @@
 <XPD:REF name="ClientDependencies[0]">f3183keVVEWI2XtTCTLRrgAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="irfFzah1k0OdDvwpmG9OywAA">
-<XPD:ATTR name="Name" type="string">addArticle</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">makeArticle</XPD:ATTR>
 <XPD:REF name="Owner">wXYF/aIrs0qjllfX1NxcngAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="oWAvIMM89kWF2YgDlb9CWwAA">
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="G/lG2ZS1JkKtp8O+kAYv1QAA">
 <XPD:ATTR name="Name" type="string">headline</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">irfFzah1k0OdDvwpmG9OywAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="RiDEXZdFfkKoa+yPR9NAwgAA">
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="c69lRIhJq0KTuQ42hcmy/AAA">
 <XPD:ATTR name="Name" type="string">content</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">irfFzah1k0OdDvwpmG9OywAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="4Yj4SG6D7EW6f/aQhpngIAAA">
-<XPD:ATTR name="Name" type="string">imgUrl</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">irfFzah1k0OdDvwpmG9OywAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -700,7 +695,7 @@
 <XPD:ATTR name="#Associations" type="integer">2</XPD:ATTR>
 <XPD:REF name="Associations[0]">7sfYDDR+706zy3uhZ5zO6gAA</XPD:REF>
 <XPD:REF name="Associations[1]">V4e7dOFcwUu3g5ye+QdRugAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">3</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="ea/xPCyt80CHiyyXiZqKXQAA">
 <XPD:ATTR name="Name" type="string">Headline</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
@@ -713,17 +708,11 @@
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
 <XPD:REF name="Owner">TiZnaQlReU2WKEKlhSfyUgAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="vn6yfB+rg0mzyntgCEcMDAAA">
-<XPD:ATTR name="Name" type="string">imgUrl</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
-<XPD:REF name="Owner">TiZnaQlReU2WKEKlhSfyUgAA</XPD:REF>
-</XPD:OBJ>
 <XPD:ATTR name="#Instances" type="integer">1</XPD:ATTR>
 <XPD:REF name="Instances[0]">3JSWjGR4I0mo8+6BiOX6ygAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[2]" type="UMLClass" guid="Mw7i/3ogiEGQd3OO0Kn6cgAA">
-<XPD:ATTR name="Name" type="string">Articles.html</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Articles.blade.php</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">72G+P2gzb0649gyI55t/NAAA</XPD:REF>
@@ -734,22 +723,17 @@
 <XPD:REF name="Views[3]">1DWTUfXYfkS/RTSSiXvCUgAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="kmqlQrCFw06D6D4W+/DiVQAA">
-<XPD:ATTR name="Name" type="string">addArticle</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">createArticle</XPD:ATTR>
 <XPD:REF name="Owner">Mw7i/3ogiEGQd3OO0Kn6cgAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="xpiIYOVOwU+wgXDAPa7wugAA">
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="ce/05M1DS0eWEjK3btggigAA">
 <XPD:ATTR name="Name" type="string">headline</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">kmqlQrCFw06D6D4W+/DiVQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="O4+4FMuYiU6oRBZNlCUMdgAA">
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="aZZHWEvttU+ha1qr0waU6gAA">
 <XPD:ATTR name="Name" type="string">content</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">kmqlQrCFw06D6D4W+/DiVQAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="tQC9udVURUmm1a34GuNBEAAA">
-<XPD:ATTR name="Name" type="string">imgUrl</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">kmqlQrCFw06D6D4W+/DiVQAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -760,7 +744,7 @@
 <XPD:REF name="Instances[0]">XLHVrFsJ/kmH7Y1J/HRH8AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[3]" type="UMLClass" guid="/1u9jGcsu0y0dRbOX1Q9CAAA">
-<XPD:ATTR name="Name" type="string">ArticleModel</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Article</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">server page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">72G+P2gzb0649gyI55t/NAAA</XPD:REF>
@@ -775,23 +759,18 @@
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="B4CJGaQEdkqXIp4RTR//ZwAA">
 <XPD:ATTR name="Name" type="string">addArticle</XPD:ATTR>
 <XPD:REF name="Owner">/1u9jGcsu0y0dRbOX1Q9CAAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">4</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="7lLTnbgXqUiVlE7nOQVo+QAA">
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="OnK3MRYEvkyTvqAVEulCkgAA">
 <XPD:ATTR name="Name" type="string">headline</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">B4CJGaQEdkqXIp4RTR//ZwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="N9BBcbKKTEar2A2EtWgR0gAA">
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="Q7Z9xCF2+02vpkzuTAH6UQAA">
 <XPD:ATTR name="Name" type="string">content</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">B4CJGaQEdkqXIp4RTR//ZwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="GDol4KYMt02dyxV4kqLGWwAA">
-<XPD:ATTR name="Name" type="string">imgUrl</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">B4CJGaQEdkqXIp4RTR//ZwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[3]" type="UMLParameter" guid="YsFgeCfnWUyYPAL1Jc+WVgAA">
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="xkkwcR8pjEOGOBuGIokeBwAA">
 <XPD:ATTR name="Name" type="string">idUser</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">B4CJGaQEdkqXIp4RTR//ZwAA</XPD:REF>

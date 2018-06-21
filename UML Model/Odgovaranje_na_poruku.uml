@@ -457,8 +457,8 @@
 <XPD:REF name="Participant">tYX5upGcuUqa4880TQ8CEgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">qIDlUYF720ql/ujvLH/ungAA</XPD:REF>
-<XPD:REF name="Views[1]">rnmwFULSjEapFCPjkvIHvwAA</XPD:REF>
-<XPD:REF name="Views[2]">UfyGJOiOaEez/3fyCA8RpAAA</XPD:REF>
+<XPD:REF name="Views[1]">UfyGJOiOaEez/3fyCA8RpAAA</XPD:REF>
+<XPD:REF name="Views[2]">rnmwFULSjEapFCPjkvIHvwAA</XPD:REF>
 <XPD:REF name="Views[3]">J9Xp4dosVEG1Iqt4MTL73QAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="z+WlIMKew0CR4FzdNM+y3gAA">
@@ -466,8 +466,8 @@
 <XPD:REF name="Participant">COaBcHgGAEG22LQootzOoQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">GfAmKMeB90Wv3DLptYDS7wAA</XPD:REF>
-<XPD:REF name="Views[1]">0jtSvQYeCUmmztLPMPU+WgAA</XPD:REF>
-<XPD:REF name="Views[2]">0xRjHcke6E6NyDXOCBBVWQAA</XPD:REF>
+<XPD:REF name="Views[1]">0xRjHcke6E6NyDXOCBBVWQAA</XPD:REF>
+<XPD:REF name="Views[2]">0jtSvQYeCUmmztLPMPU+WgAA</XPD:REF>
 <XPD:REF name="Views[3]">CFAvQZGx+0SbAtGGaZ82SQAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -485,8 +485,8 @@
 <XPD:REF name="Participant">JXEDNzrIE0a5WTJCkBr0FgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">oRj/IM2bIkG2QPz2f7TzQgAA</XPD:REF>
-<XPD:REF name="Views[1]">k23ZeFWMq0+ssU7cwRD/kgAA</XPD:REF>
-<XPD:REF name="Views[2]">o62YiraYpEmNVDl8Z+jytQAA</XPD:REF>
+<XPD:REF name="Views[1]">o62YiraYpEmNVDl8Z+jytQAA</XPD:REF>
+<XPD:REF name="Views[2]">k23ZeFWMq0+ssU7cwRD/kgAA</XPD:REF>
 <XPD:REF name="Views[3]">18EEsCKaE0OXhnsT3/8S7gAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="0WbdpSZPhEKxOk7ygiFglAAA">
@@ -494,8 +494,8 @@
 <XPD:REF name="Participant">COaBcHgGAEG22LQootzOoQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">QGj+AhATMkilvAmsj1t+8AAA</XPD:REF>
-<XPD:REF name="Views[1]">yZzqpXMgq0G4UNyOQ3US6gAA</XPD:REF>
-<XPD:REF name="Views[2]">Li+53IT7eEefYneEeK/1PQAA</XPD:REF>
+<XPD:REF name="Views[1]">Li+53IT7eEefYneEeK/1PQAA</XPD:REF>
+<XPD:REF name="Views[2]">yZzqpXMgq0G4UNyOQ3US6gAA</XPD:REF>
 <XPD:REF name="Views[3]">0jJh2JRyZkeZ86E6tEblSgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -513,8 +513,8 @@
 <XPD:REF name="Participant">URJdqDg2aUuDr+i1zSN07AAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">nHRarWa18025E4jYt1GLgAAA</XPD:REF>
-<XPD:REF name="Views[1]">anQ4lBtwIkevPZlJi9oTvAAA</XPD:REF>
-<XPD:REF name="Views[2]">/rY/tuslVkG+NWib57rtyAAA</XPD:REF>
+<XPD:REF name="Views[1]">/rY/tuslVkG+NWib57rtyAAA</XPD:REF>
+<XPD:REF name="Views[2]">anQ4lBtwIkevPZlJi9oTvAAA</XPD:REF>
 <XPD:REF name="Views[3]">MxVSnuMVaU2gjPMYTs1woAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="62AqMBY2M0OBAmh3Sj0hZgAA">
@@ -522,8 +522,8 @@
 <XPD:REF name="Participant">COaBcHgGAEG22LQootzOoQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">Ud73odYCOUCxoqmOisWQhQAA</XPD:REF>
-<XPD:REF name="Views[1]">bhyJFXiQvkGmWM2q9GpPyQAA</XPD:REF>
-<XPD:REF name="Views[2]">Mrtw3+ktvEKU5SAQDwtVogAA</XPD:REF>
+<XPD:REF name="Views[1]">Mrtw3+ktvEKU5SAQDwtVogAA</XPD:REF>
+<XPD:REF name="Views[2]">bhyJFXiQvkGmWM2q9GpPyQAA</XPD:REF>
 <XPD:REF name="Views[3]">0Gxdln984E673rBjOH3H3AAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -583,7 +583,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="dpGAMGnE8EmhtC2BH+tqQgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="2JMvD+j7Y0m5Z23riFpe/AAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Inbox.html</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Inbox.blade.php</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="DtL4Hdyk6ECZ5asNCyORggAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -615,7 +615,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="us6gzfuqRU+xvlaJPbYzYgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="hSafZx2LnUiXQ+LpItS2+QAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">MessageModel</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Message</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="oV8hQOy3G0O0ovdJasHT6gAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -647,7 +647,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="LQzz0MqocE2Sjwngl4XZpwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="bMWE1Iaw4Ua7Iiie5zI+JQAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">ConversationModel</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Conversation</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="KOjVdKmjC0GMKLPddmE9HwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -1021,25 +1021,20 @@
 <XPD:REF name="ClientDependencies[1]">HXdgCf3xeESpu2AYjpSE3QAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="jGERmYgFQkSVWHCpDKJ6iAAA">
-<XPD:ATTR name="Name" type="string">showInbox</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">show</XPD:ATTR>
 <XPD:REF name="Owner">RJz73g8W2UaJVrO2WkOs7QAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[1]" type="UMLOperation" guid="2gjXFfulF0u0vEGfK5XwbwAA">
-<XPD:ATTR name="Name" type="string">reply</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">post</XPD:ATTR>
 <XPD:REF name="Owner">RJz73g8W2UaJVrO2WkOs7QAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="/MlxK6eHrkOgaLj2Ir+zAAAA">
-<XPD:ATTR name="Name" type="string">content</XPD:ATTR>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="sOXZacjWLEKi5U5kEIXCygAA">
+<XPD:ATTR name="Name" type="string">msgToSend</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">2gjXFfulF0u0vEGfK5XwbwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="68wdJhkXPk+6NMNu99oXIAAA">
-<XPD:ATTR name="Name" type="string">idUserTo</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">2gjXFfulF0u0vEGfK5XwbwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="8q2JA6QYV0anPlBjS2HuugAA">
-<XPD:ATTR name="Name" type="string">idUserFrom</XPD:ATTR>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="mdm6Edq2DUO1EEUWxTRJvAAA">
+<XPD:ATTR name="Name" type="string">conversation</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">2gjXFfulF0u0vEGfK5XwbwAA</XPD:REF>
 </XPD:OBJ>
@@ -1053,7 +1048,7 @@
 <XPD:REF name="Instances[0]">qfLiDWgA7UyLeDfQNuGhrgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[1]" type="UMLClass" guid="+T6L08h2IU+4GFicBUzeEQAA">
-<XPD:ATTR name="Name" type="string">Inbox.html</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Inbox.blade.php</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">EO7vNG9uN0Geld5aurIReAAA</XPD:REF>
@@ -1064,7 +1059,7 @@
 <XPD:REF name="Views[3]">VVbbrE9lB0Kcvr1M+uHVPgAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="3+W10wq+j0OVAaZOVc3IngAA">
-<XPD:ATTR name="Name" type="string">showInbox</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">send</XPD:ATTR>
 <XPD:REF name="Owner">+T6L08h2IU+4GFicBUzeEQAA</XPD:REF>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">+c8QG8r8/UW0r+hjjKS0FAAA</XPD:REF>
@@ -1076,7 +1071,7 @@
 <XPD:REF name="Instances[0]">h9v802Qyw0uSbNFxjjsK6AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[2]" type="UMLClass" guid="/CHbMichMU2Q1vNZ3fUPagAA">
-<XPD:ATTR name="Name" type="string">MessageModel</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Message</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">server page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">EO7vNG9uN0Geld5aurIReAAA</XPD:REF>
@@ -1089,21 +1084,16 @@
 <XPD:REF name="SupplierDependencies[0]">wpoNQeXNdESsazhyp7f6CAAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="qlaX+uDBLkODUh4hFe/kvAAA">
-<XPD:ATTR name="Name" type="string">insertMessage</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">insert</XPD:ATTR>
 <XPD:REF name="Owner">/CHbMichMU2Q1vNZ3fUPagAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="sGSq2wpgt061vzANdQBb4gAA">
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="dpywvSMHWkKPG1CB68nqPgAA">
 <XPD:ATTR name="Name" type="string">content</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">qlaX+uDBLkODUh4hFe/kvAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="ueuWlCKElEqtXooovEtpJgAA">
-<XPD:ATTR name="Name" type="string">idUserTo</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">qlaX+uDBLkODUh4hFe/kvAAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="Y4W8lwNQHEq3GZ1DtoNg3wAA">
-<XPD:ATTR name="Name" type="string">idUserFrom</XPD:ATTR>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="a05z0NDMuEq1Otn1zKN0HwAA">
+<XPD:ATTR name="Name" type="string">idUser</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">qlaX+uDBLkODUh4hFe/kvAAA</XPD:REF>
 </XPD:OBJ>
@@ -1114,7 +1104,7 @@
 <XPD:REF name="Instances[0]">1/FHSPmjQ0CPqoz4k8M/FgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[3]" type="UMLClass" guid="GxgFlwtW6UmtFOIrvpaiKwAA">
-<XPD:ATTR name="Name" type="string">ConversationModel</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Conversation</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">server page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">EO7vNG9uN0Geld5aurIReAAA</XPD:REF>
@@ -1147,14 +1137,14 @@
 <XPD:ATTR name="Name" type="string">update</XPD:ATTR>
 <XPD:REF name="Owner">GxgFlwtW6UmtFOIrvpaiKwAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="Ss1IQmf8xUqeTv95/6pEYwAA">
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="mJh/5VCEOESBf2cMXLdnDwAA">
 <XPD:ATTR name="Name" type="string">time</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Timestamp</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">DVH0AbRU+USsrm+E7NIIcAAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="ryQRmyL8I0+oRr2LOg4rWwAA">
-<XPD:ATTR name="Name" type="string">idMessage</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="45TApfR7Fk6w/rCIEUIWAQAA">
+<XPD:ATTR name="Name" type="string">lastMsg</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">DVH0AbRU+USsrm+E7NIIcAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
@@ -1226,21 +1216,15 @@
 <XPD:ATTR name="#Associations" type="integer">2</XPD:ATTR>
 <XPD:REF name="Associations[0]">pOB2+5SNwUunjE/525enigAA</XPD:REF>
 <XPD:REF name="Associations[1]">JxmqfWCUuU6ELd7k0PnoswAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">3</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="DFnaryPQJ0eozvSs9xxbhQAA">
-<XPD:ATTR name="Name" type="string">content</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">msgToSend</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
 <XPD:REF name="Owner">0Z1nhkDxukmCiLBTZi2H0wAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[1]" type="UMLAttribute" guid="iv8rwYfFJ0GcggA7aHpJZQAA">
-<XPD:ATTR name="Name" type="string">idUserTo</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
-<XPD:REF name="Owner">0Z1nhkDxukmCiLBTZi2H0wAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="foO58PjfgkGF6VSZqmB7pAAA">
-<XPD:ATTR name="Name" type="string">idUserFrom</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">conversation</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="Owner">0Z1nhkDxukmCiLBTZi2H0wAA</XPD:REF>

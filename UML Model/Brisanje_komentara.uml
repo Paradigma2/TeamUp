@@ -238,16 +238,16 @@
 <XPD:OBJ name="OwnedViews[0]" type="UMLClassView" guid="fqVYWXwv0kKD8fW8mRbXCQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">80</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">64</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">48</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">164</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">212</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">109</XPD:ATTR>
 <XPD:ATTR name="StereotypeDisplay" type="UMLStereotypeDisplayKind">sdkIcon</XPD:ATTR>
 <XPD:REF name="Model">HexjY9naPkawiH3LxMCwXgAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="s9juNCMyqk+u6rZUcyXEtwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="/dpeCehihESFYxW8SPZ3JwAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">ProfileController</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">UserController</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="RNRUiuX9vk6ACCuRr4hsMwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -270,16 +270,16 @@
 <XPD:OBJ name="OwnedViews[1]" type="UMLClassView" guid="4+1a/ifCaEOz4E2ltyFUQwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">76</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">40</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">236</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">173</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">262</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">96</XPD:ATTR>
 <XPD:ATTR name="StereotypeDisplay" type="UMLStereotypeDisplayKind">sdkIcon</XPD:ATTR>
 <XPD:REF name="Model">n8pHhYsp9Ue/NQ61dYNGagAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="d+UWrsqB0kG+eHffO3PyhgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="UTVn8QlaOEq16VZleoC1HwAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Profile.html</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Profile.blade.php</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="ZEIw5vBhVEmq9q4WovuvFwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -302,7 +302,7 @@
 <XPD:OBJ name="OwnedViews[2]" type="UMLAssociationView" guid="NoEiTEFE5UaiKzdCavUDbwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">161,156;162,236</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">169,156;170,236</XPD:ATTR>
 <XPD:REF name="Model">u12xhNi7ZUqDeY7iRFr+DAAA</XPD:REF>
 <XPD:REF name="Head">4+1a/ifCaEOz4E2ltyFUQwAA</XPD:REF>
 <XPD:REF name="Tail">fqVYWXwv0kKD8fW8mRbXCQAA</XPD:REF>
@@ -395,7 +395,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="BrSpM4rIz0KsrEiYRbu1NgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="dGrlDSDVJE2WXpcuYi04fAAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">UserModel</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">User</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="/e7ObX5RukeJVvqXBmG4XAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -419,7 +419,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">376</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">228</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">216</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">173</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">109</XPD:ATTR>
 <XPD:ATTR name="StereotypeDisplay" type="UMLStereotypeDisplayKind">sdkIcon</XPD:ATTR>
@@ -427,7 +427,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="pJ0GF9VEF0C5+5ms5BlAHAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="MEwbJK6QFkii6lK0s56b9gAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">CommentModel</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Comment</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="LAPHAd+E40GXy4Cva/ioRgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -450,7 +450,7 @@
 <XPD:OBJ name="OwnedViews[5]" type="UMLDependencyView" guid="rHR6HXdSPUWUH6FnfmZU0gAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">243,151;376,231</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">263,156;376,221</XPD:ATTR>
 <XPD:REF name="Model">rA5DO3hIlEuB/X3FDT74tAAA</XPD:REF>
 <XPD:REF name="Head">RJEsLBKnZ0636kvkQjQ5MQAA</XPD:REF>
 <XPD:REF name="Tail">fqVYWXwv0kKD8fW8mRbXCQAA</XPD:REF>
@@ -476,7 +476,7 @@
 <XPD:OBJ name="OwnedViews[6]" type="UMLDependencyView" guid="969UvhAbl0CED++ebFSlGgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">243,130;580,247</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">275,139;580,246</XPD:ATTR>
 <XPD:REF name="Model">g4E0IEfGnUq30x9KegPuEQAA</XPD:REF>
 <XPD:REF name="Head">16MOHFlfgUensQYaQqtr6wAA</XPD:REF>
 <XPD:REF name="Tail">fqVYWXwv0kKD8fW8mRbXCQAA</XPD:REF>
@@ -503,7 +503,7 @@
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedElements" type="integer">8</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="HexjY9naPkawiH3LxMCwXgAA">
-<XPD:ATTR name="Name" type="string">ProfileController</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">UserController</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">server page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">1GqTkT1W/kaqPkdU0kgBWQAA</XPD:REF>
@@ -517,11 +517,16 @@
 <XPD:REF name="ClientDependencies[1]">g4E0IEfGnUq30x9KegPuEQAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="kE6iHb8fLUSMBl8aQ88dNQAA">
-<XPD:ATTR name="Name" type="string">deleteComment</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">obrisiKom</XPD:ATTR>
 <XPD:REF name="Owner">HexjY9naPkawiH3LxMCwXgAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="C3PStRxMP0eh2j/YEs+5sQAA">
-<XPD:ATTR name="Name" type="string">idAd</XPD:ATTR>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="ZE7KLCHBGUiyMVW8enLq5wAA">
+<XPD:ATTR name="Name" type="string">korisnik</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">kE6iHb8fLUSMBl8aQ88dNQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="/sZ0sUr6ekm5ITgt2jJNQwAA">
+<XPD:ATTR name="Name" type="string">komentar</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">kE6iHb8fLUSMBl8aQ88dNQAA</XPD:REF>
 </XPD:OBJ>
@@ -529,7 +534,7 @@
 <XPD:REF name="CallActions[0]">n5+jtsU6bk6qgJFe8ARv/QAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[1]" type="UMLOperation" guid="HEaOMb/ZYkuqFVqj5/KGSQAA">
-<XPD:ATTR name="Name" type="string">showComments</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
 <XPD:REF name="Owner">HexjY9naPkawiH3LxMCwXgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:ATTR name="#Associations" type="integer">1</XPD:ATTR>
@@ -538,7 +543,7 @@
 <XPD:REF name="Instances[0]">Y9LpL1KT5UCy1KAPREIDIgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[1]" type="UMLClass" guid="n8pHhYsp9Ue/NQ61dYNGagAA">
-<XPD:ATTR name="Name" type="string">Profile.html</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Profile.blade.php</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">1GqTkT1W/kaqPkdU0kgBWQAA</XPD:REF>
@@ -551,8 +556,13 @@
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="wG6MfkYR10KVS6VQC+aN0wAA">
 <XPD:ATTR name="Name" type="string">deleteComment</XPD:ATTR>
 <XPD:REF name="Owner">n8pHhYsp9Ue/NQ61dYNGagAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="dH4oer9QTUaWFAztMOhIuAAA">
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="O/En2moWkEypeJZ39HzoegAA">
+<XPD:ATTR name="Name" type="string">username</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">wG6MfkYR10KVS6VQC+aN0wAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="upEHhPT9H0O1QK2ncXO6rQAA">
 <XPD:ATTR name="Name" type="string">idComment</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">wG6MfkYR10KVS6VQC+aN0wAA</XPD:REF>
@@ -595,7 +605,7 @@
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[3]" type="UMLClass" guid="5JNgdACCPESt4uxnWhvEtwAA">
-<XPD:ATTR name="Name" type="string">UserModel</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">User</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">server page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">1GqTkT1W/kaqPkdU0kgBWQAA</XPD:REF>
@@ -608,7 +618,7 @@
 <XPD:REF name="SupplierDependencies[0]">g4E0IEfGnUq30x9KegPuEQAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="WNtIvD4D702Z4eNU87kLfAAA">
-<XPD:ATTR name="Name" type="string">updateGrade</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">update</XPD:ATTR>
 <XPD:REF name="Owner">5JNgdACCPESt4uxnWhvEtwAA</XPD:REF>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">CUZhfsJwNE+lOxQ4XO/B+wAA</XPD:REF>
@@ -617,7 +627,7 @@
 <XPD:REF name="Instances[0]">Ay11pqccZ0ubfEff5NO+wAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[4]" type="UMLClass" guid="REg5OfvWCE+oz2uvcX4WUwAA">
-<XPD:ATTR name="Name" type="string">CommentModel</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Comment</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">server page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">1GqTkT1W/kaqPkdU0kgBWQAA</XPD:REF>
@@ -628,22 +638,12 @@
 <XPD:REF name="Views[3]">Zry6/sAwTUCnrrylGuORbgAA</XPD:REF>
 <XPD:ATTR name="#SupplierDependencies" type="integer">1</XPD:ATTR>
 <XPD:REF name="SupplierDependencies[0]">rA5DO3hIlEuB/X3FDT74tAAA</XPD:REF>
-<XPD:ATTR name="#Operations" type="integer">2</XPD:ATTR>
-<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="Tz/bKBjIrU6pRVsOGAZTJwAA">
-<XPD:ATTR name="Name" type="string">getComments</XPD:ATTR>
+<XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="BEPsq8+OEkKsVFyNYyGjTAAA">
+<XPD:ATTR name="Name" type="string">delete</XPD:ATTR>
 <XPD:REF name="Owner">REg5OfvWCE+oz2uvcX4WUwAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="cNzBWhV6w0avRNIORZvEhQAA">
-<XPD:ATTR name="Name" type="string">idUser</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">Tz/bKBjIrU6pRVsOGAZTJwAA</XPD:REF>
-</XPD:OBJ>
-</XPD:OBJ>
-<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="BEPsq8+OEkKsVFyNYyGjTAAA">
-<XPD:ATTR name="Name" type="string">deleteComment</XPD:ATTR>
-<XPD:REF name="Owner">REg5OfvWCE+oz2uvcX4WUwAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="739VVO55rUKHVq4zbi/7MwAA">
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="vwK4DRLjHkKIfq7lTmwCjAAA">
 <XPD:ATTR name="Name" type="string">idComment</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">BEPsq8+OEkKsVFyNYyGjTAAA</XPD:REF>
@@ -767,7 +767,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="a7DROFLpu0SmpA33WVquswAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="cvtL33OMjU2+d8DTfNWzzgAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string"> : UserModel</XPD:ATTR>
+<XPD:ATTR name="Text" type="string"> : User</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="DV98EpA9RU28jk5+EC8wuQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -791,7 +791,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="s6eVQ/u9IE+ScV/wQOpiVwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="0GQ7d7LdKkGpGEYBKssIBQAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string"> : ProfileController</XPD:ATTR>
+<XPD:ATTR name="Text" type="string"> : UserController</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="J5QwG8gAdk2THc+/7TwZOQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -815,7 +815,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="OqPvGAPY70eIVsUkDL2KsAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="LkrboH+hJkW404aqvqpIZAAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string"> : CommentModel</XPD:ATTR>
+<XPD:ATTR name="Text" type="string"> : Comment</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="IDFZEbHSV020pk2zoIKAkAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -947,7 +947,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="1fA0Qs1XN0S1DFycu1iUAAAA">
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">4 : deleteComment()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">4 : obrisiKom()</XPD:ATTR>
 <XPD:REF name="Model">op4ywLKU9ESO3wxMZh9t7QAA</XPD:REF>
 <XPD:REF name="HostEdge">G5NldV+oY0ia1rwF78Pm8gAA</XPD:REF>
 </XPD:OBJ>
@@ -983,7 +983,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="3FROZ/vZ/0SeCl6/7o0iOQAA">
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">5 : deleteComment()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">5 : delete()</XPD:ATTR>
 <XPD:REF name="Model">A03MNsGk+EmgSh8vjd9glQAA</XPD:REF>
 <XPD:REF name="HostEdge">CV5PwD44zEq4gtug8frPDgAA</XPD:REF>
 </XPD:OBJ>
@@ -1055,7 +1055,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="VU2t7aa0CE+VCRHn4BiIagAA">
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">7 : updateGrade()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">7 : update()</XPD:ATTR>
 <XPD:REF name="Model">zvN8EYj3Pkekmiuqm77dywAA</XPD:REF>
 <XPD:REF name="HostEdge">VpK9LZW2D0yvv9Mjkx5gMgAA</XPD:REF>
 </XPD:OBJ>
