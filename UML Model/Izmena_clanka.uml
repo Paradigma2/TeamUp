@@ -209,8 +209,8 @@
 <XPD:REF name="Participant">3ihi32PIcEKLe9+yZUj4TAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">s3alUIFIpUS++ZQa6F5NNAAA</XPD:REF>
-<XPD:REF name="Views[1]">BbX/bSJXVkqBPXTqE2JAtAAA</XPD:REF>
-<XPD:REF name="Views[2]">uM2nPIf6uUq+KI32gjezGQAA</XPD:REF>
+<XPD:REF name="Views[1]">uM2nPIf6uUq+KI32gjezGQAA</XPD:REF>
+<XPD:REF name="Views[2]">BbX/bSJXVkqBPXTqE2JAtAAA</XPD:REF>
 <XPD:REF name="Views[3]">CcURW+8qZUCsMxLvcii9wAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="KROlNmrTiEKyrZWnFBruBwAA">
@@ -218,8 +218,8 @@
 <XPD:REF name="Participant">9X5pBncKYk68mRmB+OBGcgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">HG/v6B1LqUmtXeE8HmGmJgAA</XPD:REF>
-<XPD:REF name="Views[1]">P+sPRH7FME6dz521ItY1ggAA</XPD:REF>
-<XPD:REF name="Views[2]">+nSRHsF/wEiBoi6eQfB1MAAA</XPD:REF>
+<XPD:REF name="Views[1]">+nSRHsF/wEiBoi6eQfB1MAAA</XPD:REF>
+<XPD:REF name="Views[2]">P+sPRH7FME6dz521ItY1ggAA</XPD:REF>
 <XPD:REF name="Views[3]">tRLqDdOgOUqfDtpBredSKwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -311,7 +311,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="jw6dImrndkyv6y3yihnUpQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="BsM5duqu30yNBUJ+X6zIAwAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Articles.html</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Articles.blade.php</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="W9OVjSMW6kSxaMVImRmX7QAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -343,7 +343,7 @@
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="KmJdF1mgxEmtHZX+oYydJQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="Z5RRYbl5skugfgn2jpwXeAAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">ArticleModel</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Article</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="KTNWG+d2w0aM3IcTViGbjAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -661,19 +661,19 @@
 <XPD:ATTR name="Name" type="string">editArticle</XPD:ATTR>
 <XPD:REF name="Owner">wXYF/aIrs0qjllfX1NxcngAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="NzL1qD+7uUmBDfzww+90MgAA">
-<XPD:ATTR name="Name" type="string">headline</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="+jQ7w2lF60er6AMz09quYQAA">
+<XPD:ATTR name="Name" type="string">idArticle</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">irfFzah1k0OdDvwpmG9OywAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="tUYhtf6P/Ee+scFYx799RQAA">
+<XPD:ATTR name="Name" type="string">naslov</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">irfFzah1k0OdDvwpmG9OywAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="jVifD79Ky02zs4yzvx8qSQAA">
-<XPD:ATTR name="Name" type="string">content</XPD:ATTR>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="4YL1BV91uE+eg6KLdleqkwAA">
+<XPD:ATTR name="Name" type="string">tekst</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">irfFzah1k0OdDvwpmG9OywAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="co38NAA7DkiJ8oQYKv2t/QAA">
-<XPD:ATTR name="Name" type="string">imgUrl</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">irfFzah1k0OdDvwpmG9OywAA</XPD:REF>
 </XPD:OBJ>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
@@ -702,7 +702,7 @@
 <XPD:ATTR name="#Associations" type="integer">2</XPD:ATTR>
 <XPD:REF name="Associations[0]">7sfYDDR+706zy3uhZ5zO6gAA</XPD:REF>
 <XPD:REF name="Associations[1]">V4e7dOFcwUu3g5ye+QdRugAA</XPD:REF>
-<XPD:ATTR name="#Attributes" type="integer">3</XPD:ATTR>
+<XPD:ATTR name="#Attributes" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="ea/xPCyt80CHiyyXiZqKXQAA">
 <XPD:ATTR name="Name" type="string">Headline</XPD:ATTR>
 <XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
@@ -715,17 +715,11 @@
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
 <XPD:REF name="Owner">TiZnaQlReU2WKEKlhSfyUgAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="vn6yfB+rg0mzyntgCEcMDAAA">
-<XPD:ATTR name="Name" type="string">imgUrl</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
-<XPD:REF name="Owner">TiZnaQlReU2WKEKlhSfyUgAA</XPD:REF>
-</XPD:OBJ>
 <XPD:ATTR name="#Instances" type="integer">1</XPD:ATTR>
 <XPD:REF name="Instances[0]">m0z78eY7JEacniluBk35mAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[2]" type="UMLClass" guid="Mw7i/3ogiEGQd3OO0Kn6cgAA">
-<XPD:ATTR name="Name" type="string">Articles.html</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Articles.blade.php</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">72G+P2gzb0649gyI55t/NAAA</XPD:REF>
@@ -739,19 +733,19 @@
 <XPD:ATTR name="Name" type="string">editArticle</XPD:ATTR>
 <XPD:REF name="Owner">Mw7i/3ogiEGQd3OO0Kn6cgAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="p9Vw1i90a0iSqvcswy2M6gAA">
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="eNJnsw3nnUO2Du/mxyGisAAA">
+<XPD:ATTR name="Name" type="string">idArticle</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">kmqlQrCFw06D6D4W+/DiVQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="7cVi7WsnxkGzqDVCZQ3MPAAA">
 <XPD:ATTR name="Name" type="string">headline</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">kmqlQrCFw06D6D4W+/DiVQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="8BWEcmbSnUu99N7xZTCzggAA">
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="HpvmttrCz0e+b30OVwyAuwAA">
 <XPD:ATTR name="Name" type="string">content</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">kmqlQrCFw06D6D4W+/DiVQAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="DGC/MZZMZkCpT31RYug+ogAA">
-<XPD:ATTR name="Name" type="string">imgUrl</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">kmqlQrCFw06D6D4W+/DiVQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:ATTR name="#CallActions" type="integer">2</XPD:ATTR>
@@ -765,7 +759,7 @@
 <XPD:REF name="Instances[0]">jAY9NVoYx02uBVzMrNQCaAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[3]" type="UMLClass" guid="/1u9jGcsu0y0dRbOX1Q9CAAA">
-<XPD:ATTR name="Name" type="string">ArticleModel</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Article</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">server page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">72G+P2gzb0649gyI55t/NAAA</XPD:REF>
@@ -778,37 +772,27 @@
 <XPD:REF name="SupplierDependencies[0]">f3183keVVEWI2XtTCTLRrgAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="B4CJGaQEdkqXIp4RTR//ZwAA">
-<XPD:ATTR name="Name" type="string">editArticle</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">edit</XPD:ATTR>
 <XPD:REF name="Owner">/1u9jGcsu0y0dRbOX1Q9CAAA</XPD:REF>
-<XPD:ATTR name="#Parameters" type="integer">4</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="Q79H7/B0wkyhwporKdmo8wAA">
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="ej6M7khH+ESsko76GvPKVAAA">
 <XPD:ATTR name="Name" type="string">headline</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">B4CJGaQEdkqXIp4RTR//ZwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="7WpqLKwxDkacXZaB5eW0FwAA">
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="R32xJ0swmUeIbsZct8xX9gAA">
 <XPD:ATTR name="Name" type="string">content</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">Text</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">B4CJGaQEdkqXIp4RTR//ZwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="lZXRXxU7S0uT0x25DFoMZgAA">
-<XPD:ATTR name="Name" type="string">imgUrl</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
-<XPD:REF name="BehavioralFeature">B4CJGaQEdkqXIp4RTR//ZwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Parameters[3]" type="UMLParameter" guid="gdgcgW1wo0GDSeF/wv6HeAAA">
-<XPD:ATTR name="Name" type="string">idUser</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">B4CJGaQEdkqXIp4RTR//ZwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:ATTR name="#CallActions" type="integer">1</XPD:ATTR>
 <XPD:REF name="CallActions[0]">f2e0Hfc8a0uoof1f0h7CLwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[1]" type="UMLOperation" guid="hoHZecBbAEqSnVc2YSzgdQAA">
-<XPD:ATTR name="Name" type="string">getArticle</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">find</XPD:ATTR>
 <XPD:REF name="Owner">/1u9jGcsu0y0dRbOX1Q9CAAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="LifgGCearUKmPWV53stXHQAA">
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="wN22gdQn802U1Myv0Qg5IwAA">
 <XPD:ATTR name="Name" type="string">idArticle</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">hoHZecBbAEqSnVc2YSzgdQAA</XPD:REF>

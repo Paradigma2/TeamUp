@@ -656,16 +656,16 @@
 <XPD:OBJ name="OwnedViews[1]" type="UMLClassView" guid="BXD1wpTM6EW3QOHToXGLLgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">100</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">288</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">158</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">88</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">280</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">177</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">96</XPD:ATTR>
 <XPD:ATTR name="StereotypeDisplay" type="UMLStereotypeDisplayKind">sdkIcon</XPD:ATTR>
 <XPD:REF name="Model">r9l69znO7k6Bg9k4EbHAoQAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="8sV83cy8EkWnubXMN5iDsAAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="DTb+wVhK+keHXxUJvieT1gAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Profile.html</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Profile.blade.php</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="iIvEOXt7jUSFVNTmmcpHuwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -688,8 +688,8 @@
 <XPD:OBJ name="OwnedViews[2]" type="UMLClassView" guid="V9PsXP/pZ0eyPxOPb1f6GAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">400</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">20</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">404</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">68</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">158</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">96</XPD:ATTR>
 <XPD:ATTR name="StereotypeDisplay" type="UMLStereotypeDisplayKind">sdkIcon</XPD:ATTR>
@@ -778,7 +778,7 @@
 <XPD:OBJ name="OwnedViews[5]" type="UMLAssociationView" guid="m34/uemDh02YVTsMhNiscgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">174,187;177,288</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">174,187;175,280</XPD:ATTR>
 <XPD:REF name="Model">fVHF7XeFvEWkOPG6BImf+gAA</XPD:REF>
 <XPD:REF name="Head">BXD1wpTM6EW3QOHToXGLLgAA</XPD:REF>
 <XPD:REF name="Tail">l7oZ6fGvDEWW3vc5B0pJmgAA</XPD:REF>
@@ -862,7 +862,7 @@
 <XPD:OBJ name="OwnedViews[6]" type="UMLAssociationView" guid="oxNH1pR/M0+RORM/v5KI3wAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">255,120;400,86</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">255,133;404,121</XPD:ATTR>
 <XPD:REF name="Model">X3083BW4r0WLtQNIiGDFQAAA</XPD:REF>
 <XPD:REF name="Head">V9PsXP/pZ0eyPxOPb1f6GAAA</XPD:REF>
 <XPD:REF name="Tail">l7oZ6fGvDEWW3vc5B0pJmgAA</XPD:REF>
@@ -961,12 +961,12 @@
 <XPD:REF name="ClientDependencies[1]">0OUUtrk57USgOLkFLMiCQgAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="f3ir7y3PP0i3g0Ltsu5L1gAA">
-<XPD:ATTR name="Name" type="string">deleteAccount</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">obrisiNalog</XPD:ATTR>
 <XPD:REF name="Owner">pqlYcWYgc0ix4WuUkPTQ5wAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="DzfcDP8xuEG2FvDKh3mTIwAA">
-<XPD:ATTR name="Name" type="string">idUser</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="nPx5BegLr0asCD7w5Drs2gAA">
+<XPD:ATTR name="Name" type="string">username</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">f3ir7y3PP0i3g0Ltsu5L1gAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -977,7 +977,7 @@
 <XPD:REF name="Instances[0]">Lo1Zh7AWM0qvD0HdeesgxQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedElements[1]" type="UMLClass" guid="r9l69znO7k6Bg9k4EbHAoQAA">
-<XPD:ATTR name="Name" type="string">Profile.html</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Profile.blade.php</XPD:ATTR>
 <XPD:ATTR name="StereotypeProfile" type="string">WAE</XPD:ATTR>
 <XPD:ATTR name="StereotypeName" type="string">client page (stereotype)</XPD:ATTR>
 <XPD:REF name="Namespace">N5+aM0bCnkOlMkif9MeNaQAA</XPD:REF>
@@ -991,9 +991,9 @@
 <XPD:ATTR name="Name" type="string">deleteAccount</XPD:ATTR>
 <XPD:REF name="Owner">r9l69znO7k6Bg9k4EbHAoQAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="SRxx5nGoMEeGVSmvWeadLwAA">
-<XPD:ATTR name="Name" type="string">idUser</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="K8exeyi3XUKwv5qo7fCACwAA">
+<XPD:ATTR name="Name" type="string">username</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">59/qlMtbbUeSzMuD5ejk2wAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1033,10 +1033,10 @@
 <XPD:REF name="SupplierDependencies[0]">nX/OnehitEOiQBGnWxHb8AAA</XPD:REF>
 <XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
 <XPD:OBJ name="Operations[0]" type="UMLOperation" guid="OVAZR2eaYUiefRxM9M4wWgAA">
-<XPD:ATTR name="Name" type="string">deleteUser</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">delete</XPD:ATTR>
 <XPD:REF name="Owner">aJtQkAmTb0GgPMnhZvYVVgAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="vdfqm78SSUiwfEMPJaXcEQAA">
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="CDKu9omC6EqxqqLiTbkk2wAA">
 <XPD:ATTR name="Name" type="string">idUser</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">OVAZR2eaYUiefRxM9M4wWgAA</XPD:REF>
@@ -1430,7 +1430,7 @@
 <XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="g78tO3UcJEubaL+lodiNVAAA">
 <XPD:ATTR name="Alpha" type="real">1.5707963267949</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">5 : deleteUser()</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">5 : delete()</XPD:ATTR>
 <XPD:REF name="Model">tj12rrH90UmzzgetX3MKXAAA</XPD:REF>
 <XPD:REF name="HostEdge">i+4QT/PS7kKYjvOw0QZM6AAA</XPD:REF>
 </XPD:OBJ>
