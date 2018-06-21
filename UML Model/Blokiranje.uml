@@ -505,7 +505,7 @@
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">484</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">160</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">156</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">186</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">122</XPD:ATTR>
 <XPD:ATTR name="StereotypeDisplay" type="UMLStereotypeDisplayKind">sdkIcon</XPD:ATTR>
@@ -568,7 +568,7 @@
 <XPD:OBJ name="OwnedViews[3]" type="UMLDependencyView" guid="xG90EZCNOEqlNQszs+E4IgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">271,109;484,187</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">271,108;484,183</XPD:ATTR>
 <XPD:REF name="Model">g+hKsOIKAEK0/aaFgt337gAA</XPD:REF>
 <XPD:REF name="Head">bzpLG+tsvUGxrVymCuY29wAA</XPD:REF>
 <XPD:REF name="Tail">nkKu3YOfBUSeMgbiRgeX3AAA</XPD:REF>
@@ -661,11 +661,6 @@
 <XPD:REF name="Views[3]">ZnOtPyv4Eku6+95TygXv8gAA</XPD:REF>
 <XPD:ATTR name="#SupplierDependencies" type="integer">1</XPD:ATTR>
 <XPD:REF name="SupplierDependencies[0]">g+hKsOIKAEK0/aaFgt337gAA</XPD:REF>
-<XPD:ATTR name="#Operations" type="integer">1</XPD:ATTR>
-<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="8pbPA5p7U0+zPyFE8M3E3QAA">
-<XPD:ATTR name="Name" type="string">insertBlockedUser(id1:int, id2:int)</XPD:ATTR>
-<XPD:REF name="Owner">evd6q+ew706c+FZ/ayHG8QAA</XPD:REF>
-</XPD:OBJ>
 <XPD:ATTR name="#Instances" type="integer">1</XPD:ATTR>
 <XPD:REF name="Instances[0]">XvZ5eWYFpkOpTHiv2LQJWgAA</XPD:REF>
 </XPD:OBJ>
